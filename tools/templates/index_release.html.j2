@@ -1,0 +1,188 @@
+{%- if full -%}
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% endif -%}
+<title>{{ idx.index_name }} {{ idx.release }}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: release header → ranking table (the point of the page) → per-family branch breakdown → pins/lineage → how to recompute. */
+:root{
+  --bg:#f5f4ef; --fg:#1d2024; --fg-2:#5b6068; --line:#d8d6cc; --surface:#ffffff;
+  --accent:#1f5f8b; --accent-ink:#ffffff; --accent-soft:#e3edf5;
+  --seal:#b4332a; --seal-soft:#f8e6e3; --ok:#2e7d4f; --ok-soft:#e2f0e7; --warn:#8d6100; --warn-soft:#f6ecd0;
+  --display:'Noto Serif TC','PMingLiU','Songti TC',serif;
+  --body:'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#17191c; --fg:#e6e4df; --fg-2:#9ea3ab; --line:#30343a; --surface:#1f2226; --accent:#7fb2d9; --accent-ink:#0f1b25; --accent-soft:#1d2f3d; --seal:#e27a70; --seal-soft:#3a1f1c; --ok:#79c594; --ok-soft:#1c3326; --warn:#e0b44c; --warn-soft:#3a2f12; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#17191c; --fg:#e6e4df; --fg-2:#9ea3ab; --line:#30343a; --surface:#1f2226; --accent:#7fb2d9; --accent-ink:#0f1b25; --accent-soft:#1d2f3d; --seal:#e27a70; --seal-soft:#3a1f1c; --ok:#79c594; --ok-soft:#1c3326; --warn:#e0b44c; --warn-soft:#3a2f12; color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.65}
+.wrap{max-width:960px;margin:0 auto;padding-block:28px 72px;padding-inline:16px}
+a{color:var(--accent)}
+h1,h2{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.25}
+h2{font-size:20px;margin-block-end:12px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);font-weight:500}
+.mono{font-family:var(--mono);font-size:.9em}
+.num{font-variant-numeric:tabular-nums}
+header{display:grid;gap:12px;padding-block-end:22px;border-bottom:2px solid var(--fg)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 10px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--line);border-radius:4px;font-size:12.5px;background:var(--surface)}
+.chip b{font-weight:500;color:var(--fg-2)}
+.warnbox{padding:12px 16px;border-left:3px solid var(--warn);background:var(--warn-soft);font-size:14px;border-radius:0 4px 4px 0}
+section{padding-block:28px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-block-end:14px}
+.sec-head .eyebrow{font-size:11px}
+.tablewrap{overflow-x:auto;margin-inline:-16px;padding-inline:16px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{font-weight:500;color:var(--fg-2);font-size:12.5px;letter-spacing:.04em;white-space:nowrap}
+td.r,th.r{text-align:right}
+td.id{font-family:var(--mono);font-size:12.5px}
+.rank{font-family:var(--display);font-weight:700;font-size:18px;color:var(--fg-2)}
+.score{font-family:var(--display);font-weight:700;font-size:22px;font-variant-numeric:tabular-nums}
+.score.na{color:var(--fg-2);font-size:14px;font-family:var(--body);font-weight:500}
+.badge{display:inline-block;padding:1px 8px;border-radius:3px;font-size:12px;font-weight:500;white-space:nowrap}
+.b-ok{background:var(--ok-soft);color:var(--ok)} .b-na{background:var(--seal-soft);color:var(--seal)} .b-fake{background:var(--warn-soft);color:var(--warn)} .b-neutral{background:var(--bg);color:var(--fg-2);border:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:8px}
+.bar i{display:block;height:8px;background:var(--accent);border-radius:2px;flex:none}
+.bar span{font-size:12.5px;color:var(--fg-2)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;min-width:0}
+.card h3{font-family:var(--body);font-size:13px;color:var(--fg-2);font-weight:600;letter-spacing:.04em;margin:0 0 8px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12.5px}
+.kv dt{color:var(--fg-2);white-space:nowrap}.kv dd{margin:0;font-family:var(--mono);word-break:break-all}
+pre{font-family:var(--mono);font-size:12.5px;line-height:1.55;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;overflow-x:auto;margin:0}
+footer{margin-block-start:28px;padding-block-start:16px;border-top:2px solid var(--fg);font-size:12.5px;color:var(--fg-2)}
+</style>
+{%- if full %}
+</head>
+<body>
+{% endif %}
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">TaiwanEval · Release {{ idx.release }}</div>
+  <h1>{{ idx.index_name }} {{ idx.release }}</h1>
+  <div class="meta">
+    {%- set mode = idx.get('mode', 'preview') %}
+    <span class="chip" data-mode="{{ mode }}"><b>mode</b> <span class="badge {{ 'b-ok' if mode == 'release' else 'b-fake' }}">{{ mode }}</span></span>
+    <span class="chip"><b>methodology</b> <span class="mono">{{ idx.methodology_version }}</span></span>
+    <span class="chip"><b>families</b> {{ idx.families | length }}（headline tier {{ idx.headline_tiers | join(',') }}）</span>
+    <span class="chip"><b>權重</b> {% for f, w in idx.weights.items() %}<span class="mono">{{ f }}={{ w }}</span>{% if not loop.last %} · {% endif %}{% endfor %}</span>
+    <span class="chip"><b>generated</b> {{ idx.generated_at[:16].replace('T',' ') }}</span>
+  </div>
+  <div class="warnbox">{% if real_targets %}<b>草稿 release</b>：{{ real_targets | length }} 個真實 target（{{ real_targets | join('、') }}），其餘 fake-* 是 pipeline 驗證用的假 solver（oracle 直接回 gold、naive 模擬一種常見錯法、random 亂數；各 family 的 naive 錯法見下），不是模型。{% else %}這是 <b>pipeline 驗證 release</b>：所有 target 都是假 solver（oracle 直接回 gold、naive 模擬一種常見錯法、random 亂數；各 family 的 naive 錯法見下），不是模型。{% endif %}只有 {{ idx.families | length }} 個 family、只有 public split，private 分數與 gap 欄位尚無資料。<br>總分需要每個 headline family 都跑完；只跑了部分 family 的 target 標 unavailable，各 family 分數以小字列在 public 欄。<br><b>accuracy</b> 只算實算題（非 control 分支）；<b>control</b> 是對照題答對率，抓的是亂套規則，答對不代表會算，不進 headline。
+    <ul>{% for f in family_meta %}<li><b class="mono">{{ f.id }}</b>：對照題 {% for c in f.controls %}<span class="mono">{{ c.id }}</span>：{{ c.note }}{% if not loop.last %}；{% endif %}{% else %}無{% endfor %}{% if f.naive %}；naive {{ f.naive }}{% endif %}</li>{% endfor %}</ul></div>
+  {%- if mode != 'release' %}
+  <div class="warnbox"><b>preview：這不是正式 release。</b>{% if idx.get('release_blockers') %}以下項目擋住 release（<span class="mono">python3 eval/aggregate.py --release {{ idx.release }} --mode release</span> 會因此失敗）：
+    <ul>{% for b in idx.release_blockers %}<li>{{ b }}</li>{% endfor %}</ul>{% else %}以 <span class="mono">--mode release</span> 重建後才是正式版本。{% endif %}</div>
+  {%- endif %}
+</header>
+
+<section id="ranking">
+  <div class="sec-head"><h2>排名</h2><span class="eyebrow">單位是 evaluation target（model @ quantization @ hardware）</span></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>#</th><th>evaluation target</th><th class="r">public<br><span style="font-weight:400">accuracy</span></th><th class="r">control<br><span style="font-weight:400">對照題</span></th><th class="r">private</th><th class="r">gap</th><th>狀態</th><th>log</th></tr></thead>
+    <tbody>
+    {% for t in ranking %}
+    <tr>
+      <td class="rank">{{ loop.index }}</td>
+      <td><span class="mono">{{ t.name }}</span>{% if t.fake %} <span class="badge b-fake">fake · {{ t.fake }}</span>{% endif %} <span class="badge b-neutral">{{ t.answer_mode }}</span></td>
+      <td class="r">{% if t.public is not none %}<span class="score">{{ '%.1f' % (100 * t.public) }}</span><span style="font-size:12px;color:var(--fg-2)">% · n={{ t.n_scored }}</span>{% else %}<span class="score na">—</span>{% if t.family_scores %}<div style="font-size:11.5px;color:var(--fg-2);white-space:nowrap">{% for f, v in t.family_scores.items() %}<span class="mono">{{ f }}</span> {% if v is not none %}{{ '%.1f' % (100 * v) }}%{% else %}未跑{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>{% endif %}{% endif %}</td>
+      <td class="r">{% if t.control_pass is not none %}<span class="num" style="font-weight:500">{{ '%.0f' % (100 * t.control_pass) }}%</span> <span style="font-size:12px;color:var(--fg-2)">n={{ t.n_control }}</span>{% else %}<span style="color:var(--fg-2)">—</span>{% endif %}</td>
+      <td class="r">{% if t.private is not none %}<span class="score">{{ '%.1f' % (100 * t.private) }}</span>{% else %}<span class="score na">無資料</span>{% endif %}</td>
+      <td class="r num">{% if t.gap is not none %}{{ '%+.1f' % (100 * t.gap) }}{% else %}—{% endif %}</td>
+      <td>{% if t.status == 'ok' %}<span class="badge b-ok">ok</span>{% else %}<span class="badge b-na">unavailable</span> <span style="font-size:12px;color:var(--fg-2)">{{ t.reason }}</span>{% endif %}</td>
+      <td class="id" title="{{ t.log_sha256 }}">{{ t.log_sha256[:12] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</section>
+
+<section id="families">
+  <div class="sec-head"><h2>各 family 分支拆解</h2><span class="eyebrow">分支 ID 對應規則卡的配額表；這裡看得到模型錯在哪一段規則</span></div>
+  {% for fam in family_tables %}
+  <h3 style="font-family:var(--body);font-size:14px;margin:10px 0 8px"><span class="mono">{{ fam.family }}</span> · public · n={{ fam.n }}（實算 {{ fam.n_scored }} · 對照 {{ fam.n_control }}）</h3>
+  <div class="tablewrap"><table>
+    <thead><tr><th>branch</th><th class="r">n</th>{% for t in fam.targets %}<th class="r">{{ t }}<br><span class="badge b-neutral">{{ fam.modes[loop.index0] }}</span></th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for b in fam.branches %}
+    <tr>
+      <td class="id">{{ b.id }}{% if b.control %} <span class="badge b-neutral" title="對照題，不進 accuracy">control</span>{% endif %}</td>
+      <td class="r num">{{ b.n }}</td>
+      {% for v in b["vals"] %}<td class="r"><div class="bar" style="justify-content:flex-end"><i style="width:{{ (v * 60) | round | int }}px"></i><span class="num">{{ '%.0f' % (100 * v) }}%</span></div></td>{% endfor %}
+    </tr>
+    {% endfor %}
+    <tr><td><b>accuracy</b> <span style="font-size:12px;color:var(--fg-2)">實算題</span></td><td class="r num">{{ fam.n_scored }}</td>{% for v in fam.totals %}<td class="r num"><b>{% if v is not none %}{{ '%.1f' % (100 * v) }}%{% else %}—{% endif %}</b></td>{% endfor %}</tr>
+    <tr><td><b>control_pass</b> <span style="font-size:12px;color:var(--fg-2)">對照題</span></td><td class="r num">{{ fam.n_control }}</td>{% for v in fam.controls %}<td class="r num">{% if v is not none %}{{ '%.0f' % (100 * v) }}%{% else %}—{% endif %}</td>{% endfor %}</tr>
+    </tbody>
+  </table></div>
+  {% endfor %}
+</section>
+
+<section id="pins">
+  <div class="sec-head"><h2>Pin 住的版本（lineage）</h2><span class="eyebrow">從這裡可以追到法條快照</span></div>
+  <div class="grid">
+    {% for fam, splits in idx.pins.items() %}{% for split, p in splits.items() %}
+    <div class="card">
+      <h3>{{ fam }} · {{ split }}</h3>
+      <dl class="kv">
+        <dt>family</dt><dd>v{{ p.family_version }} ({{ p.family_status }})</dd>
+        <dt>spec sha256</dt><dd>{{ p.spec_sha256[:16] }}…</dd>
+        <dt>rule sha256</dt><dd>{{ p.rule_sha256[:16] }}…</dd>
+        {% if p.templates_sha256 %}<dt>templates sha256</dt><dd>{{ p.templates_sha256[:16] }}…</dd>{% endif %}
+        {% if p.sampler_sha256 %}<dt>sampler sha256</dt><dd>{{ p.sampler_sha256[:16] }}…</dd>{% endif %}
+        <dt>generator</dt><dd>v{{ p.generator_version }}</dd>
+        <dt>n</dt><dd>{{ p.n }}</dd>
+        <dt>salt</dt><dd>{{ p.salt }}</dd>
+        {% for pcode, l in p.lineage.laws.items() %}
+        <dt>{{ l.law_name }}</dt><dd>{{ pcode }} · 異動 {{ l.last_amended }} · triage v{{ l.triage_version }}</dd>
+        <dt>bronze sha256</dt><dd>{{ l.bronze_sha256[:16] }}…</dd>
+        <dt>units</dt><dd>{{ l.units | map('replace', pcode ~ '/', '') | join(', ') }}</dd>
+        {% endfor %}
+      </dl>
+    </div>
+    {% endfor %}{% endfor %}
+  </div>
+</section>
+
+<section id="recompute">
+  <div class="sec-head"><h2>重算</h2><span class="eyebrow">權重在程式裡，改了重跑</span></div>
+<pre># 0. 一鍵檢查（任何人，約 1 分鐘）：clone 到暫存目錄、只裝 requirements.txt，逐層重建 bronze → silver → gold → index
+#    並和這個 commit 已提交的檔案比對；ONLINE=1 另向鏡像 commit 核對法條原檔
+make reproduce ONLINE=1
+
+# 1. 重現公開題集（任何人；--as-of 用 manifest 的日期，重生結果才會逐 byte 相同）
+{% for fam, splits in idx.pins.items() %}{% if splits.public %}python3 gold/generate.py {{ fam }} --release {{ idx.release }} --split public --n {{ splits.public.n + (splits.public.rejected or 0) }}{% if splits.public.as_of %} --as-of {{ splits.public.as_of }}{% endif %}
+{% endif %}{% endfor %}
+# 2. 跑你的模型（OpenAI 相容端點：vLLM / Ollama / oMLX；用 openai-api/&lt;service&gt;/ provider，
+#    openai/ provider 會把不認得的模型名當 GPT 前沿模型而丟掉 temperature）
+for f in {{ idx.families | join(' ') }}; do
+VLLM_BASE_URL=http://localhost:8000/v1 VLLM_API_KEY=x \
+inspect eval eval/tasks/rules_registry.py@rules_registry \
+  -T release={{ idx.release }} -T split=public -T family=$f \
+  -T evaluation_target=qwen3-8b@awq4@rtx4090@direct -T answer_mode=direct \
+  --model openai-api/vllm/qwen3-8b-awq --temperature 0 --log-dir eval/logs/{{ idx.release }}
+done
+# cot 模式：同一模型另成一個 target（…@cot），加 --max-tokens 1024
+#   -T evaluation_target=qwen3-8b@awq4@rtx4090@cot -T answer_mode=cot --max-tokens 1024
+
+# 3. 聚合（改 eval/aggregate.py 的 DEFAULT_WEIGHTS 即可 fork 權重）
+python3 eval/aggregate.py --release {{ idx.release }}
+python3 tools/build_index_page.py {{ idx.release }}</pre>
+  <p style="font-size:13px;color:var(--fg-2);margin:10px 0 0">逐題結果在 <span class="mono">index/{{ idx.release }}/items.csv</span>；每列帶 log 的 sha256。</p>
+</section>
+
+<footer>由 <span class="mono">tools/build_index_page.py</span> 自 <span class="mono">index/{{ idx.release }}/index.json</span> 生成。{{ idx.index_name }} 是模型在台灣勞動基準法加班費與特休計算題上的分數，不是法律意見，也不代表部署許可、安全認證或法規符合。</footer>
+</div>
+{%- if full %}
+</body>
+</html>
+{% endif %}

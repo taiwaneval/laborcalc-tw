@@ -1,0 +1,3143 @@
+[
+ {
+  "unit_id": "N0030001/1/1",
+  "article": "第 1 條",
+  "article_no": "1",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "為規定勞動條件最低標準，保障勞工權益，加強勞雇關係，促進社會與經濟發展，特制定本法；本法未規定者，適用其他法律之規定。",
+  "deleted": false,
+  "content_hash": "837795f900bac2d320f838ea1ec423d2553aa1a0fcf9588201ebd0b8d1476aef",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/1/2",
+  "article": "第 1 條",
+  "article_no": "1",
+  "para": 2,
+  "chapter": "第 一 章 總則",
+  "text": "雇主與勞工所訂勞動條件，不得低於本法所定之最低標準。",
+  "deleted": false,
+  "content_hash": "d0f079ab03dfcf735f3780c8bc5020cd3d904044c745f963bbb837817e848739",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/2/1",
+  "article": "第 2 條",
+  "article_no": "2",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "本法用詞，定義如下：\n一、勞工：指受雇主僱用從事工作獲致工資者。\n二、雇主：指僱用勞工之事業主、事業經營之負責人或代表事業主處理有關勞工事務之人。\n三、工資：指勞工因工作而獲得之報酬；包括工資、薪金及按計時、計日、計月、計件以現金或實物等方式給付之獎金、津貼及其他任何名義之經常性給與均屬之。\n四、平均工資：指計算事由發生之當日前六個月內所得工資總額除以該期間之總日數所得之金額。工作未滿六個月者，指工作期間所得工資總額除以工作期間之總日數所得之金額。工資按工作日數、時數或論件計算者，其依上述方式計算之平均工資，如少於該期內工資總額除以實際工作日數所得金額百分之六十者，以百分之六十計。\n五、事業單位：指適用本法各業僱用勞工從事工作之機構。\n六、勞動契約：指約定勞雇關係而具有從屬性之契約。\n七、派遣事業單位：指從事勞動派遣業務之事業單位。\n八、要派單位：指依據要派契約，實際指揮監督管理派遣勞工從事工作者。\n九、派遣勞工：指受派遣事業單位僱用，並向要派單位提供勞務者。\n十、要派契約：指要派單位與派遣事業單位就勞動派遣事項所訂立之契約。",
+  "deleted": false,
+  "content_hash": "107fcf64364982071840b560081b924e8fa7776328c2196f93938f9258fe6a33",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "definition"
+  ]
+ },
+ {
+  "unit_id": "N0030001/3/1",
+  "article": "第 3 條",
+  "article_no": "3",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "本法於左列各業適用之：\n一、農、林、漁、牧業。\n二、礦業及土石採取業。\n三、製造業。\n四、營造業。\n五、水電、煤氣業。\n六、運輸、倉儲及通信業。\n七、大眾傳播業。\n八、其他經中央主管機關指定之事業。",
+  "deleted": false,
+  "content_hash": "3352f6482d1b06a2dfef567e57cbde1ffbc6cc5102128ad63aa0bd9001186a65",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/3/2",
+  "article": "第 3 條",
+  "article_no": "3",
+  "para": 2,
+  "chapter": "第 一 章 總則",
+  "text": "依前項第八款指定時，得就事業之部分工作場所或工作者指定適用。",
+  "deleted": false,
+  "content_hash": "6d290054267d1edebb8baa0f0135ad8488eb3861077631e25697e00834b7f8d0",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/3/3",
+  "article": "第 3 條",
+  "article_no": "3",
+  "para": 3,
+  "chapter": "第 一 章 總則",
+  "text": "本法適用於一切勞雇關係。但因經營型態、管理制度及工作特性等因素適用本法確有窒礙難行者，並經中央主管機關指定公告之行業或工作者，不適用之。",
+  "deleted": false,
+  "content_hash": "6b3096372669c97d521a0782576633e1e4be1ef35be8f92922a3cfb876b39b35",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/3/4",
+  "article": "第 3 條",
+  "article_no": "3",
+  "para": 4,
+  "chapter": "第 一 章 總則",
+  "text": "前項因窒礙難行而不適用本法者，不得逾第一項第一款至第七款以外勞工總數五分之一。",
+  "deleted": false,
+  "content_hash": "aac10bbd308ef58ab99aa4f84ae2eb233dfee29895a5c51691d73177e00ed4de",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/4/1",
+  "article": "第 4 條",
+  "article_no": "4",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "本法所稱主管機關：在中央為勞動部；在直轄市為直轄市政府；在縣（市）為縣（市）政府。",
+  "deleted": false,
+  "content_hash": "9bb58eb50abf30da0f3a814eeaba7df87149e59794e6c34a7d0779d104f2c017",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/5/1",
+  "article": "第 5 條",
+  "article_no": "5",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "雇主不得以強暴、脅迫、拘禁或其他非法之方法，強制勞工從事勞動。",
+  "deleted": false,
+  "content_hash": "0d066bdf93cc4914fb13ebcc9acdafebe31161ff50e75a0e76c617e9fe49f161",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/6/1",
+  "article": "第 6 條",
+  "article_no": "6",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "任何人不得介入他人之勞動契約，抽取不法利益。",
+  "deleted": false,
+  "content_hash": "7657ca9650689cc049305cb7591df405d5166be91c185c5e73a09d8b81a7ba63",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/7/1",
+  "article": "第 7 條",
+  "article_no": "7",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "雇主應置備勞工名卡，登記勞工之姓名、性別、出生年月日、本籍、教育程度、住址、身分證統一號碼、到職年月日、工資、勞工保險投保日期、獎懲、傷病及其他必要事項。",
+  "deleted": false,
+  "content_hash": "3f1f2ff98b961906c9e4100078afd3cd80a5da627ac8e9052edcafc335c89ae3",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/7/2",
+  "article": "第 7 條",
+  "article_no": "7",
+  "para": 2,
+  "chapter": "第 一 章 總則",
+  "text": "前項勞工名卡，應保管至勞工離職後五年。",
+  "deleted": false,
+  "content_hash": "b1466c88d85b54e8e3c6cdac2903a48c3fa585c9fbb56d6b318dce62125a1448",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/8/1",
+  "article": "第 8 條",
+  "article_no": "8",
+  "para": 1,
+  "chapter": "第 一 章 總則",
+  "text": "雇主對於僱用之勞工，應預防職業上災害，建立適當之工作環境及福利設施。其有關安全衛生及福利事項，依有關法律之規定。",
+  "deleted": false,
+  "content_hash": "d6a165f4e2709c07e7157403463116dc854719dabe75347532ab7dc15f851d4c",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/9/1",
+  "article": "第 9 條",
+  "article_no": "9",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "勞動契約，分為定期契約及不定期契約。臨時性、短期性、季節性及特定性工作得為定期契約；有繼續性工作應為不定期契約。派遣事業單位與派遣勞工訂定之勞動契約，應為不定期契約。",
+  "deleted": false,
+  "content_hash": "95b5f345e2381df78608eef2a1ad2e6099d494362c15ef5de1888084f8267d0d",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/9/2",
+  "article": "第 9 條",
+  "article_no": "9",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "定期契約屆滿後，有下列情形之一，視為不定期契約：\n一、勞工繼續工作而雇主不即表示反對意思者。\n二、雖經另訂新約，惟其前後勞動契約之工作期間超過九十日，前後契約間斷期間未超過三十日者。",
+  "deleted": false,
+  "content_hash": "04c00e4e09cfb4569abd03227afde26b42b61187760b8ed79c56b32b20e19802",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/9/3",
+  "article": "第 9 條",
+  "article_no": "9",
+  "para": 3,
+  "chapter": "第 二 章 勞動契約",
+  "text": "前項規定於特定性或季節性之定期工作不適用之。",
+  "deleted": false,
+  "content_hash": "51466f184c9d84ac00cecdc139ea21351b66d52c06bc04a5eb25687de92f0b5c",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/9-1/1",
+  "article": "第 9-1 條",
+  "article_no": "9-1",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "未符合下列規定者，雇主不得與勞工為離職後競業禁止之約定：\n一、雇主有應受保護之正當營業利益。\n二、勞工擔任之職位或職務，能接觸或使用雇主之營業秘密。\n三、競業禁止之期間、區域、職業活動之範圍及就業對象，未逾合理範疇。\n四、雇主對勞工因不從事競業行為所受損失有合理補償。",
+  "deleted": false,
+  "content_hash": "498f3db7041b668ca0e623c2a517dcc9517b55fd898ba00cd8b392560a6a9ec1",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/9-1/2",
+  "article": "第 9-1 條",
+  "article_no": "9-1",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "前項第四款所定合理補償，不包括勞工於工作期間所受領之給付。",
+  "deleted": false,
+  "content_hash": "42df5726d52c4284a65af3e37ce441229141cbfad9688f0ec202a7187099e9b8",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/9-1/3",
+  "article": "第 9-1 條",
+  "article_no": "9-1",
+  "para": 3,
+  "chapter": "第 二 章 勞動契約",
+  "text": "違反第一項各款規定之一者，其約定無效。",
+  "deleted": false,
+  "content_hash": "961baa88a64798df7f08ade845d84c9584515ca11b2b2a31d9a3f8e7d6724262",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/9-1/4",
+  "article": "第 9-1 條",
+  "article_no": "9-1",
+  "para": 4,
+  "chapter": "第 二 章 勞動契約",
+  "text": "離職後競業禁止之期間，最長不得逾二年。逾二年者，縮短為二年。",
+  "deleted": false,
+  "content_hash": "9a11b39369a70a5b4d9f28a165cd862d28900909994ad27c91eb68f610c10eb1",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/10/1",
+  "article": "第 10 條",
+  "article_no": "10",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "定期契約屆滿後或不定期契約因故停止履行後，未滿三個月而訂定新約或繼續履行原約時，勞工前後工作年資，應合併計算。",
+  "deleted": false,
+  "content_hash": "560e38194249c3895d5788d5403a08eefd27793b3f7ac75aa61591b449425b8e",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/10-1/1",
+  "article": "第 10-1 條",
+  "article_no": "10-1",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "雇主調動勞工工作，不得違反勞動契約之約定，並應符合下列原則：\n一、基於企業經營上所必須，且不得有不當動機及目的。但法律另有規定者，從其規定。\n二、對勞工之工資及其他勞動條件，未作不利之變更。\n三、調動後工作為勞工體能及技術可勝任。\n四、調動工作地點過遠，雇主應予以必要之協助。\n五、考量勞工及其家庭之生活利益。",
+  "deleted": false,
+  "content_hash": "e9b3acd46d3681641bc51bd90225a54a222b8f9fc5aa687207e78cdafa409741",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/11/1",
+  "article": "第 11 條",
+  "article_no": "11",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "非有左列情事之一者，雇主不得預告勞工終止勞動契約：\n一、歇業或轉讓時。\n二、虧損或業務緊縮時。\n三、不可抗力暫停工作在一個月以上時。\n四、業務性質變更，有減少勞工之必要，又無適當工作可供安置時。\n五、勞工對於所擔任之工作確不能勝任時。",
+  "deleted": false,
+  "content_hash": "ebc567f889eb3f49ba522ae3d1008643c6a4074f20837b1dfe67819697faaf5a",
+  "refs": [],
+  "flags": [
+   "discretion",
+   "numeric",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/12/1",
+  "article": "第 12 條",
+  "article_no": "12",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "勞工有左列情形之一者，雇主得不經預告終止契約：\n一、於訂立勞動契約時為虛偽意思表示，使雇主誤信而有受損害之虞者。\n二、對於雇主、雇主家屬、雇主代理人或其他共同工作之勞工，實施暴行或有重大侮辱之行為者。\n三、受有期徒刑以上刑之宣告確定，而未諭知緩刑或未准易科罰金者。\n四、違反勞動契約或工作規則，情節重大者。\n五、故意損耗機器、工具、原料、產品，或其他雇主所有物品，或故意洩漏雇主技術上、營業上之秘密，致雇主受有損害者。\n六、無正當理由繼續曠工三日，或一個月內曠工達六日者。",
+  "deleted": false,
+  "content_hash": "b2040e48414eedfd043a46261d0667ee0185b2347c8f474388b08a1f014b1a12",
+  "refs": [],
+  "flags": [
+   "discretion",
+   "numeric",
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/12/2",
+  "article": "第 12 條",
+  "article_no": "12",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "雇主依前項第一款、第二款及第四款至第六款規定終止契約者，應自知悉其情形之日起，三十日內為之。",
+  "deleted": false,
+  "content_hash": "ea2cee76ce91268b7845c9d3d1a4961c696ec5e3d3dd0f816648bac093db6b55",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/13/1",
+  "article": "第 13 條",
+  "article_no": "13",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "勞工在第五十條規定之停止工作期間或第五十九條規定之醫療期間，雇主不得終止契約。但雇主因天災、事變或其他不可抗力致事業不能繼續，經報主管機關核定者，不在此限。",
+  "deleted": false,
+  "content_hash": "c76d9c755797a74892841bbb11ee7072ce6e3dd05a564aaca85a8166c1bb9336",
+  "refs": [
+   "50",
+   "59"
+  ],
+  "flags": [
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/14/1",
+  "article": "第 14 條",
+  "article_no": "14",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "有下列情形之一者，勞工得不經預告終止契約：\n一、雇主於訂立勞動契約時為虛偽之意思表示，使勞工誤信而有受損害之虞者。\n二、雇主、雇主家屬、雇主代理人對於勞工，實施暴行或有重大侮辱之行為者。\n三、契約所訂之工作，對於勞工健康有危害之虞，經通知雇主改善而無效果者。\n四、雇主、雇主代理人或其他勞工患有法定傳染病，對共同工作之勞工有傳染之虞，且重大危害其健康者。\n五、雇主不依勞動契約給付工作報酬，或對於按件計酬之勞工不供給充分之工作者。\n六、雇主違反勞動契約或勞工法令，致有損害勞工權益之虞者。",
+  "deleted": false,
+  "content_hash": "cb5506f248523045904b7f7dfceb485300b4f65b477646da54d74a928b410721",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/14/2",
+  "article": "第 14 條",
+  "article_no": "14",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "勞工依前項第一款、第六款規定終止契約者，應自知悉其情形之日起，三十日內為之。但雇主有前項第六款所定情形者，勞工得於知悉損害結果之日起，三十日內為之。",
+  "deleted": false,
+  "content_hash": "d3da17826de721fae00516c8b5e9d5c655b7ce16b13c2a022674c010a0d6db16",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/14/3",
+  "article": "第 14 條",
+  "article_no": "14",
+  "para": 3,
+  "chapter": "第 二 章 勞動契約",
+  "text": "有第一項第二款或第四款情形，雇主已將該代理人間之契約終止，或患有法定傳染病者依衛生法規已接受治療時，勞工不得終止契約。",
+  "deleted": false,
+  "content_hash": "305eecac4765bcb325a4fb5c36a2e77c880ddec0f2dd3989e10adb816512f6d7",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/14/4",
+  "article": "第 14 條",
+  "article_no": "14",
+  "para": 4,
+  "chapter": "第 二 章 勞動契約",
+  "text": "第十七條規定於本條終止契約準用之。",
+  "deleted": false,
+  "content_hash": "3d14595e9db98c9ea4658e992483d92ca3b202adbebd3e314efdbaf2b6c64ba1",
+  "refs": [
+   "17"
+  ],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/15/1",
+  "article": "第 15 條",
+  "article_no": "15",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "特定性定期契約期限逾三年者，於屆滿三年後，勞工得終止契約。但應於三十日前預告雇主。",
+  "deleted": false,
+  "content_hash": "65d97230ece5c4d4be32420e1b030720d9533c4b680f0cad5c2b968d356f4a98",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/15/2",
+  "article": "第 15 條",
+  "article_no": "15",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "不定期契約，勞工終止契約時，應準用第十六條第一項規定期間預告雇主。",
+  "deleted": false,
+  "content_hash": "5f34fcd79dafa1dae566c44b504f39a5041cd2e078a6f18e134be406c925b50a",
+  "refs": [
+   "16/1"
+  ],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/15-1/1",
+  "article": "第 15-1 條",
+  "article_no": "15-1",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "未符合下列規定之一，雇主不得與勞工為最低服務年限之約定：\n一、雇主為勞工進行專業技術培訓，並提供該項培訓費用者。\n二、雇主為使勞工遵守最低服務年限之約定，提供其合理補償者。",
+  "deleted": false,
+  "content_hash": "7a44b29d955a70f25d492dbfb3da9ab6df524659ee6f922e78eb1dcb025f31a5",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/15-1/2",
+  "article": "第 15-1 條",
+  "article_no": "15-1",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "前項最低服務年限之約定，應就下列事項綜合考量，不得逾合理範圍：\n一、雇主為勞工進行專業技術培訓之期間及成本。\n二、從事相同或類似職務之勞工，其人力替補可能性。\n三、雇主提供勞工補償之額度及範圍。\n四、其他影響最低服務年限合理性之事項。",
+  "deleted": false,
+  "content_hash": "b7b7e556cbff226d3a74f7a52747109a413a72fd056b3a821a7502cff5065215",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/15-1/3",
+  "article": "第 15-1 條",
+  "article_no": "15-1",
+  "para": 3,
+  "chapter": "第 二 章 勞動契約",
+  "text": "違反前二項規定者，其約定無效。",
+  "deleted": false,
+  "content_hash": "c99c6c44b18cb8f4d2518be82661e23dd49aa187daed1d98f22ca116a082d68f",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/15-1/4",
+  "article": "第 15-1 條",
+  "article_no": "15-1",
+  "para": 4,
+  "chapter": "第 二 章 勞動契約",
+  "text": "勞動契約因不可歸責於勞工之事由而於最低服務年限屆滿前終止者，勞工不負違反最低服務年限約定或返還訓練費用之責任。",
+  "deleted": false,
+  "content_hash": "b93269ea4e6c7a3a2259fdb9b8d451fa3f110a707b91f902a5e54ca850fc601d",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/16/1",
+  "article": "第 16 條",
+  "article_no": "16",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "雇主依第十一條或第十三條但書規定終止勞動契約者，其預告期間依左列各款之規定：\n一、繼續工作三個月以上一年未滿者，於十日前預告之。\n二、繼續工作一年以上三年未滿者，於二十日前預告之。\n三、繼續工作三年以上者，於三十日前預告之。",
+  "deleted": false,
+  "content_hash": "2f23f5fac3b0c65741900e3756c101d08d0d138c0e88ab2532a500427d3ecf76",
+  "refs": [
+   "11",
+   "13"
+  ],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/16/2",
+  "article": "第 16 條",
+  "article_no": "16",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "勞工於接到前項預告後，為另謀工作得於工作時間請假外出。其請假時數，每星期不得超過二日之工作時間，請假期間之工資照給。",
+  "deleted": false,
+  "content_hash": "d0e2ee6491e199a526bc0d424bf263c8055e0fed749c19fb6b2966a117b90e50",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/16/3",
+  "article": "第 16 條",
+  "article_no": "16",
+  "para": 3,
+  "chapter": "第 二 章 勞動契約",
+  "text": "雇主未依第一項規定期間預告而終止契約者，應給付預告期間之工資。",
+  "deleted": false,
+  "content_hash": "a68cb2baa1778bd8d320a10e0d3ac5db760b1c3c08dd5ff2bbfaa1f2888da258",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/17/1",
+  "article": "第 17 條",
+  "article_no": "17",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "雇主依前條終止勞動契約者，應依下列規定發給勞工資遣費：\n一、在同一雇主之事業單位繼續工作，每滿一年發給相當於一個月平均工資之資遣費。\n二、依前款計算之剩餘月數，或工作未滿一年者，以比例計給之。未滿一個月者以一個月計。",
+  "deleted": false,
+  "content_hash": "321ab86545e74869e63ab11270fd79fa7dafd6194ff33eb097e19aab1edd8faf",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/17/2",
+  "article": "第 17 條",
+  "article_no": "17",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "前項所定資遣費，雇主應於終止勞動契約三十日內發給。",
+  "deleted": false,
+  "content_hash": "ad8f36b284c74ab84338460c21cd4c7c89a905ba48696b44d77e21a0db44b575",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/17-1/1",
+  "article": "第 17-1 條",
+  "article_no": "17-1",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "要派單位不得於派遣事業單位與派遣勞工簽訂勞動契約前，有面試該派遣勞工或其他指定特定派遣勞工之行為。",
+  "deleted": false,
+  "content_hash": "af68e412f0bf96ea351fd4aadb0a7678f2a1f69e4a57972e0a7400a3a74fd90a",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/17-1/2",
+  "article": "第 17-1 條",
+  "article_no": "17-1",
+  "para": 2,
+  "chapter": "第 二 章 勞動契約",
+  "text": "要派單位違反前項規定，且已受領派遣勞工勞務者，派遣勞工得於要派單位提供勞務之日起九十日內，以書面向要派單位提出訂定勞動契約之意思表示。",
+  "deleted": false,
+  "content_hash": "92306a75e584a0c984e55685e104e001572e29d5e81c07285c5f456ca9500c53",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/17-1/3",
+  "article": "第 17-1 條",
+  "article_no": "17-1",
+  "para": 3,
+  "chapter": "第 二 章 勞動契約",
+  "text": "要派單位應自前項派遣勞工意思表示到達之日起十日內，與其協商訂定勞動契約。逾期未協商或協商不成立者，視為雙方自期滿翌日成立勞動契約，並以派遣勞工於要派單位工作期間之勞動條件為勞動契約內容。",
+  "deleted": false,
+  "content_hash": "12e586d6c33b5cc7cd78201f76fc34746de0048dc96c9ba03f841f58666e4afe",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/17-1/4",
+  "article": "第 17-1 條",
+  "article_no": "17-1",
+  "para": 4,
+  "chapter": "第 二 章 勞動契約",
+  "text": "派遣事業單位及要派單位不得因派遣勞工提出第二項意思表示，而予以解僱、降調、減薪、損害其依法令、契約或習慣上所應享有之權益，或其他不利之處分。",
+  "deleted": false,
+  "content_hash": "214476b3ab33df72f629568e2f50469991cd899ebf382a57daaa0615b37920ad",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/17-1/5",
+  "article": "第 17-1 條",
+  "article_no": "17-1",
+  "para": 5,
+  "chapter": "第 二 章 勞動契約",
+  "text": "派遣事業單位及要派單位為前項行為之一者，無效。",
+  "deleted": false,
+  "content_hash": "401fa5c64cdcc547c370950b83b990c6380c081d78a2f2264510e0c7d788743b",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/17-1/6",
+  "article": "第 17-1 條",
+  "article_no": "17-1",
+  "para": 6,
+  "chapter": "第 二 章 勞動契約",
+  "text": "派遣勞工因第二項及第三項規定與要派單位成立勞動契約者，其與派遣事業單位之勞動契約視為終止，且不負違反最低服務年限約定或返還訓練費用之責任。",
+  "deleted": false,
+  "content_hash": "79d1412f0857f3874f535c14b38437f94b5a3778acd9347fd7181a60303016e5",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/17-1/7",
+  "article": "第 17-1 條",
+  "article_no": "17-1",
+  "para": 7,
+  "chapter": "第 二 章 勞動契約",
+  "text": "前項派遣事業單位應依本法或勞工退休金條例規定之給付標準及期限，發給派遣勞工退休金或資遣費。",
+  "deleted": false,
+  "content_hash": "b571f75190c4a07f9dfdff49c62ecf09a118c3abd635aaa8fb9917145a715ff7",
+  "refs": [],
+  "flags": [
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/18/1",
+  "article": "第 18 條",
+  "article_no": "18",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "有左列情形之一者，勞工不得向雇主請求加發預告期間工資及資遣費：\n一、依第十二條或第十五條規定終止勞動契約者。\n二、定期勞動契約期滿離職者。",
+  "deleted": false,
+  "content_hash": "fa34da49365cfd250b1a70e787efb88da99175fe33af6e7069a6caebc237572c",
+  "refs": [
+   "12",
+   "15"
+  ],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/19/1",
+  "article": "第 19 條",
+  "article_no": "19",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "勞動契約終止時，勞工如請求發給服務證明書，雇主或其代理人不得拒絕。",
+  "deleted": false,
+  "content_hash": "605bc1878dca13054737837fe374c8dd78856714196fc26129496ac9b8e3a3df",
+  "refs": [],
+  "flags": [
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/20/1",
+  "article": "第 20 條",
+  "article_no": "20",
+  "para": 1,
+  "chapter": "第 二 章 勞動契約",
+  "text": "事業單位改組或轉讓時，除新舊雇主商定留用之勞工外，其餘勞工應依第十六條規定期間預告終止契約，並應依第十七條規定發給勞工資遣費。其留用勞工之工作年資，應由新雇主繼續予以承認。",
+  "deleted": false,
+  "content_hash": "10797c6564990d628104e31c0ed216fe0b92dd9967e6bd6f24131af95afeb22e",
+  "refs": [
+   "16",
+   "17"
+  ],
+  "flags": [
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/21/1",
+  "article": "第 21 條",
+  "article_no": "21",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "工資由勞雇雙方議定之。但不得低於基本工資。",
+  "deleted": false,
+  "content_hash": "e91a522fd0cb475b4e4b903d2707f4354753b181e844072db61b8f5753bac077",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/21/2",
+  "article": "第 21 條",
+  "article_no": "21",
+  "para": 2,
+  "chapter": "第 三 章 工資",
+  "text": "前項基本工資，由中央主管機關設基本工資審議委員會擬訂後，報請行政院核定之。",
+  "deleted": false,
+  "content_hash": "7a8cd5da42cf2f2899cc790d5cb016cae4805bb4780901ec60a60bc8eb9db4c5",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/21/3",
+  "article": "第 21 條",
+  "article_no": "21",
+  "para": 3,
+  "chapter": "第 三 章 工資",
+  "text": "前項基本工資審議委員會之組織及其審議程序等事項，由中央主管機關另以辦法定之。",
+  "deleted": false,
+  "content_hash": "8738f3696d3de1751adcdc52c6ad568bb32f54e3cec454cfbce28786f01d1ce6",
+  "refs": [],
+  "flags": [
+   "delegation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/22/1",
+  "article": "第 22 條",
+  "article_no": "22",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "工資之給付，應以法定通用貨幣為之。但基於習慣或業務性質，得於勞動契約內訂明一部以實物給付之。工資之一部以實物給付時，其實物之作價應公平合理，並適合勞工及其家屬之需要。",
+  "deleted": false,
+  "content_hash": "7dfe86f190ffa4bcc45072bb86681c25928841570108c422b1018f82ef9c00a3",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/22/2",
+  "article": "第 22 條",
+  "article_no": "22",
+  "para": 2,
+  "chapter": "第 三 章 工資",
+  "text": "工資應全額直接給付勞工。但法令另有規定或勞雇雙方另有約定者，不在此限。",
+  "deleted": false,
+  "content_hash": "1ddb93893d376aee928de2af02bfd2e3b7e19caac0c5c5480cbfc4da721f9801",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/22-1/1",
+  "article": "第 22-1 條",
+  "article_no": "22-1",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "派遣事業單位積欠派遣勞工工資，經主管機關處罰或依第二十七條規定限期令其給付而屆期未給付者，派遣勞工得請求要派單位給付。要派單位應自派遣勞工請求之日起三十日內給付之。",
+  "deleted": false,
+  "content_hash": "dba23729bbfe6ee7a2ca08223a8c2185c5084cd647c640784d1303c558a75787",
+  "refs": [
+   "27"
+  ],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/22-1/2",
+  "article": "第 22-1 條",
+  "article_no": "22-1",
+  "para": 2,
+  "chapter": "第 三 章 工資",
+  "text": "要派單位依前項規定給付者，得向派遣事業單位求償或扣抵要派契約之應付費用。",
+  "deleted": false,
+  "content_hash": "e8f2f35e397745a3bbbe2bc471845ae7ac8210b23bc08d5b30a54fc492261cb0",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/23/1",
+  "article": "第 23 條",
+  "article_no": "23",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "工資之給付，除當事人有特別約定或按月預付者外，每月至少定期發給二次，並應提供工資各項目計算方式明細；按件計酬者亦同。",
+  "deleted": false,
+  "content_hash": "2d7dfc6bedd2b72c6011ce43503a70a87b3aaed8a6fd93c5c895497d963eb64e",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/23/2",
+  "article": "第 23 條",
+  "article_no": "23",
+  "para": 2,
+  "chapter": "第 三 章 工資",
+  "text": "雇主應置備勞工工資清冊，將發放工資、工資各項目計算方式明細、工資總額等事項記入。工資清冊應保存五年。",
+  "deleted": false,
+  "content_hash": "db1e88ca675c7fd8acb4bea0f2744245b95e864eb9ffea7bec769b5df9dbc114",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/24/1",
+  "article": "第 24 條",
+  "article_no": "24",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "雇主延長勞工工作時間者，其延長工作時間之工資，依下列標準加給：\n一、延長工作時間在二小時以內者，按平日每小時工資額加給三分之一以上。\n二、再延長工作時間在二小時以內者，按平日每小時工資額加給三分之二以上。\n三、依第三十二條第四項規定，延長工作時間者，按平日每小時工資額加倍發給。",
+  "deleted": false,
+  "content_hash": "0a8a0f0ab19adebc940bf9da4a089e9ab486db50e77e1614bc42ae0f4702aca9",
+  "refs": [
+   "32/4"
+  ],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/24/2",
+  "article": "第 24 條",
+  "article_no": "24",
+  "para": 2,
+  "chapter": "第 三 章 工資",
+  "text": "雇主使勞工於第三十六條所定休息日工作，工作時間在二小時以內者，其工資按平日每小時工資額另再加給一又三分之一以上；工作二小時後再繼續工作者，按平日每小時工資額另再加給一又三分之二以上。",
+  "deleted": false,
+  "content_hash": "b65a1449ce16575b716e04fc171c44cc44a174d8cb4347e9dfdcd18ab147cba1",
+  "refs": [
+   "36"
+  ],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/25/1",
+  "article": "第 25 條",
+  "article_no": "25",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "雇主對勞工不得因性別而有差別之待遇。工作相同、效率相同者，給付同等之工資。",
+  "deleted": false,
+  "content_hash": "f973e465bc89bf427c3fecc2ef4e0349a69a9010fddf71eb41eeeb6e5f871c6b",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/26/1",
+  "article": "第 26 條",
+  "article_no": "26",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "雇主不得預扣勞工工資作為違約金或賠償費用。",
+  "deleted": false,
+  "content_hash": "2bd261a8e3d27a44508b09b3c3de9fa683017d146c11ae63cd73e88cdc727f8c",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/27/1",
+  "article": "第 27 條",
+  "article_no": "27",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "雇主不按期給付工資者，主管機關得限期令其給付。",
+  "deleted": false,
+  "content_hash": "022879f1be979e6b17418d2c7194acc700ce424c2cbfffa6b2fdc4d732b9894d",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/28/1",
+  "article": "第 28 條",
+  "article_no": "28",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "雇主有歇業、清算或宣告破產之情事時，勞工之下列債權受償順序與第一順位抵押權、質權或留置權所擔保之債權相同，按其債權比例受清償；未獲清償部分，有最優先受清償之權：\n一、本於勞動契約所積欠之工資未滿六個月部分。\n二、雇主未依本法給付之退休金。\n三、雇主未依本法或勞工退休金條例給付之資遣費。",
+  "deleted": false,
+  "content_hash": "33fb82147d023159ebaa329fe14a2a1eb2503c02a58a4e634f1c36ef228c1981",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/28/2",
+  "article": "第 28 條",
+  "article_no": "28",
+  "para": 2,
+  "chapter": "第 三 章 工資",
+  "text": "雇主應按其當月僱用勞工投保薪資總額及規定之費率，繳納一定數額之積欠工資墊償基金，作為墊償下列各款之用：\n一、前項第一款積欠之工資數額。\n二、前項第二款與第三款積欠之退休金及資遣費，其合計數額以六個月平均工資為限。",
+  "deleted": false,
+  "content_hash": "a4df6bd8c656d9d932263b282c665f27c9fe35ed3d6d166d95c56e8b00a23222",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/28/3",
+  "article": "第 28 條",
+  "article_no": "28",
+  "para": 3,
+  "chapter": "第 三 章 工資",
+  "text": "積欠工資墊償基金，累積至一定金額後，應降低費率或暫停收繳。",
+  "deleted": false,
+  "content_hash": "4e351b808d91cac8cf1a925bae93680d8f10ce2b7dd5e5093ed5f79c76b2e976",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/28/4",
+  "article": "第 28 條",
+  "article_no": "28",
+  "para": 4,
+  "chapter": "第 三 章 工資",
+  "text": "第二項費率，由中央主管機關於萬分之十五範圍內擬訂，報請行政院核定之。",
+  "deleted": false,
+  "content_hash": "fe49159179e5be96cac4efc8076148e47599e0722bd68a427a3518cb3ba7653c",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/28/5",
+  "article": "第 28 條",
+  "article_no": "28",
+  "para": 5,
+  "chapter": "第 三 章 工資",
+  "text": "雇主積欠之工資、退休金及資遣費，經勞工請求未獲清償者，由積欠工資墊償基金依第二項規定墊償之；雇主應於規定期限內，將墊款償還積欠工資墊償基金。",
+  "deleted": false,
+  "content_hash": "40ee0ee2e3b27a8149b62bc74115309de99c26aa1a10e303c005b26d265127db",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/28/6",
+  "article": "第 28 條",
+  "article_no": "28",
+  "para": 6,
+  "chapter": "第 三 章 工資",
+  "text": "積欠工資墊償基金，由中央主管機關設管理委員會管理之。基金之收繳有關業務，得由中央主管機關，委託勞工保險機構辦理之。基金墊償程序、收繳與管理辦法、第三項之一定金額及管理委員會組織規程，由中央主管機關定之。",
+  "deleted": false,
+  "content_hash": "db1f7ccfc5b01625e061d9551e1966225498650467e249760e055bb58c9bf237",
+  "refs": [],
+  "flags": [
+   "delegation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/29/1",
+  "article": "第 29 條",
+  "article_no": "29",
+  "para": 1,
+  "chapter": "第 三 章 工資",
+  "text": "事業單位於營業年度終了結算，如有盈餘，除繳納稅捐、彌補虧損及提列股息、公積金外，對於全年工作並無過失之勞工，應給與獎金或分配紅利。",
+  "deleted": false,
+  "content_hash": "495f43781857059ca2dc09ecd7da50f1b126e1e8e8a1636ccf5b29b371e354e8",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30/1",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工正常工作時間，每日不得超過八小時，每週不得超過四十小時。",
+  "deleted": false,
+  "content_hash": "9bd17cbed72bcc80dc28109f46d3d33b29380e5267cf6ade82b73559c30ed65e",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30/2",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前項正常工作時間，雇主經工會同意，如事業單位無工會者，經勞資會議同意後，得將其二週內二日之正常工作時數，分配於其他工作日。其分配於其他工作日之時數，每日不得超過二小時。但每週工作總時數不得超過四十八小時。",
+  "deleted": false,
+  "content_hash": "e866976a518405d7735e7d3f9db8eaa5812f99ae3813884bbdbf9777e841ec2f",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30/3",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 3,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "第一項正常工作時間，雇主經工會同意，如事業單位無工會者，經勞資會議同意後，得將八週內之正常工作時數加以分配。但每日正常工作時間不得超過八小時，每週工作總時數不得超過四十八小時。",
+  "deleted": false,
+  "content_hash": "50a284cc07635685528fe9a573fbc0a166e6e910cc8430ea14c0e762ce8ecaf2",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30/4",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 4,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前二項規定，僅適用於經中央主管機關指定之行業。",
+  "deleted": false,
+  "content_hash": "306ad9184a3fd7b6e23f7757e00f6f16139a883a92f04f1bc2446795e166732c",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/30/5",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 5,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主應置備勞工出勤紀錄，並保存五年。",
+  "deleted": false,
+  "content_hash": "039994ec29b6e7f34c0296e7a199c88826399a8a884ebe9bba8f1660a462ab49",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30/6",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 6,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前項出勤紀錄，應逐日記載勞工出勤情形至分鐘為止。勞工向雇主申請其出勤紀錄副本或影本時，雇主不得拒絕。",
+  "deleted": false,
+  "content_hash": "f4f9e32aa47590fc240114bde7f028beafca54f064771bd96325a28d6ab05038",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30/7",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 7,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主不得以第一項正常工作時間之修正，作為減少勞工工資之事由。",
+  "deleted": false,
+  "content_hash": "d4f6896b6cb4b372718b5988c483580bb9a001ddccded994b4f06a521c360e62",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/30/8",
+  "article": "第 30 條",
+  "article_no": "30",
+  "para": 8,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "第一項至第三項及第三十條之一之正常工作時間，雇主得視勞工照顧家庭成員需要，允許勞工於不變更每日正常工作時數下，在一小時範圍內，彈性調整工作開始及終止之時間。",
+  "deleted": false,
+  "content_hash": "a8211a4d32356868ab7f5c0cc1e06dc443386718e60d6e9ca27efe4286555c09",
+  "refs": [
+   "30-1"
+  ],
+  "flags": [
+   "discretion",
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30-1/1",
+  "article": "第 30-1 條",
+  "article_no": "30-1",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "中央主管機關指定之行業，雇主經工會同意，如事業單位無工會者，經勞資會議同意後，其工作時間得依下列原則變更：\n一、四週內正常工作時數分配於其他工作日之時數，每日不得超過二小時，不受前條第二項至第四項規定之限制。\n二、當日正常工作時間達十小時者，其延長之工作時間不得超過二小時。\n三、女性勞工，除妊娠或哺乳期間者外，於夜間工作，不受第四十九條第一項之限制。但雇主應提供必要之安全衛生設施。",
+  "deleted": false,
+  "content_hash": "0922c5deed468943dc08550edafefa6841118581bf41c2c6ab3f537f834b213d",
+  "refs": [
+   "49/1"
+  ],
+  "flags": [
+   "numeric",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/30-1/2",
+  "article": "第 30-1 條",
+  "article_no": "30-1",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "依中華民國八十五年十二月二十七日修正施行前第三條規定適用本法之行業，除第一項第一款之農、林、漁、牧業外，均不適用前項規定。",
+  "deleted": false,
+  "content_hash": "d165bc23a104afa7fcb240ad1c54684a097d717c3b5bbe14f7d057d2e10aaca0",
+  "refs": [
+   "3"
+  ],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/31/1",
+  "article": "第 31 條",
+  "article_no": "31",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "在坑道或隧道內工作之勞工，以入坑口時起至出坑口時止為工作時間。",
+  "deleted": false,
+  "content_hash": "d2a866b81e814d1d58d648fec8649f8bec0dff8e5dc7508bd0c553546b905a20",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/32/1",
+  "article": "第 32 條",
+  "article_no": "32",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主有使勞工在正常工作時間以外工作之必要者，雇主經工會同意，如事業單位無工會者，經勞資會議同意後，得將工作時間延長之。",
+  "deleted": false,
+  "content_hash": "769d5106a4ade0b1a14d4e21ae1df625bd803bce54fc7ae8389157d6676631bb",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/32/2",
+  "article": "第 32 條",
+  "article_no": "32",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前項雇主延長勞工之工作時間連同正常工作時間，一日不得超過十二小時；延長之工作時間，一個月不得超過四十六小時，但雇主經工會同意，如事業單位無工會者，經勞資會議同意後，延長之工作時間，一個月不得超過五十四小時，每三個月不得超過一百三十八小時。",
+  "deleted": false,
+  "content_hash": "8fecbb9fb5d64e35b9afe8368183e8bfaff990bdf2b0d80025901aaefb4ac98b",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/32/3",
+  "article": "第 32 條",
+  "article_no": "32",
+  "para": 3,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主僱用勞工人數在三十人以上，依前項但書規定延長勞工工作時間者，應報當地主管機關備查。",
+  "deleted": false,
+  "content_hash": "ea13e335eae620fa45940c4c517d8f333d6b18a51dfe33babae50d3571f19783",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/32/4",
+  "article": "第 32 條",
+  "article_no": "32",
+  "para": 4,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "因天災、事變或突發事件，雇主有使勞工在正常工作時間以外工作之必要者，得將工作時間延長之。但應於延長開始後二十四小時內通知工會；無工會組織者，應報當地主管機關備查。延長之工作時間，雇主應於事後補給勞工以適當之休息。",
+  "deleted": false,
+  "content_hash": "acc7cb3b05665a2f977b3f4cdadae1913d68de1b6ac3d38254aa6e246ec79b1e",
+  "refs": [],
+  "flags": [
+   "discretion",
+   "numeric",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/32/5",
+  "article": "第 32 條",
+  "article_no": "32",
+  "para": 5,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "在坑內工作之勞工，其工作時間不得延長。但以監視為主之工作，或有前項所定之情形者，不在此限。",
+  "deleted": false,
+  "content_hash": "ddf5700d7ba96eba796c08a91db312e926f9c7e968464e09149ceb5e1dfa4e7d",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/32-1/1",
+  "article": "第 32-1 條",
+  "article_no": "32-1",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主依第三十二條第一項及第二項規定使勞工延長工作時間，或使勞工於第三十六條所定休息日工作後，依勞工意願選擇補休並經雇主同意者，應依勞工工作之時數計算補休時數。",
+  "deleted": false,
+  "content_hash": "11e585c83f47aefbdafae4908603ddcde83636d244e6514bd5c933153d64fc14",
+  "refs": [
+   "32/1",
+   "36"
+  ],
+  "flags": [
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/32-1/2",
+  "article": "第 32-1 條",
+  "article_no": "32-1",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前項之補休，其補休期限由勞雇雙方協商；補休期限屆期或契約終止未補休之時數，應依延長工作時間或休息日工作當日之工資計算標準發給工資；未發給工資者，依違反第二十四條規定論處。",
+  "deleted": false,
+  "content_hash": "f162d404716c8ac75c16d4772ae0147a66fd081d73b5e8c3555fd5c98f744765",
+  "refs": [
+   "24"
+  ],
+  "flags": [
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/33/1",
+  "article": "第 33 條",
+  "article_no": "33",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "第三條所列事業，除製造業及礦業外，因公眾之生活便利或其他特殊原因，有調整第三十條、第三十二條所定之正常工作時間及延長工作時間之必要者，得由當地主管機關會商目的事業主管機關及工會，就必要之限度內以命令調整之。",
+  "deleted": false,
+  "content_hash": "f335867f89f1b02717cc7350ecfdc3c19ec362245bd221870f822c83d212c904",
+  "refs": [
+   "3",
+   "30",
+   "32"
+  ],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/34/1",
+  "article": "第 34 條",
+  "article_no": "34",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工工作採輪班制者，其工作班次，每週更換一次。但經勞工同意者不在此限。",
+  "deleted": false,
+  "content_hash": "f85a0efb6d7a5a1738681a0308eaac997f6744ce166040fecc2b876cbbb71cf6",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/34/2",
+  "article": "第 34 條",
+  "article_no": "34",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "依前項更換班次時，至少應有連續十一小時之休息時間。但因工作特性或特殊原因，經中央目的事業主管機關商請中央主管機關公告者，得變更休息時間不少於連續八小時。",
+  "deleted": false,
+  "content_hash": "2210b276e1558b9ccf34ad0121cd811120277bf7f194ce81318a64a220eb004a",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/34/3",
+  "article": "第 34 條",
+  "article_no": "34",
+  "para": 3,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主依前項但書規定變更休息時間者，應經工會同意，如事業單位無工會者，經勞資會議同意後，始得為之。雇主僱用勞工人數在三十人以上者，應報當地主管機關備查。",
+  "deleted": false,
+  "content_hash": "49256bd9e6b745f7eb881eaaff68225c7f07daf25c40977c2feaea6abd5e4e0e",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/35/1",
+  "article": "第 35 條",
+  "article_no": "35",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工繼續工作四小時，至少應有三十分鐘之休息。但實行輪班制或其工作有連續性或緊急性者，雇主得在工作時間內，另行調配其休息時間。",
+  "deleted": false,
+  "content_hash": "d4fc228be42911f30df9f4b8d239b4fd7e1ef0c812b2ebc7b2da9714593b0bad",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/36/1",
+  "article": "第 36 條",
+  "article_no": "36",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工每七日中應有二日之休息，其中一日為例假，一日為休息日。",
+  "deleted": false,
+  "content_hash": "749bcc59b1f7e4fb2f8d5b398ec21f5dc891a58810e08ac6bf9468562211345c",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/36/2",
+  "article": "第 36 條",
+  "article_no": "36",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主有下列情形之一，不受前項規定之限制：\n一、依第三十條第二項規定變更正常工作時間者，勞工每七日中至少應有一日之例假，每二週內之例假及休息日至少應有四日。\n二、依第三十條第三項規定變更正常工作時間者，勞工每七日中至少應有一日之例假，每八週內之例假及休息日至少應有十六日。\n三、依第三十條之一規定變更正常工作時間者，勞工每二週內至少應有二日之例假，每四週內之例假及休息日至少應有八日。",
+  "deleted": false,
+  "content_hash": "e97770674e9b5497a39605c229c1c645f21de95c09b302669f1c90b84fd1fa54",
+  "refs": [
+   "30-1",
+   "30/2",
+   "30/3"
+  ],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/36/3",
+  "article": "第 36 條",
+  "article_no": "36",
+  "para": 3,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主使勞工於休息日工作之時間，計入第三十二條第二項所定延長工作時間總數。但因天災、事變或突發事件，雇主有使勞工於休息日工作之必要者，其工作時數不受第三十二條第二項規定之限制。",
+  "deleted": false,
+  "content_hash": "6fb25a2b91d65393be21b1eb5958f87c1633ff8e2465caf24eb5487651cd1f96",
+  "refs": [
+   "32/2"
+  ],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/36/4",
+  "article": "第 36 條",
+  "article_no": "36",
+  "para": 4,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "經中央目的事業主管機關同意，且經中央主管機關指定之行業，雇主得將第一項、第二項第一款及第二款所定之例假，於每七日之週期內調整之。",
+  "deleted": false,
+  "content_hash": "4ec29a01c6bb634a6d00733e14fdf01e2b51e1f62c91170d3c1683a387bd8b5d",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/36/5",
+  "article": "第 36 條",
+  "article_no": "36",
+  "para": 5,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前項所定例假之調整，應經工會同意，如事業單位無工會者，經勞資會議同意後，始得為之。雇主僱用勞工人數在三十人以上者，應報當地主管機關備查。",
+  "deleted": false,
+  "content_hash": "15edfb883798e0770975ee18f3ce4e9ced57ebd90f0c2320889a489e99431917",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/37/1",
+  "article": "第 37 條",
+  "article_no": "37",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "內政部所定應放假之紀念日、節日、勞動節及其他中央主管機關指定應放假日，均應休假。",
+  "deleted": false,
+  "content_hash": "455915d4e9744000f1cecfa54835cb7fafe7a19c93570eaa1883ff80237b9469",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/37/2",
+  "article": "第 37 條",
+  "article_no": "37",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "中華民國一百零五年十二月六日修正之前項規定，自一百零六年一月一日施行。",
+  "deleted": false,
+  "content_hash": "91c5dc6a93f4b8b842883e04698ceb94431d5ce4b33fca9600460c78cef3fa1a",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/38/1",
+  "article": "第 38 條",
+  "article_no": "38",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工在同一雇主或事業單位，繼續工作滿一定期間者，應依下列規定給予特別休假：\n一、六個月以上一年未滿者，三日。\n二、一年以上二年未滿者，七日。\n三、二年以上三年未滿者，十日。\n四、三年以上五年未滿者，每年十四日。\n五、五年以上十年未滿者，每年十五日。\n六、十年以上者，每一年加給一日，加至三十日為止。",
+  "deleted": false,
+  "content_hash": "2902f1688eb15fd9495c7e0453ef1a4599bd79ec969d703cc4e761e3fc316d8f",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/38/2",
+  "article": "第 38 條",
+  "article_no": "38",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前項之特別休假期日，由勞工排定之。但雇主基於企業經營上之急迫需求或勞工因個人因素，得與他方協商調整。",
+  "deleted": false,
+  "content_hash": "4653c44976be52d563ff9d0cab0e1aeefca02c8b12bca810ab42b979df8b5b21",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/38/3",
+  "article": "第 38 條",
+  "article_no": "38",
+  "para": 3,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主應於勞工符合第一項所定之特別休假條件時，告知勞工依前二項規定排定特別休假。",
+  "deleted": false,
+  "content_hash": "3edb3051282ab454ca54d4f54b24c8547fcb9e38fd0146556b287a6b71989dd6",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/38/4",
+  "article": "第 38 條",
+  "article_no": "38",
+  "para": 4,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工之特別休假，因年度終結或契約終止而未休之日數，雇主應發給工資。但年度終結未休之日數，經勞雇雙方協商遞延至次一年度實施者，於次一年度終結或契約終止仍未休之日數，雇主應發給工資。",
+  "deleted": false,
+  "content_hash": "70a605fb7779180dcc30781da95cd386ad4214338107473815f9ee7175fa5a26",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/38/5",
+  "article": "第 38 條",
+  "article_no": "38",
+  "para": 5,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "雇主應將勞工每年特別休假之期日及未休之日數所發給之工資數額，記載於第二十三條所定之勞工工資清冊，並每年定期將其內容以書面通知勞工。",
+  "deleted": false,
+  "content_hash": "227fda34e9d72f77f86bd42938b6d142ccea675e8ff31003acd2efd7a6c47453",
+  "refs": [
+   "23"
+  ],
+  "flags": [
+   "formula_words",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/38/6",
+  "article": "第 38 條",
+  "article_no": "38",
+  "para": 6,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工依本條主張權利時，雇主如認為其權利不存在，應負舉證責任。",
+  "deleted": false,
+  "content_hash": "25bb6e0ac39499ceaecbc48f844bc3d48eb7b715c8d638dc78222d3517f4c263",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/39/1",
+  "article": "第 39 條",
+  "article_no": "39",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "第三十六條所定之例假、休息日、第三十七條所定之休假及第三十八條所定之特別休假，工資應由雇主照給。雇主經徵得勞工同意於休假日工作者，工資應加倍發給。因季節性關係有趕工必要，經勞工或工會同意照常工作者，亦同。",
+  "deleted": false,
+  "content_hash": "0ebbb2c4c8e67eb65028ddabbfd736900e69ba9547f0767ca2ccb29496cde267",
+  "refs": [
+   "36",
+   "37",
+   "38"
+  ],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/40/1",
+  "article": "第 40 條",
+  "article_no": "40",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "因天災、事變或突發事件，雇主認有繼續工作之必要時，得停止第三十六條至第三十八條所定勞工之假期。但停止假期之工資，應加倍發給，並應於事後補假休息。",
+  "deleted": false,
+  "content_hash": "6e4c878b8fe0ef31e85c2bff37abe6cabcb5ae6c553dd4e0665284b79fdd5a59",
+  "refs": [
+   "36",
+   "38"
+  ],
+  "flags": [
+   "discretion",
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/40/2",
+  "article": "第 40 條",
+  "article_no": "40",
+  "para": 2,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "前項停止勞工假期，應於事後二十四小時內，詳述理由，報請當地主管機關核備。",
+  "deleted": false,
+  "content_hash": "f7a11544fbce7669786612a726321653ee2f930387d8d832d4dfbbb7f743fe41",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/41/1",
+  "article": "第 41 條",
+  "article_no": "41",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "公用事業之勞工，當地主管機關認有必要時，得停止第三十八條所定之特別休假。假期內之工資應由雇主加倍發給。",
+  "deleted": false,
+  "content_hash": "fa2b7bcb105bca316becab7e6bcb20b7677d87a1fb3758235d426debb78469ca",
+  "refs": [
+   "38"
+  ],
+  "flags": [
+   "discretion",
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/42/1",
+  "article": "第 42 條",
+  "article_no": "42",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工因健康或其他正當理由，不能接受正常工作時間以外之工作者，雇主不得強制其工作。",
+  "deleted": false,
+  "content_hash": "240ac85f4e6ddfcc57342e1f8531564eb8b0f0903ea9a9ac57548f081da004d7",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/43/1",
+  "article": "第 43 條",
+  "article_no": "43",
+  "para": 1,
+  "chapter": "第 四 章 工作時間、休息、休假",
+  "text": "勞工因婚、喪、疾病或其他正當事由得請假；請假應給之假期及事假以外期間內工資給付之最低標準，由中央主管機關定之。",
+  "deleted": false,
+  "content_hash": "751096fd49a27ee299fa2257830fe3ab44815ba83fbbd076ea23e375f91b7d01",
+  "refs": [],
+  "flags": [
+   "delegation",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/44/1",
+  "article": "第 44 條",
+  "article_no": "44",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "十五歲以上未滿十六歲之受僱從事工作者，為童工。",
+  "deleted": false,
+  "content_hash": "be4d73ee008790852078acbe83fa47154dcf53306db0dd5da6aabdfd9a443588",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/44/2",
+  "article": "第 44 條",
+  "article_no": "44",
+  "para": 2,
+  "chapter": "第 五 章 童工、女工",
+  "text": "童工及十六歲以上未滿十八歲之人，不得從事危險性或有害性之工作。",
+  "deleted": false,
+  "content_hash": "418cc9ead8ce4a48d20bac0e1c3d9568a4e25a8767b083b2b7ad3b11ece31686",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/45/1",
+  "article": "第 45 條",
+  "article_no": "45",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "雇主不得僱用未滿十五歲之人從事工作。但國民中學畢業或經主管機關認定其工作性質及環境無礙其身心健康而許可者，不在此限。",
+  "deleted": false,
+  "content_hash": "98ca929b8d038390e6e1adfbc644d81940072c0641b2ce3ddb42951e876321fa",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/45/2",
+  "article": "第 45 條",
+  "article_no": "45",
+  "para": 2,
+  "chapter": "第 五 章 童工、女工",
+  "text": "前項受僱之人，準用童工保護之規定。",
+  "deleted": false,
+  "content_hash": "39ff057187e8edefe9006ca39a694e2f19dd41273b363fb65c682958eb08fc0c",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/45/3",
+  "article": "第 45 條",
+  "article_no": "45",
+  "para": 3,
+  "chapter": "第 五 章 童工、女工",
+  "text": "第一項工作性質及環境無礙其身心健康之認定基準、審查程序及其他應遵行事項之辦法，由中央主管機關依勞工年齡、工作性質及受國民義務教育之時間等因素定之。",
+  "deleted": false,
+  "content_hash": "436ec45a09944c7a95a43f61e067d485ef362f06ad8d31ddeede97d0d00047eb",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/45/4",
+  "article": "第 45 條",
+  "article_no": "45",
+  "para": 4,
+  "chapter": "第 五 章 童工、女工",
+  "text": "未滿十五歲之人透過他人取得工作為第三人提供勞務，或直接為他人提供勞務取得報酬未具勞僱關係者，準用前項及童工保護之規定。",
+  "deleted": false,
+  "content_hash": "37a7c9e2b52b7c4533efd525df443b12db9bb1d7827da8ba26d3c1d35fdf4479",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/46/1",
+  "article": "第 46 條",
+  "article_no": "46",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "未滿十八歲之人受僱從事工作者，雇主應置備其法定代理人同意書及其年齡證明文件。",
+  "deleted": false,
+  "content_hash": "bf22a248d7fa7f1ca65c519b723f564104a212e6612f33d80bf367bad8da9c99",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/47/1",
+  "article": "第 47 條",
+  "article_no": "47",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "童工每日之工作時間不得超過八小時，每週之工作時間不得超過四十小時，例假日不得工作。",
+  "deleted": false,
+  "content_hash": "9e65a4a97eb8fed4dbc147e789a80e00d396550f05db34f75e2742f409ebd21f",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/48/1",
+  "article": "第 48 條",
+  "article_no": "48",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "童工不得於午後八時至翌晨六時之時間內工作。",
+  "deleted": false,
+  "content_hash": "a7aab6dd1f56b335a7835df4709a20f39e93a8deda449be59d88f3ab79750686",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/49/1",
+  "article": "第 49 條",
+  "article_no": "49",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "雇主不得使女工於午後十時至翌晨六時之時間內工作。但雇主經工會同意，如事業單位無工會者，經勞資會議同意後，且符合下列各款規定者，不在此限：\n一、提供必要之安全衛生設施。\n二、無大眾運輸工具可資運用時，提供交通工具或安排女工宿舍。",
+  "deleted": false,
+  "content_hash": "49db297746254058b9084c13df98ec0e9a162800c96a0632562fedef724b4ae0",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/49/2",
+  "article": "第 49 條",
+  "article_no": "49",
+  "para": 2,
+  "chapter": "第 五 章 童工、女工",
+  "text": "前項第一款所稱必要之安全衛生設施，其標準由中央主管機關定之。但雇主與勞工約定之安全衛生設施優於本法者，從其約定。",
+  "deleted": false,
+  "content_hash": "7df6adb9916bdc225e5c32f5fe7da737135762c72d50d74f0c5d634c0cbb21bc",
+  "refs": [],
+  "flags": [
+   "delegation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/49/3",
+  "article": "第 49 條",
+  "article_no": "49",
+  "para": 3,
+  "chapter": "第 五 章 童工、女工",
+  "text": "女工因健康或其他正當理由，不能於午後十時至翌晨六時之時間內工作者，雇主不得強制其工作。",
+  "deleted": false,
+  "content_hash": "0344c096dadc1a0edc7b462eb319aea6415dd1816bca899653a15145e799f8f1",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/49/4",
+  "article": "第 49 條",
+  "article_no": "49",
+  "para": 4,
+  "chapter": "第 五 章 童工、女工",
+  "text": "第一項規定，於因天災、事變或突發事件，雇主必須使女工於午後十時至翌晨六時之時間內工作時，不適用之。",
+  "deleted": false,
+  "content_hash": "2b6e2ae7e5bfc07c9774382cb60101969911c7b6a51d32e460a552ae8bb22f63",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/49/5",
+  "article": "第 49 條",
+  "article_no": "49",
+  "para": 5,
+  "chapter": "第 五 章 童工、女工",
+  "text": "第一項但書及前項規定，於妊娠或哺乳期間之女工，不適用之。",
+  "deleted": false,
+  "content_hash": "db504738a6c089d381934586969cda9443fd61a37700df3cfa78a6921d606979",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/50/1",
+  "article": "第 50 條",
+  "article_no": "50",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "女工分娩前後，應停止工作，給予產假八星期；妊娠三個月以上流產者，應停止工作，給予產假四星期。",
+  "deleted": false,
+  "content_hash": "cf2194c07a2ddfb0700c0f341c6b62781b8afa691b9ad9ab3a118050afe1e083",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/50/2",
+  "article": "第 50 條",
+  "article_no": "50",
+  "para": 2,
+  "chapter": "第 五 章 童工、女工",
+  "text": "前項女工受僱工作在六個月以上者，停止工作期間工資照給；未滿六個月者減半發給。",
+  "deleted": false,
+  "content_hash": "55b6d00c2a84130c39854562227e8fa8c2e57b91a2979fd47b81e655ba21794a",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/51/1",
+  "article": "第 51 條",
+  "article_no": "51",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "女工在妊娠期間，如有較為輕易之工作，得申請改調，雇主不得拒絕，並不得減少其工資。",
+  "deleted": false,
+  "content_hash": "71c973af2f3a3f741ea610915251700310ab90015faf285ffc82595c3a0bba2e",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/52/1",
+  "article": "第 52 條",
+  "article_no": "52",
+  "para": 1,
+  "chapter": "第 五 章 童工、女工",
+  "text": "子女未滿一歲須女工親自哺乳者，於第三十五條規定之休息時間外，雇主應每日另給哺乳時間二次，每次以三十分鐘為度。",
+  "deleted": false,
+  "content_hash": "9725814390d4820a5f97b0e43a0de1a5bacaad48305ba100e676c76630ce1402",
+  "refs": [
+   "35"
+  ],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/52/2",
+  "article": "第 52 條",
+  "article_no": "52",
+  "para": 2,
+  "chapter": "第 五 章 童工、女工",
+  "text": "前項哺乳時間，視為工作時間。",
+  "deleted": false,
+  "content_hash": "26e49b343deb89f476943313b25bb530985cbe64b43c6880f87277e754a857a7",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/53/1",
+  "article": "第 53 條",
+  "article_no": "53",
+  "para": 1,
+  "chapter": "第 六 章 退休",
+  "text": "勞工有下列情形之一，得自請退休：\n一、工作十五年以上年滿五十五歲者。\n二、工作二十五年以上者。\n三、工作十年以上年滿六十歲者。",
+  "deleted": false,
+  "content_hash": "5d3317eed0a78347c3f69976e92a10356d9997cecea1836e172e116e59a1a21d",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/54/1",
+  "article": "第 54 條",
+  "article_no": "54",
+  "para": 1,
+  "chapter": "第 六 章 退休",
+  "text": "勞工非有下列情形之一，雇主不得強制其退休：\n一、年滿六十五歲者。\n二、身心障礙不堪勝任工作者。",
+  "deleted": false,
+  "content_hash": "29d2bdade65deeb16cfd3bfffcc95ff9556cfcb84d94dfa8245178ce276744c4",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/54/2",
+  "article": "第 54 條",
+  "article_no": "54",
+  "para": 2,
+  "chapter": "第 六 章 退休",
+  "text": "前項第一款所規定之年齡，得由勞雇雙方協商延後之；對於擔任具有危險、堅強體力等特殊性質之工作者，得由事業單位報請中央主管機關予以調整，但不得少於五十五歲。",
+  "deleted": false,
+  "content_hash": "4e716143038f3fd85dffafc99bc2c1a890e8488dea77768768fe1070dcdb0659",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/55/1",
+  "article": "第 55 條",
+  "article_no": "55",
+  "para": 1,
+  "chapter": "第 六 章 退休",
+  "text": "勞工退休金之給與標準如下：\n一、按其工作年資，每滿一年給與兩個基數。但超過十五年之工作年資，每滿一年給與一個基數，最高總數以四十五個基數為限。未滿半年者以半年計；滿半年者以一年計。\n二、依第五十四條第一項第二款規定，強制退休之勞工，其身心障礙係因執行職務所致者，依前款規定加給百分之二十。",
+  "deleted": false,
+  "content_hash": "d0113317dd01ef4856510e3c786d60192c46360fbdae7b9080709bb0e2368f2e",
+  "refs": [
+   "54/1"
+  ],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/55/2",
+  "article": "第 55 條",
+  "article_no": "55",
+  "para": 2,
+  "chapter": "第 六 章 退休",
+  "text": "前項第一款退休金基數之標準，係指核准退休時一個月平均工資。",
+  "deleted": false,
+  "content_hash": "8317c4c80320e02d3cf311084e24eee52fec551a10e2b75e7c8030bebe4565b1",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/55/3",
+  "article": "第 55 條",
+  "article_no": "55",
+  "para": 3,
+  "chapter": "第 六 章 退休",
+  "text": "第一項所定退休金，雇主應於勞工退休之日起三十日內給付，如無法一次發給時，得報經主管機關核定後，分期給付。本法施行前，事業單位原定退休標準優於本法者，從其規定。",
+  "deleted": false,
+  "content_hash": "b50b1d651906d2952ccaa3b48f8894daeed4b0b95e12d709ef436d9f810e7b77",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/56/1",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 1,
+  "chapter": "第 六 章 退休",
+  "text": "雇主應依勞工每月薪資總額百分之二至百分之十五範圍內，按月提撥勞工退休準備金，專戶存儲，並不得作為讓與、扣押、抵銷或擔保之標的；其提撥之比率、程序及管理等事項之辦法，由中央主管機關擬訂，報請行政院核定之。",
+  "deleted": false,
+  "content_hash": "f06c8c60aa05d326f02a1f2cc4a99fa35564e8d865160024883b616c098e1bd7",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/56/2",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 2,
+  "chapter": "第 六 章 退休",
+  "text": "雇主應於每年年度終了前，估算前項勞工退休準備金專戶餘額，該餘額不足給付次一年度內預估成就第五十三條或第五十四條第一項第一款退休條件之勞工，依前條計算之退休金數額者，雇主應於次年度三月底前一次提撥其差額，並送事業單位勞工退休準備金監督委員會審議。",
+  "deleted": false,
+  "content_hash": "3e45c157d6b02636f37582186e13f39781785ad6afecef49c52c2034dbac5072",
+  "refs": [
+   "53",
+   "54/1"
+  ],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/56/3",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 3,
+  "chapter": "第 六 章 退休",
+  "text": "第一項雇主按月提撥之勞工退休準備金匯集為勞工退休基金，由中央主管機關設勞工退休基金監理委員會管理之；其組織、會議及其他相關事項，由中央主管機關定之。",
+  "deleted": false,
+  "content_hash": "759e2265cc0e7cf6bb1413c0a28ec859af7c62622c56fc8a5c30e901d7d7e7be",
+  "refs": [],
+  "flags": [
+   "delegation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/56/4",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 4,
+  "chapter": "第 六 章 退休",
+  "text": "前項基金之收支、保管及運用，由中央主管機關會同財政部委託金融機構辦理。最低收益不得低於當地銀行二年定期存款利率之收益；如有虧損，由國庫補足之。基金之收支、保管及運用辦法，由中央主管機關擬訂，報請行政院核定之。",
+  "deleted": false,
+  "content_hash": "964d61d0f258b3cf2fdcacca96688f4b518ddd0614f652956bc727f69e08009f",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/56/5",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 5,
+  "chapter": "第 六 章 退休",
+  "text": "雇主所提撥勞工退休準備金，應由勞工與雇主共同組織勞工退休準備金監督委員會監督之。委員會中勞工代表人數不得少於三分之二；其組織準則，由中央主管機關定之。",
+  "deleted": false,
+  "content_hash": "fea249cd840e85d867078ca3bdb813cc4a86024d28306bb0e9cc2df5c7b07edc",
+  "refs": [],
+  "flags": [
+   "delegation",
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/56/6",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 6,
+  "chapter": "第 六 章 退休",
+  "text": "雇主按月提撥之勞工退休準備金比率之擬訂或調整，應經事業單位勞工退休準備金監督委員會審議通過，並報請當地主管機關核定。",
+  "deleted": false,
+  "content_hash": "4ea7ba9fe40fde235414829d05a7382d7db3361f3442e7f3f8e104b4561de042",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/56/7",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 7,
+  "chapter": "第 六 章 退休",
+  "text": "金融機構辦理核貸業務，需查核該事業單位勞工退休準備金提撥狀況之必要資料時，得請當地主管機關提供。",
+  "deleted": false,
+  "content_hash": "c7e55c7032dece5bd085588392e729897fe16c6d6037c6a0a4ffb0b142469fd2",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/56/8",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 8,
+  "chapter": "第 六 章 退休",
+  "text": "金融機構依前項取得之資料，應負保密義務，並確實辦理資料安全稽核作業。",
+  "deleted": false,
+  "content_hash": "7ad7e0d5378db5a53dea70f09bd09d06d2569e3596051dd62b7aa7f50ab312fd",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/56/9",
+  "article": "第 56 條",
+  "article_no": "56",
+  "para": 9,
+  "chapter": "第 六 章 退休",
+  "text": "前二項有關勞工退休準備金必要資料之內容、範圍、申請程序及其他應遵行事項之辦法，由中央主管機關會商金融監督管理委員會定之。",
+  "deleted": false,
+  "content_hash": "3d8ff7f44894ab7858690ac3785918d894a244a08e33bd9ead278eb36ea95b83",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/57/1",
+  "article": "第 57 條",
+  "article_no": "57",
+  "para": 1,
+  "chapter": "第 六 章 退休",
+  "text": "勞工工作年資以服務同一事業者為限。但受同一雇主調動之工作年資，及依第二十條規定應由新雇主繼續予以承認之年資，應予併計。",
+  "deleted": false,
+  "content_hash": "166e08b7e1b8cf587149bac4571f111c82be57b3f2f73fcc031b70f0fd8e35e3",
+  "refs": [
+   "20"
+  ],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/58/1",
+  "article": "第 58 條",
+  "article_no": "58",
+  "para": 1,
+  "chapter": "第 六 章 退休",
+  "text": "勞工請領退休金之權利，自退休之次月起，因五年間不行使而消滅。",
+  "deleted": false,
+  "content_hash": "3f8016f23d3fee3eb7a67e3d19b392631c3c13336b8347ec55356212ff8dacd6",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/58/2",
+  "article": "第 58 條",
+  "article_no": "58",
+  "para": 2,
+  "chapter": "第 六 章 退休",
+  "text": "勞工請領退休金之權利，不得讓與、抵銷、扣押或供擔保。",
+  "deleted": false,
+  "content_hash": "08d3313c0abb451a0d5a8e58f1e4c02f2b34ca8630dc5609b5c1f4656bd67abb",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/58/3",
+  "article": "第 58 條",
+  "article_no": "58",
+  "para": 3,
+  "chapter": "第 六 章 退休",
+  "text": "勞工依本法規定請領勞工退休金者，得檢具證明文件，於金融機構開立專戶，專供存入勞工退休金之用。",
+  "deleted": false,
+  "content_hash": "0950c7f34ba61d512a9ab2d1172019d1d6d39ae300ca628a65f7a4c202067b97",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/58/4",
+  "article": "第 58 條",
+  "article_no": "58",
+  "para": 4,
+  "chapter": "第 六 章 退休",
+  "text": "前項專戶內之存款，不得作為抵銷、扣押、供擔保或強制執行之標的。",
+  "deleted": false,
+  "content_hash": "812b5d1441a9405487609a0cd05d8d404be349d6b7f7adeb73d1029b255fb89e",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/59/1",
+  "article": "第 59 條",
+  "article_no": "59",
+  "para": 1,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "勞工因遭遇職業災害而致死亡、失能、傷害或疾病時，雇主應依下列規定予以補償。但如同一事故，依勞工保險條例或其他法令規定，已由雇主支付費用補償者，雇主得予以抵充之：\n一、勞工受傷或罹患職業病時，雇主應補償其必需之醫療費用。職業病之種類及其醫療範圍，依勞工保險條例有關之規定。\n二、勞工在醫療中不能工作時，雇主應按其原領工資數額予以補償。但醫療期間屆滿二年仍未能痊癒，經指定之醫院診斷，審定為喪失原有工作能力，且不合第三款之失能給付標準者，雇主得一次給付四十個月之平均工資後，免除此項工資補償責任。\n三、勞工經治療終止後，經指定之醫院診斷，審定其遺存障害者，雇主應按其平均工資及其失能程度，一次給予失能補償。失能補償標準，依勞工保險條例有關之規定。\n四、勞工遭遇職業傷害或罹患職業病而死亡時，雇主除給與五個月平均工資之喪葬費外，並應一次給與其遺屬四十個月平均工資之死亡補償。其遺屬受領死亡補償之順位如下：",
+  "deleted": false,
+  "content_hash": "18f24547a04a0602e26e69609f39f984fcf79a933ce9196dcbe15f8555aba1f1",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/59/2",
+  "article": "第 59 條",
+  "article_no": "59",
+  "para": 2,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "（一）配偶及子女。",
+  "deleted": false,
+  "content_hash": "f33a5bb79531326e219d3a4d58309e847474323f8ef755944f4e0a88144b5602",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/59/3",
+  "article": "第 59 條",
+  "article_no": "59",
+  "para": 3,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "（二）父母。",
+  "deleted": false,
+  "content_hash": "2b6f96fedd85ac9f126aab13f89c4923608f332a40a3da728de23e6aa772159e",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/59/4",
+  "article": "第 59 條",
+  "article_no": "59",
+  "para": 4,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "（三）祖父母。",
+  "deleted": false,
+  "content_hash": "74b6bbcca5d49fb295bb6db1db2d3b559b2c98d4e2de6e3a4822941b44ffce0d",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/59/5",
+  "article": "第 59 條",
+  "article_no": "59",
+  "para": 5,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "（四）孫子女。",
+  "deleted": false,
+  "content_hash": "d42e6c9d13d439292add5c7ed53689c17eb3ee3d53cc1b5a0148139a32be6b2f",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/59/6",
+  "article": "第 59 條",
+  "article_no": "59",
+  "para": 6,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "（五）兄弟姐妹。",
+  "deleted": false,
+  "content_hash": "adde12f6e72b10341df629c69a89fccdf4c7c07f1ad522b37ab038cdf89e6efa",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/60/1",
+  "article": "第 60 條",
+  "article_no": "60",
+  "para": 1,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "雇主依前條規定給付之補償金額，得抵充就同一事故所生損害之賠償金額。",
+  "deleted": false,
+  "content_hash": "b8bcb8627177a5f262bb161db4aa9d2aafa5a22fcc47e0d697f0b446f4840e16",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/61/1",
+  "article": "第 61 條",
+  "article_no": "61",
+  "para": 1,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "第五十九條之受領補償權，自得受領之日起，因二年間不行使而消滅。",
+  "deleted": false,
+  "content_hash": "c00f4b476451b6d9402db49d326befd82aa6db460eee6fa4fbef1967e11fb6ac",
+  "refs": [
+   "59"
+  ],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/61/2",
+  "article": "第 61 條",
+  "article_no": "61",
+  "para": 2,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "受領補償之權利，不因勞工之離職而受影響，且不得讓與、抵銷、扣押或供擔保。",
+  "deleted": false,
+  "content_hash": "d0687d831a447123ca886e90a3e6447ebe5f1e6e24c666bb62f4378c9cf7466f",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/61/3",
+  "article": "第 61 條",
+  "article_no": "61",
+  "para": 3,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "勞工或其遺屬依本法規定受領職業災害補償金者，得檢具證明文件，於金融機構開立專戶，專供存入職業災害補償金之用。",
+  "deleted": false,
+  "content_hash": "a73e067c5e00168fc0bc651cbd8294690545f75006864ca7c668c6f9acc181f2",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/61/4",
+  "article": "第 61 條",
+  "article_no": "61",
+  "para": 4,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "前項專戶內之存款，不得作為抵銷、扣押、供擔保或強制執行之標的。",
+  "deleted": false,
+  "content_hash": "812b5d1441a9405487609a0cd05d8d404be349d6b7f7adeb73d1029b255fb89e",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/62/1",
+  "article": "第 62 條",
+  "article_no": "62",
+  "para": 1,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "事業單位以其事業招人承攬，如有再承攬時，承攬人或中間承攬人，就各該承攬部分所使用之勞工，均應與最後承攬人，連帶負本章所定雇主應負職業災害補償之責任。",
+  "deleted": false,
+  "content_hash": "1b7fd0d532bfb104aa21de57bc0ce84142f02f4ab3118cf376f2f3fc801c75f5",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/62/2",
+  "article": "第 62 條",
+  "article_no": "62",
+  "para": 2,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "事業單位或承攬人或中間承攬人，為前項之災害補償時，就其所補償之部分，得向最後承攬人求償。",
+  "deleted": false,
+  "content_hash": "e3af88deedb123154b5d510c28c44f2144b9df27a868b36e54813eccf2bacd02",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/63/1",
+  "article": "第 63 條",
+  "article_no": "63",
+  "para": 1,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "承攬人或再承攬人工作場所，在原事業單位工作場所範圍內，或為原事業單位提供者，原事業單位應督促承攬人或再承攬人，對其所僱用勞工之勞動條件應符合有關法令之規定。",
+  "deleted": false,
+  "content_hash": "f0ece407a8183f5ff8ca827663e3178d7719c3e8d6224a3af9f752b46c667da2",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/63/2",
+  "article": "第 63 條",
+  "article_no": "63",
+  "para": 2,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "事業單位違背職業安全衛生法有關對於承攬人、再承攬人應負責任之規定，致承攬人或再承攬人所僱用之勞工發生職業災害時，應與該承攬人、再承攬人負連帶補償責任。",
+  "deleted": false,
+  "content_hash": "5f7652ba9b3865d109ca44c6d9ee6e44dffd5324d8d289311d59b14bc90ff384",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/63-1/1",
+  "article": "第 63-1 條",
+  "article_no": "63-1",
+  "para": 1,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "要派單位使用派遣勞工發生職業災害時，要派單位應與派遣事業單位連帶負本章所定雇主應負職業災害補償之責任。",
+  "deleted": false,
+  "content_hash": "0a58f751372eae5023c303cd66e4075bcce49e80f3888f722c39c386a8a1d622",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/63-1/2",
+  "article": "第 63-1 條",
+  "article_no": "63-1",
+  "para": 2,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "前項之職業災害依勞工保險條例或其他法令規定，已由要派單位或派遣事業單位支付費用補償者，得主張抵充。",
+  "deleted": false,
+  "content_hash": "1b1f0c151db1e4f80da357c680d85f1e12778117e36596f74fd9b0c00f22585c",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/63-1/3",
+  "article": "第 63-1 條",
+  "article_no": "63-1",
+  "para": 3,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "要派單位及派遣事業單位因違反本法或有關安全衛生規定，致派遣勞工發生職業災害時，應連帶負損害賠償之責任。",
+  "deleted": false,
+  "content_hash": "6ee39bfae88cde5900ab3b27f73d446c674063a1c9419a06b85d5e7afe133541",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/63-1/4",
+  "article": "第 63-1 條",
+  "article_no": "63-1",
+  "para": 4,
+  "chapter": "第 七 章 職業災害補償",
+  "text": "要派單位或派遣事業單位依本法規定給付之補償金額，得抵充就同一事故所生損害之賠償金額。",
+  "deleted": false,
+  "content_hash": "712348aad4472300335b73a66230cf97b5b21d4ba238e687c4ef317a96026751",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/64/1",
+  "article": "第 64 條",
+  "article_no": "64",
+  "para": 1,
+  "chapter": "第 八 章 技術生",
+  "text": "雇主不得招收未滿十五歲之人為技術生。但國民中學畢業者，不在此限。",
+  "deleted": false,
+  "content_hash": "55e3f8c3b357800736c41f23ef58098944c7ab0b5bc7e0bcdc7244316c06be54",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/64/2",
+  "article": "第 64 條",
+  "article_no": "64",
+  "para": 2,
+  "chapter": "第 八 章 技術生",
+  "text": "稱技術生者，指依中央主管機關規定之技術生訓練職類中以學習技能為目的，依本章之規定而接受雇主訓練之人。",
+  "deleted": false,
+  "content_hash": "197a0a547b8e6cac6be9f45aaff80b6e1fa88b5d559b2bb037834eb935338622",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/64/3",
+  "article": "第 64 條",
+  "article_no": "64",
+  "para": 3,
+  "chapter": "第 八 章 技術生",
+  "text": "本章規定，於事業單位之養成工、見習生、建教合作班之學生及其他與技術生性質相類之人，準用之。",
+  "deleted": false,
+  "content_hash": "118f92f0ef55c93e61e8efabab5cfb3c2e8542a34e4d6c8c71f27ffdcda4b700",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/65/1",
+  "article": "第 65 條",
+  "article_no": "65",
+  "para": 1,
+  "chapter": "第 八 章 技術生",
+  "text": "雇主招收技術生時，須與技術生簽訂書面訓練契約一式三份，訂明訓練項目、訓練期限、膳宿負擔、生活津貼、相關教學、勞工保險、結業證明、契約生效與解除之條件及其他有關雙方權利、義務事項，由當事人分執，並送主管機關備案。",
+  "deleted": false,
+  "content_hash": "7885bfc4d30324b7dcf97086fe1440f98780d626a2aabc609da2b1b4e7ade538",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/65/2",
+  "article": "第 65 條",
+  "article_no": "65",
+  "para": 2,
+  "chapter": "第 八 章 技術生",
+  "text": "前項技術生如為未成年人，其訓練契約，應得法定代理人之允許。",
+  "deleted": false,
+  "content_hash": "17106a59e5ac60c3a5a0676f4e1bdd2706f21bd557bb2070e0b07ebc8a0eecd8",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/66/1",
+  "article": "第 66 條",
+  "article_no": "66",
+  "para": 1,
+  "chapter": "第 八 章 技術生",
+  "text": "雇主不得向技術生收取有關訓練費用。",
+  "deleted": false,
+  "content_hash": "edd0520e9357d8eb68b93e116bd1ebe57232e843871b1eccafe1bc73c15c598e",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/67/1",
+  "article": "第 67 條",
+  "article_no": "67",
+  "para": 1,
+  "chapter": "第 八 章 技術生",
+  "text": "技術生訓練期滿，雇主得留用之，並應與同等工作之勞工享受同等之待遇。雇主如於技術生訓練契約內訂明留用期間，應不得超過其訓練期間。",
+  "deleted": false,
+  "content_hash": "d33bb3ec2ed9e37b78cd20f2c03c18a51aac63d02124fb8e4836b909951cc36b",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/68/1",
+  "article": "第 68 條",
+  "article_no": "68",
+  "para": 1,
+  "chapter": "第 八 章 技術生",
+  "text": "技術生人數，不得超過勞工人數四分之一。勞工人數不滿四人者，以四人計。",
+  "deleted": false,
+  "content_hash": "5a9c09b3326b0fe79c1b32e4beb47e28c08110c860fbd656db414f1a0ac1083e",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/69/1",
+  "article": "第 69 條",
+  "article_no": "69",
+  "para": 1,
+  "chapter": "第 八 章 技術生",
+  "text": "本法第四章工作時間、休息、休假，第五章童工、女工，第七章災害補償及其他勞工保險等有關規定，於技術生準用之。",
+  "deleted": false,
+  "content_hash": "78c6675c10aeca8b27b280bb9f5caa641213934fed0fe780d88dda58a067b25e",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/69/2",
+  "article": "第 69 條",
+  "article_no": "69",
+  "para": 2,
+  "chapter": "第 八 章 技術生",
+  "text": "技術生災害補償所採薪資計算之標準，不得低於基本工資。",
+  "deleted": false,
+  "content_hash": "85c52f1a906a8c9f60c6b9a1157ec7ddf6c95c87bea1995f320c4aacd7726a59",
+  "refs": [],
+  "flags": [
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/70/1",
+  "article": "第 70 條",
+  "article_no": "70",
+  "para": 1,
+  "chapter": "第 九 章 工作規則",
+  "text": "雇主僱用勞工人數在三十人以上者，應依其事業性質，就左列事項訂立工作規則，報請主管機關核備後並公開揭示之：\n一、工作時間、休息、休假、國定紀念日、特別休假及繼續性工作之輪班方法。\n二、工資之標準、計算方法及發放日期。\n三、延長工作時間。\n四、津貼及獎金。\n五、應遵守之紀律。\n六、考勤、請假、獎懲及升遷。\n七、受僱、解僱、資遣、離職及退休。\n八、災害傷病補償及撫卹。\n九、福利措施。\n十、勞雇雙方應遵守勞工安全衛生規定。\n十一、勞雇雙方溝通意見加強合作之方法。\n十二、其他。",
+  "deleted": false,
+  "content_hash": "ab8619a4127bc718e28d9b55d9d3a1ff5294ac996fbe310a0ce9953612c99394",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "formula_words",
+   "obligation",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/71/1",
+  "article": "第 71 條",
+  "article_no": "71",
+  "para": 1,
+  "chapter": "第 九 章 工作規則",
+  "text": "工作規則，違反法令之強制或禁止規定或其他有關該事業適用之團體協約規定者，無效。",
+  "deleted": false,
+  "content_hash": "a6dc8c55b7d0b444905bc7ba8db29f698d851d6152780f4bbd1abbce65b922f0",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/72/1",
+  "article": "第 72 條",
+  "article_no": "72",
+  "para": 1,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "中央主管機關，為貫徹本法及其他勞工法令之執行，設勞工檢查機構或授權直轄市主管機關專設檢查機構辦理之；直轄市、縣（市）主管機關於必要時，亦得派員實施檢查。",
+  "deleted": false,
+  "content_hash": "5ee41cc11dd04700d7982bf89d9b34efed808c4d6c945e2682e4dbaef2e6e4a1",
+  "refs": [],
+  "flags": [
+   "discretion"
+  ]
+ },
+ {
+  "unit_id": "N0030001/72/2",
+  "article": "第 72 條",
+  "article_no": "72",
+  "para": 2,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "前項勞工檢查機構之組織，由中央主管機關定之。",
+  "deleted": false,
+  "content_hash": "8e3facfc3ce347b7081d6aa09f82f23dcc1aae1c0e7ca0aa266b81d2a06b9cd2",
+  "refs": [],
+  "flags": [
+   "delegation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/73/1",
+  "article": "第 73 條",
+  "article_no": "73",
+  "para": 1,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "檢查員執行職務，應出示檢查證，各事業單位不得拒絕。事業單位拒絕檢查時，檢查員得會同當地主管機關或警察機關強制檢查之。",
+  "deleted": false,
+  "content_hash": "918fee66d2256013a360647f2fb51ac1bcf91facbd09a2973a71d8c699a42339",
+  "refs": [],
+  "flags": [
+   "obligation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/73/2",
+  "article": "第 73 條",
+  "article_no": "73",
+  "para": 2,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "檢查員執行職務，得就本法規定事項，要求事業單位提出必要之報告、紀錄、帳冊及有關文件或書面說明。如需抽取物料、樣品或資料時，應事先通知雇主或其代理人並掣給收據。",
+  "deleted": false,
+  "content_hash": "a643cef3d90ba6ee65fd18e08be6c6627d8064489f7667f88d973c5d0061b01d",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/74/1",
+  "article": "第 74 條",
+  "article_no": "74",
+  "para": 1,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "勞工發現事業單位違反本法及其他勞工法令規定時，得向雇主、主管機關或檢查機構申訴。",
+  "deleted": false,
+  "content_hash": "f23ba1d2b8c4deb24e39be6ea375bb2511db3d9e2f38f8b3d0fbf6d7a7575d32",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/74/2",
+  "article": "第 74 條",
+  "article_no": "74",
+  "para": 2,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "雇主不得因勞工為前項申訴，而予以解僱、降調、減薪、損害其依法令、契約或習慣上所應享有之權益，或其他不利之處分。",
+  "deleted": false,
+  "content_hash": "911b5f6b96b61ca596a339ddbec1eef40ddd7f5820c2ea8f3b6303823f2e4868",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/74/3",
+  "article": "第 74 條",
+  "article_no": "74",
+  "para": 3,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "雇主為前項行為之一者，無效。",
+  "deleted": false,
+  "content_hash": "c990ab20ebda2371897181f5e8404293946f9f8bbe0b790d046d5c1946654b87",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/74/4",
+  "article": "第 74 條",
+  "article_no": "74",
+  "para": 4,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "主管機關或檢查機構於接獲第一項申訴後，應為必要之調查，並於六十日內將處理情形，以書面通知勞工。",
+  "deleted": false,
+  "content_hash": "49ebf91acd1d66121c6bdaca2b605beee14f9a703cdb10d8109140f6ee5f7aac",
+  "refs": [],
+  "flags": [
+   "numeric",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/74/5",
+  "article": "第 74 條",
+  "article_no": "74",
+  "para": 5,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "主管機關或檢查機構應對申訴人身分資料嚴守秘密，不得洩漏足以識別其身分之資訊。",
+  "deleted": false,
+  "content_hash": "9ab901d4eb7d12ba725a44b56cbce812abd2812ce45c1301004647294c94593c",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/74/6",
+  "article": "第 74 條",
+  "article_no": "74",
+  "para": 6,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "違反前項規定者，除公務員應依法追究刑事與行政責任外，對因此受有損害之勞工，應負損害賠償責任。",
+  "deleted": false,
+  "content_hash": "fe4ef8221cefa8fcac29c8bb65c15aaad83aca178d9417e1d15b0b81c466ad70",
+  "refs": [],
+  "flags": [
+   "obligation",
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/74/7",
+  "article": "第 74 條",
+  "article_no": "74",
+  "para": 7,
+  "chapter": "第 十 章 監督與檢查",
+  "text": "主管機關受理檢舉案件之保密及其他應遵行事項之辦法，由中央主管機關定之。",
+  "deleted": false,
+  "content_hash": "45b525559d18c6019154dd536baf1d0b7d4ab7482201d2872b0ee29d7ed40294",
+  "refs": [],
+  "flags": [
+   "delegation"
+  ]
+ },
+ {
+  "unit_id": "N0030001/75/1",
+  "article": "第 75 條",
+  "article_no": "75",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反第五條規定者，處五年以下有期徒刑、拘役或科或併科新臺幣七十五萬元以下罰金。",
+  "deleted": false,
+  "content_hash": "0cfa963a3ca7ef9eba7f5456861ad9cc78d4ce814806c36284a21d794a445e23",
+  "refs": [
+   "5"
+  ],
+  "flags": [
+   "numeric",
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/76/1",
+  "article": "第 76 條",
+  "article_no": "76",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反第六條規定者，處三年以下有期徒刑、拘役或科或併科新臺幣四十五萬元以下罰金。",
+  "deleted": false,
+  "content_hash": "2103f0c5d2e5abd266f869396c292aa0de704f18caac9163c527d1c4ddc5d08d",
+  "refs": [
+   "6"
+  ],
+  "flags": [
+   "numeric",
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/77/1",
+  "article": "第 77 條",
+  "article_no": "77",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反第四十二條、第四十四條第二項、第四十五條第一項、第四十七條、第四十八條、第四十九條第三項或第六十四條第一項規定者，處六個月以下有期徒刑、拘役或科或併科新臺幣三十萬元以下罰金。",
+  "deleted": false,
+  "content_hash": "3c83e45991d29a66db4b8e9078657b834a187aa404960f72251b7a04e0ddb868",
+  "refs": [
+   "42",
+   "44/2",
+   "45/1",
+   "47",
+   "48",
+   "49/3",
+   "64/1"
+  ],
+  "flags": [
+   "numeric",
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/78/1",
+  "article": "第 78 條",
+  "article_no": "78",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "未依第十七條、第十七條之一第七項、第五十五條規定之標準或期限給付者，處新臺幣三十萬元以上一百五十萬元以下罰鍰，並限期令其給付，屆期未給付者，應按次處罰。",
+  "deleted": false,
+  "content_hash": "0c215712bfcf5847180d5f870acfdbbbdd326e4b5965694b3b6a94f7c7b331bd",
+  "refs": [
+   "17",
+   "17-1/7",
+   "55"
+  ],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/78/2",
+  "article": "第 78 條",
+  "article_no": "78",
+  "para": 2,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反第十三條、第十七條之一第一項、第四項、第二十六條、第五十條、第五十一條或第五十六條第二項規定者，處新臺幣九萬元以上四十五萬元以下罰鍰。",
+  "deleted": false,
+  "content_hash": "af7e7cfb982b409480d0bac8292ea0b62b86f7b574f865f2b5fd07c097b7b89d",
+  "refs": [
+   "13",
+   "17-1/1",
+   "26",
+   "50",
+   "51",
+   "56/2"
+  ],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/79/1",
+  "article": "第 79 條",
+  "article_no": "79",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "有下列各款規定行為之一者，處新臺幣二萬元以上一百萬元以下罰鍰：\n一、違反第二十一條第一項、第二十二條至第二十五條、第三十條第一項至第三項、第六項、第七項、第三十二條、第三十四條至第四十一條、第四十九條第一項或第五十九條規定。\n二、違反主管機關依第二十七條限期給付工資或第三十三條調整工作時間之命令。\n三、違反中央主管機關依第四十三條所定假期或事假以外期間內工資給付之最低標準。",
+  "deleted": false,
+  "content_hash": "8989e46cc5d2d570ac460186469aaa5163484eb7f57c513c39d36107be87d6c5",
+  "refs": [
+   "21/1",
+   "22",
+   "25",
+   "27",
+   "30/1",
+   "32",
+   "33",
+   "34",
+   "41",
+   "43",
+   "49/1",
+   "59"
+  ],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/79/2",
+  "article": "第 79 條",
+  "article_no": "79",
+  "para": 2,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反第三十條第五項或第四十九條第五項規定者，處新臺幣九萬元以上四十五萬元以下罰鍰。",
+  "deleted": false,
+  "content_hash": "5744be559843ae9271b195cb0df5a0cb4a32cfbce6d101d6486ce3b34e4efbca",
+  "refs": [
+   "30/5",
+   "49/5"
+  ],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/79/3",
+  "article": "第 79 條",
+  "article_no": "79",
+  "para": 3,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反第七條、第九條第一項、第十六條、第十九條、第二十八條第二項、第四十六條、第五十六條第一項、第六十五條第一項、第六十六條至第六十八條、第七十條或第七十四條第二項規定者，處新臺幣二萬元以上三十萬元以下罰鍰。",
+  "deleted": false,
+  "content_hash": "490d02c97b137db1ea5b1c96879dd45c9b7e686eec5b57a6d7d918a21e990109",
+  "refs": [
+   "16",
+   "19",
+   "28/2",
+   "46",
+   "56/1",
+   "65/1",
+   "66",
+   "68",
+   "7",
+   "70",
+   "74/2",
+   "9/1"
+  ],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/79/4",
+  "article": "第 79 條",
+  "article_no": "79",
+  "para": 4,
+  "chapter": "第 十一 章 罰則",
+  "text": "有前三項規定行為之一者，主管機關得依事業規模、違反人數或違反情節，加重其罰鍰至法定罰鍰最高額二分之一。",
+  "deleted": false,
+  "content_hash": "bdf7821997d0d323be252d7d85dd1a583627245cc4f6a7651d8c5835508061dc",
+  "refs": [],
+  "flags": [
+   "discretion",
+   "numeric",
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/79-1/1",
+  "article": "第 79-1 條",
+  "article_no": "79-1",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反第四十五條第二項、第四項、第六十四條第三項及第六十九條第一項準用規定之處罰，適用本法罰則章規定。",
+  "deleted": false,
+  "content_hash": "88274f1b5e125ce98ff7585ae71ecd5f8739d52b9cf9203b96ceefce6676ad03",
+  "refs": [
+   "45/2",
+   "64/3",
+   "69/1"
+  ],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/80/1",
+  "article": "第 80 條",
+  "article_no": "80",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "拒絕、規避或阻撓勞工檢查員依法執行職務者，處新臺幣三萬元以上十五萬元以下罰鍰。",
+  "deleted": false,
+  "content_hash": "45b7908dca127545d3ca2540c985e80dfa074ca0c4163d5c70ed95b93b75cdb6",
+  "refs": [],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/80-1/1",
+  "article": "第 80-1 條",
+  "article_no": "80-1",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "違反本法經主管機關處以罰鍰者，主管機關應公布其事業單位或事業主之名稱、負責人姓名、處分期日、違反條文及罰鍰金額，並限期令其改善；屆期未改善者，應按次處罰。",
+  "deleted": false,
+  "content_hash": "1cf5c95ac04bf03ef5cb10f736b3f626794b45ad0379f988f140eb35c5d847e7",
+  "refs": [],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/80-1/2",
+  "article": "第 80-1 條",
+  "article_no": "80-1",
+  "para": 2,
+  "chapter": "第 十一 章 罰則",
+  "text": "主管機關裁處罰鍰，得審酌與違反行為有關之勞工人數、累計違法次數或未依法給付之金額，為量罰輕重之標準。",
+  "deleted": false,
+  "content_hash": "5fdab11ed7793c53e8015d92d2cddfdecc301def31af9026a6fd8813be82b2d3",
+  "refs": [],
+  "flags": [
+   "discretion",
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/81/1",
+  "article": "第 81 條",
+  "article_no": "81",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "法人之代表人、法人或自然人之代理人、受僱人或其他從業人員，因執行業務違反本法規定，除依本章規定處罰行為人外，對該法人或自然人並應處以各該條所定之罰金或罰鍰。但法人之代表人或自然人對於違反之發生，已盡力為防止行為者，不在此限。",
+  "deleted": false,
+  "content_hash": "a933f427538994ef5822bd10c4a9a861c356bd4c0615d72c682a58e1a8c161e8",
+  "refs": [],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/81/2",
+  "article": "第 81 條",
+  "article_no": "81",
+  "para": 2,
+  "chapter": "第 十一 章 罰則",
+  "text": "法人之代表人或自然人教唆或縱容為違反之行為者，以行為人論。",
+  "deleted": false,
+  "content_hash": "0e746d789a321a8150a2796f4bf50a32679eb143b8bc05e97fcb4eadc7b1240f",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/82/1",
+  "article": "第 82 條",
+  "article_no": "82",
+  "para": 1,
+  "chapter": "第 十一 章 罰則",
+  "text": "本法所定之罰鍰，經主管機關催繳，仍不繳納時，得移送法院強制執行。",
+  "deleted": false,
+  "content_hash": "ed9b51dd3a782579d9ff8dc70809643b8bd0081a7c2bb02fe9d40c29ec51d797",
+  "refs": [],
+  "flags": [
+   "penalty"
+  ]
+ },
+ {
+  "unit_id": "N0030001/83/1",
+  "article": "第 83 條",
+  "article_no": "83",
+  "para": 1,
+  "chapter": "第 十二 章 附則",
+  "text": "為協調勞資關係，促進勞資合作，提高工作效率，事業單位應舉辦勞資會議。其辦法由中央主管機關會同經濟部訂定，並報行政院核定。",
+  "deleted": false,
+  "content_hash": "cd7d1c71fa92421dedb3fc6d9ddb0a9aef07270dd1f5ebf38395ec696038d973",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/84/1",
+  "article": "第 84 條",
+  "article_no": "84",
+  "para": 1,
+  "chapter": "第 十二 章 附則",
+  "text": "公務員兼具勞工身分者，其有關任（派）免、薪資、獎懲、退休、撫卹及保險（含職業災害）等事項，應適用公務員法令之規定。但其他所定勞動條件優於本法規定者，從其規定。",
+  "deleted": false,
+  "content_hash": "1fc8651dbaa1e06b2f5f0dec5ba18625d84d650d12585b99fa690f518cedd6be",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/84-1/1",
+  "article": "第 84-1 條",
+  "article_no": "84-1",
+  "para": 1,
+  "chapter": "第 十二 章 附則",
+  "text": "經中央主管機關核定公告之下列工作者，得由勞雇雙方另行約定，工作時間、例假、休假、女性夜間工作，並報請當地主管機關核備，不受第三十條、第三十二條、第三十六條、第三十七條、第四十九條規定之限制。\n一、監督、管理人員或責任制專業人員。\n二、監視性或間歇性之工作。\n三、其他性質特殊之工作。",
+  "deleted": false,
+  "content_hash": "011853e918ae5e03c25ae8ecd9d5dc4b34051d3eea78a849293f63354d49af7e",
+  "refs": [
+   "30",
+   "32",
+   "36",
+   "37",
+   "49"
+  ],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/84-1/2",
+  "article": "第 84-1 條",
+  "article_no": "84-1",
+  "para": 2,
+  "chapter": "第 十二 章 附則",
+  "text": "前項約定應以書面為之，並應參考本法所定之基準且不得損及勞工之健康及福祉。",
+  "deleted": false,
+  "content_hash": "2bf3119cb5440e6a0070d58f7ca2f1daa322b9b99e40cc79ff24d24d63fc5ddb",
+  "refs": [],
+  "flags": [
+   "discretion",
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/84-2/1",
+  "article": "第 84-2 條",
+  "article_no": "84-2",
+  "para": 1,
+  "chapter": "第 十二 章 附則",
+  "text": "勞工工作年資自受僱之日起算，適用本法前之工作年資，其資遣費及退休金給與標準，依其當時應適用之法令規定計算；當時無法令可資適用者，依各該事業單位自訂之規定或勞雇雙方之協商計算之。適用本法後之工作年資，其資遣費及退休金給與標準，依第十七條及第五十五條規定計算。",
+  "deleted": false,
+  "content_hash": "825d3f64a93bc7caaf0e6b456b99fa48c15cbad37d27fce2fabaf580a1687750",
+  "refs": [
+   "17",
+   "55"
+  ],
+  "flags": [
+   "formula_words"
+  ]
+ },
+ {
+  "unit_id": "N0030001/85/1",
+  "article": "第 85 條",
+  "article_no": "85",
+  "para": 1,
+  "chapter": "第 十二 章 附則",
+  "text": "本法施行細則，由中央主管機關擬定，報請行政院核定。",
+  "deleted": false,
+  "content_hash": "e2c0c3f6678e6ab1f4bd11df34d3ca40bdc144d3dbd8fdf99b85e65c13eaaf39",
+  "refs": [],
+  "flags": [
+   "procedure"
+  ]
+ },
+ {
+  "unit_id": "N0030001/86/1",
+  "article": "第 86 條",
+  "article_no": "86",
+  "para": 1,
+  "chapter": "第 十二 章 附則",
+  "text": "本法自公布日施行。",
+  "deleted": false,
+  "content_hash": "6bab8c0fd98e72747952c9187f6018844a694b99be9a43147e673afac5c0271d",
+  "refs": [],
+  "flags": []
+ },
+ {
+  "unit_id": "N0030001/86/2",
+  "article": "第 86 條",
+  "article_no": "86",
+  "para": 2,
+  "chapter": "第 十二 章 附則",
+  "text": "本法中華民國八十九年六月二十八日修正公布之第三十條第一項及第二項，自九十年一月一日施行；一百零四年二月四日修正公布之第二十八條第一項，自公布後八個月施行；一百零四年六月三日修正公布之條文，自一百零五年一月一日施行；一百零五年十二月二十一日修正公布之第三十四條第二項施行日期，由行政院定之、第三十七條及第三十八條，自一百零六年一月一日施行。",
+  "deleted": false,
+  "content_hash": "c29e5e4c6d0203c161bf4e2f7574a62d7d9aed1068c9439abb50e34423341de7",
+  "refs": [
+   "28/1",
+   "30/1",
+   "34/2",
+   "37",
+   "38"
+  ],
+  "flags": [
+   "numeric"
+  ]
+ },
+ {
+  "unit_id": "N0030001/86/3",
+  "article": "第 86 條",
+  "article_no": "86",
+  "para": 3,
+  "chapter": "第 十二 章 附則",
+  "text": "本法中華民國一百零七年一月十日修正之條文，自一百零七年三月一日施行。",
+  "deleted": false,
+  "content_hash": "de82140a6f921736c7c72034d2358648adc4801b4e6d71fc016e8af0572a86bd",
+  "refs": [],
+  "flags": [
+   "numeric"
+  ]
+ }
+]

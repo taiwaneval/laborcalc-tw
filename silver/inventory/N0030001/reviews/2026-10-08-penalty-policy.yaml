@@ -1,0 +1,22 @@
+reviewer: Calvin Ku
+date: "2026-10-08"
+scope: 罰則政策延伸：刑事罰金上限（75–77 條）比照罰鍰，開放為 lookup
+decisions:
+  - unit_id: N0030001/75/1
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反第 5 條→刑度上限（五年以下）與罰金上限（75 萬）
+    note: 罰則題開放；刑度與罰金上限各為唯一答案。
+  - unit_id: N0030001/76/1
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反第 6 條→刑度上限（三年以下）與罰金上限（45 萬）
+    note: 同上。
+  - unit_id: N0030001/77/1
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反所列條次→刑度上限（六個月以下）與罰金上限（30 萬）
+    note: 同上。

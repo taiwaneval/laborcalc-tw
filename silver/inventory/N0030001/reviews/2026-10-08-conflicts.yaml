@@ -1,0 +1,80 @@
+reviewer: Calvin Ku
+date: "2026-10-08"
+scope: 10 筆 heuristic/LLM 衝突 ＋ 罰則政策連帶的 79/1–3、78、80
+decisions:
+  # ---- 改分類 ----
+  - unit_id: N0030001/38/4
+    verdict: overridden
+    category: delegated
+    family: null
+    io: null
+    note: 給付義務在本項，「一日工資」算法在施行細則 §24-1；待施行細則 inventory 時收成 family（unused_annual_leave_payout）。
+  - unit_id: N0030001/40/1
+    verdict: overridden
+    category: computable
+    family: holiday_work_double_pay
+    note: 併入 39/1 同一 family。另：休息日因天災出勤依 §40 加倍（×2），非 §24-2 之 4/3、5/3，需律師確認後作為 overtime_pay v2 干擾分支。
+  - unit_id: N0030001/41/1
+    verdict: overridden
+    category: computable
+    family: holiday_work_double_pay
+    note: 併入 39/40 同一 family；公用事業特休停止，單獨不成題。
+  # ---- 罰則政策：上限是唯一答案，開放為 lookup ----
+  - unit_id: N0030001/78/1
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反條次→罰鍰上下限（30 萬–150 萬）
+    note: 罰則題開放。範圍上下限各為唯一答案；按次處罰、限期改善為附帶事實。
+  - unit_id: N0030001/78/2
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反條次→罰鍰上下限（9 萬–45 萬）
+    note: 同上。
+  - unit_id: N0030001/79/1
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反條次→罰鍰上下限（2 萬–100 萬）
+    note: 同上；本項列舉條次多，可出「違反第 X 條最高罰多少」。
+  - unit_id: N0030001/79/2
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反條次→罰鍰上下限（9 萬–45 萬）
+    note: 同上。
+  - unit_id: N0030001/79/3
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 違反條次→罰鍰上下限（2 萬–30 萬）
+    note: 同上。
+  - unit_id: N0030001/80/1
+    verdict: overridden
+    category: lookup
+    family: penalty_range_lookup
+    io: 妨礙勞工檢查→罰鍰上下限（3 萬–15 萬）
+    note: 同上。
+  # ---- 同意 LLM ----
+  - unit_id: N0030001/12/1
+    verdict: confirmed
+    note: 限第六款；「一個月內」為曆月或任意 30 日待函釋確認（open question）。訊號薄，低優先。
+  - unit_id: N0030001/17/1
+    verdict: confirmed
+    note: 高優先。heuristic 衝突為「相當於」誤判，已自裁量 pattern 排除。舊制資遣費；新制在勞退條例 §12，family 需以新舊制為輸入或限舊制年資。
+  - unit_id: N0030001/30/8
+    verdict: confirmed
+    note: lookup，題目價值低。
+  - unit_id: N0030001/32/4
+    verdict: confirmed
+    note: lookup；對應加倍工資在 24/1 第三款，互相連結。
+  - unit_id: N0030001/55/2
+    verdict: confirmed
+    note: 55/1 的輸入定義，退休金 family 一併引用。
+  - unit_id: N0030001/56/5
+    verdict: confirmed
+    note: lookup，薄。
+  - unit_id: N0030001/79/4
+    verdict: confirmed
+    note: 加重上限 = 法定最高額 × 1.5；依賴 79/1–3 的上限（已改 lookup）。低優先。

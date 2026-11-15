@@ -1,0 +1,336 @@
+# TaiwanEval rule family spec
+# 這份 YAML 是 source of truth；HTML 規則卡由 build_page.py 從這裡生成。
+# 審閱者簽核寫在同目錄的 reviews.yaml，對象是本檔、rule.py、templates.yaml、sampler.py 的 sha256（見 tools/family_reviews.py），不是頁面本身。
+# 本檔不記 status／review_log：family 是否 reviewed 只由 reviews.yaml 推得（TAI-428）。
+
+id: overtime_pay
+name: 加班費（月薪制・單日）
+version: 0.2.2
+tier: 1 # 程序型：參數由程式抽樣，答案由程式計算
+language: zh-TW
+curated_at: "2026-10-08"
+curator: Calvin Ku
+
+summary: >
+  月薪制勞工於「單一日」的平日延長工時、休息日出勤、國定假日出勤之加班費。
+  平日每小時工資額以 月薪 ÷ 30 ÷ 8 計算；各段時數依勞動基準法第 24 條、第 39 條之倍率加給，
+  休息日第 9 小時起依勞動部加班費示意圖與試算系統按 ×8/3 計給；最終金額無條件進位到元。
+  本 family 只編碼無解釋空間的核心案例，排除項見 scope.excludes。
+
+# ---------------------------------------------------------------------------
+# 法源：每條都要有條號、修正日期與全國法規資料庫 URL
+# ---------------------------------------------------------------------------
+legal_basis:
+  - id: LSA-24-1
+    law: 勞動基準法
+    article: 第 24 條第 1 項
+    amended: "2018-01-31"
+    url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=24
+    summary: >
+      雇主延長勞工工作時間者：延長工作時間在二小時以內者，按平日每小時工資額加給三分之一以上；
+      再延長工作時間在二小時以內者，按平日每小時工資額加給三分之二以上。
+    encodes: 平日延長工時前 2 小時 ×4/3、第 3–4 小時 ×5/3（第 1、2 款）。第 3 款（依 §32 第 4 項因天災、事變或突發事件延長工時，加倍發給）不在本 family，見 scope.excludes
+  - id: LSA-24-2
+    law: 勞動基準法
+    article: 第 24 條第 2 項
+    amended: "2018-01-31"
+    url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=24
+    summary: >
+      雇主使勞工於第 36 條所定休息日工作，工作時間在二小時以內者，其工資按平日每小時工資額另再加給一又三分之一以上；
+      工作二小時後再繼續工作者，按平日每小時工資額另再加給一又三分之二以上。
+    encodes: 月薪以外另再加給的金額：休息日前 2 小時 ×4/3、第 3–8 小時 ×5/3（勞動部加班費示意圖標「+1又1/3H」「+1又2/3H」；按實際出勤時數計算，2018 年修法已刪除「做一給四」）；第 9 小時起 ×8/3 見 MOL-RESTDAY-9H
+  - id: LSA-32-2
+    law: 勞動基準法
+    article: 第 32 條第 2 項
+    amended: "2018-01-31"
+    url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=32
+    summary: >
+      延長之工作時間連同正常工作時間，一日不得超過十二小時。
+    encodes: 平日延長工時上限 4 小時（8 + 4 = 12）。休息日、國定假日出勤以 12 小時為出題上限，是編者比照本項設定的範圍，非本項原文
+  - id: LSA-39
+    law: 勞動基準法
+    article: 第 39 條
+    amended: "2018-01-31"
+    url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=39
+    summary: >
+      第三十六條所定之例假、休息日、第三十七條所定之休假及第三十八條所定之特別休假，工資應由雇主照給。
+      雇主經徵得勞工同意於休假日工作者，工資應加倍發給。（本 family 只用到第 37 條休假，即國定假日）
+    encodes: 「加倍發給」的計算依勞動部「國定假日工資說明」（見備註）：國定假日出勤 8 小時以內加發一日工資（月薪 ÷ 30）；逾 8 小時部分依第 24 條第 1 項計算
+    note: >
+      勞動部「國定假日工資說明」（2025-09-05）：「雇主徵得勞工同意於休假日出勤，8小時以內部分，工資加倍發給。
+      超過8小時的部分，加班在2小時以內，按平日每小時工資額加給3分之1以上；再加班在2小時以內，按平日每小時工資額加給3分之2以上。」
+      https://www.mol.gov.tw/1607/28162/28166/28180/81521/81533/post 。勞動部加班費試算系統同，核對紀錄見 docs/verification/2026-10-11-mol-overtime。
+  - id: MOL-HOURLY
+    law: 行政院勞工委員會函釋
+    article: 90 年 6 月 26 日台 90 勞動 2 字第 0026202 號函
+    amended: "2001-06-26"
+    url: https://www.mol.gov.tw/topic/3067/5991/6010/19252/
+    summary: >
+      月薪制勞工延長工作時間，其「平日每小時工資額」視勞動契約之內容而定：原月薪給付總額為 240 小時者，
+      除勞資雙方重行約定者外，仍得視為給付 240 小時之工資，據原公式推算。
+    encodes: hourly = monthly / 240（勞資未另行約定時）
+    note: >
+      勞動部「延時工資（加班費）相關函釋」收錄本函。勞動部加班費試算系統（https://calcr2.mol.gov.tw/Monthly）
+      亦以 月薪 ÷ 30 ÷ 8 計算（monthly.js 第 207 行），核對紀錄見 docs/verification/2026-10-11-mol-overtime。
+  - id: MOL-RESTDAY-9H
+    law: 勞動部工資專區〈加班費示意圖〉／加班費試算系統
+    article: 休息日出勤第 9–12 小時
+    amended: "2025-09-05"
+    url: https://www.mol.gov.tw/1607/28162/28166/28180/81521/81529/post
+    summary: >
+      休息日出勤第 9–12 小時按平日每小時工資額 2⅔ 倍計給：示意圖週六第 1–2 小時標「+1又1/3H」、第 3–8 小時標「+1又2/3H」、
+      第 9–12 小時標「+2又2/3H」。編者說明（非出處原文）：月薪制下休息日 8 小時的工資已含在月薪內，
+      第 9 小時起除另再加給 1⅔ 外還要給原本工資，合計 2⅔。
+    encodes: 休息日第 9–12 小時 ×8/3
+    note: >
+      勞動部加班費試算系統同（monthly.js 第 226 行）。臺北市勞動局常見問答：月薪 36,000 元、休息日出勤 10 小時，
+      另再加給 150×1⅓×2 + 150×1⅔×6 + 150×2⅔×2 = 2,700 元（golden G11）。
+      無直接條文規定 2⅔ 倍（§24 第 2 項只分前 2 小時與之後兩段），本列依據為勞動部的示意圖與試算系統。
+      已透過勞動部加班費試算系統驗證（2026-10-12；當時線上 monthly.js 的 sha256 與核對快照相同，d3301391…）：
+      休息日 8／9／10／12 小時於月薪 36,000 元分別為 1,900／2,300／2,700／3,500 元，與本規則一致；
+      全面比對 47,088 組除試算系統自身 18 組浮點誤差外全部一致。Calvin 2026-10-12 審閱同意。
+
+# ---------------------------------------------------------------------------
+# 適用範圍
+# ---------------------------------------------------------------------------
+scope:
+  includes:
+    - 月薪制勞工
+    - 勞資未另行約定平日每小時工資額之計算方式（以月薪 ÷ 240 計，見 MOL-HOURLY）
+    - 正常工時制（每日 8 小時、每週 40 小時）
+    - 單一日之加班費，不跨日累計
+    - 整數小時
+    - 休息日因天災、事變或突發事件出勤：工資仍依 §24 第 2 項計給，與一般休息日相同（勞動部 107 年 3 月 14 日勞動條 2 字第 1070130380 號函；§40 停止假期加倍只涵蓋例假、休假日、特休）
+  excludes: # 每項附排除理由，規則卡顯示在項目底下
+    - item: 時薪制、日薪制
+      reason: 平日每小時工資額直接依約定的時薪或日薪計算，不經月薪 ÷ 240；國定假日出勤的計算方式也和月薪制不同（月薪制的國定假日工資已含在月薪內）。勞動部另有時薪制試算系統（https://calcr2.mol.gov.tw/Daily），v1 先只做月薪制。
+    - item: 變形工時（§30、§30-1）
+      reason: 變形工時下，正常工時依約定可能超過每日 8 小時，延長工時從第幾小時起算要看當期排班；只給「當日出勤時數」無法判斷，題目沒有唯一答案。
+    - item: 責任制／監督管理人員（§84-1）
+      reason: 工作時間由勞雇雙方另行約定，並報請當地主管機關核備，各事業單位不同；平日每小時工資額的分母也可能不是 240，無法用通用參數出題。
+    - item: 平日因天災、事變或突發事件延長工時（§32 第 4 項；§24 第 1 項第 3 款）
+      reason: 這種延長工時的工資加倍發給，且不受一般延長工時上限限制；要先判斷事由是否成立，屬例外情境，v1 不出題（N0030001/24/1 因此標為 partial）。
+    - item: 例假日出勤（§40 天災、事變、突發事件）
+      reason: 例假日原則上不得出勤，§40 只在天災、事變或突發事件時例外，工資加倍並應事後補假；屬例外情境，還要判斷出勤事由是否成立，v1 不出題。
+    - item: 月 46 小時、三個月 138 小時延長工時上限之檢核（§32）
+      reason: 上限是跨日（每月、每三個月）累計的合法性檢核，需要整段期間的出勤紀錄；本 family 只算單一日的加班費。
+    - item: 補休換算（§32-1）
+      reason: 是否以補休代替加班費、補休期限與屆期未休的折算，都由勞雇雙方協商並涉及跨日紀錄，不是單日加班費的計算。
+    - item: 部分工時勞工
+      reason: 正常工時依個別契約約定，延長工時的起算點與平日每小時工資額的基準都和全時月薪制不同。
+    - item: 夜間、輪班津貼
+      reason: 多由勞動契約或工作規則約定，勞動基準法沒有統一金額，沒有可驗證的唯一答案。
+    - item: 未滿一小時之零星時數
+      reason: v1 只出整數小時（Calvin 2026-10-11 決定，原 open_questions Q4）。勞動部試算系統可輸入分鐘，留待後續版本評估。
+
+# ---------------------------------------------------------------------------
+# 參數 schema：生成器抽樣的空間
+# ---------------------------------------------------------------------------
+parameters:
+  monthly_salary:
+    type: int
+    unit: TWD
+    min: 29500 # = rate_tables.minimum_wage.monthly
+    max: 200000
+    sampling: 錨定主計總處受僱員工薪資分位數；最低工資與不能被 240 整除之金額保留固定配額
+  day_type:
+    type: enum
+    values:
+      weekday: 平日延長工時
+      rest_day: 休息日出勤
+      holiday: 國定假日出勤
+  hours:
+    type: int
+    min: 0
+    max:
+      weekday: 4
+      rest_day: 12
+      holiday: 12
+
+# ---------------------------------------------------------------------------
+# 費率表：每張帶生效期間與來源
+# ---------------------------------------------------------------------------
+rate_tables:
+  minimum_wage:
+    effective_from: "2026-01-01"
+    effective_to: null
+    monthly: 29500
+    hourly: 196
+    law: 最低工資法
+    source: 勞動部「歷年最低工資／基本工資調整」：民國 114 年 10 月 21 日發布，自 115 年 1 月 1 日起實施，每月最低工資 29,500 元，每小時最低工資 196 元
+    source_url: https://www.mol.gov.tw/1607/28162/28166/28180/70460/76761/76833/post
+    note: 116 年起的數額待勞動部發布後新增一列（effective_from 2027-01-01）；2026Q4 題集不受影響
+  multipliers:
+    overtime_first_2h: "4/3"
+    overtime_after_2h: "5/3"
+    rest_day_after_8h: "8/3"
+    holiday_base: "1 日工資 = 月薪 ÷ 30"
+
+rounding:
+  hourly_rate: none # 時薪不先捨入，保留分數（勞動部試算系統同）
+  final: ceil_to_integer # 最終金額無條件進位到元
+  basis: >
+    法條為加給「以上」，法定下限即精確金額；四捨五入在小數部分小於 0.5 時會低於下限。勞動部 2023-08-25 新聞稿
+    〈五大常見加班費違法態樣〉談以 1.33、1.66 代替 1/3、2/3 的倍率：「雇主若逕自將小數點後第3位以下之部分予以捨去計算，
+    一定會少算，因而會違反法令所定基準」（https://www.mol.gov.tw/1607/1632/1633/63139/）；這句講的是倍率，
+    同一原則（任何取捨都不得低於法定下限）適用於最終金額取整。勞動部加班費試算系統的總額無條件進位（monthly.js 第 364 行）。
+  note: 試算系統以浮點數加總後進位，精確值為整數時偶爾多 1 元（2026-10-11 核對 47,088 組中 18 組，含 G16）；本 family 以精確分數計算，不採用此誤差。
+
+# ---------------------------------------------------------------------------
+# 公式：tex 為審閱用原始碼，mathml 為頁面渲染（瀏覽器原生，不依賴外部函式庫）
+# ---------------------------------------------------------------------------
+formulas:
+  - label: 平日每小時工資額
+    tex: 'w_h = \dfrac{W_m}{30 \times 8} = \dfrac{W_m}{240}'
+    mathml: |
+      <math display="block"><mrow><msub><mi>w</mi><mi>h</mi></msub><mo>=</mo><mfrac><msub><mi>W</mi><mi>m</mi></msub><mrow><mn>30</mn><mo>×</mo><mn>8</mn></mrow></mfrac><mo>=</mo><mfrac><msub><mi>W</mi><mi>m</mi></msub><mn>240</mn></mfrac></mrow></math>
+  - label: 平日延長工時（0 ≤ h ≤ 4）
+    tex: 'P = w_h \left( \tfrac{4}{3}\,\min(h,2) + \tfrac{5}{3}\,\max(h-2,0) \right)'
+    mathml: |
+      <math display="block"><mrow><mi>P</mi><mo>=</mo><msub><mi>w</mi><mi>h</mi></msub><mrow><mo stretchy="true">(</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>h</mi><mo>,</mo><mn>2</mn><mo>)</mo><mo>+</mo><mfrac><mn>5</mn><mn>3</mn></mfrac><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo stretchy="true">)</mo></mrow></mrow></math>
+  - label: 休息日出勤（0 ≤ h ≤ 12）
+    tex: 'P = w_h \left( \tfrac{4}{3}\,\min(h,2) + \tfrac{5}{3}\,\min(\max(h-2,0),6) + \tfrac{8}{3}\,\max(h-8,0) \right)'
+    mathml: |
+      <math display="block"><mrow><mi>P</mi><mo>=</mo><msub><mi>w</mi><mi>h</mi></msub><mrow><mo stretchy="true">(</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>h</mi><mo>,</mo><mn>2</mn><mo>)</mo><mo>+</mo><mfrac><mn>5</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo>,</mo><mn>6</mn><mo>)</mo><mo>+</mo><mfrac><mn>8</mn><mn>3</mn></mfrac><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>8</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo stretchy="true">)</mo></mrow></mrow></math>
+  - label: 國定假日出勤
+    tex: 'P = \dfrac{W_m}{30}\,[h>0] + w_h \left( \tfrac{4}{3}\,\min(\max(h-8,0),2) + \tfrac{5}{3}\,\max(h-10,0) \right)'
+    mathml: |
+      <math display="block"><mrow><mi>P</mi><mo>=</mo><mfrac><msub><mi>W</mi><mi>m</mi></msub><mn>30</mn></mfrac><mo>[</mo><mi>h</mi><mo>&gt;</mo><mn>0</mn><mo>]</mo><mo>+</mo><msub><mi>w</mi><mi>h</mi></msub><mrow><mo stretchy="true">(</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>8</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo>,</mo><mn>2</mn><mo>)</mo><mo>+</mo><mfrac><mn>5</mn><mn>3</mn></mfrac><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>10</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo stretchy="true">)</mo></mrow></mrow></math>
+  - label: 最終金額（無條件進位到元）
+    tex: 'P^{*} = \lceil P \rceil'
+    mathml: |
+      <math display="block"><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mo>⌈</mo><mi>P</mi><mo>⌉</mo></mrow></math>
+  - label: 整數實作（避免浮點誤差；JS 與 Python 皆以此驗算）
+    tex: 'P = \dfrac{W_m \cdot (4h_1 + 5h_2 + 8h_3 + 24b)}{720},\quad P^{*} = \left\lfloor \dfrac{720P + 719}{720} \right\rfloor,\quad h_3 = \text{休息日第 9 小時起},\ b=[\text{國定假日且 } h>0]'
+    mathml: |
+      <math display="block"><mrow><mi>P</mi><mo>=</mo><mfrac><mrow><msub><mi>W</mi><mi>m</mi></msub><mo>(</mo><mn>4</mn><msub><mi>h</mi><mn>1</mn></msub><mo>+</mo><mn>5</mn><msub><mi>h</mi><mn>2</mn></msub><mo>+</mo><mn>8</mn><msub><mi>h</mi><mn>3</mn></msub><mo>+</mo><mn>24</mn><mi>b</mi><mo>)</mo></mrow><mn>720</mn></mfrac><mo>,</mo><mspace width="1em"/><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mo>⌊</mo><mfrac><mrow><mn>720</mn><mi>P</mi><mo>+</mo><mn>719</mn></mrow><mn>720</mn></mfrac><mo>⌋</mo><mo>,</mo><mspace width="1em"/><msub><mi>h</mi><mn>3</mn></msub><mo>=</mo><mtext>休息日第 9 小時起</mtext><mo>,</mo><mspace width="0.5em"/><mi>b</mi><mo>=</mo><mo>[</mo><mtext>國定假日且 </mtext><mi>h</mi><mo>&gt;</mo><mn>0</mn><mo>]</mo></mrow></math>
+
+implementation:
+  python: rule.py
+  js: rule.js
+  js_global: OvertimeRule
+  arg_order: [monthly_salary, day_type, hours]
+  calculator_default: { monthly_salary: 36000, day_type: rest_day, hours: 8 }
+
+# ---------------------------------------------------------------------------
+# 分支與配額：生成器依此抽樣，coverage 報告依此檢核
+# ---------------------------------------------------------------------------
+branches:
+  - { id: W0, day_type: weekday, hours: [0, 0], quota: 0.05, control: true, note: 對照題（無加班，應答 0）；control 分支不進 accuracy，另報 control_pass }
+  - { id: W1, day_type: weekday, hours: [1, 2], quota: 0.15, note: 僅 4/3 段 }
+  - { id: W2, day_type: weekday, hours: [3, 4], quota: 0.15, note: 4/3 + 5/3 兩段 }
+  - { id: R1, day_type: rest_day, hours: [1, 2], quota: 0.15, note: 僅 4/3 段 }
+  - { id: R2, day_type: rest_day, hours: [3, 8], quota: 0.15, note: 4/3 + 5/3，未逾 8 小時 }
+  - { id: R3, day_type: rest_day, hours: [9, 12], quota: 0.10, note: 第 9 小時起 ×8/3（MOL-RESTDAY-9H） }
+  - { id: H1, day_type: holiday, hours: [1, 8], quota: 0.10, note: 僅加發一日工資，與時數無關 }
+  - { id: H2, day_type: holiday, hours: [9, 10], quota: 0.075, note: 一日工資 + 4/3 段 }
+  - { id: H3, day_type: holiday, hours: [11, 12], quota: 0.075, note: 一日工資 + 4/3 + 5/3 }
+
+boundary_values:
+  hours: [0, 1, 2, 3, 4, 8, 9, 10, 11, 12]
+  monthly_salary:
+    - 29500 # 最低工資
+    - 36000 # 勞動部宣導範例（時薪 150）
+    - 不能被 240 整除之金額（觸發無條件進位）
+
+# ---------------------------------------------------------------------------
+# Golden cases：驗證器出貨前必須全過
+# status: published-example = 來自官方公開範例；calculator-verified = 經勞動部加班費試算系統核對（docs/verification/2026-10-11-mol-overtime）；
+#         derived = 依官方倍率推導
+# ---------------------------------------------------------------------------
+golden_cases:
+  - id: G01
+    input: { monthly_salary: 36000, day_type: rest_day, hours: 8 }
+    expected: 1900
+    status: published-example
+    source: 勞動部一例一休宣導範例：時薪 150，休息日出勤 8 小時 → 150×4/3×2 + 150×5/3×6 = 1,900；試算系統同
+  - id: G02
+    input: { monthly_salary: 36000, day_type: weekday, hours: 2 }
+    expected: 400
+    status: calculator-verified
+    source: 150 × 4/3 × 2
+  - id: G03
+    input: { monthly_salary: 36000, day_type: weekday, hours: 4 }
+    expected: 900
+    status: calculator-verified
+    source: 400 + 150 × 5/3 × 2
+  - id: G04
+    input: { monthly_salary: 36000, day_type: rest_day, hours: 12 }
+    expected: 3500
+    status: calculator-verified
+    source: 400 + 150 × 5/3 × 6 + 150 × 8/3 × 4（第 9 小時起 ×8/3，MOL-RESTDAY-9H；0.1.x 誤為 2,900）
+  - id: G05
+    input: { monthly_salary: 36000, day_type: holiday, hours: 8 }
+    expected: 1200
+    status: calculator-verified
+    source: 一日工資 36000 ÷ 30
+  - id: G06
+    input: { monthly_salary: 36000, day_type: holiday, hours: 10 }
+    expected: 1600
+    status: calculator-verified
+    source: 1200 + 150 × 4/3 × 2
+  - id: G07
+    input: { monthly_salary: 36000, day_type: holiday, hours: 12 }
+    expected: 2100
+    status: calculator-verified
+    source: 1600 + 150 × 5/3 × 2
+  - id: G08
+    input: { monthly_salary: 36000, day_type: weekday, hours: 0 }
+    expected: 0
+    status: calculator-verified
+    source: 對照題
+  - id: G09
+    input: { monthly_salary: 29500, day_type: weekday, hours: 1 }
+    expected: 164
+    status: calculator-verified
+    source: 29500 ÷ 240 × 4/3 = 163.89 → 無條件進位 164
+  - id: G10
+    input: { monthly_salary: 29500, day_type: holiday, hours: 9 }
+    expected: 1148
+    status: calculator-verified
+    source: 29500 ÷ 30 + 29500 ÷ 240 × 4/3 = 983.33 + 163.89 = 1147.22 → 無條件進位 1148（0.1.x 四捨五入為 1,147，低於法定下限）
+  - id: G11
+    input: { monthly_salary: 36000, day_type: rest_day, hours: 10 }
+    expected: 2700
+    status: published-example
+    source: 臺北市勞動局常見問答「休息日加班費如何計算？」：150×1又1/3×2 + 150×1又2/3×6 + 150×2又2/3×2 = 2,700；試算系統同
+  - id: G12
+    input: { monthly_salary: 36000, day_type: rest_day, hours: 6 }
+    expected: 1400
+    status: published-example
+    source: 臺北市勞動局常見問答：150×1又1/3×2 + 150×1又2/3×4 = 1,400；試算系統同
+  - id: G13
+    input: { monthly_salary: 36000, day_type: rest_day, hours: 1 }
+    expected: 200
+    status: published-example
+    source: 臺北市勞動局常見問答：150×1又1/3 = 200；試算系統同
+  - id: G14
+    input: { monthly_salary: 29500, day_type: rest_day, hours: 5 }
+    expected: 943
+    status: calculator-verified
+    source: 29500 ÷ 240 × (4/3×2 + 5/3×3) = 942.36 → 無條件進位 943
+  - id: G15
+    input: { monthly_salary: 29500, day_type: rest_day, hours: 9 }
+    expected: 1885
+    status: calculator-verified
+    source: 29500 ÷ 240 × (4/3×2 + 5/3×6 + 8/3×1) = 1884.72 → 無條件進位 1885
+  - id: G16
+    input: { monthly_salary: 72880, day_type: weekday, hours: 4 }
+    expected: 1822
+    status: derived
+    source: 72880 ÷ 240 × (4/3×2 + 5/3×2) = 1822（精確值為整數）。試算系統以浮點數加總後進位顯示 1,823，不採用（見 rounding.note）
+
+# ---------------------------------------------------------------------------
+# 待釐清：審閱者請逐項回覆
+# 0.1.x 的 Q1–Q4 已依官方來源結案（TAI-430，Calvin 2026-10-11 確認）：Q1 試算系統不先捨入時薪、總額無條件進位，見 rounding；
+# Q2 見 LSA-39 note；Q3 見 MOL-HOURLY；Q4 半小時單位 v1 不納入（scope.excludes「未滿一小時之零星時數」）。
+# ---------------------------------------------------------------------------
+open_questions: []
+
+changelog:
+  - { version: 0.2.2, date: "2026-10-12", note: MOL-RESTDAY-9H 註記無直接條文、已以勞動部加班費試算系統驗證並經 Calvin 審閱同意；規則與題目不變 }
+  - { version: 0.2.1, date: "2026-10-12", note: 法源文字澄清（LSA-24-1 註明第 3 款排除、LSA-24-2 註明月薪以外另給、LSA-32-2 標示 12 小時出題上限為編者設定、LSA-39 引全文並指向勞動部說明）；排除項目附理由並補「天災事變延長工時」一項；規則與題目不變 }
+  - { version: 0.2.0, date: "2026-10-11", note: 依勞動部官方來源與加班費試算系統修正（TAI-430，Calvin 確認）——休息日第 9 小時起 ×8/3（原 ×5/3；勞動部示意圖與試算系統為 2⅔ 倍）；最終金額改無條件進位（原四捨五入，可能低於法定下限），題目說明同步改；基本工資改稱最低工資（最低工資法）；補 ÷240、最低工資、國定假日第 9–12 小時的官方出處；golden 改 G04、G10，新增 G11–G16；open_questions 結案 }
+  - { version: 0.1.2, date: "2026-10-10", note: 平日說法一律帶「下班後」——0.1.1 的「某個平日」配上 T01／T02／T05，字面是當天總出勤只有 N 小時，與 gold 矛盾（2026Q4 有 8 題）；T05 改寫「工作 N 小時」、Z01 配合改寫；scope 補休息日因天災出勤仍依 §24-2；移除 status／review_log，簽核改在 reviews.yaml；規則不變 }
+  - { version: 0.1.1, date: "2026-10-08", note: W0 標 control，規則不變 }
+  - { version: 0.1.0, date: "2026-10-08", note: 初版草稿 }

@@ -1,0 +1,24 @@
+{
+ "note": "AI 意見，供審閱參考，不是人工簽核；family 是否 reviewed 只看 reviews.yaml。",
+ "generated_by": "tools/ai_review_legal.py",
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "reviewed_at": "2026-10-12T19:11:31+08:00",
+ "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+ "entries": {
+  "LSA-38-1": {
+   "verdict": "ok",
+   "reason": "摘要完整對應出處原文第 1 項各款特休日數階梯；編碼為第一段同步反映階梯日數，第二段「滿期當天起適用下一級日數」為「滿一定期間」之合理實作邏輯，與出處不矛盾；備註說明修法沿革並註明 bronze 沿革點次為其他依據，符合規定。",
+   "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=38"
+  },
+  "LSAER-5": {
+   "verdict": "ok",
+   "reason": "摘要與出處原文條文第一句完全一致；編碼為說明「到職日算入、不適用民法120條第2項始日不算入」，係依據出處「自受僱當日起算」之法律解釋與實務見解，並非出處原文直接敘述，但屬程式實作邏輯且未與出處矛盾；備註明確引用其他行政機關Q&A為依據（G16–G19），符合規則允許引用其他出處之規定。",
+   "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030002&flno=5"
+  },
+  "CC-121": {
+   "verdict": "ok",
+   "reason": "摘要忠實引用民法第 121 條第 2 項全文；編碼為正確實作該條但書「無相當日者以月末日為末日」之邏輯；備註明確標註起算點依據施行細則第 5 條、並引用勞動部試算系統與勞委會函釋作為外部驗證依據，均無與出處原文矛盾或臆測內容。",
+   "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=121"
+  }
+ }
+}

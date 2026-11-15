@@ -1,0 +1,237 @@
+{%- if full -%}
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% endif -%}
+<title>{{ prov.law_name }} 可計算性盤點</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: summary strip → chapter bars → computable roadmap → full filterable ledger. Same token set as the rule card. */
+:root{
+  --bg:#f5f4ef; --fg:#1d2024; --fg-2:#5b6068; --line:#d8d6cc; --surface:#ffffff;
+  --accent:#1f5f8b; --accent-ink:#ffffff; --accent-soft:#e3edf5;
+  --seal:#b4332a; --seal-soft:#f8e6e3;
+  --ok:#2e7d4f; --ok-soft:#e2f0e7;
+  --warn:#8d6100; --warn-soft:#f6ecd0;
+  --c-computable:#1f5f8b; --c-lookup:#5e8f3e; --c-definitional:#9a9a92; --c-discretionary:#c0742a; --c-delegated:#7a5aa6;
+  --display:'Noto Serif TC','PMingLiU','Songti TC',serif;
+  --body:'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17191c; --fg:#e6e4df; --fg-2:#9ea3ab; --line:#30343a; --surface:#1f2226;
+    --accent:#7fb2d9; --accent-ink:#0f1b25; --accent-soft:#1d2f3d;
+    --seal:#e27a70; --seal-soft:#3a1f1c; --ok:#79c594; --ok-soft:#1c3326; --warn:#e0b44c; --warn-soft:#3a2f12;
+    --c-computable:#7fb2d9; --c-lookup:#9cc97a; --c-definitional:#6f7378; --c-discretionary:#e0a062; --c-delegated:#b39ad8;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17191c; --fg:#e6e4df; --fg-2:#9ea3ab; --line:#30343a; --surface:#1f2226;
+  --accent:#7fb2d9; --accent-ink:#0f1b25; --accent-soft:#1d2f3d;
+  --seal:#e27a70; --seal-soft:#3a1f1c; --ok:#79c594; --ok-soft:#1c3326; --warn:#e0b44c; --warn-soft:#3a2f12;
+  --c-computable:#7fb2d9; --c-lookup:#9cc97a; --c-definitional:#6f7378; --c-discretionary:#e0a062; --c-delegated:#b39ad8;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.65}
+.wrap{max-width:1040px;margin:0 auto;padding-block:28px 72px;padding-inline:16px}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.25}
+h2{font-size:20px;margin-block-end:12px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);font-weight:500}
+.mono{font-family:var(--mono);font-size:.9em}
+.num{font-variant-numeric:tabular-nums}
+header{display:grid;gap:12px;padding-block-end:22px;border-bottom:2px solid var(--fg)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 10px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--line);border-radius:4px;font-size:12.5px;background:var(--surface)}
+.chip b{font-weight:500;color:var(--fg-2)}
+.warnbox{padding:12px 16px;border-left:3px solid var(--warn);background:var(--warn-soft);color:var(--fg);font-size:14px;border-radius:0 4px 4px 0}
+section{padding-block:28px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-block-end:14px}
+.sec-head .eyebrow{font-size:11px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.tile{padding:12px 14px;border:1px solid var(--line);border-radius:6px;background:var(--surface);min-width:0}
+.tile .k{font-size:12px;color:var(--fg-2);letter-spacing:.04em}
+.tile .v{font-family:var(--display);font-size:28px;font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums}
+.tile .s{font-size:12px;color:var(--fg-2)}
+.tile.hero{border-color:var(--accent);background:var(--accent-soft)}
+.tile.hero .v{color:var(--accent)}
+.badge{display:inline-block;padding:1px 8px;border-radius:3px;font-size:12px;font-weight:500;white-space:nowrap;color:#fff}
+.b-computable{background:var(--c-computable)} .b-lookup{background:var(--c-lookup)} .b-definitional{background:var(--c-definitional)}
+.b-discretionary{background:var(--c-discretionary)} .b-delegated{background:var(--c-delegated)} .b-deleted{background:var(--line);color:var(--fg-2)}
+.b-full{background:var(--ok-soft);color:var(--ok)} .b-partial{background:var(--warn-soft);color:var(--warn)} .b-none{background:transparent;color:var(--fg-2);border:1px solid var(--line)}
+.b-conf{background:var(--seal-soft);color:var(--seal);border:1px solid var(--seal)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--fg-2);margin-block-start:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-inline-end:5px;vertical-align:-1px}
+.bars{display:grid;gap:8px}
+.bar-row{display:grid;grid-template-columns:minmax(120px,220px) 1fr auto;gap:10px;align-items:center;font-size:13px}
+.bar-row .lab{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar{display:flex;height:16px;border-radius:3px;overflow:hidden;background:var(--line)}
+.bar span{display:block;height:100%}
+@media (max-width:520px){.bar-row{grid-template-columns:1fr auto}.bar-row .lab{grid-column:1/-1}}
+.tablewrap{overflow-x:auto;margin-inline:-16px;padding-inline:16px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:720px}
+th,td{text-align:left;vertical-align:top;padding:8px 9px;border-bottom:1px solid var(--line)}
+th{font-weight:500;color:var(--fg-2);font-size:12px;letter-spacing:.04em;white-space:nowrap;position:sticky;top:0;background:var(--bg)}
+td.id{font-family:var(--mono);font-size:12.5px;white-space:nowrap}
+td.txt{max-width:46ch;color:var(--fg-2);font-size:12.5px}
+td.txt details summary{cursor:pointer;color:var(--accent);font-size:12px}
+td.txt pre{white-space:pre-wrap;font-family:inherit;margin:6px 0 0;color:var(--fg);font-size:12.5px}
+.filters{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-block-end:12px}
+.filters label{font-size:13px;color:var(--fg-2);display:flex;align-items:center;gap:6px}
+.filters select,.filters input[type=search]{font:inherit;font-size:13.5px;padding:6px 9px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--fg);min-width:0}
+.filters input[type=search]{width:220px;max-width:100%}
+.filters .count{margin-inline-start:auto;font-size:13px;color:var(--fg-2)}
+.filters input:focus,.filters select:focus{outline:2px solid var(--accent);outline-offset:2px}
+ul.plain{margin:0;padding-inline-start:18px}
+ul.plain li{margin-block:3px}
+footer{margin-block-start:28px;padding-block-start:16px;border-top:2px solid var(--fg);font-size:12.5px;color:var(--fg-2);display:grid;gap:4px}
+.hash{font-family:var(--mono);word-break:break-all}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+{%- if full %}
+</head>
+<body>
+{% endif %}
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">TaiwanEval · Rule Inventory · Coverage Report</div>
+  <h1>{{ prov.law_name }} 可計算性盤點</h1>
+  <div class="meta">
+    <span class="chip"><b>pcode</b> <span class="mono">{{ prov.pcode }}</span></span>
+    <span class="chip"><b>最新異動</b> <span class="num">{{ prov.last_amended[:4] }}-{{ prov.last_amended[4:6] }}-{{ prov.last_amended[6:] }}</span></span>
+    <span class="chip"><b>資料快照</b> {{ prov.mirror_update_date[:4] }}-{{ prov.mirror_update_date[4:6] }}-{{ prov.mirror_update_date[6:] }} · commit <span class="mono">{{ prov.mirror_commit[:8] }}</span></span>
+    <span class="chip"><b>triage</b> <span class="mono">v{{ triage.triage_version }}</span></span>
+    <span class="chip"><b>抓取</b> {{ prov.fetched_at[:16].replace('T',' ') }}</span>
+  </div>
+  <div class="warnbox">分類為 LLM 第一輪，<b>{{ stats.reviewed }}/{{ stats.live }} 筆經人工複核</b>（{{ stats.overridden }} 筆覆寫）。本頁是複核的工作底稿，不是 coverage 的最終數字。規則式標記與 LLM 分類衝突共 {{ stats.conflicts }} 筆，{{ stats.conflicts_open }} 筆尚未複核。</div>
+</header>
+
+<section id="summary">
+  <div class="sec-head"><h2>分母</h2><span class="eyebrow">coverage = 已編碼 ÷ computable，不是 ÷ 全部條文</span></div>
+  <div class="tiles">
+    <div class="tile"><div class="k">條</div><div class="v">{{ stats.articles }}</div><div class="s">{{ stats.live }} 項（unit）</div></div>
+    <div class="tile hero"><div class="k">computable</div><div class="v">{{ stats.cat.computable }}</div><div class="s">{{ stats.computable_articles }} 條 · Tier 1 分母</div></div>
+    <div class="tile"><div class="k">lookup</div><div class="v">{{ stats.cat.lookup }}</div><div class="s">Tier 2 錨定題候選</div></div>
+    <div class="tile"><div class="k">definitional</div><div class="v">{{ stats.cat.definitional }}</div><div class="s">不出題</div></div>
+    <div class="tile"><div class="k">discretionary</div><div class="v">{{ stats.cat.discretionary }}</div><div class="s">不做</div></div>
+    <div class="tile"><div class="k">delegated</div><div class="v">{{ stats.cat.delegated }}</div><div class="s">追子法／公告</div></div>
+  </div>
+  <div class="tiles" style="margin-block-start:12px">
+    <div class="tile"><div class="k">已編碼 units</div><div class="v num">{{ stats.encoded_full }}<span style="font-size:16px;color:var(--fg-2)"> + {{ stats.encoded_partial }} partial</span></div><div class="s">{{ families | length }} 個 family：{% for f in families %}<span class="mono">{{ f.id }}</span>{% if not loop.last %}, {% endif %}{% endfor %}</div></div>
+    <div class="tile"><div class="k">Tier 1 coverage（unit）</div><div class="v num">{{ '%.0f' % (100 * stats.encoded_full / stats.cat.computable) }}%<span style="font-size:16px;color:var(--fg-2)"> full</span></div><div class="s">{{ '%.0f' % (100 * (stats.encoded_full + stats.encoded_partial) / stats.cat.computable) }}% 含 partial</div></div>
+    <div class="tile"><div class="k">待複核</div><div class="v num">{{ stats.live - stats.reviewed }}</div><div class="s">其中 {{ stats.conflicts_open }} 筆有衝突標記</div></div>
+  </div>
+</section>
+
+<section id="chapters">
+  <div class="sec-head"><h2>各章分布</h2><span class="eyebrow">unit 數，依 triage 類別堆疊</span></div>
+  <div class="bars">
+    {% for ch in chapters %}
+    <div class="bar-row">
+      <div class="lab" title="{{ ch.name }}">{{ ch.name }}</div>
+      <div class="bar" title="{% for c in categories %}{{ c }} {{ ch.counts[c] }}{% if not loop.last %} · {% endif %}{% endfor %}">
+        {% for c in categories %}{% if ch.counts[c] %}<span style="width:{{ 100 * ch.counts[c] / ch.total }}%;background:var(--c-{{ c }})"></span>{% endif %}{% endfor %}
+      </div>
+      <div class="num" style="font-size:12.5px;color:var(--fg-2)">{{ ch.counts.computable }} / {{ ch.total }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="legend">{% for c in categories %}<span><i style="background:var(--c-{{ c }})"></i>{{ c }}</span>{% endfor %}<span style="margin-inline-start:auto">右欄：computable / 全部</span></div>
+</section>
+
+<section id="roadmap">
+  <div class="sec-head"><h2>Computable units 與候選 family</h2><span class="eyebrow">Tier 1 的 roadmap；family 名稱為 LLM 建議，待合併與命名</span></div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>unit</th><th>條</th><th>候選 family</th><th>輸入 → 輸出</th><th>已編碼</th><th>備註</th></tr></thead>
+    <tbody>
+    {% for r in computable %}
+    <tr>
+      <td class="id">{{ r.unit_id.split('/')[1] }}/{{ r.para }}</td>
+      <td><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode={{ prov.pcode }}&flno={{ r.unit_id.split('/')[1] }}" target="_blank" rel="noopener">{{ r.article }}</a>{% if r.conflicts %} <span class="badge b-conf">衝突</span>{% endif %}</td>
+      <td class="mono">{{ r.family or '—' }}</td>
+      <td style="font-size:12.5px">{{ r.io or '' }}</td>
+      <td>{% if r.encoded %}<span class="badge b-{{ r.encoded.coverage }}">{{ r.encoded.coverage }}</span> <span class="mono" style="font-size:11.5px">{{ r.encoded.family }}</span>{% else %}<span class="badge b-none">—</span>{% endif %}</td>
+      <td style="font-size:12.5px;color:var(--fg-2)">{{ r.encoded.note if r.encoded and r.encoded.note else r.reason }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</section>
+
+<section id="ledger">
+  <div class="sec-head"><h2>全表</h2><span class="eyebrow">{{ stats.live }} units · 每列有 content hash，變更偵測以此比對</span></div>
+  <div class="filters">
+    <label for="f-cat">類別 <select id="f-cat"><option value="">全部</option>{% for c in categories %}<option value="{{ c }}">{{ c }}</option>{% endfor %}</select></label>
+    <label for="f-ch">章 <select id="f-ch"><option value="">全部</option>{% for ch in chapters %}<option value="{{ ch.name }}">{{ ch.name }}</option>{% endfor %}</select></label>
+    <label><input type="checkbox" id="f-conf"> 只看衝突</label>
+    <label for="f-rev">複核 <select id="f-rev"><option value="">全部</option><option value="pending">pending</option><option value="confirmed">confirmed</option><option value="overridden">overridden</option></select></label>
+    <label for="f-q">搜尋 <input type="search" id="f-q" placeholder="條號、family、關鍵字"></label>
+    <span class="count" id="f-count"></span>
+  </div>
+  <div class="tablewrap"><table id="ledger-table">
+    <thead><tr><th>unit</th><th>章</th><th>類別</th><th>複核</th><th>理由</th><th>family</th><th>標記</th><th>hash</th><th>條文</th></tr></thead>
+    <tbody>
+    {% for r in units %}
+    <tr data-cat="{{ r.category }}" data-ch="{{ r.chapter }}" data-conf="{{ 1 if r.conflicts else 0 }}" data-rev="{{ r.review }}" data-q="{{ (r.unit_id ~ ' ' ~ r.article ~ ' ' ~ (r.family or '') ~ ' ' ~ r.reason ~ ' ' ~ (r.review_note or '') ~ ' ' ~ r.text) | lower }}">
+      <td class="id"><a href="https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode={{ prov.pcode }}&flno={{ r.unit_id.split('/')[1] }}" target="_blank" rel="noopener">{{ r.unit_id.split('/')[1] }}/{{ r.para }}</a></td>
+      <td style="font-size:12px;color:var(--fg-2);white-space:nowrap">{{ r.chapter.replace('第 ','').split(' 章')[0] }}</td>
+      <td><span class="badge b-{{ r.category }}">{{ r.category }}</span>{% if r.override %}<br><span style="font-size:11px;color:var(--fg-2)">原 {{ r.override['from'].category }}</span>{% endif %}</td>
+      <td>{% if r.review == 'pending' %}<span class="badge b-none">pending</span>{% elif r.review == 'confirmed' %}<span class="badge b-full">confirmed</span>{% else %}<span class="badge b-partial">overridden</span>{% endif %}{% if r.reviewer %}<div style="font-size:11px;color:var(--fg-2);white-space:nowrap">{{ r.reviewer }} · {{ r.reviewed_at }}</div>{% endif %}</td>
+      <td style="font-size:12.5px">{{ r.reason }}{% if r.review_note %}<div style="margin-top:4px;padding-left:8px;border-left:2px solid var(--accent);color:var(--fg)">{{ r.review_note }}</div>{% endif %}</td>
+      <td class="mono" style="font-size:12px">{{ r.family or '' }}</td>
+      <td style="font-size:11.5px;color:var(--fg-2)">{% for f in r.flags %}{{ f }}{% if not loop.last %}, {% endif %}{% endfor %}{% if r.conflicts %}<br><span class="badge b-conf">{{ r.conflicts | join(', ') }}</span>{% endif %}</td>
+      <td class="id" style="color:var(--fg-2)">{{ r.content_hash }}</td>
+      <td class="txt"><details><summary>展開</summary><pre>{{ r.text }}</pre></details></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</section>
+
+<section id="maintenance">
+  <div class="sec-head"><h2>更新維護</h2><span class="eyebrow">這張表如何保持對齊</span></div>
+  <ul class="plain">
+    <li><b>變更偵測</b>：每個 unit 記 content hash。重新抓取開放資料後逐 unit 比對；hash 變了 → 引用該 unit 的 family 標 <span class="mono">stale</span>，不出貨，直到人工確認無影響或改 spec + golden + bump version。</li>
+    <li><b>可預期更新</b>：最低工資（每年 Q3 審議、公告）、休息日／國定假日行事曆（每年 6 月）等屬費率表，不在本表，由 family 的 <span class="mono">rate_tables</span> 帶生效期間管理。</li>
+    <li><b>隱性更新</b>：函釋、官方試算器邏輯改變不會反映在法條 hash。對策是每季重打所有 family 的 golden cases。</li>
+    <li><b>複核流程</b>：每筆 <span class="mono">review: pending → confirmed | overridden</span>，覆寫時填 <span class="mono">override</span> 與理由。複核完成率與衝突清零是 triage 版本凍結的條件。</li>
+    <li><b>delegated 追蹤</b>：{{ stats.cat.delegated }} 筆授權條文各自對應的子法／公告要另建 inventory（勞基法施行細則、勞工退休金條例等），本表不涵蓋。</li>
+  </ul>
+</section>
+
+<footer>
+  <div>由 <span class="mono">inventory/coverage_report.py</span> 自 <span class="mono">triage.yaml</span>、<span class="mono">families.yaml</span>、<span class="mono">provenance.json</span> 生成於 {{ built_at }}（Asia/Taipei）。</div>
+  <div class="hash">source sha256 {{ prov.sha256 }}</div>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const rows = Array.from(document.querySelectorAll('#ledger-table tbody tr'));
+  function apply(){
+    const cat = $('f-cat').value, ch = $('f-ch').value, conf = $('f-conf').checked, rev = $('f-rev').value, q = $('f-q').value.trim().toLowerCase();
+    let n = 0;
+    for (const tr of rows){
+      const ok = (!cat || tr.dataset.cat === cat) && (!ch || tr.dataset.ch === ch) && (!conf || tr.dataset.conf === '1') && (!rev || tr.dataset.rev === rev) && (!q || tr.dataset.q.includes(q));
+      tr.hidden = !ok; n += ok;
+    }
+    $('f-count').textContent = n + ' / ' + rows.length;
+  }
+  ['f-cat','f-ch','f-conf','f-rev','f-q'].forEach(id => $(id).addEventListener('input', apply));
+  apply();
+})();
+</script>
+{%- if full %}
+</body>
+</html>
+{% endif %}

@@ -1,0 +1,573 @@
+{%- if full -%}
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+{% endif -%}
+<title>{{ spec.name }}</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Noto+Sans+TC:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one-column reference sheet (max 880px); sections divided by rules, not cards; the calculator is the single carded object. */
+:root{
+  --bg:#f5f4ef; --fg:#1d2024; --fg-2:#5b6068; --line:#d8d6cc; --surface:#ffffff;
+  --accent:#1f5f8b; --accent-ink:#ffffff; --accent-soft:#e3edf5;
+  --seal:#b4332a; --seal-soft:#f8e6e3;
+  --ok:#2e7d4f; --ok-soft:#e2f0e7;
+  --warn:#8d6100; --warn-soft:#f6ecd0;
+  --display:'Noto Serif TC','PMingLiU','Songti TC',serif;
+  --body:'Noto Sans TC','PingFang TC','Microsoft JhengHei',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#17191c; --fg:#e6e4df; --fg-2:#9ea3ab; --line:#30343a; --surface:#1f2226;
+    --accent:#7fb2d9; --accent-ink:#0f1b25; --accent-soft:#1d2f3d;
+    --seal:#e27a70; --seal-soft:#3a1f1c;
+    --ok:#79c594; --ok-soft:#1c3326;
+    --warn:#e0b44c; --warn-soft:#3a2f12;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17191c; --fg:#e6e4df; --fg-2:#9ea3ab; --line:#30343a; --surface:#1f2226;
+  --accent:#7fb2d9; --accent-ink:#0f1b25; --accent-soft:#1d2f3d;
+  --seal:#e27a70; --seal-soft:#3a1f1c;
+  --ok:#79c594; --ok-soft:#1c3326;
+  --warn:#e0b44c; --warn-soft:#3a2f12;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.7}
+.wrap{max-width:880px;margin:0 auto;padding-block:28px 72px;padding-inline:16px}
+a{color:var(--accent)}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(26px,5vw,36px);line-height:1.25;font-weight:700}
+h2{font-size:20px;font-weight:700;margin-block:0 12px}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-2);font-weight:500}
+.mono{font-family:var(--mono);font-size:.9em}
+.num{font-variant-numeric:tabular-nums}
+header{display:grid;gap:14px;padding-block-end:22px;border-bottom:2px solid var(--fg)}
+.meta{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--line);border-radius:4px;font-size:12.5px;line-height:1.5;background:var(--surface)}
+.chip b{font-weight:500;color:var(--fg-2)}
+.badge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:12px;font-weight:500;line-height:1.6;white-space:nowrap}
+.b-draft{background:var(--warn-soft);color:var(--warn)}
+.b-pending{background:var(--seal-soft);color:var(--seal);border:1px solid var(--seal)}
+.b-ok{background:var(--ok-soft);color:var(--ok)}
+.b-derived{background:var(--accent-soft);color:var(--accent)}
+.b-neutral{background:var(--bg);color:var(--fg-2);border:1px solid var(--line)}
+.summary{font-size:16.5px;max-width:64ch;margin:0}
+section{padding-block:28px;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;margin-block-end:14px}
+.sec-head h2{margin:0}
+.sec-head .eyebrow{font-size:11px}
+.tablewrap{overflow-x:auto;margin-inline:-16px;padding-inline:16px}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{font-weight:500;color:var(--fg-2);font-size:12.5px;letter-spacing:.04em;white-space:nowrap}
+td.id{font-family:var(--mono);font-size:13px;white-space:nowrap}
+td.r,th.r{text-align:right}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 28px}
+.cols>div{min-width:0}
+.cols h3{font-family:var(--body);font-size:13px;color:var(--fg-2);font-weight:500;letter-spacing:.04em;margin-block-end:6px}
+ul.plain{margin:0;padding-inline-start:18px}
+ul.plain li{margin-block:2px}
+.formula{display:grid;gap:4px;padding-block:12px;border-bottom:1px dashed var(--line)}
+.formula:last-child{border-bottom:0}
+.formula .lab{font-size:13px;color:var(--fg-2)}
+.formula math{font-size:18px;overflow-x:auto;max-width:100%;display:block;text-align:left;margin:0}
+.formula .tex{font-family:var(--mono);font-size:12px;color:var(--fg-2);word-break:break-all}
+details summary{cursor:pointer;color:var(--fg-2);font-size:13px}
+.quota{display:flex;align-items:center;gap:8px}
+.quota .bar{height:8px;background:var(--accent);border-radius:2px;flex:none}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 16px}
+.calc label{display:grid;gap:4px;font-size:13px;color:var(--fg-2)}
+.calc input,.calc select{font:inherit;font-family:var(--mono);font-size:15px;padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg);min-width:0;width:100%}
+.calc input:focus,.calc select:focus,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.result{margin-block-start:14px;display:grid;gap:6px}
+.result .row{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding-block:3px;border-bottom:1px dashed var(--line)}
+.result .row span:first-child{color:var(--fg-2)}
+.result .total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-block-start:8px}
+.result .total .amt{font-family:var(--display);font-size:30px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.result .err{color:var(--seal);font-size:14px}
+.result .exact{font-size:12.5px;color:var(--fg-2)}
+button{font:inherit;font-size:14px;padding:7px 14px;border-radius:4px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+button.ghost{background:transparent;color:var(--accent)}
+button:disabled{opacity:.45;cursor:not-allowed}
+.signoff .calc textarea{font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:4px;background:var(--bg);color:var(--fg);width:100%;min-height:64px;resize:vertical}
+.signoff .verdicts{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px;color:var(--fg)}
+.signoff .verdicts label{display:inline-flex;align-items:center;gap:6px}
+.signoff code,.signoff #so-msg{overflow-wrap:anywhere;min-width:0}
+.signoff .eyebrow{text-transform:none;letter-spacing:0}
+.signoff #so-msg{font-size:13px;color:var(--fg-2)}
+.signoff .gate{font-size:13.5px;color:var(--fg-2);margin-block:12px 8px}
+.signoff .gate.ok{color:var(--ok)}
+.signoff pre{font-family:var(--mono);font-size:12.5px;background:var(--bg);border:1px solid var(--line);border-radius:4px;padding:10px 12px;overflow-x:auto;white-space:pre;margin-block:10px}
+.signoff .actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pf{font-weight:700}
+.pf.ok{color:var(--ok)} .pf.fail{color:var(--seal)}
+.empty{padding:16px 18px;border:1px dashed var(--line);border-radius:6px;color:var(--fg-2);font-size:14px}
+.empty code{font-family:var(--mono);font-size:12.5px;background:var(--bg);padding:1px 5px;border-radius:3px}
+.oq{display:grid;gap:10px}
+.oq .item{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.oq .item .id{font-family:var(--mono);font-size:13px;color:var(--seal);padding-top:2px}
+.oq .item .blocks{font-size:12.5px;color:var(--fg-2)}
+footer{margin-block-start:28px;padding-block-start:16px;border-top:2px solid var(--fg);font-size:12.5px;color:var(--fg-2);display:grid;gap:4px}
+footer .hash{font-family:var(--mono);word-break:break-all}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+{%- if full %}
+</head>
+<body>
+{% endif %}
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">TaiwanEval · Rule Family · Tier {{ spec.tier }}（程序型）</div>
+  <h1>{{ spec.name }}</h1>
+  <div class="meta">
+    <span class="chip"><b>id</b> <span class="mono">{{ spec.id }}</span></span>
+    <span class="chip"><b>version</b> <span class="mono">{{ spec.version }}</span></span>
+    <span class="chip" data-status="{{ fstatus.status }}"><b>status</b> <span class="badge b-{{ 'derived' if fstatus.status == 'reviewed' else 'draft' }}"{% if fstatus.review %} title="{{ fstatus.review.reviewer }} · {{ fstatus.review.date }} · {{ fstatus.review.verdict }}"{% endif %}>{{ fstatus.status }}</span></span>
+    <span class="chip"><b>curated</b> {{ spec.curated_at }} · {{ spec.curator }}</span>
+    <span class="chip" title="{{ spec_sha256 }}"><b>spec sha256</b> <span class="mono">{{ spec_sha256[:12] }}</span></span>
+    <span class="chip" title="{{ rule_sha256 }}"><b>rule sha256</b> <span class="mono">{{ rule_sha256[:12] }}</span></span>
+    <span class="chip" title="{{ signed_hashes.templates_sha256 }}"><b>templates sha256</b> <span class="mono">{{ signed_hashes.templates_sha256[:12] }}</span></span>
+    <span class="chip" title="{{ signed_hashes.sampler_sha256 }}"><b>sampler sha256</b> <span class="mono">{{ signed_hashes.sampler_sha256[:12] }}</span></span>
+  </div>
+  <p class="summary">{{ spec.summary | trim }}</p>
+</header>
+
+<section id="legal">
+  <div class="sec-head"><h2>法源</h2><span class="eyebrow">每條對應程式中的一段邏輯</span></div>
+  {% if ai %}<p style="font-size:13px;color:var(--fg-2);margin:0 0 8px">AI 意見：{{ ai.model }}，{{ ai.reviewed_at[:16].replace('T', ' ') }}（tools/ai_review_legal.py）。只是審閱輔助，不是人工簽核。✓ 相符　! 有疑慮　✗ 不符{% if ai_stale %}　<span class="badge b-pending">AI 意見針對舊版 spec，請重跑</span>{% endif %}</p>
+  {% else %}<p style="font-size:13px;color:var(--fg-2);margin:0 0 8px">尚無 AI 意見（執行 tools/ai_review_legal.py 產生）。</p>{% endif %}
+  <div class="tablewrap"><table>
+    <thead><tr><th>ID</th><th>法規／條次</th><th>修正</th><th>內容摘要</th><th>編碼為</th><th>AI</th><th>已核</th></tr></thead>
+    <tbody>
+    {% for b in spec.legal_basis %}
+    <tr>
+      <td class="id">{{ b.id }}</td>
+      <td><a href="{{ b.url }}" target="_blank" rel="noopener">{{ b.law }} {{ b.article }}</a>{% if b.verify == 'pending' %} <span class="badge b-pending">待核對</span>{% endif %}</td>
+      <td class="num">{{ b.amended or '—' }}</td>
+      <td>{{ b.summary | trim }}{% if b.note %}<div style="font-size:12px;color:var(--fg-2);margin-top:4px">{{ b.note | trim }}</div>{% endif %}</td>
+      <td>{{ b.encodes }}</td>
+      {% set op = ai.entries.get(b.id) if ai else none %}<td style="min-width:9em">{% if op %}<span data-ai="{{ op.verdict }}" style="font-weight:700;color:{{ {'ok': 'var(--ok, #2e7d32)', 'warn': 'var(--warn, #b26a00)', 'fail': 'var(--bad, #c62828)'}[op.verdict] }}">{{ {'ok': '✓', 'warn': '!', 'fail': '✗'}[op.verdict] }}</span><div style="font-size:12px;color:var(--fg-2)">{{ op.reason }}</div>{% else %}—{% endif %}</td>
+      <td style="text-align:center"><input type="checkbox" class="lb-check" data-key="taiwaneval-review:{{ spec.id }}:{{ spec_sha256[:12] }}:{{ b.id }}" aria-label="{{ b.id }} 已核對"></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+</section>
+
+<section id="scope">
+  <div class="sec-head"><h2>適用範圍</h2><span class="eyebrow">只編碼無解釋空間的核心案例</span></div>
+  <div class="cols">
+    <div><h3>納入</h3><ul class="plain">{% for s in spec.scope.includes %}<li>{{ s }}</li>{% endfor %}</ul></div>
+    <div><h3>排除（不在本 family 出題）</h3><ul class="plain">{% for s in spec.scope.excludes %}<li>{% if s is mapping %}{{ s.item }}<div style="font-size:12px;color:var(--fg-2);margin:2px 0 6px">{{ s.reason | trim }}</div>{% else %}{{ s }}{% endif %}</li>{% endfor %}</ul></div>
+  </div>
+</section>
+
+{% set is_overtime = spec.id == 'overtime_pay' %}<section id="formulas">
+  <div class="sec-head"><h2>公式</h2><span class="eyebrow">{% if is_overtime %}W<sub>m</sub> 月薪 · h 時數 · w<sub>h</sub> 平日每小時工資額{% else %}{{ spec.formula_legend }}{% endif %}</span></div>
+  {% for f in spec.formulas %}
+  <div class="formula">
+    <div class="lab">{{ f.label }}</div>
+    {% if f.mathml %}{{ f.mathml | safe }}{% else %}<p style="margin:6px 0">{{ f.text }}</p>{% endif %}
+    <details><summary>TeX 原始碼</summary><div class="tex">{{ f.tex }}</div></details>
+  </div>
+  {% endfor %}
+</section>
+
+<section id="params">
+  <div class="sec-head"><h2>參數與費率表</h2><span class="eyebrow">生成器的抽樣空間</span></div>
+{% if is_overtime %}  <div class="cols">
+    <div>
+      <h3>參數 schema</h3>
+      <div class="tablewrap"><table style="min-width:0">
+        <thead><tr><th>參數</th><th>型別</th><th>範圍</th></tr></thead>
+        <tbody>
+        <tr><td class="id">monthly_salary</td><td>int（{{ spec.parameters.monthly_salary.unit }}）</td><td class="num">{{ spec.parameters.monthly_salary.min }} – {{ spec.parameters.monthly_salary.max }}</td></tr>
+        <tr><td class="id">day_type</td><td>enum</td><td>{% for k, v in spec.parameters.day_type['values'].items() %}<span class="mono">{{ k }}</span> {{ v }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>
+        <tr><td class="id">hours</td><td>int</td><td>{% for k, v in spec.parameters.hours.max.items() %}<span class="mono">{{ k }}</span> 0–{{ v }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:13px;color:var(--fg-2);margin-block:8px 0">抽樣：{{ spec.parameters.monthly_salary.sampling }}</p>
+    </div>
+    <div>
+      <h3>費率表</h3>
+      <div class="tablewrap"><table style="min-width:0">
+        <thead><tr><th>項目</th><th>值</th><th>生效</th></tr></thead>
+        <tbody>
+        {% set mw = spec.rate_tables.minimum_wage %}<tr><td>最低工資（月）</td><td class="num">{{ mw.monthly }}</td><td class="num">{{ mw.effective_from }} 起{% if mw.verify == 'pending' %} <span class="badge b-pending">待核對</span>{% endif %}{% if mw.source_url %} · <a href="{{ mw.source_url }}" target="_blank" rel="noopener">{{ mw.law }}</a>{% endif %}</td></tr>
+        <tr><td>最低工資（時）</td><td class="num">{{ mw.hourly }}</td><td></td></tr>
+        <tr><td>延長工時前 2 小時</td><td class="mono">×{{ spec.rate_tables.multipliers.overtime_first_2h }}</td><td>LSA-24</td></tr>
+        <tr><td>延長工時第 3 小時起</td><td class="mono">×{{ spec.rate_tables.multipliers.overtime_after_2h }}</td><td>LSA-24</td></tr>
+        <tr><td>休息日第 9 小時起</td><td class="mono">×{{ spec.rate_tables.multipliers.rest_day_after_8h }}</td><td>MOL-RESTDAY-9H</td></tr>
+        <tr><td>國定假日基數</td><td>{{ spec.rate_tables.multipliers.holiday_base }}</td><td>LSA-39</td></tr>
+        </tbody>
+      </table></div>
+      {% set rmode = {'none': '不捨入', 'ceil_to_integer': '無條件進位到元', 'round_half_up_to_integer': '四捨五入到元'} %}<p style="font-size:13px;color:var(--fg-2);margin-block:8px 0">捨入：時薪{{ rmode.get(spec.rounding.hourly_rate, spec.rounding.hourly_rate) }}；最終金額{{ rmode.get(spec.rounding.final, spec.rounding.final) }}{% if spec.rounding.verify == 'pending' %} <span class="badge b-pending">待核對</span>{% endif %}{% if spec.rounding.basis %}<br>{{ spec.rounding.basis | trim }}{% endif %}</p>
+    </div>
+  </div>
+{% else %}
+  <div class="cols">
+    <div>
+      <h3>參數 schema</h3>
+      <div class="tablewrap"><table style="min-width:0">
+        <thead><tr><th>參數</th><th>型別</th><th>範圍／說明</th></tr></thead>
+        <tbody>
+        {% for k in spec.implementation.arg_order %}{% set prm = spec.parameters[k] %}
+        <tr><td class="id">{{ k }}</td><td>{{ prm.type }}{% if prm.format %}（{{ prm.format }}）{% endif %}</td><td>{% if prm.min is defined %}<span class="num">{{ prm.min }} – {{ prm.max }}</span><br>{% endif %}{{ prm.note }}</td></tr>
+        {% endfor %}
+        </tbody>
+      </table></div>
+    </div>
+    <div>
+      <h3>答案</h3>
+      <div class="tablewrap"><table style="min-width:0">
+        <tbody>
+        <tr><td>型別</td><td class="mono">{{ spec.answer.type }}</td></tr>
+        <tr><td>容許誤差</td><td class="num">{{ spec.answer.tolerance }}</td></tr>
+        {% if spec.answer.unit %}<tr><td>單位</td><td>{{ spec.answer.unit }}</td></tr>{% endif %}
+        </tbody>
+      </table></div>
+    </div>
+  </div>
+{% endif %}
+</section>
+
+<section id="branches">
+  <div class="sec-head"><h2>分支與配額</h2><span class="eyebrow">coverage 報告依此檢核</span></div>
+{% if is_overtime %}  <div class="tablewrap"><table>
+    <thead><tr><th>ID</th><th>日別</th><th>時數</th><th>配額</th><th>說明</th></tr></thead>
+    <tbody>
+    {% for b in spec.branches %}
+    <tr>
+      <td class="id">{{ b.id }}</td>
+      <td class="mono">{{ b.day_type }}</td>
+      <td class="num">{{ b.hours[0] }}{% if b.hours[1] != b.hours[0] %}–{{ b.hours[1] }}{% endif %}</td>
+      <td><div class="quota"><span class="bar" style="width:{{ (b.quota * 400) | round | int }}px"></span><span class="num">{{ (b.quota * 100) | round(1) }}%</span></div></td>
+      <td>{{ b.note }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  <p style="font-size:13px;color:var(--fg-2);margin-block:10px 0">邊界值固定納入：時數 {{ spec.boundary_values.hours | join(', ') }}；月薪 {{ spec.boundary_values.monthly_salary | join('、') }}。</p>
+{% else %}
+  <div class="tablewrap"><table>
+    <thead><tr><th>ID</th><th>定義</th><th>配額</th><th>說明</th></tr></thead>
+    <tbody>
+    {% for b in spec.branches %}
+    <tr>
+      <td class="id">{{ b.id }}{% if b.control %} <span class="badge b-draft">對照題</span>{% endif %}</td>
+      <td class="mono">{% if b.months is defined %}已滿 {{ b.months[0] }}–{{ b.months[1] }} 個月{% elif b.boundary is defined %}邊界 {{ b.boundary }}{% elif b.definition is defined %}{{ b.definition }}{% endif %}</td>
+      <td><div class="quota"><span class="bar" style="width:{{ (b.quota * 400) | round | int }}px"></span><span class="num">{{ (b.quota * 100) | round(1) }}%</span></div></td>
+      <td>{{ b.note }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table></div>
+  <p style="font-size:13px;color:var(--fg-2);margin-block:10px 0">{{ spec.boundary_values_label or '邊界錨點（月數）' }}：{% for k, v in spec.boundary_values.items() %}<span class="mono">{{ k }}</span> {{ v | join(', ') }}{% if not loop.last %}；{% endif %}{% endfor %}。</p>
+{% endif %}
+</section>
+
+<section id="calc">
+  <div class="sec-head"><h2>互動試算</h2><span class="eyebrow">JS 實作，與 pipeline 的 Python 實作獨立；CI 檢查兩者一致</span></div>
+  <div class="card">
+    <div class="calc">
+{% if is_overtime %}      <label for="in-monthly">月薪（TWD）<input id="in-monthly" type="number" inputmode="numeric" min="1" step="1" value="{{ spec.implementation.calculator_default.monthly_salary }}"></label>
+      <label for="in-daytype">日別<select id="in-daytype">{% for k, v in spec.parameters.day_type['values'].items() %}<option value="{{ k }}"{% if k == spec.implementation.calculator_default.day_type %} selected{% endif %}>{{ v }}</option>{% endfor %}</select></label>
+      <label for="in-hours">時數<input id="in-hours" type="number" inputmode="numeric" min="0" max="12" step="1" value="{{ spec.implementation.calculator_default.hours }}"></label>
+{% else %}
+      {% for k in spec.implementation.arg_order %}{% set prm = spec.parameters[k] %}
+      <label for="in-{{ k }}">{{ prm.label or k }}{% if prm.type == 'date' %}<input id="in-{{ k }}" type="date" value="{{ spec.implementation.calculator_default[k] }}">{% elif prm.type == 'string' %}<input id="in-{{ k }}" type="text" spellcheck="false" value="{{ spec.implementation.calculator_default[k] }}">{% elif prm.type == 'enum' %}<select id="in-{{ k }}">{% for ek, ev in prm['values'].items() %}<option value="{{ ek }}"{% if ek == spec.implementation.calculator_default[k] %} selected{% endif %}>{{ ev }}</option>{% endfor %}</select>{% else %}<input id="in-{{ k }}" type="number" inputmode="numeric" step="1" value="{{ spec.implementation.calculator_default[k] }}">{% endif %}</label>
+      {% endfor %}
+{% endif %}
+    </div>
+    <div class="result" id="calc-result"></div>
+  </div>
+</section>
+
+<section id="golden">
+  <div class="sec-head"><h2>Golden cases</h2><span class="eyebrow">出貨前驗證器必須全過</span>
+    <span style="margin-inline-start:auto"><button class="ghost" id="btn-run" type="button">重新執行</button></span></div>
+  <div class="tablewrap"><table id="golden-table">
+{% if is_overtime %}    <thead><tr><th>ID</th><th>月薪</th><th>日別</th><th class="r">時數</th><th class="r">期望</th><th class="r">JS 計算</th><th>結果</th><th>狀態</th><th>來源／推導</th></tr></thead>
+    <tbody>
+    {% for g in spec.golden_cases %}
+    <tr data-m="{{ g.input.monthly_salary }}" data-d="{{ g.input.day_type }}" data-h="{{ g.input.hours }}" data-e="{{ g.expected }}">
+      <td class="id">{{ g.id }}</td>
+      <td class="num">{{ g.input.monthly_salary }}</td>
+      <td class="mono">{{ g.input.day_type }}</td>
+      <td class="r num">{{ g.input.hours }}</td>
+      <td class="r num">{{ g.expected }}</td>
+      <td class="r num js-got">—</td>
+      <td class="js-pf">—</td>
+      <td><span class="badge {{ 'b-ok' if g.status in ('published-example', 'calculator-verified') else ('b-derived' if g.status == 'derived' else 'b-pending') }}">{{ g.status }}</span></td>
+      <td style="font-size:13px">{{ g.source }}</td>
+    </tr>
+    {% endfor %}
+{% else %}
+    <thead><tr><th>ID</th>{% for k in spec.implementation.arg_order %}<th>{{ spec.parameters[k].label or k }}</th>{% endfor %}<th class="r">期望</th><th class="r">JS 計算</th><th>結果</th><th>狀態</th><th>來源／推導</th></tr></thead>
+    <tbody>
+    {% for g in spec.golden_cases %}{% set args = [] %}{% for k in spec.implementation.arg_order %}{% set _ = args.append(g.input[k]) %}{% endfor %}
+    <tr data-args='{{ args | tojson }}' data-e="{{ g.expected }}">
+      <td class="id">{{ g.id }}</td>
+      {% for a in args %}<td class="num">{{ a }}</td>{% endfor %}
+      <td class="r num">{{ g.expected }}</td>
+      <td class="r num js-got">—</td>
+      <td class="js-pf">—</td>
+      <td><span class="badge {{ 'b-ok' if g.status in ('published-example', 'calculator-verified') else ('b-derived' if g.status == 'derived' else 'b-pending') }}">{{ g.status }}</span></td>
+      <td style="font-size:13px">{{ g.source }}</td>
+    </tr>
+    {% endfor %}
+{% endif %}
+    </tbody>
+  </table></div>
+  {%- set legend = {'published-example': ['b-ok', '來自官方公開範例'], 'calculator-verified': ['b-ok', '依條文推導，並以勞動部官方試算系統核對一致'], 'derived': ['b-derived', '依條文推導'], 'pending-official': ['b-pending', '待用勞動部官方試算系統逐筆核對']} %}
+  {%- set present = spec.golden_cases | map(attribute='status') | unique | list %}
+  <p style="font-size:13px;color:var(--fg-2);margin-block:10px 0">狀態說明：{% for st, d in legend.items() if st in present %}<span class="badge {{ d[0] }}">{{ st }}</span> {{ d[1] }}{% if not loop.last %}；{% endif %}{% endfor %}。</p>
+</section>
+
+<section id="open">
+  <div class="sec-head"><h2>待釐清</h2><span class="eyebrow">審閱者請逐項回覆</span></div>
+  <div class="oq">
+    {% if not spec.open_questions %}<div class="empty">目前沒有待釐清事項。</div>{% endif %}
+    {% for q in spec.open_questions %}
+    {% if q is string %}<div class="item"><span class="id">Q{{ loop.index }}</span><div>{{ q | trim }}</div></div>{% else %}<div class="item"><span class="id">{{ q.id }}</span><div>{{ q.question }}<div class="blocks">影響：<span class="mono">{{ q.blocks }}</span></div></div></div>{% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section id="review">
+  <div class="sec-head"><h2>審閱紀錄</h2><span class="eyebrow">簽核對象是 spec、rule、templates、sampler 四個檔的 sha256，不是這個頁面</span></div>
+  {% if fstatus.reviews %}
+  <div class="tablewrap"><table>
+    <thead><tr><th>審閱者</th><th>角色</th><th>日期</th><th>簽核的版本</th><th>結論</th><th>對應</th><th>備註</th></tr></thead>
+    <tbody>{% for r in fstatus.reviews %}<tr><td>{{ r.reviewer }}</td><td>{{ r.role }}</td><td class="num">{{ r.date }}</td><td class="id">{% for k in signed_hashes %}{{ k.replace('_sha256', '') }} {{ r[k][:12] }}{% if not loop.last %}<br>{% endif %}{% endfor %}</td><td>{{ r.verdict }}</td><td>{% if r.current %}<span class="badge b-derived">目前版本</span>{% else %}<span class="badge b-neutral" title="spec 或 rule 已改動，這筆簽核不再對應">已失效</span>{% endif %}</td><td>{{ r.notes or '' }}</td></tr>{% endfor %}</tbody>
+  </table></div>
+  {% else %}
+  <div class="empty">尚無審閱紀錄。</div>
+  {% endif %}
+  <div class="empty">簽核方式：①逐條對照法源 ②用上方試算器打官方試算系統的案例 ③回覆待釐清事項 ④用下方「審閱者簽核」表單產生 <code>reviews.yaml</code>（本機開啟時顯示），或手動在 <code>silver/families/{{ spec.id }}/reviews.yaml</code> 新增一筆：reviewer、role、date、verdict（<code>approved</code> 或 <code>changes_requested</code>）、notes，以及下面四個 hash 整串照抄。spec、rule、templates、sampler 任一改動，舊簽核自動失效，需要重新簽核。只接受人工簽核。
+    <div class="mono" style="margin-top:8px;word-break:break-all">{% for k, v in signed_hashes.items() %}{{ k }}: {{ v }}{% if not loop.last %}<br>{% endif %}{% endfor %}</div>
+  </div>
+</section>
+
+<section id="signoff" class="signoff" hidden>
+  <div class="sec-head"><h2>審閱者簽核</h2><span class="eyebrow">只在本機開啟（file://）或網址帶 ?review 時顯示</span></div>
+  <div class="card">
+    <p style="margin-top:0">這裡產生 <code>reviews.yaml</code>：既有紀錄原樣保留，新的一筆接在後面。下載後放到 <code>silver/families/{{ spec.id }}/reviews.yaml</code> 才算簽核；頁面本身不寫入 repo，AI 不代填結論。</p>
+    <div class="calc">
+      <label>審閱者<input id="so-reviewer" value="{{ spec.curator or '' }}" autocomplete="name"></label>
+      <label>角色<input id="so-role" value="owner"></label>
+      <label>日期<input id="so-date" type="date"></label>
+    </div>
+    <div class="verdicts" role="radiogroup" aria-label="結論" style="margin-top:14px">
+      <label><input type="radio" name="so-verdict" value="approved" id="so-approved">核可（approved）</label>
+      <label><input type="radio" name="so-verdict" value="changes_requested">需修改（changes_requested）</label>
+    </div>
+    <div class="calc" style="grid-template-columns:1fr;margin-top:12px"><label>備註<textarea id="so-notes" placeholder="選「需修改」時必填：要改什麼"></textarea></label></div>
+    <div class="gate" id="so-gate"></div>
+    <pre id="so-preview" aria-label="新增的簽核紀錄"></pre>
+    <div class="actions"><button type="button" id="so-download" disabled>下載 reviews.yaml</button><button type="button" class="ghost" id="so-copy" disabled>複製整個檔案</button><span id="so-msg" role="status"></span></div>
+  </div>
+  <script type="application/json" id="signoff-hashes">{{ signed_hashes | tojson }}</script>
+  <script type="application/json" id="reviews-raw">{{ reviews_raw | tojson }}</script>
+</section>
+
+<section id="changelog">
+  <div class="sec-head"><h2>變更紀錄</h2></div>
+  <ul class="plain">{% for c in spec.changelog %}<li><span class="mono">{{ c.version }}</span> · {{ c.date }} · {{ c.note }}</li>{% endfor %}</ul>
+</section>
+
+<footer>
+  <div>此頁由 <span class="mono">build_page.py</span> 自 <span class="mono">spec.yaml</span> 生成於 {{ built_at }}（Asia/Taipei）。手動修改頁面不會進入 pipeline。</div>
+  <div class="hash">spec sha256 {{ spec_sha256 }}</div>
+</footer>
+
+</div>
+
+<script>
+{{ rule_js | safe }}
+</script>
+<script>
+{% if is_overtime %}(function(){
+  const R = {{ spec.implementation.js_global }};
+  const fmt = n => new Intl.NumberFormat('zh-TW').format(n);
+  const $ = id => document.getElementById(id);
+  const out = $('calc-result');
+
+  function render(){
+    const m = parseInt($('in-monthly').value, 10);
+    const d = $('in-daytype').value;
+    const h = parseInt($('in-hours').value, 10);
+    $('in-hours').max = R.MAX_HOURS[d];
+    const errs = R.validate(m, d, h, {{ spec.rate_tables.minimum_wage.monthly }});
+    if (errs.length) { out.innerHTML = '<div class="err">' + errs.join('；') + '</div>'; return; }
+    const r = R.compute(m, d, h);
+    let html = '<div class="row"><span>平日每小時工資額（月薪 ÷ 240）</span><span class="num">' + r.hourly.toFixed(4) + '</span></div>';
+    for (const it of r.items) html += '<div class="row"><span>' + it.label + ' × ' + it.hours + ' 小時</span><span class="num">' + it.amount.toFixed(2) + '</span></div>';
+    if (!r.items.length) html += '<div class="row"><span>無加班時數</span><span class="num">0</span></div>';
+    html += '<div class="total"><span>加班費</span><span class="amt">NT$ ' + fmt(r.total) + '</span></div>';
+    html += '<div class="exact">精確值 ' + r.totalExact.toFixed(4) + '，無條件進位到元</div>';
+    out.innerHTML = html;
+  }
+  ['in-monthly','in-daytype','in-hours'].forEach(id => $(id).addEventListener('input', render));
+  render();
+
+  function runGolden(){
+    let pass = 0, total = 0;
+    document.querySelectorAll('#golden-table tbody tr').forEach(tr => {
+      total++;
+      const got = R.compute(+tr.dataset.m, tr.dataset.d, +tr.dataset.h).total;
+      const ok = got === +tr.dataset.e; pass += ok;
+      tr.querySelector('.js-got').textContent = fmt(got);
+      const pf = tr.querySelector('.js-pf');
+      pf.textContent = ok ? '✓' : '✗'; pf.className = 'js-pf pf ' + (ok ? 'ok' : 'fail');
+    });
+    $('btn-run').textContent = '重新執行（' + pass + '/' + total + ' 通過）';
+  }
+  $('btn-run').addEventListener('click', runGolden);
+  runGolden();
+})();
+{% else %}{% set types = {} %}{% for k in spec.implementation.arg_order %}{% set _ = types.update({k: spec.parameters[k].type}) %}{% endfor %}
+(function(){
+  const R = {{ spec.implementation.js_global }};
+  const ARGS = {{ spec.implementation.arg_order | tojson }};
+  const TYPES = {{ types | tojson }};
+  const LABELS = {{ (spec.implementation.result_labels or {}) | tojson }};
+  const fmt = n => new Intl.NumberFormat('zh-TW').format(n);
+  const $ = id => document.getElementById(id);
+  const out = $('calc-result');
+  const read = k => { const v = $('in-' + k).value; return TYPES[k] === 'int' ? parseInt(v, 10) : v; };
+
+  function render(){
+    let r;
+    try { r = R.compute(...ARGS.map(read)); }
+    catch (e) { out.innerHTML = '<div class="err">' + e.message + '</div>'; return; }
+    let html = '';
+    for (const [k, v] of Object.entries(r)) {
+      if (k === 'total' || k === 'totalExact') continue;
+      html += '<div class="row"><span>' + (LABELS[k] || k) + '</span><span class="num">' + v + '</span></div>';
+    }
+    html += '<div class="total"><span>{{ spec.answer.label or "答案" }}</span><span class="amt">' + fmt(r.total) + ' {{ spec.answer.unit or "" }}</span></div>';
+    out.innerHTML = html;
+  }
+  ARGS.forEach(k => $('in-' + k).addEventListener('input', render));
+  render();
+
+  function runGolden(){
+    let pass = 0, total = 0;
+    document.querySelectorAll('#golden-table tbody tr').forEach(tr => {
+      total++;
+      const got = R.compute(...JSON.parse(tr.dataset.args)).total;
+      const ok = got === +tr.dataset.e; pass += ok;
+      tr.querySelector('.js-got').textContent = fmt(got);
+      const pf = tr.querySelector('.js-pf');
+      pf.textContent = ok ? '✓' : '✗'; pf.className = 'js-pf pf ' + (ok ? 'ok' : 'fail');
+    });
+    $('btn-run').textContent = '重新執行（' + pass + '/' + total + ' 通過）';
+  }
+  $('btn-run').addEventListener('click', runGolden);
+  runGolden();
+})();
+{% endif %}
+// 法源「已核」勾選：只存在這個瀏覽器（localStorage），鍵含 spec hash，spec 一改就重置；審閱輔助，不是簽核紀錄
+document.querySelectorAll('.lb-check').forEach(function (cb) {
+  try { cb.checked = localStorage.getItem(cb.dataset.key) === '1'; } catch (e) {}
+  cb.addEventListener('change', function () {
+    try { cb.checked ? localStorage.setItem(cb.dataset.key, '1') : localStorage.removeItem(cb.dataset.key); } catch (e) {}
+  });
+});
+
+// BEGIN reviewsYaml
+// 在既有 reviews.yaml 的原文後面接一筆新紀錄（紀錄只增不改）。字串一律用 JSON 雙引號（也是合法的 YAML 雙引號字串），
+// 備註裡的冒號、井號、引號、換行都不會改變 YAML 結構。縮排沿用既有清單；不是區塊式清單（例如 reviews: []）就拒絕，請手動處理。
+function reviewsYaml(existing, e) {
+  var q = function (s) { return JSON.stringify(String(s)); };
+  var base = existing && existing.trim() ? existing.replace(/\s*$/, '\n') : '';
+  var indent = '  ';
+  if (base) {
+    if (!/^reviews:[ \t]*(#.*)?$/m.test(base)) throw new Error('既有的 reviews.yaml 不是「reviews:」加區塊式清單，請手動新增這筆紀錄');
+    var m = base.match(/^([ \t]*)- /m);
+    if (m) indent = m[1];
+  } else {
+    base = 'reviews:\n';
+  }
+  var pad = indent + '  ';
+  var lines = [indent + '- reviewer: ' + q(e.reviewer), pad + 'role: ' + q(e.role), pad + 'date: ' + q(e.date)];
+  ['spec_sha256', 'rule_sha256', 'templates_sha256', 'sampler_sha256'].forEach(function (k) { lines.push(pad + k + ': ' + e[k]); });
+  lines.push(pad + 'verdict: ' + e.verdict);
+  if (e.notes && String(e.notes).trim()) lines.push(pad + 'notes: ' + q(String(e.notes).trim()));
+  return base + lines.join('\n') + '\n';
+}
+// END reviewsYaml
+
+(function () {
+  var sec = document.getElementById('signoff');
+  if (!sec) return;
+  var local = location.protocol === 'file:' || new URLSearchParams(location.search).has('review');
+  if (!local) return;
+  sec.hidden = false;
+  var hashes = JSON.parse(document.getElementById('signoff-hashes').textContent);
+  var existing = JSON.parse(document.getElementById('reviews-raw').textContent);
+  var $ = function (id) { return document.getElementById(id); };
+  var d = new Date();
+  $('so-date').value = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+  var full = '';
+
+  function update() {
+    var checks = document.querySelectorAll('.lb-check');
+    var done = Array.prototype.filter.call(checks, function (c) { return c.checked; }).length;
+    var all = done === checks.length;
+    var approve = $('so-approved');
+    approve.disabled = !all;
+    if (!all && approve.checked) approve.checked = false;
+    var v = (document.querySelector('input[name="so-verdict"]:checked') || {}).value;
+    var notes = $('so-notes').value;
+    var problems = [];
+    if (!all && v !== 'changes_requested') problems.push('法源已核 ' + done + '／' + checks.length + '，全部勾完才能核可');   // 需修改不必先勾完
+    if (!$('so-reviewer').value.trim()) problems.push('請填審閱者');
+    if (!/^\d{4}-\d{2}-\d{2}$/.test($('so-date').value)) problems.push('請填日期');
+    if (!v) problems.push('請選結論');
+    if (v === 'changes_requested' && !notes.trim()) problems.push('需修改時請在備註寫要改什麼');
+    var ok = problems.length === 0;
+    $('so-gate').textContent = ok ? '可以下載。' : problems.join('；');
+    $('so-gate').className = 'gate' + (ok ? ' ok' : '');
+    full = '';
+    $('so-msg').textContent = '';
+    if (ok) {
+      try {
+        full = reviewsYaml(existing, Object.assign({ reviewer: $('so-reviewer').value.trim(), role: $('so-role').value.trim() || 'owner',
+          date: $('so-date').value, verdict: v, notes: notes }, hashes));
+      } catch (err) { $('so-gate').textContent = err.message; $('so-gate').className = 'gate'; }
+    }
+    var prefix = existing.trim() ? existing.replace(/\s*$/, '\n') : 'reviews:\n';   // 預覽只顯示新增的那一筆
+    $('so-preview').textContent = full ? full.slice(prefix.length) : '';
+    $('so-download').disabled = $('so-copy').disabled = !full;
+  }
+  ['so-reviewer', 'so-role', 'so-date', 'so-notes'].forEach(function (id) { $(id).addEventListener('input', update); });
+  document.querySelectorAll('input[name="so-verdict"], .lb-check').forEach(function (el) { el.addEventListener('change', update); });
+  $('so-download').addEventListener('click', function () {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([full], { type: 'text/yaml' }));
+    a.download = 'reviews.yaml';
+    document.body.appendChild(a); a.click(); a.remove();
+    $('so-msg').textContent = '已下載，放到 silver/families/{{ spec.id }}/reviews.yaml';
+  });
+  $('so-copy').addEventListener('click', function () {
+    navigator.clipboard.writeText(full).then(function () { $('so-msg').textContent = '已複製'; },
+      function () { $('so-msg').textContent = '無法複製，請改用下載'; });
+  });
+  update();
+})();
+</script>
+{%- if full %}
+</body>
+</html>
+{% endif %}

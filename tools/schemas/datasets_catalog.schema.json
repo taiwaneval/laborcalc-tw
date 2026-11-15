@@ -1,0 +1,44 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://taiwaneval.org/schemas/datasets-catalog/0.1.0",
+ "title": "TaiwanEval datasets catalog",
+ "description": "index/datasets.json：所有資料集與它們的 release，由 tools/site_data.py --catalog 從 datasets.yaml 產生。每個 release 的內容在 site_data 指向的 site-data bundle；還沒產生的為 null。",
+ "type": "object",
+ "required": ["schema_version", "datasets"],
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {"type": "string"},
+  "datasets": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "required": ["id", "name", "families", "latest_release", "releases", "public"],
+    "additionalProperties": false,
+    "properties": {
+     "id": {"type": "string", "pattern": "^[a-z][a-z0-9-]*$"},
+     "name": {"type": "string"},
+     "families": {"type": "array", "items": {"type": "string"}},
+     "latest_release": {"type": ["string", "null"]},
+     "releases": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "required": ["release", "site_data"],
+       "additionalProperties": false,
+       "properties": {
+        "release": {"type": "string"},
+        "site_data": {"type": ["string", "null"]}
+       }
+      }
+     },
+     "public": {
+      "type": "object",
+      "required": ["github", "huggingface"],
+      "additionalProperties": false,
+      "properties": {"github": {"type": "string"}, "huggingface": {"type": "string"}}
+     }
+    }
+   }
+  }
+ }
+}

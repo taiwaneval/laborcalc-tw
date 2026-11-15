@@ -1,0 +1,55 @@
+{
+ "family": "annual_leave_days",
+ "family_version": "0.1.3",
+ "family_status": "reviewed",
+ "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+ "rule_sha256": "ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595",
+ "templates_sha256": "073e2530e76ecbed90478ce3fd549c0f72828a31a0fde9207e635f5318091314",
+ "sampler_sha256": "41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85",
+ "generator_version": "0.5.0",
+ "release": "2026Q4",
+ "split": "public",
+ "salt": "taiwaneval-public-2026",
+ "n": 200,
+ "rejected": 0,
+ "lineage": {
+  "laws": {
+   "N0030001": {
+    "law_name": "勞動基準法",
+    "last_amended": "20240731",
+    "bronze_sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+    "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+    "triage_version": "0.1.1",
+    "units": [
+     "N0030001/38/1"
+    ]
+   }
+  }
+ },
+ "as_of": "2026-10-09",
+ "diversity": {
+  "template_counts": {
+   "T01": 19,
+   "T02": 18,
+   "T03": 19,
+   "T04": 20,
+   "T05": 19,
+   "T06": 19,
+   "T07": 20,
+   "T08": 19,
+   "T09": 19,
+   "T10": 18,
+   "Z01": 3,
+   "Z02": 3,
+   "Z03": 4
+  },
+  "max_template_share": 0.1,
+  "max_template_share_cap": 0.15,
+  "skeletons": 198,
+  "near_duplicates": 0,
+  "max_skeleton_reuse": 1,
+  "param_duplicates": 0,
+  "pairs": 19,
+  "paired_items": 38
+ }
+}

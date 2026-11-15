@@ -1,0 +1,24 @@
+{
+ "schema_version": "0.1.0",
+ "datasets": [
+  {
+   "id": "laborcalc",
+   "name": "LaborCalc-TW",
+   "families": [
+    "overtime_pay",
+    "annual_leave_days"
+   ],
+   "latest_release": "2026Q4",
+   "releases": [
+    {
+     "release": "2026Q4",
+     "site_data": "index/2026Q4/site-data/"
+    }
+   ],
+   "public": {
+    "github": "taiwaneval/laborcalc-tw",
+    "huggingface": "taiwaneval/LaborCalc-TW"
+   }
+  }
+ ]
+}

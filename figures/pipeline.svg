@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 956 292" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="laborcalc-pipeline-title laborcalc-pipeline-desc" id="pipeline-root">
+<title id="laborcalc-pipeline-title">How LaborCalc-TW is built</title>
+<desc id="laborcalc-pipeline-desc">The statute snapshot is encoded into signed rules, rules generate the questions, model runs produce a per-question score table, and the leaderboard is aggregated from it; make reproduce rebuilds every layer from a clean clone.</desc>
+<defs>
+      <style>#pipeline-root { color: #202526; font-family: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+      #pipeline-root .wrap { overflow-x: auto; }
+      #pipeline-root .tier-title { fill: #202526; font: 600 14px -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; text-anchor: middle; }
+      #pipeline-root .bucket { font: 400 10px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; text-anchor: middle; }
+      #pipeline-root .field-label { fill: #202526; font: 600 11px -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+      #pipeline-root .field-value, #pipeline-root .example-value { fill: #465156; font: 400 9px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      #pipeline-root .example-label, #pipeline-root .arc-label, #pipeline-root .path-tag { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+      #pipeline-root .example-label { fill: #3E494D; font-size: 9px; }
+      #pipeline-root .arc-label { font-size: 10px; text-anchor: middle; }
+      #pipeline-root .path-tag { fill: #465156; font-size: 9px; }
+      #pipeline-root .path-title { fill: #202526; font: 600 12px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+      #pipeline-root .path-sub { fill: #465156; font: 400 11px -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }</style>
+<marker id="pipeline-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#70858E"/></marker>
+<marker id="pipeline-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#DB3012"/></marker>
+<clipPath id="pipeline-clip-0"><rect x="16" y="80" width="172" height="124" rx="6"/></clipPath>
+<clipPath id="pipeline-clip-1"><rect x="204" y="80" width="172" height="124" rx="6"/></clipPath>
+<clipPath id="pipeline-clip-2"><rect x="392" y="80" width="172" height="124" rx="6"/></clipPath>
+<clipPath id="pipeline-clip-3"><rect x="580" y="80" width="172" height="124" rx="6"/></clipPath>
+<clipPath id="pipeline-clip-4"><rect x="768" y="80" width="172" height="124" rx="6"/></clipPath>
+</defs>
+<rect width="956" height="292" fill="#FAFBFB"/>
+<path d="M102 80 C102 0 290 0 290 80" fill="none" stroke="#DB3012" stroke-width="1.6" marker-end="url(#pipeline-arrow-accent)"/>
+<text x="196" y="50" class="arc-label" fill="#971D08">ENCODE + SIGN</text>
+<path d="M290 80 C290 0 478 0 478 80" fill="none" stroke="#70858E" stroke-width="1.4" marker-end="url(#pipeline-arrow)"/>
+<text x="384" y="50" class="arc-label" fill="#465156">GENERATE</text>
+<path d="M478 80 C478 0 666 0 666 80" fill="none" stroke="#70858E" stroke-width="1.4" marker-end="url(#pipeline-arrow)"/>
+<text x="572" y="50" class="arc-label" fill="#465156">EVALUATE</text>
+<path d="M666 80 C666 0 854 0 854 80" fill="none" stroke="#70858E" stroke-width="1.4" marker-end="url(#pipeline-arrow)"/>
+<text x="760" y="50" class="arc-label" fill="#465156">AGGREGATE</text>
+<rect x="16" y="80" width="172" height="124" rx="6" fill="#FFFFFF"/>
+<rect x="16" y="80" width="172" height="44" fill="#70858e" clip-path="url(#pipeline-clip-0)" fill-opacity="0.12"/>
+<rect x="16" y="80" width="172" height="124" rx="6" fill="none" stroke="#70858E" stroke-width="1.0"/>
+<text x="102" y="107" class="tier-title">Statute</text>
+<text x="102" y="144" class="bucket" fill="#465156">bronze/</text>
+<text x="102" y="168" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">Official law text,</text>
+<text x="102" y="184" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">stored as published</text>
+<rect x="204" y="80" width="172" height="124" rx="6" fill="#db3012" fill-opacity="0.06"/>
+<rect x="204" y="80" width="172" height="44" fill="#db3012" clip-path="url(#pipeline-clip-1)" fill-opacity="0.12"/>
+<rect x="204" y="80" width="172" height="124" rx="6" fill="none" stroke="#DB3012" stroke-width="1.6"/>
+<text x="290" y="107" class="tier-title">Rules</text>
+<text x="290" y="144" class="bucket" fill="#971D08">silver/</text>
+<text x="290" y="168" fill="#971D08" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">Coded twice, signed</text>
+<text x="290" y="184" fill="#971D08" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">off by a reviewer</text>
+<rect x="392" y="80" width="172" height="124" rx="6" fill="#FFFFFF"/>
+<rect x="392" y="80" width="172" height="44" fill="#193c4b" clip-path="url(#pipeline-clip-2)" fill-opacity="0.07"/>
+<rect x="392" y="80" width="172" height="124" rx="6" fill="none" stroke="#193C4B" stroke-width="1.0"/>
+<text x="478" y="107" class="tier-title">Questions</text>
+<text x="478" y="144" class="bucket" fill="#465156">gold/</text>
+<text x="478" y="168" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">Generated from</text>
+<text x="478" y="184" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">the signed rules</text>
+<rect x="580" y="80" width="172" height="124" rx="6" fill="#FFFFFF"/>
+<rect x="580" y="80" width="172" height="44" fill="#193c4b" clip-path="url(#pipeline-clip-3)" fill-opacity="0.07"/>
+<rect x="580" y="80" width="172" height="124" rx="6" fill="none" stroke="#193C4B" stroke-width="1.0"/>
+<text x="666" y="107" class="tier-title">Scores</text>
+<text x="666" y="144" class="bucket" fill="#465156">eval/scores/</text>
+<text x="666" y="168" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">Each model&#x27;s answer</text>
+<text x="666" y="184" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">to every question</text>
+<rect x="768" y="80" width="172" height="124" rx="6" fill="#FFFFFF"/>
+<rect x="768" y="80" width="172" height="44" fill="#193c4b" clip-path="url(#pipeline-clip-4)" fill-opacity="0.07"/>
+<rect x="768" y="80" width="172" height="124" rx="6" fill="none" stroke="#193C4B" stroke-width="1.0"/>
+<text x="854" y="107" class="tier-title">Leaderboard</text>
+<text x="854" y="144" class="bucket" fill="#465156">index/</text>
+<text x="854" y="168" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">One score</text>
+<text x="854" y="184" fill="#465156" font-family="-apple-system, &#x27;Segoe UI&#x27;, &#x27;Helvetica Neue&#x27;, Arial, sans-serif" font-size="12" text-anchor="middle">per model</text>
+<rect x="16" y="220" width="924" height="56" rx="6" fill="#FFFFFF" stroke="#193C4B"/>
+<rect x="32" y="232" width="80" height="16" rx="2" fill="none" stroke="#465156" stroke-width="0.8"/>
+<text x="72" y="243" class="path-tag" text-anchor="middle">REPRODUCE</text>
+<text x="128" y="244" class="path-title">make reproduce</text>
+<text x="128" y="262" class="path-sub">A clean clone rebuilds every layer and compares it byte for byte with the committed files.</text>
+</svg>

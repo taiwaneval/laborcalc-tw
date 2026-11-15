@@ -1,0 +1,1235 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://taiwaneval.org/schemas/site-data/0.2.0",
+ "title": "TaiwanEval site-data bundle",
+ "description": "index/<release>/site-data/ 的格式；由 tools/site_data.py 產生並在寫出前驗證。改格式要升 tools/site_data.py 的 SCHEMA_VERSION。照抄 spec 的條目（法源、公式、分支、golden）核心欄位必填、其餘原樣保留；private split 的 run 不附 log_path（log_withheld）。0.2.0：laws 與 sources 只列該 release 題目 lineage 用到的 bronze 快照；新增 sources.json（非法規來源），laws.json 格式不變。",
+ "$defs": {
+  "manifest": {
+   "type": "object",
+   "properties": {
+    "schema_version": {
+     "type": "string"
+    },
+    "release": {
+     "type": "string"
+    },
+    "mode": {
+     "enum": [
+      "preview",
+      "release"
+     ]
+    },
+    "methodology_version": {
+     "type": "string"
+    },
+    "files": {
+     "type": "object",
+     "properties": {
+      "laws.json": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{64}$"
+      },
+      "families.json": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{64}$"
+      },
+      "results.json": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{64}$"
+      },
+      "sources.json": {
+       "type": "string",
+       "pattern": "^[0-9a-f]{64}$"
+      }
+     },
+     "required": [
+      "laws.json",
+      "families.json",
+      "results.json",
+      "sources.json"
+     ],
+     "additionalProperties": false
+    },
+    "sources": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+     }
+    }
+   },
+   "required": [
+    "schema_version",
+    "release",
+    "mode",
+    "methodology_version",
+    "files",
+    "sources"
+   ],
+   "additionalProperties": false
+  },
+  "laws": {
+   "type": "object",
+   "properties": {
+    "laws": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "pcode": {
+        "type": "string"
+       },
+       "law_name": {
+        "type": "string"
+       },
+       "law_url": {
+        "type": "string"
+       },
+       "last_amended": {
+        "type": "string"
+       },
+       "source": {
+        "type": "string"
+       },
+       "source_file": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "mirror_commit": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "mirror_update_date": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "fetched_at": {
+        "type": "string"
+       },
+       "sha256": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+       },
+       "inventory": {
+        "oneOf": [
+         {
+          "type": "null"
+         },
+         {
+          "type": "object",
+          "properties": {
+           "triage_version": {
+            "type": [
+             "string",
+             "null"
+            ]
+           },
+           "articles": {
+            "type": "integer"
+           },
+           "units": {
+            "type": "integer"
+           },
+           "by_category": {
+            "type": "object",
+            "additionalProperties": {
+             "type": "integer"
+            }
+           },
+           "review": {
+            "type": "object",
+            "additionalProperties": {
+             "type": "integer"
+            }
+           },
+           "conflicts_open": {
+            "type": "integer"
+           },
+           "encoded_units": {
+            "type": "array",
+            "items": {
+             "type": "object",
+             "properties": {
+              "unit_id": {
+               "type": "string"
+              },
+              "family": {
+               "type": "string"
+              },
+              "coverage": {
+               "enum": [
+                "full",
+                "partial"
+               ]
+              },
+              "note": {
+               "type": [
+                "string",
+                "null"
+               ]
+              }
+             },
+             "required": [
+              "unit_id",
+              "family",
+              "coverage",
+              "note"
+             ],
+             "additionalProperties": false
+            }
+           },
+           "page": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "triage_version",
+           "articles",
+           "units",
+           "by_category",
+           "review",
+           "conflicts_open",
+           "encoded_units",
+           "page"
+          ],
+          "additionalProperties": false
+         }
+        ]
+       }
+      },
+      "required": [
+       "pcode",
+       "law_name",
+       "law_url",
+       "last_amended",
+       "source",
+       "source_file",
+       "mirror_commit",
+       "mirror_update_date",
+       "fetched_at",
+       "sha256",
+       "inventory"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   "required": [
+    "laws"
+   ],
+   "additionalProperties": false
+  },
+  "sources": {
+   "type": "object",
+   "properties": {
+    "sources": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "source_id": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+       },
+       "source_type": {
+        "enum": [
+         "announcement",
+         "dataset"
+        ]
+       },
+       "title": {
+        "type": "string"
+       },
+       "publisher": {
+        "type": "string"
+       },
+       "url": {
+        "type": "string"
+       },
+       "retrieved_url": {
+        "type": "string"
+       },
+       "published_on": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "document_number": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "version": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "source_file": {
+        "type": "string"
+       },
+       "media_type": {
+        "type": "string"
+       },
+       "sha256": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+       },
+       "fetched_at": {
+        "type": "string"
+       },
+       "fetched_by": {
+        "type": "string"
+       },
+       "license": {
+        "type": "string"
+       },
+       "note": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "families": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        },
+        "minItems": 1
+       }
+      },
+      "required": [
+       "source_id",
+       "source_type",
+       "title",
+       "publisher",
+       "url",
+       "retrieved_url",
+       "published_on",
+       "document_number",
+       "version",
+       "source_file",
+       "media_type",
+       "sha256",
+       "fetched_at",
+       "fetched_by",
+       "license",
+       "note",
+       "families"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   "required": [
+    "sources"
+   ],
+   "additionalProperties": false
+  },
+  "families": {
+   "type": "object",
+   "properties": {
+    "families": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "name": {
+        "type": "string"
+       },
+       "version": {
+        "type": "string"
+       },
+       "tier": {
+        "type": "integer"
+       },
+       "summary": {
+        "type": "string"
+       },
+       "curator": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "status": {
+        "enum": [
+         "draft",
+         "reviewed"
+        ]
+       },
+       "hashes": {
+        "type": "object",
+        "properties": {
+         "spec_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+         },
+         "rule_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+         },
+         "templates_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+         },
+         "sampler_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+         }
+        },
+        "required": [
+         "spec_sha256",
+         "rule_sha256",
+         "templates_sha256",
+         "sampler_sha256"
+        ],
+        "additionalProperties": false
+       },
+       "reviews": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "reviewer": {
+           "type": "string"
+          },
+          "role": {
+           "type": "string"
+          },
+          "date": {
+           "type": "string"
+          },
+          "verdict": {
+           "enum": [
+            "approved",
+            "changes_requested"
+           ]
+          },
+          "notes": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "current": {
+           "type": "boolean"
+          },
+          "spec_sha256": {
+           "type": "string",
+           "pattern": "^[0-9a-f]{64}$"
+          },
+          "rule_sha256": {
+           "type": "string",
+           "pattern": "^[0-9a-f]{64}$"
+          },
+          "templates_sha256": {
+           "type": "string",
+           "pattern": "^[0-9a-f]{64}$"
+          },
+          "sampler_sha256": {
+           "type": "string",
+           "pattern": "^[0-9a-f]{64}$"
+          }
+         },
+         "required": [
+          "reviewer",
+          "role",
+          "date",
+          "verdict",
+          "notes",
+          "current",
+          "spec_sha256",
+          "rule_sha256",
+          "templates_sha256",
+          "sampler_sha256"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "card": {
+        "type": "string"
+       },
+       "legal_basis": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "law": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "article": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "amended": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "effective": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "url": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "source_url": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "summary": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "encodes": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "note": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "ai_review": {
+           "oneOf": [
+            {
+             "type": "null"
+            },
+            {
+             "type": "object",
+             "properties": {
+              "verdict": {
+               "enum": [
+                "ok",
+                "warn",
+                "fail"
+               ]
+              },
+              "reason": {
+               "type": "string"
+              }
+             },
+             "required": [
+              "verdict",
+              "reason"
+             ],
+             "additionalProperties": false
+            }
+           ]
+          },
+          "verify": {
+           "enum": [
+            "pending"
+           ]
+          }
+         },
+         "required": [
+          "id",
+          "law",
+          "article",
+          "url",
+          "summary",
+          "encodes",
+          "ai_review"
+         ],
+         "additionalProperties": true
+        }
+       },
+       "ai_review": {
+        "oneOf": [
+         {
+          "type": "null"
+         },
+         {
+          "type": "object",
+          "properties": {
+           "model": {
+            "type": "string"
+           },
+           "reviewed_at": {
+            "type": "string"
+           },
+           "note": {
+            "type": "string"
+           },
+           "spec_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+           },
+           "current": {
+            "type": "boolean"
+           }
+          },
+          "required": [
+           "model",
+           "reviewed_at",
+           "note",
+           "spec_sha256",
+           "current"
+          ],
+          "additionalProperties": false
+         }
+        ]
+       },
+       "scope": {
+        "type": "object",
+        "properties": {
+         "includes": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         },
+         "excludes": {
+          "type": "array",
+          "items": {
+           "type": "object",
+           "properties": {
+            "item": {
+             "type": "string"
+            },
+            "reason": {
+             "type": [
+              "string",
+              "null"
+             ]
+            }
+           },
+           "required": [
+            "item",
+            "reason"
+           ],
+           "additionalProperties": false
+          }
+         }
+        },
+        "required": [
+         "includes",
+         "excludes"
+        ],
+        "additionalProperties": true
+       },
+       "parameters": {
+        "type": "object"
+       },
+       "formulas": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "label": {
+           "type": "string"
+          },
+          "tex": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "text": {
+           "type": [
+            "string",
+            "null"
+           ]
+          },
+          "mathml": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "label"
+         ],
+         "additionalProperties": true
+        }
+       },
+       "rounding": {
+        "type": [
+         "object",
+         "null"
+        ]
+       },
+       "rate_tables": {
+        "type": [
+         "object",
+         "null"
+        ]
+       },
+       "branches": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "quota": {
+           "type": "number"
+          },
+          "control": {
+           "type": "boolean"
+          },
+          "note": {
+           "type": [
+            "string",
+            "null"
+           ]
+          }
+         },
+         "required": [
+          "id",
+          "quota"
+         ],
+         "additionalProperties": true
+        }
+       },
+       "golden": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "input": {
+           "type": "object"
+          },
+          "expected": {},
+          "status": {
+           "type": "string"
+          },
+          "source": {
+           "type": [
+            "string",
+            "null"
+           ]
+          }
+         },
+         "required": [
+          "id",
+          "input",
+          "expected",
+          "status"
+         ],
+         "additionalProperties": true
+        }
+       },
+       "golden_status_counts": {
+        "type": "object",
+        "additionalProperties": {
+         "type": "integer"
+        }
+       },
+       "open_questions": {
+        "type": "array"
+       },
+       "changelog": {
+        "type": "array"
+       },
+       "public_set": {
+        "oneOf": [
+         {
+          "type": "null"
+         },
+         {
+          "type": "object",
+          "properties": {
+           "path": {
+            "type": "string"
+           },
+           "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+           },
+           "manifest_path": {
+            "type": "string"
+           },
+           "manifest_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+           },
+           "family_version": {
+            "type": "string"
+           },
+           "family_status": {
+            "enum": [
+             "draft",
+             "reviewed"
+            ]
+           },
+           "generator_version": {
+            "type": "string"
+           },
+           "n": {
+            "type": "integer"
+           },
+           "rejected": {
+            "type": "integer"
+           },
+           "as_of": {
+            "type": "string"
+           },
+           "salt": {
+            "type": "string"
+           },
+           "hashes": {
+            "type": "object",
+            "properties": {
+             "spec_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+             },
+             "rule_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+             },
+             "templates_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+             },
+             "sampler_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+             }
+            },
+            "required": [
+             "spec_sha256",
+             "rule_sha256",
+             "templates_sha256",
+             "sampler_sha256"
+            ],
+            "additionalProperties": false
+           },
+           "matches_current_files": {
+            "type": "boolean"
+           },
+           "lineage": {
+            "type": "object"
+           }
+          },
+          "required": [
+           "path",
+           "sha256",
+           "manifest_path",
+           "manifest_sha256",
+           "family_version",
+           "family_status",
+           "generator_version",
+           "n",
+           "rejected",
+           "as_of",
+           "salt",
+           "hashes",
+           "matches_current_files",
+           "lineage"
+          ],
+          "additionalProperties": false
+         }
+        ]
+       },
+       "private_set": {
+        "oneOf": [
+         {
+          "type": "null"
+         },
+         {
+          "type": "object",
+          "properties": {
+           "manifest_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+           }
+          },
+          "required": [
+           "manifest_sha256"
+          ],
+          "additionalProperties": true
+         }
+        ]
+       },
+       "language": {},
+       "curated_at": {},
+       "answer": {},
+       "formula_legend": {},
+       "boundary_values": {}
+      },
+      "required": [
+       "ai_review",
+       "answer",
+       "boundary_values",
+       "branches",
+       "card",
+       "changelog",
+       "curated_at",
+       "curator",
+       "formula_legend",
+       "formulas",
+       "golden",
+       "golden_status_counts",
+       "hashes",
+       "id",
+       "language",
+       "legal_basis",
+       "name",
+       "open_questions",
+       "parameters",
+       "private_set",
+       "public_set",
+       "rate_tables",
+       "reviews",
+       "rounding",
+       "scope",
+       "status",
+       "summary",
+       "tier",
+       "version"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   "required": [
+    "families"
+   ],
+   "additionalProperties": false
+  },
+  "results": {
+   "type": "object",
+   "properties": {
+    "release": {
+     "type": "string"
+    },
+    "index_name": {
+     "type": "string"
+    },
+    "methodology_version": {
+     "type": "string"
+    },
+    "mode": {
+     "enum": [
+      "preview",
+      "release"
+     ]
+    },
+    "weights": {
+     "type": "object",
+     "additionalProperties": {
+      "type": "number"
+     }
+    },
+    "headline_tiers": {
+     "type": "array",
+     "items": {
+      "type": "integer"
+     }
+    },
+    "families": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "release_blockers": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "notes": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "targets": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "properties": {
+       "target": {
+        "type": "string"
+       },
+       "model": {
+        "type": "string"
+       },
+       "quantization": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "hardware": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "answer_mode": {
+        "type": [
+         "string",
+         "null"
+        ]
+       },
+       "is_fake": {
+        "type": "boolean"
+       },
+       "splits": {
+        "type": "object",
+        "additionalProperties": {
+         "type": "object",
+         "properties": {
+          "score": {
+           "type": [
+            "number",
+            "null"
+           ]
+          },
+          "status": {
+           "type": "string"
+          },
+          "reason": {},
+          "control_pass": {
+           "type": [
+            "number",
+            "null"
+           ]
+          },
+          "n_control": {
+           "type": [
+            "integer",
+            "null"
+           ]
+          },
+          "family_scores": {
+           "type": "object",
+           "additionalProperties": {
+            "type": [
+             "number",
+             "null"
+            ]
+           }
+          },
+          "runs": {
+           "type": "array",
+           "items": {
+            "type": "object",
+            "properties": {
+             "family": {
+              "type": "string"
+             },
+             "n": {
+              "type": "integer"
+             },
+             "expected_n": {
+              "type": [
+               "integer",
+               "null"
+              ]
+             },
+             "correct": {
+              "type": "integer"
+             },
+             "n_scored": {
+              "type": [
+               "integer",
+               "null"
+              ]
+             },
+             "correct_scored": {
+              "type": [
+               "integer",
+               "null"
+              ]
+             },
+             "accuracy": {
+              "type": [
+               "number",
+               "null"
+              ]
+             },
+             "n_control": {
+              "type": [
+               "integer",
+               "null"
+              ]
+             },
+             "correct_control": {
+              "type": [
+               "integer",
+               "null"
+              ]
+             },
+             "control_pass": {
+              "type": [
+               "number",
+               "null"
+              ]
+             },
+             "complete": {
+              "type": "boolean"
+             },
+             "tier": {
+              "type": [
+               "integer",
+               "null"
+              ]
+             },
+             "answer_mode": {
+              "type": [
+               "string",
+               "null"
+              ]
+             },
+             "by_branch": {
+              "type": "object"
+             },
+             "log_file": {
+              "type": "string"
+             },
+             "log_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+             },
+             "run_id": {
+              "type": [
+               "string",
+               "null"
+              ]
+             },
+             "model": {
+              "type": [
+               "string",
+               "null"
+              ]
+             },
+             "fake": {
+              "type": [
+               "string",
+               "null"
+              ]
+             },
+             "log_path": {
+              "type": [
+               "string",
+               "null"
+              ]
+             },
+             "stale": {
+              "type": "boolean"
+             },
+             "stale_fields": {
+              "type": "array",
+              "items": {
+               "type": "string"
+              }
+             },
+             "log_withheld": {
+              "type": "boolean"
+             }
+            },
+            "required": [
+             "accuracy",
+             "answer_mode",
+             "by_branch",
+             "complete",
+             "control_pass",
+             "correct",
+             "correct_control",
+             "correct_scored",
+             "expected_n",
+             "fake",
+             "family",
+             "log_file",
+             "log_path",
+             "log_sha256",
+             "log_withheld",
+             "model",
+             "n",
+             "n_control",
+             "n_scored",
+             "run_id",
+             "stale",
+             "stale_fields",
+             "tier"
+            ],
+            "additionalProperties": false
+           }
+          }
+         },
+         "required": [
+          "score",
+          "status",
+          "reason",
+          "control_pass",
+          "n_control",
+          "family_scores",
+          "runs"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "public_private_gap": {}
+      },
+      "required": [
+       "target",
+       "model",
+       "quantization",
+       "hardware",
+       "answer_mode",
+       "is_fake",
+       "splits",
+       "public_private_gap"
+      ],
+      "additionalProperties": false
+     }
+    }
+   },
+   "required": [
+    "release",
+    "index_name",
+    "methodology_version",
+    "mode",
+    "weights",
+    "headline_tiers",
+    "families",
+    "release_blockers",
+    "notes",
+    "targets"
+   ],
+   "additionalProperties": false
+  }
+ }
+}

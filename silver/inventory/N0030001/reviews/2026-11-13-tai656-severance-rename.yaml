@@ -1,0 +1,9 @@
+reviewer: Calvin Ku
+date: "2026-11-13"
+scope: TAI-656 資遣費的三個缺口之一：17/1 的 triage family 名稱改成實際的 family。協調 session 2026-11-13 問 Calvin「資遣費的三個缺口要現在一起修、重簽一次嗎？」，Calvin 回覆「現在一起修」。分類不變，只改 family。
+decisions:
+  - unit_id: N0030001/17/1
+    verdict: overridden
+    category: computable
+    family: severance_pay
+    note: 實際 family 為 severance_pay（舊制依本項，新制依勞工退休金條例 §12 第 1 項，同一 family 分段計算後合計；TAI-442 第 3 題）。原 LLM 標籤 severance_pay_old_system 只涵蓋舊制。

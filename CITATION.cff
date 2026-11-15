@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use LaborCalc-TW, please cite it as below."
+title: "LaborCalc-TW: a benchmark of Taiwan labor-law calculations"
+type: dataset
+version: "2026Q4"
+authors:
+  - family-names: Ku
+    given-names: Calvin
+repository-code: "https://github.com/taiwaneval/laborcalc-tw"
+url: "https://huggingface.co/datasets/taiwaneval/LaborCalc-TW"
+license: "Apache-2.0"
+keywords:
+  - benchmark
+  - evaluation
+  - Taiwan
+  - labor law
+  - Traditional Chinese

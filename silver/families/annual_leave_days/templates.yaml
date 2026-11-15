@@ -1,0 +1,71 @@
+# annual_leave_days 題幹模板（v1：手寫、確定性、零 LLM 成本）
+# 佔位符：{name} {hire} {query}
+# hire／query 由 sampler.py 依 date_style 旋鈕渲染（民國年／西元年、全寫／縮寫），兩個日期各自獨立抽，可能混用。
+# 每個模板標 register（formal / casual）與 implicit（題幹是否隱含而非明說「特別休假」）。
+
+answer_instruction: 請只回答一個整數（天數），不要附任何單位或說明。
+
+# 刻意配對（TAI-647）：一般題中 rate 比例組成 size 題一組，同參數、不同模板，標 pair_id，用來量「換問法，答案會不會變」。
+pairing:
+  rate: 0.2
+  size: 2
+
+templates:
+  - id: T01
+    register: formal
+    text: "{name}自{hire}起受僱於同一事業單位，持續在職至今。請問在{query}當天，依勞動基準法第38條規定，{name}依其年資應有幾日特別休假？"
+  - id: T02
+    register: formal
+    text: "某公司員工{name}到職日為{hire}。試依勞動基準法第38條第1項計算：以{query}為基準日，雇主應給予{name}之特別休假日數為何？"
+  - id: T03
+    register: casual
+    text: "{name}是{hire}進公司的，一直做到現在。到{query}這天，照勞基法算他可以有幾天特休？"
+  - id: T04
+    register: casual
+    text: "我叫{name}，{hire}到職，一直沒離職。想問一下到{query}為止，我依勞基法有幾天特休？"
+  - id: T05
+    register: formal
+    implicit: true
+    text: "{name}於{hire}到職，服務年資持續未中斷。截至{query}，依勞動基準法規定其得享有之年度休假日數為幾日？"
+  # ---- TAI-647 新增（2026-11-10 草稿，待 Calvin 逐條簽核）----
+  - id: T06
+    register: formal
+    style: hr
+    text: "人資作業：員工{name}到職日{hire}，年資未曾中斷。請計算其於{query}依勞動基準法第38條得享有之特別休假日數。"
+  - id: T07
+    register: casual
+    style: line
+    text: "請問一下～我是{name}，{hire}開始上班，中間都沒離職過，到{query}的時候照勞基法應該有幾天特休？"
+  - id: T08
+    register: formal
+    style: qa
+    text: "【勞資Q&A】問：勞工{name}於{hire}到職並持續工作，至{query}時依勞動基準法有幾日特別休假？"
+  - id: T09
+    register: formal
+    style: distractor
+    text: "{name}於{hire}到職，公司共有62名員工，{name}去年請過3天病假。{name}截至{query}仍在職，依勞動基準法第38條，{name}有幾日特別休假？"
+  - id: T10
+    register: casual
+    implicit: true
+    style: implicit
+    text: "{name}自{hire}起在同一家公司工作至今。到了{query}這天，依勞動基準法按年資計算，公司應給{name}幾天帶薪年假？"
+
+# 對照題（未滿六個月）專用模板：問法相同，答案是 0，測模型會不會先給三天
+zero_templates:
+  - id: Z01
+    register: formal
+    text: "{name}於{hire}到職，至{query}仍在職。依勞動基準法第38條，{query}當天{name}依法可排定的特別休假為幾日？"
+  # ---- TAI-647 新增（待簽核）----
+  - id: Z02
+    register: casual
+    style: line
+    text: "我是{name}，{hire}才開始上班，到{query}都還在。照勞基法，我在{query}這天有幾天特休？"
+  - id: Z03
+    register: formal
+    style: hr
+    text: "人資作業：新進員工{name}到職日{hire}。以{query}為基準日，依勞動基準法第38條，其可排定之特別休假日數為何？"
+
+# 實體池（v1 小型；與 overtime_pay 相同，release 時換池）
+names:
+  surnames: [陳, 林, 黃, 張, 李, 王, 吳, 劉, 蔡, 楊, 許, 鄭, 謝, 郭, 洪]
+  given: [怡君, 家豪, 淑芬, 建宏, 美玲, 志明, 雅婷, 俊傑, 宗翰, 佩珊, 冠宇, 欣怡, 柏翰, 詩涵, 承翰]

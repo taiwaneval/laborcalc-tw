@@ -1,0 +1,18 @@
+reviews:
+  - reviewer: "Calvin Ku"
+    role: "owner"
+    date: "2026-10-12"
+    spec_sha256: a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254
+    rule_sha256: ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595
+    templates_sha256: 038a55f3b9ec1b146c633fd913b863c338469d8b214a73c057bb0037eea5f218
+    sampler_sha256: 41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85
+    verdict: approved
+  - reviewer: "Calvin Ku"
+    role: "owner"
+    date: "2026-11-10"
+    spec_sha256: a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254
+    rule_sha256: ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595
+    templates_sha256: 073e2530e76ecbed90478ce3fd549c0f72828a31a0fde9207e635f5318091314
+    sampler_sha256: 41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85
+    verdict: approved
+    notes: "TAI-647：新增模板 T06–T10、Z02–Z03，配對設定 pairing rate 0.2 size 2"

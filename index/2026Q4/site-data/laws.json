@@ -1,0 +1,67 @@
+{
+ "laws": [
+  {
+   "pcode": "N0030001",
+   "law_name": "勞動基準法",
+   "law_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001",
+   "last_amended": "20240731",
+   "source": "kong0107/mojLawSplitJSON (mirror of law.moj.gov.tw open data)",
+   "source_file": "FalVMingLing/N0030001.json",
+   "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+   "mirror_update_date": "20260918",
+   "fetched_at": "2026-10-11T13:30:49+08:00",
+   "sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+   "inventory": {
+    "triage_version": "0.1.1",
+    "articles": 98,
+    "units": 220,
+    "by_category": {
+     "computable": 31,
+     "definitional": 94,
+     "delegated": 21,
+     "discretionary": 15,
+     "lookup": 59
+    },
+    "review": {
+     "confirmed": 12,
+     "overridden": 12,
+     "pending": 196
+    },
+    "conflicts_open": 0,
+    "encoded_units": [
+     {
+      "unit_id": "N0030001/24/1",
+      "family": "overtime_pay",
+      "coverage": "partial",
+      "note": "第一款、第二款已編碼；第三款（§32-4 天災事變加倍）排除"
+     },
+     {
+      "unit_id": "N0030001/24/2",
+      "family": "overtime_pay",
+      "coverage": "full",
+      "note": null
+     },
+     {
+      "unit_id": "N0030001/32/2",
+      "family": "overtime_pay",
+      "coverage": "partial",
+      "note": "只用到單日 12 小時上限；月 46 小時、三個月 138 小時未檢核"
+     },
+     {
+      "unit_id": "N0030001/39/1",
+      "family": "overtime_pay",
+      "coverage": "full",
+      "note": "國定假日出勤加倍；例假與特休部分不在本 family"
+     },
+     {
+      "unit_id": "N0030001/38/1",
+      "family": "annual_leave_days",
+      "coverage": "full",
+      "note": "第 1 項階梯全部編碼；起算點依施行細則第 5 條；無相當日依民法 §121 但書，經勞動部特休試算系統核對（TAI-442）"
+     }
+    ],
+    "page": "site/rules/laws/coverage_N0030001.html"
+   }
+  }
+ ]
+}

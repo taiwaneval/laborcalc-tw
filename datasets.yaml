@@ -1,0 +1,16 @@
+datasets:
+  laborcalc:
+    name: LaborCalc-TW
+    families:
+    - overtime_pay
+    - annual_leave_days
+    releases:
+    - 2026Q4
+    release_name_format: laborcalc-{period}
+    legacy_releases:
+    - 2026Q4
+    default_weights: {}
+    public:
+      github: taiwaneval/laborcalc-tw
+      huggingface: taiwaneval/LaborCalc-TW
+      templates: tools/public_export

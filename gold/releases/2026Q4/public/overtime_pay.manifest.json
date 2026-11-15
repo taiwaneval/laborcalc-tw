@@ -1,0 +1,58 @@
+{
+ "family": "overtime_pay",
+ "family_version": "0.2.2",
+ "family_status": "reviewed",
+ "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+ "rule_sha256": "e8862905b1df284d3f686b4a128b177ef130b1cf0726eddba90ae96a943f8fae",
+ "templates_sha256": "471ec16e1727bdb68ac744c322a6c0e70788707d7f62b33db99a4cbafea6b937",
+ "sampler_sha256": "a83134ac02f6e37973b9b511e63a9f7e04223395fa24cbe280c6c4bcdf5a45d8",
+ "generator_version": "0.5.0",
+ "release": "2026Q4",
+ "split": "public",
+ "salt": "taiwaneval-public-2026",
+ "n": 200,
+ "rejected": 0,
+ "lineage": {
+  "laws": {
+   "N0030001": {
+    "law_name": "勞動基準法",
+    "last_amended": "20240731",
+    "bronze_sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+    "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+    "triage_version": "0.1.1",
+    "units": [
+     "N0030001/24/1",
+     "N0030001/24/2",
+     "N0030001/32/2",
+     "N0030001/39/1"
+    ]
+   }
+  }
+ },
+ "as_of": "2026-10-08",
+ "diversity": {
+  "template_counts": {
+   "T01": 19,
+   "T02": 18,
+   "T03": 18,
+   "T04": 19,
+   "T05": 18,
+   "T06": 20,
+   "T07": 19,
+   "T08": 20,
+   "T09": 20,
+   "T10": 19,
+   "Z01": 3,
+   "Z02": 3,
+   "Z03": 4
+  },
+  "max_template_share": 0.1,
+  "max_template_share_cap": 0.15,
+  "skeletons": 165,
+  "near_duplicates": 11,
+  "max_skeleton_reuse": 2,
+  "param_duplicates": 0,
+  "pairs": 19,
+  "paired_items": 38
+ }
+}

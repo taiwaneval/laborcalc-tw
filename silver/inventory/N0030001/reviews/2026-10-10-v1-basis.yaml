@@ -1,0 +1,21 @@
+reviewer: Calvin Ku
+date: "2026-10-10"
+scope: v1 兩個 family（overtime_pay、annual_leave_days）依據的 5 個 computable 條項（TAI-429）。Calvin 2026-10-10 在對話中逐條決定。family 欄位維持候選名稱；實際編碼對應見 families.yaml。
+decisions:
+  # ---- overtime_pay ----
+  - unit_id: N0030001/24/1
+    verdict: confirmed
+    note: 分類與 io 正確。已編碼於 overtime_pay（partial）；第三款（§32-4 天災事變加倍）留待後續，與 32/4 連結。
+  - unit_id: N0030001/24/2
+    verdict: confirmed
+    note: 已完整編碼於 overtime_pay。
+  - unit_id: N0030001/32/2
+    verdict: confirmed
+    note: 分類與 io 正確。overtime_pay 只用單日 12 小時上限（partial）；月、季上限留給候選 family overtime_hour_caps。
+  - unit_id: N0030001/39/1
+    verdict: confirmed
+    note: 分類正確。io 只涵蓋休假日加倍；照給句與季節性趕工不在題庫範圍。已編碼於 overtime_pay（國定假日）。
+  # ---- annual_leave_days ----
+  - unit_id: N0030001/38/1
+    verdict: confirmed
+    note: 已完整編碼於 annual_leave_days；無相當日的處理在 TAI-434 決定。

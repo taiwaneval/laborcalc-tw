@@ -1,0 +1,7 @@
+reviewer: Calvin Ku
+date: "2026-11-13"
+scope: TAI-656 資遣費與預告期間 family 入場前的條項複核。Calvin 2026-11-13 對簽核包第一節回覆「都照預設」（第 6 題：§16 第 1 項照草稿 confirmed）。草稿中選用的 17/1 family 改名不在同意範圍內，未收入。
+decisions:
+  - unit_id: N0030001/16/1
+    verdict: confirmed
+    note: computable，family termination_notice_period。三款級距依繼續工作年資（算到最後工作日），「以上」含本數；未滿三個月條文未規定（勞動部「預告期間天數計算」頁：法無明文，依雙方約定），不收。

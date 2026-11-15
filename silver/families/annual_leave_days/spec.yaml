@@ -1,0 +1,171 @@
+# TaiwanEval rule family spec
+# 這份 YAML 是 source of truth；HTML 規則卡由 build_page.py 從這裡生成。
+# 審閱者簽核寫在同目錄的 reviews.yaml，對象是本檔與 rule.py 的 sha256（見 tools/family_reviews.py），不是頁面本身。
+# 本檔不記 status／review_log：family 是否 reviewed 只由 reviews.yaml 推得（TAI-428）。
+
+id: annual_leave_days
+name: 特別休假日數（§38 第 1 項・週年制）
+version: 0.1.3
+tier: 1 # 程序型：參數由程式抽樣，答案由程式計算
+language: zh-TW
+curated_at: "2026-10-09"
+curator: Calvin Ku
+
+summary: >
+  勞工在同一雇主繼續工作，依到職日與查詢日計算已滿年資，再依勞動基準法第 38 條第 1 項之階梯給予特別休假日數。
+  年資自受僱當日起算（勞動基準法施行細則第 5 條），滿期日依民法第 121 條：相當日當天起算已滿；最後之月無相當日者以該月末日為期間末日，翌日起算已滿。
+  只編碼週年制之法定最低日數，排除曆年制比例計算與未休折算工資。
+
+# ---------------------------------------------------------------------------
+# 法源：條號、修正與施行日期以 bronze/N0030001 快照之沿革核對
+# ---------------------------------------------------------------------------
+legal_basis:
+  - id: LSA-38-1
+    law: 勞動基準法
+    article: 第 38 條第 1 項
+    amended: "2018-01-31"
+    effective: "2018-03-01"
+    url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=38
+    encodes: 各年資區間應給的特休日數（3／7／10／14／15 日，十年以上每年加 1 日至 30 日）；滿期當天起適用下一級日數，前一天仍適用原級數
+    note: >
+      第 1 項階梯為 2016-12-21 修正、2017-01-01 施行。2018-01-31 修正（2018-03-01 施行）僅於第 4 項增訂遞延但書，並將原第 7 項施行日期移至第 86 條；
+      第 1 項未修正：行政院 2017-11 勞動基準法部分條文修正草案條文對照表第三十八條說明一「第一項至第三項、第五項及第六項未修正」，
+      且現行第 1 項與 2016-12-21 版逐字相同、2018 年後本條未再修正（bronze 沿革第 17、19–24 點）。
+    source_url: https://www.ey.gov.tw/File/3828484B485815C0?A=C
+    summary: >
+      六個月以上一年未滿者三日；一年以上二年未滿者七日；二年以上三年未滿者十日；三年以上五年未滿者每年十四日；
+      五年以上十年未滿者每年十五日；十年以上者每一年加給一日，加至三十日為止。
+  - id: LSAER-5
+    law: 勞動基準法施行細則
+    article: 第 5 條第 1 項
+    url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030002&flno=5
+    encodes: 到職日算入：相當日當天起算已滿（不適用民法 §120 第 2 項「始日不算入」）
+    summary: >
+      勞工工作年資以服務同一事業單位為限，並自受僱當日起算。
+    note: >
+      地方主管機關的適用例：新北市勞工局勞動基準法 Q&A【特別休假】（起算日自受僱當日起算；105-10-01 到職，106-04-01 取得 3 日、106-10-01 取得 7 日）；
+      臺北市勞動局常見問答（105-02-01 到職，106-01-01 已滿 6 個月以上取得 3 天、106-02-01 已滿 1 年可排定 7 天）；
+      勞動部常見問答（自受僱之日起工作滿一定期間之翌日取得請特別休假之權利）。見 G16–G19。
+  - id: CC-121
+    law: 民法
+    article: 第 121 條
+    url: https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=121
+    summary: >
+      期間不以星期、月或年之始日起算者，以最後之星期、月或年與起算日相當日之前一日為期間之末日；
+      但以月或年定期間，於最後之月無相當日者，以其月之末日為期間之末日。
+    encodes: 滿期日（已滿幾個月）；到職日 29–31 日、滿期之月無相當日時，以該月末日為期間末日
+    note: >
+      起算點已由施行細則第 5 條定案（到職日算入）。但書（滿期之月無相當日時以該月末日為期間末日、翌日起算已滿）沒有直接處理的函釋或地方勞工局範例，
+      2026-10-10 改以勞動部「特別休假日數試算系統」（https://calcr2.mol.gov.tw/RestDays）核對：該系統前端的年資算法（Func_Seniority、addDate2）
+      與本 family 的 rule.py 在 2092 組日期（含月底與閏日到職）上零差異，G11–G14 全部一致；快照、sha256 與重跑方式見 repo docs/verification/2026-10-10-mol-annual-leave/。
+      另，勞委會 88 年 11 月 18 日（88）台勞資二字第 0048187 號函對勞基法第 12 條「一個月」明示期間之終止依民法第 121 條辦理。查核紀錄：Linear TAI-442，Calvin 2026-10-10 確認。
+
+scope:
+  includes:
+    - 同一雇主繼續工作之年資
+    - 週年制（以到職日起算）
+    - 查詢日當天依法應給之日數
+  excludes: # 每項附排除理由，規則卡顯示在項目底下
+    - item: 曆年制、會計年度等非週年制的年度（勞動基準法施行細則 §24 第 2 項第 2、3 款）
+      reason: 細則 §24 第 2 項讓勞雇雙方協商特休的行使期間，可選週年制、曆年制或學年度、會計年度等約定年度。選了週年以外的年度，就要把依年資取得的日數拆到各年度；拆算方法條文沒有規定，答案還取決於雙方約定的年度，只給到職日與查詢日無法得出唯一答案。
+    - item: 未休日數折算工資（§38 第 4 項；施行細則 §24-1）
+      reason: 要再算一日工資（計月者以最近一個月正常工作時間工資除以 30），也要知道年度終結時實際未休幾日、是否協商遞延至次一年度；需要薪資與請休紀錄，不是「應給幾日」的計算。
+    - item: 年資中斷、併計、留職停薪
+      reason: 本 family 假設到職日至查詢日在同一雇主連續受僱。年資能否併計要看事實（§57：同一雇主調動、依 §20 由新雇主承認的年資應予併計），中斷或留職停薪期間是否計入也依事由而定；只給到職日與查詢日無法判斷。
+    - item: 部分工時勞工
+      reason: 部分工時勞工也有特休，但依勞動部說明，各種假別依均等原則及比例原則給予相當日數（https://www.mol.gov.tw/1607/1632/2660/20733/），需要約定工時與全時工時的比例，題目參數沒有這項。
+    - item: 2017-01-01 施行前的舊階梯
+      reason: 現行第 1 項階梯自 2017-01-01 施行，修法前的日數不同。查詢日下限訂在 2018-03-01，查詢日當時適用的最近一次滿期日都在 2017-01-01 之後，所有題目都只適用現行階梯，不必處理新舊制銜接。
+
+parameters:
+  hire_date:
+    type: date
+    label: 到職日
+    format: ISO-8601
+    max_years_before_query: 32
+    note: 到職日；題幹以民國或西元呈現（date_style 旋鈕）；查詢日往前最多 32 年（sampler 以 32 × 366 日為界）
+  query_date:
+    type: date
+    label: 查詢日
+    format: ISO-8601
+    min: "2018-03-01"
+    max: "2026-12-31"
+    note: 查詢日 ≥ 到職日；下限為 §38 最近一次修正之施行日
+
+answer: { type: integer_days, tolerance: 0, label: 特別休假, unit: 日 }
+
+formulas:
+  - label: 已滿月數（民法 §121）
+    tex: 'm = \max\{\, k \ge 0 : E(H, k) \le Q \,\}'
+    text: E(H, k) 為到職日 H 加 k 個月之相當日；最後之月無相當日者，為該月末日之翌日。年資自受僱當日起算（施行細則第 5 條），相當日當天起算已滿（到職日算入）。
+  - label: 特別休假日數（§38 第 1 項）
+    tex: 'D = \begin{cases} 0 & m < 6 \\ 3 & 6 \le m < 12 \\ 7 & y = 1 \\ 10 & y = 2 \\ 14 & 3 \le y < 5 \\ 15 & 5 \le y < 10 \\ \min(15 + (y - 9),\ 30) & y \ge 10 \end{cases},\quad y = \lfloor m / 12 \rfloor'
+    text: 未滿六個月 0 日；六個月以上一年未滿 3 日；一年 7 日；二年 10 日；三、四年 14 日；五至九年 15 日；十年以上每一年加給一日，至 30 日為止。
+formula_legend: H 到職日 · Q 查詢日 · m 已滿月數 · y 已滿年數 · E 滿期日
+
+implementation:
+  python: rule.py
+  js: rule.js
+  js_global: AnnualLeaveRule
+  arg_order: [hire_date, query_date]
+  calculator_default: { hire_date: "2020-03-15", query_date: "2026-03-15" }
+  result_labels: { completedMonths: 已滿月數, completedYears: 已滿年數, tier: 階梯 }
+
+# ---------------------------------------------------------------------------
+# 分支與配額：生成器（sampler.py）依此抽樣，coverage 報告依此檢核
+# kind: tier = 依已滿月數區間抽；boundary = 以某階梯的滿期日為錨
+# ---------------------------------------------------------------------------
+branches:
+  - { id: S0, kind: tier, months: [0, 5], quota: 0.05, control: true, template_pool: zero_templates, note: 未滿六個月，應答 0（對照題，不進 accuracy） }
+  - { id: S1, kind: tier, months: [6, 11], quota: 0.10, note: 三日 }
+  - { id: S2, kind: tier, months: [12, 23], quota: 0.10, note: 七日 }
+  - { id: S3, kind: tier, months: [24, 35], quota: 0.10, note: 十日 }
+  - { id: S4, kind: tier, months: [36, 59], quota: 0.10, note: 十四日 }
+  - { id: S5, kind: tier, months: [60, 119], quota: 0.10, note: 十五日 }
+  - { id: S6, kind: tier, months: [120, 287], quota: 0.10, note: 十年以上每年加一日（16–29 日） }
+  - { id: S7, kind: tier, months: [288, 384], quota: 0.05, note: 封頂三十日 }
+  - { id: B1, kind: boundary, boundary: "on", quota: 0.125, note: 查詢日 = 滿期相當日當天（新階梯） }
+  - { id: B2, kind: boundary, boundary: before, quota: 0.125, note: 查詢日 = 相當日前一日（舊階梯） }
+  - { id: B3, kind: boundary, boundary: no_corresponding_day, quota: 0.05, note: 到職日 29/30/31，滿期之月無相當日（民法 §121 但書）；查詢日為該月末日或翌日 }
+
+boundary_values:
+  # B1／B2 的錨：各階梯第一個月數，加上十年以上線性區的一個例子（11 年）與封頂（24 年）
+  tier_months: [6, 12, 24, 36, 60, 120, 132, 288]
+  # B3 只能錨在「滿期之月可能短於到職日」的月數。以年為單位時目標月與到職月同月，只有 2/29 到職會缺相當日，
+  # 需要目標年為平年、到職年為閏年；24 年（288 月）兩者同為閏年或同為平年，曆法上不可能，故排除。
+  b3_tier_months: [6, 12, 24, 36, 60, 120, 132]
+
+# ---------------------------------------------------------------------------
+# Golden cases：驗證器出貨前必須全過
+# status: published-example = 勞動部公開之特休日數表或地方勞工局範例；derived = 依條文與民法 §121 推導；
+#         calculator-verified = 依條文推導，並以勞動部特別休假日數試算系統的年資算法核對一致（TAI-442）
+# ---------------------------------------------------------------------------
+golden_cases:
+  - { id: G01, input: { hire_date: "2020-01-15", query_date: "2020-07-15" }, expected: 3,  status: published-example, source: §38 第 1 項第 1 款：滿六個月三日 }
+  - { id: G02, input: { hire_date: "2020-01-15", query_date: "2021-01-15" }, expected: 7,  status: published-example, source: 滿一年七日 }
+  - { id: G03, input: { hire_date: "2020-01-15", query_date: "2022-01-15" }, expected: 10, status: published-example, source: 滿二年十日 }
+  - { id: G04, input: { hire_date: "2020-01-15", query_date: "2023-01-15" }, expected: 14, status: published-example, source: 滿三年十四日 }
+  - { id: G05, input: { hire_date: "2015-01-15", query_date: "2020-01-15" }, expected: 15, status: published-example, source: 滿五年十五日 }
+  - { id: G06, input: { hire_date: "2010-01-15", query_date: "2020-01-15" }, expected: 16, status: published-example, source: 滿十年十六日 }
+  - { id: G07, input: { hire_date: "1996-01-15", query_date: "2020-01-15" }, expected: 30, status: published-example, source: 滿二十四年三十日（封頂） }
+  - { id: G08, input: { hire_date: "1990-01-15", query_date: "2020-01-15" }, expected: 30, status: published-example, source: 滿三十年仍三十日 }
+  - { id: G09, input: { hire_date: "2023-03-15", query_date: "2024-03-14" }, expected: 3,  status: derived, source: 相當日前一日仍未滿一年 }
+  - { id: G10, input: { hire_date: "2023-03-15", query_date: "2024-03-15" }, expected: 7,  status: derived, source: 相當日當天已滿一年（民法 §121） }
+  - { id: G11, input: { hire_date: "2024-02-29", query_date: "2025-02-28" }, expected: 3,  status: calculator-verified, source: 無相當日，2025-02-28 為期間末日，尚未滿一年；勞動部特休試算系統一致 }
+  - { id: G12, input: { hire_date: "2024-02-29", query_date: "2025-03-01" }, expected: 7,  status: calculator-verified, source: 期間末日翌日起算已滿一年；勞動部特休試算系統一致 }
+  - { id: G13, input: { hire_date: "2023-08-31", query_date: "2024-02-29" }, expected: 0,  status: calculator-verified, source: 滿六個月之月（2024-02）無 31 日，2024-02-29 為期間末日，當日尚未滿；勞動部特休試算系統一致 }
+  - { id: G14, input: { hire_date: "2023-08-31", query_date: "2024-03-01" }, expected: 3,  status: calculator-verified, source: 2024-03-01 起滿六個月；勞動部特休試算系統一致（試算器顯示 113/03/01 取得 3 日） }
+  - { id: G15, input: { hire_date: "2020-01-15", query_date: "2020-01-15" }, expected: 0,  status: derived, source: 到職當日年資零 }
+  - { id: G16, input: { hire_date: "2016-10-01", query_date: "2017-04-01" }, expected: 3,  status: published-example, source: 新北市勞工局 Q&A：105年10月1日到職，106年4月1日取得特休 3 日 }
+  - { id: G17, input: { hire_date: "2016-10-01", query_date: "2017-10-01" }, expected: 7,  status: published-example, source: 新北市勞工局 Q&A：同上，106年10月1日取得特休 7 日 }
+  - { id: G18, input: { hire_date: "2016-02-01", query_date: "2017-01-01" }, expected: 3,  status: published-example, source: 臺北市勞動局常見問答：105年2月1日到職，106年1月1日年資已滿 6 個月以上，取得 3 天 }
+  - { id: G19, input: { hire_date: "2016-02-01", query_date: "2017-02-01" }, expected: 7,  status: published-example, source: 臺北市勞動局常見問答：同上，106年2月1日年資已滿 1 年，可排定 7 天 }
+
+# 0.1.1 的唯一待釐清事項（滿期之月無相當日）已於 2026-10-10 以勞動部試算系統核對結案，見 CC-121 與 Linear TAI-442。
+open_questions: []
+
+changelog:
+  - { version: 0.1.3, date: "2026-10-12", note: 法源「編碼為」改寫成白話（不再用 S0–S7／B1–B3 抽樣代號，避免「新舊階梯」與修法前舊階梯混淆）；適用範圍排除每項附理由；規則與題目不變 }
+  - { version: 0.1.2, date: "2026-10-10", note: 無相當日（CC-121）經勞動部特休試算系統核對結案，G11–G14 改 calculator-verified、open_questions 清空；rule.py 與 rule.js 對不存在或非 YYYY-MM-DD 的日期一律報錯；T01 拿掉暗示曆年制的「當年度」；移除 status／review_log，簽核改在 reviews.yaml；有效輸入的結果不變 }
+  - { version: 0.1.1, date: "2026-10-10", note: 法源補施行細則第 5 條（到職日算入）；2018 修正未改第 1 項已以行政院條文對照表核對；新增地方勞工局官方範例 G16–G19；規則與題目參數不變 }
+  - { version: 0.1.0, date: "2026-10-09", note: 初版草稿 }

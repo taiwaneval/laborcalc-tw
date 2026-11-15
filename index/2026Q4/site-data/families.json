@@ -1,0 +1,1183 @@
+{
+ "families": [
+  {
+   "id": "annual_leave_days",
+   "status": "reviewed",
+   "hashes": {
+    "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+    "rule_sha256": "ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595",
+    "templates_sha256": "073e2530e76ecbed90478ce3fd549c0f72828a31a0fde9207e635f5318091314",
+    "sampler_sha256": "41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85"
+   },
+   "reviews": [
+    {
+     "reviewer": "Calvin Ku",
+     "role": "owner",
+     "date": "2026-10-12",
+     "verdict": "approved",
+     "notes": null,
+     "current": false,
+     "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+     "rule_sha256": "ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595",
+     "templates_sha256": "038a55f3b9ec1b146c633fd913b863c338469d8b214a73c057bb0037eea5f218",
+     "sampler_sha256": "41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85"
+    },
+    {
+     "reviewer": "Calvin Ku",
+     "role": "owner",
+     "date": "2026-11-10",
+     "verdict": "approved",
+     "notes": "TAI-647：新增模板 T06–T10、Z02–Z03，配對設定 pairing rate 0.2 size 2",
+     "current": true,
+     "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+     "rule_sha256": "ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595",
+     "templates_sha256": "073e2530e76ecbed90478ce3fd549c0f72828a31a0fde9207e635f5318091314",
+     "sampler_sha256": "41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85"
+    }
+   ],
+   "card": "site/rules/families/annual_leave_days.html",
+   "ai_review": {
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "reviewed_at": "2026-10-12T19:11:31+08:00",
+    "note": "AI 意見，供審閱參考，不是人工簽核；family 是否 reviewed 只看 reviews.yaml。",
+    "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+    "current": true
+   },
+   "name": "特別休假日數（§38 第 1 項・週年制）",
+   "version": "0.1.3",
+   "tier": 1,
+   "language": "zh-TW",
+   "curated_at": "2026-10-09",
+   "curator": "Calvin Ku",
+   "summary": "勞工在同一雇主繼續工作，依到職日與查詢日計算已滿年資，再依勞動基準法第 38 條第 1 項之階梯給予特別休假日數。 年資自受僱當日起算（勞動基準法施行細則第 5 條），滿期日依民法第 121 條：相當日當天起算已滿；最後之月無相當日者以該月末日為期間末日，翌日起算已滿。 只編碼週年制之法定最低日數，排除曆年制比例計算與未休折算工資。",
+   "legal_basis": [
+    {
+     "id": "LSA-38-1",
+     "law": "勞動基準法",
+     "article": "第 38 條第 1 項",
+     "amended": "2018-01-31",
+     "effective": "2018-03-01",
+     "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=38",
+     "encodes": "各年資區間應給的特休日數（3／7／10／14／15 日，十年以上每年加 1 日至 30 日）；滿期當天起適用下一級日數，前一天仍適用原級數",
+     "note": "第 1 項階梯為 2016-12-21 修正、2017-01-01 施行。2018-01-31 修正（2018-03-01 施行）僅於第 4 項增訂遞延但書，並將原第 7 項施行日期移至第 86 條； 第 1 項未修正：行政院 2017-11 勞動基準法部分條文修正草案條文對照表第三十八條說明一「第一項至第三項、第五項及第六項未修正」， 且現行第 1 項與 2016-12-21 版逐字相同、2018 年後本條未再修正（bronze 沿革第 17、19–24 點）。",
+     "source_url": "https://www.ey.gov.tw/File/3828484B485815C0?A=C",
+     "summary": "六個月以上一年未滿者三日；一年以上二年未滿者七日；二年以上三年未滿者十日；三年以上五年未滿者每年十四日； 五年以上十年未滿者每年十五日；十年以上者每一年加給一日，加至三十日為止。",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要完整對應出處原文第 1 項各款特休日數階梯；編碼為第一段同步反映階梯日數，第二段「滿期當天起適用下一級日數」為「滿一定期間」之合理實作邏輯，與出處不矛盾；備註說明修法沿革並註明 bronze 沿革點次為其他依據，符合規定。"
+     }
+    },
+    {
+     "id": "LSAER-5",
+     "law": "勞動基準法施行細則",
+     "article": "第 5 條第 1 項",
+     "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030002&flno=5",
+     "encodes": "到職日算入：相當日當天起算已滿（不適用民法 §120 第 2 項「始日不算入」）",
+     "summary": "勞工工作年資以服務同一事業單位為限，並自受僱當日起算。",
+     "note": "地方主管機關的適用例：新北市勞工局勞動基準法 Q&A【特別休假】（起算日自受僱當日起算；105-10-01 到職，106-04-01 取得 3 日、106-10-01 取得 7 日）； 臺北市勞動局常見問答（105-02-01 到職，106-01-01 已滿 6 個月以上取得 3 天、106-02-01 已滿 1 年可排定 7 天）； 勞動部常見問答（自受僱之日起工作滿一定期間之翌日取得請特別休假之權利）。見 G16–G19。",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要與出處原文條文第一句完全一致；編碼為說明「到職日算入、不適用民法120條第2項始日不算入」，係依據出處「自受僱當日起算」之法律解釋與實務見解，並非出處原文直接敘述，但屬程式實作邏輯且未與出處矛盾；備註明確引用其他行政機關Q&A為依據（G16–G19），符合規則允許引用其他出處之規定。"
+     }
+    },
+    {
+     "id": "CC-121",
+     "law": "民法",
+     "article": "第 121 條",
+     "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=B0000001&flno=121",
+     "summary": "期間不以星期、月或年之始日起算者，以最後之星期、月或年與起算日相當日之前一日為期間之末日； 但以月或年定期間，於最後之月無相當日者，以其月之末日為期間之末日。",
+     "encodes": "滿期日（已滿幾個月）；到職日 29–31 日、滿期之月無相當日時，以該月末日為期間末日",
+     "note": "起算點已由施行細則第 5 條定案（到職日算入）。但書（滿期之月無相當日時以該月末日為期間末日、翌日起算已滿）沒有直接處理的函釋或地方勞工局範例， 2026-10-10 改以勞動部「特別休假日數試算系統」（https://calcr2.mol.gov.tw/RestDays）核對：該系統前端的年資算法（Func_Seniority、addDate2） 與本 family 的 rule.py 在 2092 組日期（含月底與閏日到職）上零差異，G11–G14 全部一致；快照、sha256 與重跑方式見 repo docs/verification/2026-10-10-mol-annual-leave/。 另，勞委會 88 年 11 月 18 日（88）台勞資二字第 0048187 號函對勞基法第 12 條「一個月」明示期間之終止依民法第 121 條辦理。查核紀錄：Linear TAI-442，Calvin 2026-10-10 確認。",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要忠實引用民法第 121 條第 2 項全文；編碼為正確實作該條但書「無相當日者以月末日為末日」之邏輯；備註明確標註起算點依據施行細則第 5 條、並引用勞動部試算系統與勞委會函釋作為外部驗證依據，均無與出處原文矛盾或臆測內容。"
+     }
+    }
+   ],
+   "scope": {
+    "includes": [
+     "同一雇主繼續工作之年資",
+     "週年制（以到職日起算）",
+     "查詢日當天依法應給之日數"
+    ],
+    "excludes": [
+     {
+      "item": "曆年制、會計年度等非週年制的年度（勞動基準法施行細則 §24 第 2 項第 2、3 款）",
+      "reason": "細則 §24 第 2 項讓勞雇雙方協商特休的行使期間，可選週年制、曆年制或學年度、會計年度等約定年度。選了週年以外的年度，就要把依年資取得的日數拆到各年度；拆算方法條文沒有規定，答案還取決於雙方約定的年度，只給到職日與查詢日無法得出唯一答案。"
+     },
+     {
+      "item": "未休日數折算工資（§38 第 4 項；施行細則 §24-1）",
+      "reason": "要再算一日工資（計月者以最近一個月正常工作時間工資除以 30），也要知道年度終結時實際未休幾日、是否協商遞延至次一年度；需要薪資與請休紀錄，不是「應給幾日」的計算。"
+     },
+     {
+      "item": "年資中斷、併計、留職停薪",
+      "reason": "本 family 假設到職日至查詢日在同一雇主連續受僱。年資能否併計要看事實（§57：同一雇主調動、依 §20 由新雇主承認的年資應予併計），中斷或留職停薪期間是否計入也依事由而定；只給到職日與查詢日無法判斷。"
+     },
+     {
+      "item": "部分工時勞工",
+      "reason": "部分工時勞工也有特休，但依勞動部說明，各種假別依均等原則及比例原則給予相當日數（https://www.mol.gov.tw/1607/1632/2660/20733/），需要約定工時與全時工時的比例，題目參數沒有這項。"
+     },
+     {
+      "item": "2017-01-01 施行前的舊階梯",
+      "reason": "現行第 1 項階梯自 2017-01-01 施行，修法前的日數不同。查詢日下限訂在 2018-03-01，查詢日當時適用的最近一次滿期日都在 2017-01-01 之後，所有題目都只適用現行階梯，不必處理新舊制銜接。"
+     }
+    ]
+   },
+   "parameters": {
+    "hire_date": {
+     "type": "date",
+     "label": "到職日",
+     "format": "ISO-8601",
+     "max_years_before_query": 32,
+     "note": "到職日；題幹以民國或西元呈現（date_style 旋鈕）；查詢日往前最多 32 年（sampler 以 32 × 366 日為界）"
+    },
+    "query_date": {
+     "type": "date",
+     "label": "查詢日",
+     "format": "ISO-8601",
+     "min": "2018-03-01",
+     "max": "2026-12-31",
+     "note": "查詢日 ≥ 到職日；下限為 §38 最近一次修正之施行日"
+    }
+   },
+   "answer": {
+    "type": "integer_days",
+    "tolerance": 0,
+    "label": "特別休假",
+    "unit": "日"
+   },
+   "rate_tables": null,
+   "rounding": null,
+   "formulas": [
+    {
+     "label": "已滿月數（民法 §121）",
+     "tex": "m = \\max\\{\\, k \\ge 0 : E(H, k) \\le Q \\,\\}",
+     "text": "E(H, k) 為到職日 H 加 k 個月之相當日；最後之月無相當日者，為該月末日之翌日。年資自受僱當日起算（施行細則第 5 條），相當日當天起算已滿（到職日算入）。"
+    },
+    {
+     "label": "特別休假日數（§38 第 1 項）",
+     "tex": "D = \\begin{cases} 0 & m < 6 \\\\ 3 & 6 \\le m < 12 \\\\ 7 & y = 1 \\\\ 10 & y = 2 \\\\ 14 & 3 \\le y < 5 \\\\ 15 & 5 \\le y < 10 \\\\ \\min(15 + (y - 9),\\ 30) & y \\ge 10 \\end{cases},\\quad y = \\lfloor m / 12 \\rfloor",
+     "text": "未滿六個月 0 日；六個月以上一年未滿 3 日；一年 7 日；二年 10 日；三、四年 14 日；五至九年 15 日；十年以上每一年加給一日，至 30 日為止。"
+    }
+   ],
+   "formula_legend": "H 到職日 · Q 查詢日 · m 已滿月數 · y 已滿年數 · E 滿期日",
+   "branches": [
+    {
+     "id": "S0",
+     "kind": "tier",
+     "months": [
+      0,
+      5
+     ],
+     "quota": 0.05,
+     "control": true,
+     "template_pool": "zero_templates",
+     "note": "未滿六個月，應答 0（對照題，不進 accuracy）"
+    },
+    {
+     "id": "S1",
+     "kind": "tier",
+     "months": [
+      6,
+      11
+     ],
+     "quota": 0.1,
+     "note": "三日"
+    },
+    {
+     "id": "S2",
+     "kind": "tier",
+     "months": [
+      12,
+      23
+     ],
+     "quota": 0.1,
+     "note": "七日"
+    },
+    {
+     "id": "S3",
+     "kind": "tier",
+     "months": [
+      24,
+      35
+     ],
+     "quota": 0.1,
+     "note": "十日"
+    },
+    {
+     "id": "S4",
+     "kind": "tier",
+     "months": [
+      36,
+      59
+     ],
+     "quota": 0.1,
+     "note": "十四日"
+    },
+    {
+     "id": "S5",
+     "kind": "tier",
+     "months": [
+      60,
+      119
+     ],
+     "quota": 0.1,
+     "note": "十五日"
+    },
+    {
+     "id": "S6",
+     "kind": "tier",
+     "months": [
+      120,
+      287
+     ],
+     "quota": 0.1,
+     "note": "十年以上每年加一日（16–29 日）"
+    },
+    {
+     "id": "S7",
+     "kind": "tier",
+     "months": [
+      288,
+      384
+     ],
+     "quota": 0.05,
+     "note": "封頂三十日"
+    },
+    {
+     "id": "B1",
+     "kind": "boundary",
+     "boundary": "on",
+     "quota": 0.125,
+     "note": "查詢日 = 滿期相當日當天（新階梯）"
+    },
+    {
+     "id": "B2",
+     "kind": "boundary",
+     "boundary": "before",
+     "quota": 0.125,
+     "note": "查詢日 = 相當日前一日（舊階梯）"
+    },
+    {
+     "id": "B3",
+     "kind": "boundary",
+     "boundary": "no_corresponding_day",
+     "quota": 0.05,
+     "note": "到職日 29/30/31，滿期之月無相當日（民法 §121 但書）；查詢日為該月末日或翌日"
+    }
+   ],
+   "boundary_values": {
+    "tier_months": [
+     6,
+     12,
+     24,
+     36,
+     60,
+     120,
+     132,
+     288
+    ],
+    "b3_tier_months": [
+     6,
+     12,
+     24,
+     36,
+     60,
+     120,
+     132
+    ]
+   },
+   "golden": [
+    {
+     "id": "G01",
+     "input": {
+      "hire_date": "2020-01-15",
+      "query_date": "2020-07-15"
+     },
+     "expected": 3,
+     "status": "published-example",
+     "source": "§38 第 1 項第 1 款：滿六個月三日"
+    },
+    {
+     "id": "G02",
+     "input": {
+      "hire_date": "2020-01-15",
+      "query_date": "2021-01-15"
+     },
+     "expected": 7,
+     "status": "published-example",
+     "source": "滿一年七日"
+    },
+    {
+     "id": "G03",
+     "input": {
+      "hire_date": "2020-01-15",
+      "query_date": "2022-01-15"
+     },
+     "expected": 10,
+     "status": "published-example",
+     "source": "滿二年十日"
+    },
+    {
+     "id": "G04",
+     "input": {
+      "hire_date": "2020-01-15",
+      "query_date": "2023-01-15"
+     },
+     "expected": 14,
+     "status": "published-example",
+     "source": "滿三年十四日"
+    },
+    {
+     "id": "G05",
+     "input": {
+      "hire_date": "2015-01-15",
+      "query_date": "2020-01-15"
+     },
+     "expected": 15,
+     "status": "published-example",
+     "source": "滿五年十五日"
+    },
+    {
+     "id": "G06",
+     "input": {
+      "hire_date": "2010-01-15",
+      "query_date": "2020-01-15"
+     },
+     "expected": 16,
+     "status": "published-example",
+     "source": "滿十年十六日"
+    },
+    {
+     "id": "G07",
+     "input": {
+      "hire_date": "1996-01-15",
+      "query_date": "2020-01-15"
+     },
+     "expected": 30,
+     "status": "published-example",
+     "source": "滿二十四年三十日（封頂）"
+    },
+    {
+     "id": "G08",
+     "input": {
+      "hire_date": "1990-01-15",
+      "query_date": "2020-01-15"
+     },
+     "expected": 30,
+     "status": "published-example",
+     "source": "滿三十年仍三十日"
+    },
+    {
+     "id": "G09",
+     "input": {
+      "hire_date": "2023-03-15",
+      "query_date": "2024-03-14"
+     },
+     "expected": 3,
+     "status": "derived",
+     "source": "相當日前一日仍未滿一年"
+    },
+    {
+     "id": "G10",
+     "input": {
+      "hire_date": "2023-03-15",
+      "query_date": "2024-03-15"
+     },
+     "expected": 7,
+     "status": "derived",
+     "source": "相當日當天已滿一年（民法 §121）"
+    },
+    {
+     "id": "G11",
+     "input": {
+      "hire_date": "2024-02-29",
+      "query_date": "2025-02-28"
+     },
+     "expected": 3,
+     "status": "calculator-verified",
+     "source": "無相當日，2025-02-28 為期間末日，尚未滿一年；勞動部特休試算系統一致"
+    },
+    {
+     "id": "G12",
+     "input": {
+      "hire_date": "2024-02-29",
+      "query_date": "2025-03-01"
+     },
+     "expected": 7,
+     "status": "calculator-verified",
+     "source": "期間末日翌日起算已滿一年；勞動部特休試算系統一致"
+    },
+    {
+     "id": "G13",
+     "input": {
+      "hire_date": "2023-08-31",
+      "query_date": "2024-02-29"
+     },
+     "expected": 0,
+     "status": "calculator-verified",
+     "source": "滿六個月之月（2024-02）無 31 日，2024-02-29 為期間末日，當日尚未滿；勞動部特休試算系統一致"
+    },
+    {
+     "id": "G14",
+     "input": {
+      "hire_date": "2023-08-31",
+      "query_date": "2024-03-01"
+     },
+     "expected": 3,
+     "status": "calculator-verified",
+     "source": "2024-03-01 起滿六個月；勞動部特休試算系統一致（試算器顯示 113/03/01 取得 3 日）"
+    },
+    {
+     "id": "G15",
+     "input": {
+      "hire_date": "2020-01-15",
+      "query_date": "2020-01-15"
+     },
+     "expected": 0,
+     "status": "derived",
+     "source": "到職當日年資零"
+    },
+    {
+     "id": "G16",
+     "input": {
+      "hire_date": "2016-10-01",
+      "query_date": "2017-04-01"
+     },
+     "expected": 3,
+     "status": "published-example",
+     "source": "新北市勞工局 Q&A：105年10月1日到職，106年4月1日取得特休 3 日"
+    },
+    {
+     "id": "G17",
+     "input": {
+      "hire_date": "2016-10-01",
+      "query_date": "2017-10-01"
+     },
+     "expected": 7,
+     "status": "published-example",
+     "source": "新北市勞工局 Q&A：同上，106年10月1日取得特休 7 日"
+    },
+    {
+     "id": "G18",
+     "input": {
+      "hire_date": "2016-02-01",
+      "query_date": "2017-01-01"
+     },
+     "expected": 3,
+     "status": "published-example",
+     "source": "臺北市勞動局常見問答：105年2月1日到職，106年1月1日年資已滿 6 個月以上，取得 3 天"
+    },
+    {
+     "id": "G19",
+     "input": {
+      "hire_date": "2016-02-01",
+      "query_date": "2017-02-01"
+     },
+     "expected": 7,
+     "status": "published-example",
+     "source": "臺北市勞動局常見問答：同上，106年2月1日年資已滿 1 年，可排定 7 天"
+    }
+   ],
+   "open_questions": [],
+   "changelog": [
+    {
+     "version": "0.1.3",
+     "date": "2026-10-12",
+     "note": "法源「編碼為」改寫成白話（不再用 S0–S7／B1–B3 抽樣代號，避免「新舊階梯」與修法前舊階梯混淆）；適用範圍排除每項附理由；規則與題目不變"
+    },
+    {
+     "version": "0.1.2",
+     "date": "2026-10-10",
+     "note": "無相當日（CC-121）經勞動部特休試算系統核對結案，G11–G14 改 calculator-verified、open_questions 清空；rule.py 與 rule.js 對不存在或非 YYYY-MM-DD 的日期一律報錯；T01 拿掉暗示曆年制的「當年度」；移除 status／review_log，簽核改在 reviews.yaml；有效輸入的結果不變"
+    },
+    {
+     "version": "0.1.1",
+     "date": "2026-10-10",
+     "note": "法源補施行細則第 5 條（到職日算入）；2018 修正未改第 1 項已以行政院條文對照表核對；新增地方勞工局官方範例 G16–G19；規則與題目參數不變"
+    },
+    {
+     "version": "0.1.0",
+     "date": "2026-10-09",
+     "note": "初版草稿"
+    }
+   ],
+   "golden_status_counts": {
+    "calculator-verified": 4,
+    "derived": 3,
+    "published-example": 12
+   },
+   "public_set": {
+    "path": "gold/releases/2026Q4/public/annual_leave_days.jsonl",
+    "sha256": "4eee1965da1cb50d9c6d81a449840a0460acd22633f6eff533e5b7cee124b389",
+    "manifest_path": "gold/releases/2026Q4/public/annual_leave_days.manifest.json",
+    "manifest_sha256": "b8563fb49e2c968904821b3b636dbbf15a33c23de617a942e1882b45d9ba89fc",
+    "family_version": "0.1.3",
+    "family_status": "reviewed",
+    "generator_version": "0.5.0",
+    "n": 200,
+    "rejected": 0,
+    "as_of": "2026-10-09",
+    "salt": "taiwaneval-public-2026",
+    "hashes": {
+     "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+     "rule_sha256": "ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595",
+     "templates_sha256": "073e2530e76ecbed90478ce3fd549c0f72828a31a0fde9207e635f5318091314",
+     "sampler_sha256": "41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85"
+    },
+    "matches_current_files": true,
+    "lineage": {
+     "laws": {
+      "N0030001": {
+       "law_name": "勞動基準法",
+       "last_amended": "20240731",
+       "bronze_sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+       "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+       "triage_version": "0.1.1",
+       "units": [
+        "N0030001/38/1"
+       ]
+      }
+     }
+    }
+   },
+   "private_set": null
+  },
+  {
+   "id": "overtime_pay",
+   "status": "reviewed",
+   "hashes": {
+    "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+    "rule_sha256": "e8862905b1df284d3f686b4a128b177ef130b1cf0726eddba90ae96a943f8fae",
+    "templates_sha256": "471ec16e1727bdb68ac744c322a6c0e70788707d7f62b33db99a4cbafea6b937",
+    "sampler_sha256": "a83134ac02f6e37973b9b511e63a9f7e04223395fa24cbe280c6c4bcdf5a45d8"
+   },
+   "reviews": [
+    {
+     "reviewer": "Calvin Ku",
+     "role": "owner",
+     "date": "2026-10-12",
+     "verdict": "approved",
+     "notes": null,
+     "current": false,
+     "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+     "rule_sha256": "e8862905b1df284d3f686b4a128b177ef130b1cf0726eddba90ae96a943f8fae",
+     "templates_sha256": "1d7fc694ce59c59404f03960de4f556a7f84db98a871548e612d8118f6b50954",
+     "sampler_sha256": "a83134ac02f6e37973b9b511e63a9f7e04223395fa24cbe280c6c4bcdf5a45d8"
+    },
+    {
+     "reviewer": "Calvin Ku",
+     "role": "owner",
+     "date": "2026-11-10",
+     "verdict": "approved",
+     "notes": "TAI-647：新增模板 T06–T10、Z02–Z03，配對設定 pairing rate 0.2 size 2",
+     "current": true,
+     "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+     "rule_sha256": "e8862905b1df284d3f686b4a128b177ef130b1cf0726eddba90ae96a943f8fae",
+     "templates_sha256": "471ec16e1727bdb68ac744c322a6c0e70788707d7f62b33db99a4cbafea6b937",
+     "sampler_sha256": "a83134ac02f6e37973b9b511e63a9f7e04223395fa24cbe280c6c4bcdf5a45d8"
+    }
+   ],
+   "card": "site/rules/families/overtime_pay.html",
+   "ai_review": {
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "reviewed_at": "2026-10-12T15:21:51+08:00",
+    "note": "AI 意見，供審閱參考，不是人工簽核；family 是否 reviewed 只看 reviews.yaml。",
+    "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+    "current": true
+   },
+   "name": "加班費（月薪制・單日）",
+   "version": "0.2.2",
+   "tier": 1,
+   "language": "zh-TW",
+   "curated_at": "2026-10-08",
+   "curator": "Calvin Ku",
+   "summary": "月薪制勞工於「單一日」的平日延長工時、休息日出勤、國定假日出勤之加班費。 平日每小時工資額以 月薪 ÷ 30 ÷ 8 計算；各段時數依勞動基準法第 24 條、第 39 條之倍率加給， 休息日第 9 小時起依勞動部加班費示意圖與試算系統按 ×8/3 計給；最終金額無條件進位到元。 本 family 只編碼無解釋空間的核心案例，排除項見 scope.excludes。",
+   "legal_basis": [
+    {
+     "id": "LSA-24-1",
+     "law": "勞動基準法",
+     "article": "第 24 條第 1 項",
+     "amended": "2018-01-31",
+     "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=24",
+     "summary": "雇主延長勞工工作時間者：延長工作時間在二小時以內者，按平日每小時工資額加給三分之一以上； 再延長工作時間在二小時以內者，按平日每小時工資額加給三分之二以上。",
+     "encodes": "平日延長工時前 2 小時 ×4/3、第 3–4 小時 ×5/3（第 1、2 款）。第 3 款（依 §32 第 4 項因天災、事變或突發事件延長工時，加倍發給）不在本 family，見 scope.excludes",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要雖僅列前二款，但編碼為欄位明確說明第三款（天災事變加倍發給）已排除於本 family（見 scope.excludes），完整對應出處原文三款內容且無矛盾。"
+     }
+    },
+    {
+     "id": "LSA-24-2",
+     "law": "勞動基準法",
+     "article": "第 24 條第 2 項",
+     "amended": "2018-01-31",
+     "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=24",
+     "summary": "雇主使勞工於第 36 條所定休息日工作，工作時間在二小時以內者，其工資按平日每小時工資額另再加給一又三分之一以上； 工作二小時後再繼續工作者，按平日每小時工資額另再加給一又三分之二以上。",
+     "encodes": "月薪以外另再加給的金額：休息日前 2 小時 ×4/3、第 3–8 小時 ×5/3（勞動部加班費示意圖標「+1又1/3H」「+1又2/3H」；按實際出勤時數計算，2018 年修法已刪除「做一給四」）；第 9 小時起 ×8/3 見 MOL-RESTDAY-9H",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要完整引用出處原文；編碼為正確解讀「另再加給」為月薪外加給倍率（前2小時4/3、第3-8小時5/3），並註明引用勞動部示意圖與MOL-RESTDAY-9H作為時段劃分依據，與本出處無矛盾。"
+     }
+    },
+    {
+     "id": "LSA-32-2",
+     "law": "勞動基準法",
+     "article": "第 32 條第 2 項",
+     "amended": "2018-01-31",
+     "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=32",
+     "summary": "延長之工作時間連同正常工作時間，一日不得超過十二小時。",
+     "encodes": "平日延長工時上限 4 小時（8 + 4 = 12）。休息日、國定假日出勤以 12 小時為出題上限，是編者比照本項設定的範圍，非本項原文",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要完整引用本條第2項前段原文；編碼為說明平日延長工時上限4小時係依正常工時8小時推算，並明確標註休息日、國定假日12小時上限為編者比照設定非本項原文，無隱匿或錯誤。"
+     }
+    },
+    {
+     "id": "LSA-39",
+     "law": "勞動基準法",
+     "article": "第 39 條",
+     "amended": "2018-01-31",
+     "url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=39",
+     "summary": "第三十六條所定之例假、休息日、第三十七條所定之休假及第三十八條所定之特別休假，工資應由雇主照給。 雇主經徵得勞工同意於休假日工作者，工資應加倍發給。（本 family 只用到第 37 條休假，即國定假日）",
+     "encodes": "「加倍發給」的計算依勞動部「國定假日工資說明」（見備註）：國定假日出勤 8 小時以內加發一日工資（月薪 ÷ 30）；逾 8 小時部分依第 24 條第 1 項計算",
+     "note": "勞動部「國定假日工資說明」（2025-09-05）：「雇主徵得勞工同意於休假日出勤，8小時以內部分，工資加倍發給。 超過8小時的部分，加班在2小時以內，按平日每小時工資額加給3分之1以上；再加班在2小時以內，按平日每小時工資額加給3分之2以上。」 https://www.mol.gov.tw/1607/28162/28166/28180/81521/81533/post 。勞動部加班費試算系統同，核對紀錄見 docs/verification/2026-10-11-mol-overtime。",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要正確反映第 39 條原文；編碼與備註引用勞動部行政解釋作為「加倍發給」之具體計算依據，並已於備註註明出處，符合規則模型可結合其他出處之原則，與本出處無矛盾。"
+     }
+    },
+    {
+     "id": "MOL-HOURLY",
+     "law": "行政院勞工委員會函釋",
+     "article": "90 年 6 月 26 日台 90 勞動 2 字第 0026202 號函",
+     "amended": "2001-06-26",
+     "url": "https://www.mol.gov.tw/topic/3067/5991/6010/19252/",
+     "summary": "月薪制勞工延長工作時間，其「平日每小時工資額」視勞動契約之內容而定：原月薪給付總額為 240 小時者， 除勞資雙方重行約定者外，仍得視為給付 240 小時之工資，據原公式推算。",
+     "encodes": "hourly = monthly / 240（勞資未另行約定時）",
+     "note": "勞動部「延時工資（加班費）相關函釋」收錄本函。勞動部加班費試算系統（https://calcr2.mol.gov.tw/Monthly） 亦以 月薪 ÷ 30 ÷ 8 計算（monthly.js 第 207 行），核對紀錄見 docs/verification/2026-10-11-mol-overtime。",
+     "ai_review": {
+      "verdict": "ok",
+      "reason": "摘要忠實引述原函釋核心內容，編碼為正確實作「原月薪給付總額為240小時且未重行約定」時之時薪換算邏輯，備註已註明其他系統驗證依據，均無違誤。"
+     }
+    },
+    {
+     "id": "MOL-RESTDAY-9H",
+     "law": "勞動部工資專區〈加班費示意圖〉／加班費試算系統",
+     "article": "休息日出勤第 9–12 小時",
+     "amended": "2025-09-05",
+     "url": "https://www.mol.gov.tw/1607/28162/28166/28180/81521/81529/post",
+     "summary": "休息日出勤第 9–12 小時按平日每小時工資額 2⅔ 倍計給：示意圖週六第 1–2 小時標「+1又1/3H」、第 3–8 小時標「+1又2/3H」、 第 9–12 小時標「+2又2/3H」。編者說明（非出處原文）：月薪制下休息日 8 小時的工資已含在月薪內， 第 9 小時起除另再加給 1⅔ 外還要給原本工資，合計 2⅔。",
+     "encodes": "休息日第 9–12 小時 ×8/3",
+     "note": "勞動部加班費試算系統同（monthly.js 第 226 行）。臺北市勞動局常見問答：月薪 36,000 元、休息日出勤 10 小時， 另再加給 150×1⅓×2 + 150×1⅔×6 + 150×2⅔×2 = 2,700 元（golden G11）。 無直接條文規定 2⅔ 倍（§24 第 2 項只分前 2 小時與之後兩段），本列依據為勞動部的示意圖與試算系統。 已透過勞動部加班費試算系統驗證（2026-10-12；當時線上 monthly.js 的 sha256 與核對快照相同，d3301391…）： 休息日 8／9／10／12 小時於月薪 36,000 元分別為 1,900／2,300／2,700／3,500 元，與本規則一致； 全面比對 47,088 組除試算系統自身 18 組浮點誤差外全部一致。Calvin 2026-10-12 審閱同意。",
+     "ai_review": {
+      "verdict": "warn",
+      "reason": "出處原文僅列示法條規定之兩段加班費率（前2小時另加1⅓、2小時後另加1⅔），未包含示意圖圖片內容與試算系統程式碼，而本列關鍵的「第9–12小時2⅔倍」內容僅見於示意圖與系統驗證，無法由提供的原文直接佐證。"
+     }
+    }
+   ],
+   "scope": {
+    "includes": [
+     "月薪制勞工",
+     "勞資未另行約定平日每小時工資額之計算方式（以月薪 ÷ 240 計，見 MOL-HOURLY）",
+     "正常工時制（每日 8 小時、每週 40 小時）",
+     "單一日之加班費，不跨日累計",
+     "整數小時",
+     "休息日因天災、事變或突發事件出勤：工資仍依 §24 第 2 項計給，與一般休息日相同（勞動部 107 年 3 月 14 日勞動條 2 字第 1070130380 號函；§40 停止假期加倍只涵蓋例假、休假日、特休）"
+    ],
+    "excludes": [
+     {
+      "item": "時薪制、日薪制",
+      "reason": "平日每小時工資額直接依約定的時薪或日薪計算，不經月薪 ÷ 240；國定假日出勤的計算方式也和月薪制不同（月薪制的國定假日工資已含在月薪內）。勞動部另有時薪制試算系統（https://calcr2.mol.gov.tw/Daily），v1 先只做月薪制。"
+     },
+     {
+      "item": "變形工時（§30、§30-1）",
+      "reason": "變形工時下，正常工時依約定可能超過每日 8 小時，延長工時從第幾小時起算要看當期排班；只給「當日出勤時數」無法判斷，題目沒有唯一答案。"
+     },
+     {
+      "item": "責任制／監督管理人員（§84-1）",
+      "reason": "工作時間由勞雇雙方另行約定，並報請當地主管機關核備，各事業單位不同；平日每小時工資額的分母也可能不是 240，無法用通用參數出題。"
+     },
+     {
+      "item": "平日因天災、事變或突發事件延長工時（§32 第 4 項；§24 第 1 項第 3 款）",
+      "reason": "這種延長工時的工資加倍發給，且不受一般延長工時上限限制；要先判斷事由是否成立，屬例外情境，v1 不出題（N0030001/24/1 因此標為 partial）。"
+     },
+     {
+      "item": "例假日出勤（§40 天災、事變、突發事件）",
+      "reason": "例假日原則上不得出勤，§40 只在天災、事變或突發事件時例外，工資加倍並應事後補假；屬例外情境，還要判斷出勤事由是否成立，v1 不出題。"
+     },
+     {
+      "item": "月 46 小時、三個月 138 小時延長工時上限之檢核（§32）",
+      "reason": "上限是跨日（每月、每三個月）累計的合法性檢核，需要整段期間的出勤紀錄；本 family 只算單一日的加班費。"
+     },
+     {
+      "item": "補休換算（§32-1）",
+      "reason": "是否以補休代替加班費、補休期限與屆期未休的折算，都由勞雇雙方協商並涉及跨日紀錄，不是單日加班費的計算。"
+     },
+     {
+      "item": "部分工時勞工",
+      "reason": "正常工時依個別契約約定，延長工時的起算點與平日每小時工資額的基準都和全時月薪制不同。"
+     },
+     {
+      "item": "夜間、輪班津貼",
+      "reason": "多由勞動契約或工作規則約定，勞動基準法沒有統一金額，沒有可驗證的唯一答案。"
+     },
+     {
+      "item": "未滿一小時之零星時數",
+      "reason": "v1 只出整數小時（Calvin 2026-10-11 決定，原 open_questions Q4）。勞動部試算系統可輸入分鐘，留待後續版本評估。"
+     }
+    ]
+   },
+   "parameters": {
+    "monthly_salary": {
+     "type": "int",
+     "unit": "TWD",
+     "min": 29500,
+     "max": 200000,
+     "sampling": "錨定主計總處受僱員工薪資分位數；最低工資與不能被 240 整除之金額保留固定配額"
+    },
+    "day_type": {
+     "type": "enum",
+     "values": {
+      "weekday": "平日延長工時",
+      "rest_day": "休息日出勤",
+      "holiday": "國定假日出勤"
+     }
+    },
+    "hours": {
+     "type": "int",
+     "min": 0,
+     "max": {
+      "weekday": 4,
+      "rest_day": 12,
+      "holiday": 12
+     }
+    }
+   },
+   "answer": null,
+   "rate_tables": {
+    "minimum_wage": {
+     "effective_from": "2026-01-01",
+     "effective_to": null,
+     "monthly": 29500,
+     "hourly": 196,
+     "law": "最低工資法",
+     "source": "勞動部「歷年最低工資／基本工資調整」：民國 114 年 10 月 21 日發布，自 115 年 1 月 1 日起實施，每月最低工資 29,500 元，每小時最低工資 196 元",
+     "source_url": "https://www.mol.gov.tw/1607/28162/28166/28180/70460/76761/76833/post",
+     "note": "116 年起的數額待勞動部發布後新增一列（effective_from 2027-01-01）；2026Q4 題集不受影響"
+    },
+    "multipliers": {
+     "overtime_first_2h": "4/3",
+     "overtime_after_2h": "5/3",
+     "rest_day_after_8h": "8/3",
+     "holiday_base": "1 日工資 = 月薪 ÷ 30"
+    }
+   },
+   "rounding": {
+    "hourly_rate": "none",
+    "final": "ceil_to_integer",
+    "basis": "法條為加給「以上」，法定下限即精確金額；四捨五入在小數部分小於 0.5 時會低於下限。勞動部 2023-08-25 新聞稿 〈五大常見加班費違法態樣〉談以 1.33、1.66 代替 1/3、2/3 的倍率：「雇主若逕自將小數點後第3位以下之部分予以捨去計算， 一定會少算，因而會違反法令所定基準」（https://www.mol.gov.tw/1607/1632/1633/63139/）；這句講的是倍率， 同一原則（任何取捨都不得低於法定下限）適用於最終金額取整。勞動部加班費試算系統的總額無條件進位（monthly.js 第 364 行）。",
+    "note": "試算系統以浮點數加總後進位，精確值為整數時偶爾多 1 元（2026-10-11 核對 47,088 組中 18 組，含 G16）；本 family 以精確分數計算，不採用此誤差。"
+   },
+   "formulas": [
+    {
+     "label": "平日每小時工資額",
+     "tex": "w_h = \\dfrac{W_m}{30 \\times 8} = \\dfrac{W_m}{240}",
+     "mathml": "<math display=\"block\"><mrow><msub><mi>w</mi><mi>h</mi></msub><mo>=</mo><mfrac><msub><mi>W</mi><mi>m</mi></msub><mrow><mn>30</mn><mo>×</mo><mn>8</mn></mrow></mfrac><mo>=</mo><mfrac><msub><mi>W</mi><mi>m</mi></msub><mn>240</mn></mfrac></mrow></math>"
+    },
+    {
+     "label": "平日延長工時（0 ≤ h ≤ 4）",
+     "tex": "P = w_h \\left( \\tfrac{4}{3}\\,\\min(h,2) + \\tfrac{5}{3}\\,\\max(h-2,0) \\right)",
+     "mathml": "<math display=\"block\"><mrow><mi>P</mi><mo>=</mo><msub><mi>w</mi><mi>h</mi></msub><mrow><mo stretchy=\"true\">(</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>h</mi><mo>,</mo><mn>2</mn><mo>)</mo><mo>+</mo><mfrac><mn>5</mn><mn>3</mn></mfrac><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    {
+     "label": "休息日出勤（0 ≤ h ≤ 12）",
+     "tex": "P = w_h \\left( \\tfrac{4}{3}\\,\\min(h,2) + \\tfrac{5}{3}\\,\\min(\\max(h-2,0),6) + \\tfrac{8}{3}\\,\\max(h-8,0) \\right)",
+     "mathml": "<math display=\"block\"><mrow><mi>P</mi><mo>=</mo><msub><mi>w</mi><mi>h</mi></msub><mrow><mo stretchy=\"true\">(</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>h</mi><mo>,</mo><mn>2</mn><mo>)</mo><mo>+</mo><mfrac><mn>5</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo>,</mo><mn>6</mn><mo>)</mo><mo>+</mo><mfrac><mn>8</mn><mn>3</mn></mfrac><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>8</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    {
+     "label": "國定假日出勤",
+     "tex": "P = \\dfrac{W_m}{30}\\,[h>0] + w_h \\left( \\tfrac{4}{3}\\,\\min(\\max(h-8,0),2) + \\tfrac{5}{3}\\,\\max(h-10,0) \\right)",
+     "mathml": "<math display=\"block\"><mrow><mi>P</mi><mo>=</mo><mfrac><msub><mi>W</mi><mi>m</mi></msub><mn>30</mn></mfrac><mo>[</mo><mi>h</mi><mo>&gt;</mo><mn>0</mn><mo>]</mo><mo>+</mo><msub><mi>w</mi><mi>h</mi></msub><mrow><mo stretchy=\"true\">(</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>min</mi><mo>(</mo><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>8</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo>,</mo><mn>2</mn><mo>)</mo><mo>+</mo><mfrac><mn>5</mn><mn>3</mn></mfrac><mi>max</mi><mo>(</mo><mi>h</mi><mo>−</mo><mn>10</mn><mo>,</mo><mn>0</mn><mo>)</mo><mo stretchy=\"true\">)</mo></mrow></mrow></math>"
+    },
+    {
+     "label": "最終金額（無條件進位到元）",
+     "tex": "P^{*} = \\lceil P \\rceil",
+     "mathml": "<math display=\"block\"><mrow><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mo>⌈</mo><mi>P</mi><mo>⌉</mo></mrow></math>"
+    },
+    {
+     "label": "整數實作（避免浮點誤差；JS 與 Python 皆以此驗算）",
+     "tex": "P = \\dfrac{W_m \\cdot (4h_1 + 5h_2 + 8h_3 + 24b)}{720},\\quad P^{*} = \\left\\lfloor \\dfrac{720P + 719}{720} \\right\\rfloor,\\quad h_3 = \\text{休息日第 9 小時起},\\ b=[\\text{國定假日且 } h>0]",
+     "mathml": "<math display=\"block\"><mrow><mi>P</mi><mo>=</mo><mfrac><mrow><msub><mi>W</mi><mi>m</mi></msub><mo>(</mo><mn>4</mn><msub><mi>h</mi><mn>1</mn></msub><mo>+</mo><mn>5</mn><msub><mi>h</mi><mn>2</mn></msub><mo>+</mo><mn>8</mn><msub><mi>h</mi><mn>3</mn></msub><mo>+</mo><mn>24</mn><mi>b</mi><mo>)</mo></mrow><mn>720</mn></mfrac><mo>,</mo><mspace width=\"1em\"/><msup><mi>P</mi><mo>∗</mo></msup><mo>=</mo><mo>⌊</mo><mfrac><mrow><mn>720</mn><mi>P</mi><mo>+</mo><mn>719</mn></mrow><mn>720</mn></mfrac><mo>⌋</mo><mo>,</mo><mspace width=\"1em\"/><msub><mi>h</mi><mn>3</mn></msub><mo>=</mo><mtext>休息日第 9 小時起</mtext><mo>,</mo><mspace width=\"0.5em\"/><mi>b</mi><mo>=</mo><mo>[</mo><mtext>國定假日且 </mtext><mi>h</mi><mo>&gt;</mo><mn>0</mn><mo>]</mo></mrow></math>"
+    }
+   ],
+   "formula_legend": null,
+   "branches": [
+    {
+     "id": "W0",
+     "day_type": "weekday",
+     "hours": [
+      0,
+      0
+     ],
+     "quota": 0.05,
+     "control": true,
+     "note": "對照題（無加班，應答 0）；control 分支不進 accuracy，另報 control_pass"
+    },
+    {
+     "id": "W1",
+     "day_type": "weekday",
+     "hours": [
+      1,
+      2
+     ],
+     "quota": 0.15,
+     "note": "僅 4/3 段"
+    },
+    {
+     "id": "W2",
+     "day_type": "weekday",
+     "hours": [
+      3,
+      4
+     ],
+     "quota": 0.15,
+     "note": "4/3 + 5/3 兩段"
+    },
+    {
+     "id": "R1",
+     "day_type": "rest_day",
+     "hours": [
+      1,
+      2
+     ],
+     "quota": 0.15,
+     "note": "僅 4/3 段"
+    },
+    {
+     "id": "R2",
+     "day_type": "rest_day",
+     "hours": [
+      3,
+      8
+     ],
+     "quota": 0.15,
+     "note": "4/3 + 5/3，未逾 8 小時"
+    },
+    {
+     "id": "R3",
+     "day_type": "rest_day",
+     "hours": [
+      9,
+      12
+     ],
+     "quota": 0.1,
+     "note": "第 9 小時起 ×8/3（MOL-RESTDAY-9H）"
+    },
+    {
+     "id": "H1",
+     "day_type": "holiday",
+     "hours": [
+      1,
+      8
+     ],
+     "quota": 0.1,
+     "note": "僅加發一日工資，與時數無關"
+    },
+    {
+     "id": "H2",
+     "day_type": "holiday",
+     "hours": [
+      9,
+      10
+     ],
+     "quota": 0.075,
+     "note": "一日工資 + 4/3 段"
+    },
+    {
+     "id": "H3",
+     "day_type": "holiday",
+     "hours": [
+      11,
+      12
+     ],
+     "quota": 0.075,
+     "note": "一日工資 + 4/3 + 5/3"
+    }
+   ],
+   "boundary_values": {
+    "hours": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "monthly_salary": [
+     29500,
+     36000,
+     "不能被 240 整除之金額（觸發無條件進位）"
+    ]
+   },
+   "golden": [
+    {
+     "id": "G01",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "rest_day",
+      "hours": 8
+     },
+     "expected": 1900,
+     "status": "published-example",
+     "source": "勞動部一例一休宣導範例：時薪 150，休息日出勤 8 小時 → 150×4/3×2 + 150×5/3×6 = 1,900；試算系統同"
+    },
+    {
+     "id": "G02",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "weekday",
+      "hours": 2
+     },
+     "expected": 400,
+     "status": "calculator-verified",
+     "source": "150 × 4/3 × 2"
+    },
+    {
+     "id": "G03",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "weekday",
+      "hours": 4
+     },
+     "expected": 900,
+     "status": "calculator-verified",
+     "source": "400 + 150 × 5/3 × 2"
+    },
+    {
+     "id": "G04",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "rest_day",
+      "hours": 12
+     },
+     "expected": 3500,
+     "status": "calculator-verified",
+     "source": "400 + 150 × 5/3 × 6 + 150 × 8/3 × 4（第 9 小時起 ×8/3，MOL-RESTDAY-9H；0.1.x 誤為 2,900）"
+    },
+    {
+     "id": "G05",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "holiday",
+      "hours": 8
+     },
+     "expected": 1200,
+     "status": "calculator-verified",
+     "source": "一日工資 36000 ÷ 30"
+    },
+    {
+     "id": "G06",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "holiday",
+      "hours": 10
+     },
+     "expected": 1600,
+     "status": "calculator-verified",
+     "source": "1200 + 150 × 4/3 × 2"
+    },
+    {
+     "id": "G07",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "holiday",
+      "hours": 12
+     },
+     "expected": 2100,
+     "status": "calculator-verified",
+     "source": "1600 + 150 × 5/3 × 2"
+    },
+    {
+     "id": "G08",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "weekday",
+      "hours": 0
+     },
+     "expected": 0,
+     "status": "calculator-verified",
+     "source": "對照題"
+    },
+    {
+     "id": "G09",
+     "input": {
+      "monthly_salary": 29500,
+      "day_type": "weekday",
+      "hours": 1
+     },
+     "expected": 164,
+     "status": "calculator-verified",
+     "source": "29500 ÷ 240 × 4/3 = 163.89 → 無條件進位 164"
+    },
+    {
+     "id": "G10",
+     "input": {
+      "monthly_salary": 29500,
+      "day_type": "holiday",
+      "hours": 9
+     },
+     "expected": 1148,
+     "status": "calculator-verified",
+     "source": "29500 ÷ 30 + 29500 ÷ 240 × 4/3 = 983.33 + 163.89 = 1147.22 → 無條件進位 1148（0.1.x 四捨五入為 1,147，低於法定下限）"
+    },
+    {
+     "id": "G11",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "rest_day",
+      "hours": 10
+     },
+     "expected": 2700,
+     "status": "published-example",
+     "source": "臺北市勞動局常見問答「休息日加班費如何計算？」：150×1又1/3×2 + 150×1又2/3×6 + 150×2又2/3×2 = 2,700；試算系統同"
+    },
+    {
+     "id": "G12",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "rest_day",
+      "hours": 6
+     },
+     "expected": 1400,
+     "status": "published-example",
+     "source": "臺北市勞動局常見問答：150×1又1/3×2 + 150×1又2/3×4 = 1,400；試算系統同"
+    },
+    {
+     "id": "G13",
+     "input": {
+      "monthly_salary": 36000,
+      "day_type": "rest_day",
+      "hours": 1
+     },
+     "expected": 200,
+     "status": "published-example",
+     "source": "臺北市勞動局常見問答：150×1又1/3 = 200；試算系統同"
+    },
+    {
+     "id": "G14",
+     "input": {
+      "monthly_salary": 29500,
+      "day_type": "rest_day",
+      "hours": 5
+     },
+     "expected": 943,
+     "status": "calculator-verified",
+     "source": "29500 ÷ 240 × (4/3×2 + 5/3×3) = 942.36 → 無條件進位 943"
+    },
+    {
+     "id": "G15",
+     "input": {
+      "monthly_salary": 29500,
+      "day_type": "rest_day",
+      "hours": 9
+     },
+     "expected": 1885,
+     "status": "calculator-verified",
+     "source": "29500 ÷ 240 × (4/3×2 + 5/3×6 + 8/3×1) = 1884.72 → 無條件進位 1885"
+    },
+    {
+     "id": "G16",
+     "input": {
+      "monthly_salary": 72880,
+      "day_type": "weekday",
+      "hours": 4
+     },
+     "expected": 1822,
+     "status": "derived",
+     "source": "72880 ÷ 240 × (4/3×2 + 5/3×2) = 1822（精確值為整數）。試算系統以浮點數加總後進位顯示 1,823，不採用（見 rounding.note）"
+    }
+   ],
+   "open_questions": [],
+   "changelog": [
+    {
+     "version": "0.2.2",
+     "date": "2026-10-12",
+     "note": "MOL-RESTDAY-9H 註記無直接條文、已以勞動部加班費試算系統驗證並經 Calvin 審閱同意；規則與題目不變"
+    },
+    {
+     "version": "0.2.1",
+     "date": "2026-10-12",
+     "note": "法源文字澄清（LSA-24-1 註明第 3 款排除、LSA-24-2 註明月薪以外另給、LSA-32-2 標示 12 小時出題上限為編者設定、LSA-39 引全文並指向勞動部說明）；排除項目附理由並補「天災事變延長工時」一項；規則與題目不變"
+    },
+    {
+     "version": "0.2.0",
+     "date": "2026-10-11",
+     "note": "依勞動部官方來源與加班費試算系統修正（TAI-430，Calvin 確認）——休息日第 9 小時起 ×8/3（原 ×5/3；勞動部示意圖與試算系統為 2⅔ 倍）；最終金額改無條件進位（原四捨五入，可能低於法定下限），題目說明同步改；基本工資改稱最低工資（最低工資法）；補 ÷240、最低工資、國定假日第 9–12 小時的官方出處；golden 改 G04、G10，新增 G11–G16；open_questions 結案"
+    },
+    {
+     "version": "0.1.2",
+     "date": "2026-10-10",
+     "note": "平日說法一律帶「下班後」——0.1.1 的「某個平日」配上 T01／T02／T05，字面是當天總出勤只有 N 小時，與 gold 矛盾（2026Q4 有 8 題）；T05 改寫「工作 N 小時」、Z01 配合改寫；scope 補休息日因天災出勤仍依 §24-2；移除 status／review_log，簽核改在 reviews.yaml；規則不變"
+    },
+    {
+     "version": "0.1.1",
+     "date": "2026-10-08",
+     "note": "W0 標 control，規則不變"
+    },
+    {
+     "version": "0.1.0",
+     "date": "2026-10-08",
+     "note": "初版草稿"
+    }
+   ],
+   "golden_status_counts": {
+    "calculator-verified": 11,
+    "derived": 1,
+    "published-example": 4
+   },
+   "public_set": {
+    "path": "gold/releases/2026Q4/public/overtime_pay.jsonl",
+    "sha256": "f9b56f556727c2a06f1cb3ba486a2d3a2ff3d5c3752ba3c369d2e3890b36a748",
+    "manifest_path": "gold/releases/2026Q4/public/overtime_pay.manifest.json",
+    "manifest_sha256": "2f4a15f3c8243ee151ed4b27cb895f32e571d536c01556c2bb3cfa1a7547a377",
+    "family_version": "0.2.2",
+    "family_status": "reviewed",
+    "generator_version": "0.5.0",
+    "n": 200,
+    "rejected": 0,
+    "as_of": "2026-10-08",
+    "salt": "taiwaneval-public-2026",
+    "hashes": {
+     "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+     "rule_sha256": "e8862905b1df284d3f686b4a128b177ef130b1cf0726eddba90ae96a943f8fae",
+     "templates_sha256": "471ec16e1727bdb68ac744c322a6c0e70788707d7f62b33db99a4cbafea6b937",
+     "sampler_sha256": "a83134ac02f6e37973b9b511e63a9f7e04223395fa24cbe280c6c4bcdf5a45d8"
+    },
+    "matches_current_files": true,
+    "lineage": {
+     "laws": {
+      "N0030001": {
+       "law_name": "勞動基準法",
+       "last_amended": "20240731",
+       "bronze_sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+       "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+       "triage_version": "0.1.1",
+       "units": [
+        "N0030001/24/1",
+        "N0030001/24/2",
+        "N0030001/32/2",
+        "N0030001/39/1"
+       ]
+      }
+     }
+    }
+   },
+   "private_set": null
+  }
+ ]
+}

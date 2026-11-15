@@ -1,0 +1,1542 @@
+[
+ {
+  "unit_id": "N0030001/1/1",
+  "category": "definitional",
+  "reason": "立法目的與補充適用其他法律之宣示，沒有可問的唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/1/2",
+  "category": "definitional",
+  "reason": "勞動條件不得低於最低標準屬原則性義務規定，本身無數值或計算。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/2/1",
+  "category": "computable",
+  "reason": "本項多數各款為用詞定義，但第四款平均工資可獨立切出：以事由發生前六個月工資總額除以總日數（未滿六個月者以工作期間計），按日／時／件計酬者另以工資總額除以實際工作日數之百分之六十為下限，為可寫成純函數之唯一數值輸出。",
+  "family": "average_wage_calculation",
+  "io": "事由發生前六個月（或工作期間）工資總額、期間總日數、計酬方式與實際工作日數→平均工資金額"
+ },
+ {
+  "unit_id": "N0030001/3/1",
+  "category": "definitional",
+  "reason": "列舉適用行業屬適用範圍之定義，答案為是否適用而非數字或期限，第八款另授權中央主管機關指定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/3/2",
+  "category": "delegated",
+  "reason": "僅授權中央主管機關於指定時得就部分工作場所或工作者指定適用，實際內容由指定公告決定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/3/3",
+  "category": "delegated",
+  "reason": "一切勞雇關係原則適用本身無可問答案，而排除適用之行業或工作者係由中央主管機關依窒礙難行指定公告，規則本體在公告。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/3/4",
+  "category": "lookup",
+  "reason": "不適用本法者之人數上限為第一項第一款至第七款以外勞工總數五分之一，答案是條文明定的門檻比例。",
+  "family": "exclusion_headcount_cap_ratio",
+  "io": "問因窒礙難行不適用本法之勞工總數上限比例→第一項第一款至第七款以外勞工總數五分之一"
+ },
+ {
+  "unit_id": "N0030001/4/1",
+  "category": "definitional",
+  "reason": "界定中央與地方主管機關，屬機關定義，無數字、期限或計算。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/5/1",
+  "category": "definitional",
+  "reason": "禁止強制勞動之義務規定，答案為是否應該而非唯一數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/6/1",
+  "category": "definitional",
+  "reason": "禁止介入他人勞動契約抽取不法利益，屬禁止規定，無可計算內容。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/7/1",
+  "category": "definitional",
+  "reason": "置備勞工名卡並登記特定事項為程序性義務，登記項目清單不是數字或計算。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/7/2",
+  "category": "lookup",
+  "reason": "勞工名卡應保管至離職後五年，答案是條文明定的單一期限。",
+  "family": "worker_card_retention_period",
+  "io": "問勞工名卡保管期限→離職後五年"
+ },
+ {
+  "unit_id": "N0030001/8/1",
+  "category": "definitional",
+  "reason": "預防職業災害及建立工作環境與福利設施為一般性義務並轉引其他法律，無唯一可問答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/9/1",
+  "category": "definitional",
+  "reason": "區分定期與不定期契約及其適用工作類型（含派遣契約應為不定期），屬契約類型之定義與分類規則，無數值輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/9/2",
+  "category": "computable",
+  "reason": "第二款以前後契約工作期間合計超過九十日且間斷未超過三十日為視為不定期契約之條件，給定日數即可得唯一布林輸出，第一款之默示續約則作為另一事實條件。",
+  "family": "fixed_term_deemed_indefinite",
+  "io": "前後定期契約工作期間合計日數與間斷日數→是否視為不定期契約"
+ },
+ {
+  "unit_id": "N0030001/9/3",
+  "category": "definitional",
+  "reason": "僅排除特定性或季節性定期工作對前項之適用，為適用範圍例外，可併入 9/2 題型作為條件而非獨立計算。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/9-1/1",
+  "category": "discretionary",
+  "reason": "競業禁止約定要件含正當營業利益、合理範疇、合理補償等不確定法律概念，是否符合依個案判斷。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/9-1/2",
+  "category": "definitional",
+  "reason": "說明合理補償不包括工作期間所受領之給付，屬概念界定，無數值或計算。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/9-1/3",
+  "category": "definitional",
+  "reason": "規定違反各款者約定無效之法律效果，答案為效力判斷而非數字。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/9-1/4",
+  "category": "computable",
+  "reason": "競業禁止期間上限二年且逾二年者縮短為二年，輸入約定期間即可唯一輸出有效期間。",
+  "family": "non_compete_period_cap",
+  "io": "約定之離職後競業禁止期間→有效競業禁止期間（上限二年）"
+ },
+ {
+  "unit_id": "N0030001/10/1",
+  "category": "computable",
+  "reason": "前後契約間斷未滿三個月即應合併計算年資，輸入間斷期間可唯一輸出是否合併及合併後年資。",
+  "family": "seniority_aggregation_gap",
+  "io": "前後契約間斷期間與前後工作年資→是否合併計算及合併後年資"
+ },
+ {
+  "unit_id": "N0030001/10-1/1",
+  "category": "discretionary",
+  "reason": "調動五原則含企業經營所必須、不當動機、必要之協助、考量生活利益等不確定概念，依個案判斷。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/11/1",
+  "category": "discretionary",
+  "reason": "預告終止事由含確不能勝任、有減少勞工之必要、無適當工作等裁量概念，第三款之一個月門檻僅為其中一款之條件而非獨立題目。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/12/1",
+  "category": "computable",
+  "reason": "多數各款含情節重大等裁量，但第六款可獨立切出：繼續曠工三日或一個月內曠工達六日即符合得不經預告終止，給定曠工日數可得唯一布林輸出。",
+  "family": "absenteeism_dismissal_threshold",
+  "io": "無正當理由連續曠工日數與一個月內曠工總日數→是否符合第六款得不經預告終止契約"
+ },
+ {
+  "unit_id": "N0030001/12/2",
+  "category": "lookup",
+  "reason": "雇主依特定款終止契約應自知悉之日起三十日內為之，答案是條文明定的單一期限。",
+  "family": "employer_summary_dismissal_exercise_period",
+  "io": "問雇主依第十二條第一項第一、二、四至六款終止契約之期限→自知悉之日起三十日內"
+ },
+ {
+  "unit_id": "N0030001/13/1",
+  "category": "definitional",
+  "reason": "停止工作期間與醫療期間禁止終止契約及其經主管機關核定之例外，為禁止規定與程序，無數值輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/14/1",
+  "category": "discretionary",
+  "reason": "勞工不經預告終止事由含有危害之虞、重大侮辱、重大危害健康等不確定法律概念，依個案認定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/14/2",
+  "category": "lookup",
+  "reason": "勞工依第一款、第六款終止契約應自知悉其情形或損害結果之日起三十日內為之，答案是條文明定的單一期限。",
+  "family": "worker_termination_exercise_period",
+  "io": "問勞工依第十四條第一項第一款、第六款終止契約之期限→自知悉之日起三十日內"
+ },
+ {
+  "unit_id": "N0030001/14/3",
+  "category": "definitional",
+  "reason": "規定雇主已終止代理人契約或病患已接受治療時勞工不得終止契約，屬權利消滅之條件規定，無數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/14/4",
+  "category": "definitional",
+  "reason": "僅準用第十七條資遣費規定，為引用條款，計算內容在第十七條。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/15/1",
+  "category": "lookup",
+  "reason": "特定性定期契約逾三年者屆滿三年後勞工得終止並應於三十日前預告，答案為條文明定之年限與預告期限。",
+  "family": "long_fixed_term_worker_termination_notice",
+  "io": "問特定性定期契約逾三年時勞工終止契約之條件與預告期間→屆滿三年後得終止、三十日前預告"
+ },
+ {
+  "unit_id": "N0030001/15/2",
+  "category": "definitional",
+  "reason": "不定期契約勞工終止時準用第十六條第一項預告期間，為引用條款，階梯本體在第十六條。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/15-1/1",
+  "category": "discretionary",
+  "reason": "最低服務年限約定要件含專業技術培訓與合理補償等不確定概念，是否符合依個案判斷。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/15-1/2",
+  "category": "discretionary",
+  "reason": "要求綜合考量培訓成本、替補可能性、補償額度等以判斷是否逾合理範圍，屬裁量規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/15-1/3",
+  "category": "definitional",
+  "reason": "規定違反前二項者約定無效之法律效果，答案為效力判斷而非數字。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/15-1/4",
+  "category": "definitional",
+  "reason": "規定不可歸責於勞工之事由致契約提前終止時勞工免責，屬責任歸屬規定，無數值或計算。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/16/1",
+  "category": "computable",
+  "reason": "依繼續工作年資三階梯對應十日、二十日、三十日預告期間，輸入年資即可唯一輸出預告日數。",
+  "family": "termination_notice_period",
+  "io": "繼續工作年資→預告期間日數（十日、二十日或三十日）"
+ },
+ {
+  "unit_id": "N0030001/16/2",
+  "category": "lookup",
+  "reason": "預告期間謀職假每星期不得超過二日之工作時間且工資照給，答案是條文明定的上限。",
+  "family": "job_search_leave_cap",
+  "io": "問預告期間勞工另謀工作請假之每週上限→二日之工作時間（工資照給）"
+ },
+ {
+  "unit_id": "N0030001/16/3",
+  "category": "definitional",
+  "reason": "規定未依期間預告者應給付預告期間工資之義務，預告日數本體在第一項，金額計算基礎條文未明定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/17/1",
+  "category": "computable",
+  "reason": "資遣費依每滿一年一個月平均工資、剩餘月數或未滿一年者按比例、未滿一個月以一個月計之規則計算，輸入年資與平均工資可得唯一金額。",
+  "family": "severance_pay_old_system",
+  "io": "同一雇主繼續工作年資（年、月）與平均工資→資遣費金額"
+ },
+ {
+  "unit_id": "N0030001/17/2",
+  "category": "lookup",
+  "reason": "本項唯一可問的是資遣費發給期限「終止勞動契約三十日內」，為條文明定之期限，無須計算。",
+  "family": "severance_pay_payment_deadline",
+  "io": "問資遣費應於契約終止後幾日內發給→三十日內"
+ },
+ {
+  "unit_id": "N0030001/17-1/1",
+  "category": "definitional",
+  "reason": "禁止要派單位事前面試或指定特定派遣勞工之行為規範，無數值或唯一可計算答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/17-1/2",
+  "category": "lookup",
+  "reason": "派遣勞工提出訂約意思表示之期限「提供勞務之日起九十日內」為條文明定期限，前提要件屬定義性內容，切割後以期限成題。",
+  "family": "dispatched_worker_contract_request_deadline",
+  "io": "問派遣勞工得向要派單位提出訂約意思表示之期限→自提供勞務之日起九十日內"
+ },
+ {
+  "unit_id": "N0030001/17-1/3",
+  "category": "lookup",
+  "reason": "協商期限「意思表示到達之日起十日內」為明確期限，逾期視為成立契約之法律效果屬定義性內容，切割後以期限成題。",
+  "family": "dispatch_negotiation_deadline",
+  "io": "問要派單位應於幾日內與派遣勞工協商訂約→意思表示到達之日起十日內"
+ },
+ {
+  "unit_id": "N0030001/17-1/4",
+  "category": "definitional",
+  "reason": "禁止因提出意思表示而為解僱、降調、減薪等不利處分之義務規範，無數值或布林唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/17-1/5",
+  "category": "definitional",
+  "reason": "規定違反前項行為之法律效果為無效，屬定義性規範。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/17-1/6",
+  "category": "definitional",
+  "reason": "規定與派遣事業單位之契約視為終止及免除最低服務年限與訓練費用責任之法律效果，無可計算內容。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/17-1/7",
+  "category": "definitional",
+  "reason": "僅課予派遣事業單位依本法或勞工退休金條例之標準及期限給付之義務，具體標準在他條，本項本身無數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/18/1",
+  "category": "computable",
+  "reason": "以契約終止事由（依第十二條或第十五條終止、定期契約期滿）為輸入，可寫成判斷是否不得請求預告期間工資及資遣費之純布林函數。",
+  "family": "severance_claim_exclusion",
+  "io": "契約終止事由→是否不得請求加發預告期間工資及資遣費（布林）"
+ },
+ {
+  "unit_id": "N0030001/19/1",
+  "category": "definitional",
+  "reason": "雇主不得拒絕發給服務證明書之義務規範，無唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/20/1",
+  "category": "definitional",
+  "reason": "改組轉讓時之預告、資遣費及年資承認義務均援引第十六條、第十七條，本項本身無獨立數值或計算。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/21/1",
+  "category": "definitional",
+  "reason": "宣示工資議定原則及不得低於基本工資之下限，但基本工資數額不在本項而由第二項程序核定，本文無法得出唯一數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/21/2",
+  "category": "delegated",
+  "reason": "基本工資由審議委員會擬訂、報行政院核定，規則本體在核定結果，本項僅為授權程序。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/21/3",
+  "category": "delegated",
+  "reason": "審議委員會組織及審議程序由中央主管機關另以辦法定之，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/22/1",
+  "category": "discretionary",
+  "reason": "實物給付之作價須「公平合理」並「適合勞工及其家屬之需要」，屬不確定法律概念，答案依個案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/22/2",
+  "category": "definitional",
+  "reason": "工資全額直接給付之義務及其法令或約定例外，無數值或唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/22-1/1",
+  "category": "lookup",
+  "reason": "要派單位之給付期限「自派遣勞工請求之日起三十日內」為條文明定期限，處罰或限期未給付之前提要件屬定義性內容，切割後以期限成題。",
+  "family": "client_unit_wage_payment_deadline",
+  "io": "問要派單位應於幾日內給付派遣勞工被積欠之工資→自請求之日起三十日內"
+ },
+ {
+  "unit_id": "N0030001/22-1/2",
+  "category": "definitional",
+  "reason": "規定要派單位之求償或扣抵權，屬權利定義，無數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/23/1",
+  "category": "lookup",
+  "reason": "工資「每月至少定期發給二次」為明確次數門檻，特別約定或按月預付之例外及明細提供義務屬定義性內容，可切割成題。",
+  "family": "wage_payment_frequency",
+  "io": "問工資每月至少應定期發給幾次→二次"
+ },
+ {
+  "unit_id": "N0030001/23/2",
+  "category": "lookup",
+  "reason": "工資清冊應保存五年為條文明定期限，置備與記載義務屬定義性內容。",
+  "family": "wage_ledger_retention_period",
+  "io": "問工資清冊應保存幾年→五年"
+ },
+ {
+  "unit_id": "N0030001/24/1",
+  "category": "computable",
+  "reason": "以平日每小時工資額、延長工時時數及是否屬第三十二條第四項情形為輸入，依三款倍率（三分之一、三分之二以上視為法定下限，加倍）可寫成純函數計算延長工時工資。",
+  "family": "overtime_pay_rate",
+  "io": "平日每小時工資額、延長工時時數、是否屬第三十二條第四項情形→延長工時工資法定下限"
+ },
+ {
+  "unit_id": "N0030001/24/2",
+  "category": "computable",
+  "reason": "以平日每小時工資額與休息日工作時數為輸入，前二小時另加給一又三分之一以上、之後一又三分之二以上，視為法定下限可寫成純函數。",
+  "family": "rest_day_pay_rate",
+  "io": "平日每小時工資額、休息日工作時數→休息日工資加給法定下限"
+ },
+ {
+  "unit_id": "N0030001/25/1",
+  "category": "definitional",
+  "reason": "性別差別待遇禁止與同工同酬原則，屬義務規範，無數值或唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/26/1",
+  "category": "definitional",
+  "reason": "禁止預扣工資作為違約金或賠償費用之規範，無數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/27/1",
+  "category": "definitional",
+  "reason": "授權主管機關得限期令雇主給付工資，屬職權授權，無唯一可問數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/28/1",
+  "category": "lookup",
+  "reason": "受償順序規則本身屬定義性內容，但享有優先受償之積欠工資以「未滿六個月部分」為限，為明確門檻可獨立成題。",
+  "family": "wage_priority_claim_cap",
+  "io": "問得與第一順位擔保債權同序受償之積欠工資範圍→本於勞動契約所積欠未滿六個月部分"
+ },
+ {
+  "unit_id": "N0030001/28/2",
+  "category": "computable",
+  "reason": "繳納費率雖由第四項授權核定，但墊償範圍中退休金及資遣費合計以「六個月平均工資」為限，可由平均工資與積欠金額寫成取上限之純函數。",
+  "family": "wage_arrears_fund_advance_cap",
+  "io": "平均工資、積欠退休金及資遣費金額→墊償基金可墊償之退休金及資遣費金額（以六個月平均工資為上限）"
+ },
+ {
+  "unit_id": "N0030001/28/3",
+  "category": "definitional",
+  "reason": "課予基金累積至「一定金額」後降低費率或暫停收繳之義務，金額由第六項另定且措施二擇一，本項無唯一數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/28/4",
+  "category": "lookup",
+  "reason": "實際費率由中央主管機關擬訂報核定屬授權，但「萬分之十五」為條文明定之費率上限，可切割成獨立 lookup 題。",
+  "family": "wage_arrears_fund_rate_ceiling",
+  "io": "問積欠工資墊償基金費率之法定上限→萬分之十五"
+ },
+ {
+  "unit_id": "N0030001/28/5",
+  "category": "definitional",
+  "reason": "規定墊償程序與雇主於「規定期限內」償還之義務，期限未在本項明定，無唯一數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/28/6",
+  "category": "delegated",
+  "reason": "基金管理、墊償程序、收繳管理辦法、一定金額及組織規程均由中央主管機關定之，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/29/1",
+  "category": "definitional",
+  "reason": "課予有盈餘時應給與獎金或分配紅利之義務，但金額與方式未定，無唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/30/1",
+  "category": "lookup",
+  "reason": "正常工時每日八小時、每週四十小時為條文明定之上限數值，無須計算。",
+  "family": "regular_working_hours_limit",
+  "io": "問正常工作時間每日及每週上限→每日八小時、每週四十小時"
+ },
+ {
+  "unit_id": "N0030001/30/2",
+  "category": "lookup",
+  "reason": "二週變形工時之分配上限「每日不得超過二小時」及「每週總時數不得超過四十八小時」為明確數值，工會或勞資會議同意之程序屬定義性內容，可切割成題。",
+  "family": "two_week_flexible_hours_limits",
+  "io": "問二週變形工時分配於其他工作日之每日上限及每週總時數上限→每日二小時、每週四十八小時"
+ },
+ {
+  "unit_id": "N0030001/30/3",
+  "category": "lookup",
+  "reason": "八週變形工時之「每日正常工作時間不得超過八小時」及「每週總時數不得超過四十八小時」為明確數值上限，同意程序屬定義性內容。",
+  "family": "eight_week_flexible_hours_limits",
+  "io": "問八週變形工時每日及每週上限→每日八小時、每週四十八小時"
+ },
+ {
+  "unit_id": "N0030001/30/4",
+  "category": "delegated",
+  "reason": "變形工時適用行業由中央主管機關指定，規則本體在公告，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/30/5",
+  "category": "lookup",
+  "reason": "出勤紀錄應保存五年為條文明定期限，置備義務屬定義性內容。",
+  "family": "attendance_record_retention_period",
+  "io": "問勞工出勤紀錄應保存幾年→五年"
+ },
+ {
+  "unit_id": "N0030001/30/6",
+  "category": "lookup",
+  "reason": "出勤紀錄應逐日記載「至分鐘為止」為明確記載精度門檻，不得拒絕提供副本之義務屬定義性內容，可切割成題。",
+  "family": "attendance_record_granularity",
+  "io": "問出勤紀錄應記載至何時間單位→逐日記載至分鐘為止"
+ },
+ {
+  "unit_id": "N0030001/30/7",
+  "category": "definitional",
+  "reason": "禁止以正常工時修正作為減少工資事由之規範，無數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/30/8",
+  "category": "lookup",
+  "reason": "雇主「得視」照顧家庭需要允許調整屬裁量，但彈性調整起訖時間之範圍「一小時」為明確數值，可切割成題。",
+  "family": "flexible_start_end_time_range",
+  "io": "問勞工彈性調整工作開始及終止時間之範圍→一小時範圍內"
+ },
+ {
+  "unit_id": "N0030001/30-1/1",
+  "category": "lookup",
+  "reason": "本項雖以中央主管機關指定行業及工會同意為前提，但第一款「每日不得超過二小時」與第二款「當日正常工時達十小時者延長不得超過二小時」可獨立切出為明確數值門檻，故歸 lookup。",
+  "family": "four_week_flexible_hours_daily_limits",
+  "io": "問四週變形工時分配至其他工作日之每日上限、或當日正常工時達十小時時之延長上限→二小時"
+ },
+ {
+  "unit_id": "N0030001/30-1/2",
+  "category": "definitional",
+  "reason": "本項為適用範圍之排除規定，需對照八十五年修正前第三條之行業清單，條文本身無可問之唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/31/1",
+  "category": "computable",
+  "reason": "坑道工作時間以入坑口至出坑口計算，給定入坑與出坑時刻即可唯一算出工作時間，可寫成純函數。",
+  "family": "mine_tunnel_working_hours",
+  "io": "輸入入坑口時刻、出坑口時刻→工作時間（出坑時刻減入坑時刻）"
+ },
+ {
+  "unit_id": "N0030001/32/1",
+  "category": "definitional",
+  "reason": "本項規定延長工時須經工會或勞資會議同意之程序要件，答案為「是否得延長」之程序問題，無數值輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/32/2",
+  "category": "computable",
+  "reason": "本項給出每日總工時十二小時、每月四十六小時、經同意後每月五十四小時及每三個月一百三十八小時之上限，輸入當日正常工時、各期間延長時數及是否經同意即可唯一判定是否超限或剩餘可延長時數。",
+  "family": "overtime_hour_caps",
+  "io": "輸入當日正常工時、當月及三個月延長時數、是否經工會或勞資會議同意→是否超過法定上限（或剩餘可延長時數）"
+ },
+ {
+  "unit_id": "N0030001/32/3",
+  "category": "lookup",
+  "reason": "本項為備查義務，但「僱用勞工三十人以上」為明確人數門檻，可獨立成題。",
+  "family": "thirty_employee_report_threshold",
+  "io": "問依但書延長工時應報備查之僱用人數門檻→三十人以上"
+ },
+ {
+  "unit_id": "N0030001/32/4",
+  "category": "lookup",
+  "reason": "本項含「必要」「適當之休息」等裁量用語，但「延長開始後二十四小時內通知工會」為明確期限可獨立切出成題，故歸 lookup。",
+  "family": "disaster_overtime_notice_deadline",
+  "io": "問天災事變突發事件延長工時後通知工會或報備之期限→延長開始後二十四小時內"
+ },
+ {
+  "unit_id": "N0030001/32/5",
+  "category": "definitional",
+  "reason": "本項為坑內工作不得延長工時之禁止規定及其例外，答案為「是否得延長」，且「以監視為主」須個案認定，無數值輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/32-1/1",
+  "category": "computable",
+  "reason": "補休時數應依勞工實際工作之時數計算，輸入延長工時或休息日工作時數即可唯一得出補休時數（一比一）。",
+  "family": "compensatory_leave_hours",
+  "io": "輸入延長工時或休息日工作之時數→應給補休時數（等值）"
+ },
+ {
+  "unit_id": "N0030001/32-1/2",
+  "category": "definitional",
+  "reason": "補休期限由勞雇協商而無固定數值，未補休時數之工資計算標準則引用第二十四條而非本項自定，本項僅為義務與罰則連結。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/33/1",
+  "category": "delegated",
+  "reason": "本項授權當地主管機關會商後以命令於必要限度內調整工時，實際調整內容在命令而非本條。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/34/1",
+  "category": "lookup",
+  "reason": "輪班制班次「每週更換一次」為明確頻率，經勞工同意之例外不影響該數值可獨立成題。",
+  "family": "shift_rotation_frequency",
+  "io": "問輪班制工作班次之法定更換頻率→每週更換一次（經勞工同意者除外）"
+ },
+ {
+  "unit_id": "N0030001/34/2",
+  "category": "lookup",
+  "reason": "更換班次「至少連續十一小時休息」為明確門檻，但書之不少於八小時須經公告始適用，仍可以原則數值獨立成題。",
+  "family": "shift_change_rest_hours",
+  "io": "問輪班更換班次時最少連續休息時間→十一小時（經公告變更者不少於八小時）"
+ },
+ {
+  "unit_id": "N0030001/34/3",
+  "category": "lookup",
+  "reason": "本項前段為同意程序，後段「僱用勞工三十人以上應報備查」為明確人數門檻，可切出獨立成題。",
+  "family": "thirty_employee_report_threshold",
+  "io": "問依但書變更輪班休息時間應報備查之僱用人數門檻→三十人以上"
+ },
+ {
+  "unit_id": "N0030001/35/1",
+  "category": "lookup",
+  "reason": "「繼續工作四小時至少三十分鐘休息」為明確數值門檻，但書之另行調配不影響該數值；更長工時之休息總量未由條文唯一決定，故歸 lookup 而非 computable。",
+  "family": "rest_break_after_four_hours",
+  "io": "問勞工繼續工作多久應有休息、休息至少多久→四小時／至少三十分鐘"
+ },
+ {
+  "unit_id": "N0030001/36/1",
+  "category": "lookup",
+  "reason": "每七日應有二日休息（一例假一休息日）為條文明確數字，非計算。",
+  "family": "weekly_rest_days",
+  "io": "問勞工每七日應有之休息日數及其組成→二日（一日例假、一日休息日）"
+ },
+ {
+  "unit_id": "N0030001/36/2",
+  "category": "computable",
+  "reason": "三款依變形工時種類分別給出例假最低頻率及週期內例假加休息日之最低日數，輸入變形工時種類即可唯一對應各數值並判定排班是否符合。",
+  "family": "flexible_hours_rest_day_minimums",
+  "io": "輸入適用之變形工時種類（二週／八週／四週）及週期內排定之例假與休息日數→各期間最低例假及休息日數、是否符合"
+ },
+ {
+  "unit_id": "N0030001/36/3",
+  "category": "definitional",
+  "reason": "本項規定休息日工作時數計入延長工時總數及天災例外，為計算規則之歸屬與適用範圍，單獨無唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/36/4",
+  "category": "delegated",
+  "reason": "例假得於七日週期內調整僅適用於經中央目的事業主管機關同意且經中央主管機關指定之行業，適用範圍由指定公告決定，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/36/5",
+  "category": "lookup",
+  "reason": "本項前段為同意程序，後段「僱用勞工三十人以上應報備查」為明確人數門檻可切出成題。",
+  "family": "thirty_employee_report_threshold",
+  "io": "問調整例假應報備查之僱用人數門檻→三十人以上"
+ },
+ {
+  "unit_id": "N0030001/37/1",
+  "category": "delegated",
+  "reason": "應放假之紀念日、節日及其他放假日由內政部所定及中央主管機關指定，本項僅規定均應休假而未列具體日期。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/37/2",
+  "category": "lookup",
+  "reason": "本項為施行日期規定，答案為條文明示之「一百零六年一月一日」此一唯一日期。",
+  "family": "amendment_effective_date",
+  "io": "問一百零五年十二月六日修正之第三十七條第一項自何時施行→一百零六年一月一日"
+ },
+ {
+  "unit_id": "N0030001/38/1",
+  "category": "computable",
+  "reason": "特別休假日數依年資階梯明確給定，含十年以上每年加一日至三十日之封頂，輸入年資即可唯一算出日數。",
+  "family": "annual_leave_days",
+  "io": "輸入在同一雇主之繼續工作年資→特別休假日數"
+ },
+ {
+  "unit_id": "N0030001/38/2",
+  "category": "discretionary",
+  "reason": "特休期日原則由勞工排定，但雇主得否協商調整取決於「企業經營上之急迫需求」或「個人因素」等不確定法律概念，答案依個案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/38/3",
+  "category": "definitional",
+  "reason": "本項為雇主於勞工符合特休條件時之告知義務，無數值或布林輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/38/4",
+  "category": "definitional",
+  "reason": "本項規定未休特休日數應發給工資及遞延之處理，為給付義務，每日工資之計算標準不在本項，無法僅憑條文寫出純函數。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/38/5",
+  "category": "definitional",
+  "reason": "本項為記載於工資清冊及每年書面通知之義務，「每年定期」無具體期限數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/38/6",
+  "category": "definitional",
+  "reason": "本項為舉證責任分配之程序規定，無可問之數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/39/1",
+  "category": "computable",
+  "reason": "假日工資照給、經同意於休假日工作者工資加倍，「加倍」為明確倍率，輸入當日工資即可唯一算出應給工資。",
+  "family": "holiday_work_double_pay",
+  "io": "輸入勞工於休假日工作當日之工資→應發給工資（加倍）"
+ },
+ {
+  "unit_id": "N0030001/40/1",
+  "category": "computable",
+  "reason": "停止假期之前提「雇主認有必要」屬裁量，但「停止假期之工資應加倍發給」為明確倍率可獨立切出，輸入當日工資即可唯一算出應給工資。",
+  "family": "stopped_leave_double_pay",
+  "io": "輸入因天災事變停止假期當日之工資→應發給工資（加倍）"
+ },
+ {
+  "unit_id": "N0030001/40/2",
+  "category": "lookup",
+  "reason": "停止假期後「二十四小時內」報請核備為條文明確期限。",
+  "family": "holiday_suspension_report_deadline",
+  "io": "問停止勞工假期後報請當地主管機關核備之期限→事後二十四小時內"
+ },
+ {
+  "unit_id": "N0030001/41/1",
+  "category": "computable",
+  "reason": "停止特休須當地主管機關認有必要屬裁量，但「假期內之工資應加倍發給」為明確倍率可獨立切出，輸入假期內工資即可唯一算出應給數額。",
+  "family": "stopped_leave_double_pay",
+  "io": "輸入公用事業勞工被停止特休期間之工資→應發給工資（加倍）"
+ },
+ {
+  "unit_id": "N0030001/42/1",
+  "category": "discretionary",
+  "reason": "「健康或其他正當理由」為不確定法律概念，勞工得否拒絕正常工時以外之工作須依個案認定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/43/1",
+  "category": "delegated",
+  "reason": "請假應給之假期及事假以外期間工資最低標準均由中央主管機關定之，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/44/1",
+  "category": "computable",
+  "reason": "童工定義為十五歲以上未滿十六歲之受僱者，輸入年齡即可唯一判定是否為童工，可寫成布林純函數。",
+  "family": "child_worker_age_test",
+  "io": "輸入受僱從事工作者之年齡→是否為童工（十五歲以上未滿十六歲）"
+ },
+ {
+  "unit_id": "N0030001/44/2",
+  "category": "lookup",
+  "reason": "「危險性或有害性工作」須另行認定無法由本項判斷，但不得從事之年齡範圍「未滿十八歲」為明確門檻可切出成題。",
+  "family": "hazardous_work_age_limit",
+  "io": "問不得從事危險性或有害性工作之年齡範圍→童工及十六歲以上未滿十八歲者（即未滿十八歲）"
+ },
+ {
+  "unit_id": "N0030001/45/1",
+  "category": "lookup",
+  "reason": "「不得僱用未滿十五歲之人」為明確年齡門檻可獨立成題，但書之國中畢業或主管機關許可例外不影響該數值。",
+  "family": "minimum_employment_age",
+  "io": "問雇主得僱用之最低年齡→十五歲（國民中學畢業或經主管機關許可者除外）"
+ },
+ {
+  "unit_id": "N0030001/45/2",
+  "category": "definitional",
+  "reason": "本項為準用童工保護規定之適用規定，無數值輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/45/3",
+  "category": "delegated",
+  "reason": "認定基準、審查程序及其他應遵行事項之辦法由中央主管機關定之，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/45/4",
+  "category": "definitional",
+  "reason": "本項為未滿十五歲者透過他人或無勞僱關係提供勞務時準用童工保護之適用規定，無可問之唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/46/1",
+  "category": "definitional",
+  "reason": "規範雇主對未滿十八歲受僱者應置備同意書與年齡證明之文件義務，沒有可計算或可查詢之唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/47/1",
+  "category": "lookup",
+  "reason": "條文直接給出童工每日八小時、每週四十小時及例假日不得工作之明確上限，屬查表式答案而非計算。",
+  "family": "child_worker_working_hour_limits",
+  "io": "童工工時項目（每日／每週／例假日）→法定上限（八小時／四十小時／不得工作）"
+ },
+ {
+  "unit_id": "N0030001/48/1",
+  "category": "lookup",
+  "reason": "條文明定童工禁止工作之固定時段（午後八時至翌晨六時），答案為條文中唯一明確的時間區間。",
+  "family": "child_worker_night_work_ban_window",
+  "io": "童工禁止工作時段→午後八時至翌晨六時"
+ },
+ {
+  "unit_id": "N0030001/49/1",
+  "category": "lookup",
+  "reason": "將原則性禁止時段（午後十時至翌晨六時）切割為獨立可查之明確區間，但書中工會同意程序及「必要之安全衛生設施」等條件則屬程序與裁量，不納入題目。",
+  "family": "female_worker_night_work_ban_window",
+  "io": "女工原則禁止工作時段→午後十時至翌晨六時"
+ },
+ {
+  "unit_id": "N0030001/49/2",
+  "category": "delegated",
+  "reason": "必要之安全衛生設施之標準由中央主管機關定之，本項僅為授權，規則本體在子法。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/49/3",
+  "category": "discretionary",
+  "reason": "「健康或其他正當理由」為不確定法律概念，是否不能夜間工作須依個案判斷。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/49/4",
+  "category": "discretionary",
+  "reason": "「天災、事變或突發事件」及「必須」均為不確定法律概念，例外是否成立依個案認定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/49/5",
+  "category": "definitional",
+  "reason": "本項為適用範圍之排除規定，說明但書與前項例外不適用於妊娠或哺乳期間女工，無獨立可計算之數值輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/50/1",
+  "category": "computable",
+  "reason": "依分娩或妊娠三個月以上流產之情形即可唯一決定產假週數（八星期或四星期），可寫成純函數。",
+  "family": "maternity_leave_duration",
+  "io": "分娩或妊娠三個月以上流產→產假星期數（八／四）"
+ },
+ {
+  "unit_id": "N0030001/50/2",
+  "category": "computable",
+  "reason": "以受僱期間是否滿六個月為門檻即可唯一決定產假期間工資為全額或減半，屬純函數。",
+  "family": "maternity_leave_wage_ratio",
+  "io": "受僱期間（月數）→產假期間工資給付比例（全額／減半）"
+ },
+ {
+  "unit_id": "N0030001/51/1",
+  "category": "discretionary",
+  "reason": "「較為輕易之工作」為不確定法律概念，是否有可改調之工作須依個案認定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/52/1",
+  "category": "lookup",
+  "reason": "條文明定子女未滿一歲之哺乳女工每日另給哺乳時間二次、每次三十分鐘，為固定數值而非計算。",
+  "family": "breastfeeding_time_entitlement",
+  "io": "子女未滿一歲須親自哺乳之女工→每日哺乳時間（二次、每次三十分鐘）"
+ },
+ {
+  "unit_id": "N0030001/52/2",
+  "category": "definitional",
+  "reason": "本項為將哺乳時間視為工作時間之擬制規定，屬定義性內容，無獨立可問之數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/53/1",
+  "category": "computable",
+  "reason": "三款條件均以工作年資與年齡之明確門檻構成，輸入年資與年齡即可唯一輸出是否得自請退休之布林值。",
+  "family": "voluntary_retirement_eligibility",
+  "io": "工作年資與年齡→是否得自請退休"
+ },
+ {
+  "unit_id": "N0030001/54/1",
+  "category": "computable",
+  "reason": "第一款年滿六十五歲可切割為以年齡判斷之純函數，第二款「身心障礙不堪勝任工作」屬個案裁量，不納入題目。",
+  "family": "mandatory_retirement_age_check",
+  "io": "勞工年齡→是否符合第一款年滿六十五歲之強制退休條件"
+ },
+ {
+  "unit_id": "N0030001/54/2",
+  "category": "lookup",
+  "reason": "協商延後與報請中央主管機關調整屬程序與核定事項，但「不得少於五十五歲」之調整下限可獨立切割為明確門檻。",
+  "family": "mandatory_retirement_age_adjustment_floor",
+  "io": "特殊性質工作經核定調整之強制退休年齡→下限五十五歲"
+ },
+ {
+  "unit_id": "N0030001/55/1",
+  "category": "computable",
+  "reason": "退休金基數依年資階梯（前十五年每年二基數、其後每年一基數、上限四十五）及半年進位規則計算，並對因公身心障礙加給百分之二十，可寫成純函數。",
+  "family": "retirement_pension_base_units",
+  "io": "工作年資（年與月）及是否因執行職務致身心障礙→退休金基數"
+ },
+ {
+  "unit_id": "N0030001/55/2",
+  "category": "definitional",
+  "reason": "本項定義基數之標準為核准退休時一個月平均工資，屬定義性規定，無獨立可計算輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/55/3",
+  "category": "lookup",
+  "reason": "三十日內給付期限為明確數字可獨立成題，分期給付之主管機關核定與施行前優於本法之規定則屬程序與個案，不納入。",
+  "family": "retirement_pension_payment_deadline",
+  "io": "勞工退休日→雇主應給付退休金之期限（三十日內）"
+ },
+ {
+  "unit_id": "N0030001/56/1",
+  "category": "delegated",
+  "reason": "百分之二至百分之十五僅為提撥比率之範圍，不是唯一答案，實際比率、程序及管理辦法由中央主管機關擬訂報行政院核定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/56/2",
+  "category": "lookup",
+  "reason": "估算與審議屬程序義務且預估退休人數依個案，但「次年度三月底前」一次提撥差額之期限可切割為明確期限。",
+  "family": "retirement_reserve_shortfall_topup_deadline",
+  "io": "退休準備金專戶餘額不足→雇主一次提撥差額之期限（次年度三月底前）"
+ },
+ {
+  "unit_id": "N0030001/56/3",
+  "category": "delegated",
+  "reason": "基金監理委員會之組織、會議及其他相關事項由中央主管機關定之，本項僅為設置與授權規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/56/4",
+  "category": "lookup",
+  "reason": "收支保管運用辦法雖由中央主管機關擬訂，但「最低收益不得低於當地銀行二年定期存款利率」為條文中明確的門檻，可獨立成題。",
+  "family": "retirement_fund_minimum_yield_floor",
+  "io": "勞工退休基金最低收益保證→不得低於當地銀行二年定期存款利率之收益（虧損由國庫補足）"
+ },
+ {
+  "unit_id": "N0030001/56/5",
+  "category": "lookup",
+  "reason": "組織準則由中央主管機關定之，但委員會中勞工代表人數不得少於三分之二為條文明定之明確比例門檻。",
+  "family": "reserve_fund_committee_labor_representation_floor",
+  "io": "勞工退休準備金監督委員會勞工代表人數比例→不得少於三分之二"
+ },
+ {
+  "unit_id": "N0030001/56/6",
+  "category": "definitional",
+  "reason": "規範提撥比率擬訂或調整須經監督委員會審議並報當地主管機關核定之程序，無可問之唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/56/7",
+  "category": "definitional",
+  "reason": "本項為金融機構得請主管機關提供資料之授權規定，屬程序性內容，沒有可計算或查詢之數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/56/8",
+  "category": "definitional",
+  "reason": "規範金融機構之保密義務與資料安全稽核，屬義務性規定，無唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/56/9",
+  "category": "delegated",
+  "reason": "必要資料之內容、範圍、申請程序等辦法由中央主管機關會商金管會定之，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/57/1",
+  "category": "definitional",
+  "reason": "本項界定工作年資之計算範圍（以同一事業為限並併計調動與承認年資），屬定義性規定，不產生獨立數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/58/1",
+  "category": "lookup",
+  "reason": "退休金請領權利之消滅時效為自退休次月起五年，為條文明定之固定期限，不需計算。",
+  "family": "retirement_claim_prescription_period",
+  "io": "勞工請領退休金之權利→消滅時效（自退休之次月起五年）"
+ },
+ {
+  "unit_id": "N0030001/58/2",
+  "category": "definitional",
+  "reason": "規定退休金請領權不得讓與、抵銷、扣押或供擔保，屬禁止性規範，無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/58/3",
+  "category": "definitional",
+  "reason": "規定勞工得開立退休金專戶之程序與權利，無可計算或查詢之唯一數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/58/4",
+  "category": "definitional",
+  "reason": "規定專戶存款不得作為抵銷、扣押、擔保或強制執行標的，屬禁止性規範，無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/59/1",
+  "category": "computable",
+  "reason": "喪葬費五個月、死亡補償四十個月及醫療逾二年未癒之一次給付四十個月平均工資均為固定倍率可切割成純函數；「必需之醫療費用」與失能補償標準則依個案及勞保條例，不納入題目。",
+  "family": "occupational_accident_compensation_multiples",
+  "io": "平均工資與補償情形（死亡／喪葬／醫療逾二年未癒一次給付）→補償金額（四十／五／四十個月平均工資）"
+ },
+ {
+  "unit_id": "N0030001/59/2",
+  "category": "definitional",
+  "reason": "本單元為遺屬受領死亡補償順位第一順位（配偶及子女）之列舉片段，屬定義性內容，無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/59/3",
+  "category": "definitional",
+  "reason": "本單元為遺屬受領順位第二順位（父母）之列舉片段，屬定義性內容，無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/59/4",
+  "category": "definitional",
+  "reason": "本單元為遺屬受領順位第三順位（祖父母）之列舉片段，屬定義性內容，無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/59/5",
+  "category": "definitional",
+  "reason": "本單元為遺屬受領順位第四順位（孫子女）之列舉片段，屬定義性內容，無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/59/6",
+  "category": "definitional",
+  "reason": "本單元為遺屬受領順位第五順位（兄弟姐妹）之列舉片段，屬定義性內容，無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/60/1",
+  "category": "definitional",
+  "reason": "規定雇主「得」以職災補償抵充同一事故之損害賠償，屬抵充之授權規定，損害賠償額依個案，無唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/61/1",
+  "category": "lookup",
+  "reason": "受領補償權之消滅時效為條文明定之單一期限「二年」，屬可直接查得之期限而非計算。",
+  "family": "injury_compensation_claim_limitation_period",
+  "io": "問職災補償受領權之消滅時效→二年"
+ },
+ {
+  "unit_id": "N0030001/61/2",
+  "category": "definitional",
+  "reason": "規定受領補償權不受離職影響且不得讓與、抵銷、扣押或供擔保，屬權利性質之宣示，無唯一可問答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/61/3",
+  "category": "definitional",
+  "reason": "賦予勞工或遺屬得開立職災補償金專戶之程序性權利，無數值或布林輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/61/4",
+  "category": "definitional",
+  "reason": "規定專戶存款不得作為抵銷、扣押、擔保或強制執行標的，屬禁止規定而非可計算規則。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/62/1",
+  "category": "definitional",
+  "reason": "規定承攬關係中各承攬人與最後承攬人連帶負職災補償責任，屬責任歸屬之義務規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/62/2",
+  "category": "definitional",
+  "reason": "規定事業單位或承攬人補償後得向最後承攬人求償，屬求償權之賦予，無唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/63/1",
+  "category": "definitional",
+  "reason": "課予原事業單位督促承攬人使勞動條件符合法令之義務，屬義務規定而無可問之唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/63/2",
+  "category": "definitional",
+  "reason": "規定事業單位違反職安法承攬責任規定時與承攬人負連帶補償責任，屬責任成立要件之規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/63-1/1",
+  "category": "definitional",
+  "reason": "規定要派單位與派遣事業單位就派遣勞工職災連帶負補償責任，屬責任歸屬規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/63-1/2",
+  "category": "definitional",
+  "reason": "規定已依勞保條例或其他法令支付之補償得主張抵充，為抵充權之賦予而非計算規則，抵充金額須依他法確定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/63-1/3",
+  "category": "definitional",
+  "reason": "規定要派單位與派遣事業單位違反本法或安全衛生規定致職災時連帶負損害賠償責任，屬責任規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/63-1/4",
+  "category": "definitional",
+  "reason": "規定依本法給付之補償金額得抵充同一事故之損害賠償，僅宣示抵充關係，賠償額本身須依個案確定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/64/1",
+  "category": "computable",
+  "reason": "以年齡是否滿十五歲及是否國民中學畢業兩個輸入即可唯一判定得否招收為技術生，可寫成布林純函數。",
+  "family": "apprentice_minimum_age_eligibility",
+  "io": "年齡、是否國中畢業→得否招收為技術生"
+ },
+ {
+  "unit_id": "N0030001/64/2",
+  "category": "definitional",
+  "reason": "為技術生之定義條款，訓練職類並由中央主管機關規定，無可問之數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/64/3",
+  "category": "definitional",
+  "reason": "規定本章對養成工、見習生、建教合作生等準用，屬適用範圍之準用規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/65/1",
+  "category": "lookup",
+  "reason": "主體為訓練契約應載事項與備案之程序義務，但「一式三份」為條文明定之單一數字，可切割為獨立查詢題。",
+  "family": "apprentice_training_contract_copies",
+  "io": "問技術生訓練契約應簽訂份數→三份"
+ },
+ {
+  "unit_id": "N0030001/65/2",
+  "category": "definitional",
+  "reason": "規定未成年技術生之訓練契約應得法定代理人允許，答案為「是否應該」之義務規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/66/1",
+  "category": "definitional",
+  "reason": "禁止雇主向技術生收取訓練費用，屬單純禁止規定，無數值輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/67/1",
+  "category": "computable",
+  "reason": "前段留用與同等待遇為義務規定，但後段「留用期間不得超過訓練期間」可切割為以訓練期間為輸入、留用期間上限為輸出之純函數。",
+  "family": "apprentice_retention_period_cap",
+  "io": "訓練期間、約定留用期間→留用期間上限及是否逾限"
+ },
+ {
+  "unit_id": "N0030001/68/1",
+  "category": "computable",
+  "reason": "以勞工人數為輸入，不滿四人以四人計後取四分之一，即可唯一算出技術生人數上限。",
+  "family": "apprentice_headcount_cap",
+  "io": "勞工人數→技術生人數上限"
+ },
+ {
+  "unit_id": "N0030001/69/1",
+  "category": "definitional",
+  "reason": "規定工作時間、童工女工、災害補償及勞保等規定於技術生準用，屬準用規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/69/2",
+  "category": "computable",
+  "reason": "技術生災害補償薪資計算標準以基本工資為法定下限，給定薪資與基本工資即可取較高者得出唯一結果。",
+  "family": "apprentice_injury_compensation_wage_floor",
+  "io": "技術生薪資、基本工資→災害補償採計薪資（取較高者）"
+ },
+ {
+  "unit_id": "N0030001/70/1",
+  "category": "lookup",
+  "reason": "主體為工作規則應載事項與核備程序，但「三十人以上」為條文明定之單一門檻，可切割為獨立查詢題。",
+  "family": "work_rules_headcount_threshold",
+  "io": "問應訂立工作規則之僱用人數門檻→三十人以上"
+ },
+ {
+  "unit_id": "N0030001/71/1",
+  "category": "definitional",
+  "reason": "規定工作規則牴觸法令強制禁止規定或團體協約者無效，屬效力規定而無數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/72/1",
+  "category": "definitional",
+  "reason": "規定中央主管機關設置或授權勞工檢查機構之組織性授權，「必要時」僅為地方主管機關派員之權限描述，無可問之唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/72/2",
+  "category": "delegated",
+  "reason": "勞工檢查機構之組織由中央主管機關定之，規則本體在子法，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/73/1",
+  "category": "definitional",
+  "reason": "規定檢查員出示檢查證、事業單位不得拒絕及強制檢查之程序，屬程序規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/73/2",
+  "category": "definitional",
+  "reason": "規定檢查員得要求提出文件及抽樣時應通知並掣給收據之程序性權限，「必要之」僅界定檢查權範圍，無數值或布林輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/74/1",
+  "category": "definitional",
+  "reason": "賦予勞工發現違法時向雇主、主管機關或檢查機構申訴之權利，屬程序性權利規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/74/2",
+  "category": "definitional",
+  "reason": "禁止雇主因勞工申訴而為解僱、降調、減薪等不利處分，屬禁止規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/74/3",
+  "category": "definitional",
+  "reason": "規定雇主違反前項之行為無效，屬效力規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/74/4",
+  "category": "lookup",
+  "reason": "「必要之調查」具裁量性，但「六十日內書面通知」為條文明定之單一期限，可切割為獨立查詢題。",
+  "family": "complaint_handling_notice_deadline",
+  "io": "問主管機關接獲申訴後書面通知處理情形之期限→六十日內"
+ },
+ {
+  "unit_id": "N0030001/74/5",
+  "category": "definitional",
+  "reason": "課予主管機關或檢查機構對申訴人身分保密之義務，屬義務規定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/74/6",
+  "category": "definitional",
+  "reason": "規定違反保密義務者之刑事、行政責任及對勞工之損害賠償責任，賠償金額依個案而無唯一數值。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/74/7",
+  "category": "delegated",
+  "reason": "檢舉案件保密及應遵行事項之辦法由中央主管機關定之，本項僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/75/1",
+  "category": "definitional",
+  "reason": "為違反第五條之刑事罰則，刑度與罰金均為範圍而非唯一答案，依判準歸 definitional。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/76/1",
+  "category": "definitional",
+  "reason": "為違反第六條之刑事罰則，刑度與罰金為範圍而非唯一答案，依判準歸 definitional。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/77/1",
+  "category": "definitional",
+  "reason": "為違反多條規定之刑事罰則，刑度與罰金為範圍而非唯一答案，依判準歸 definitional。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/78/1",
+  "category": "definitional",
+  "reason": "為未依標準或期限給付之罰鍰規定，三十萬至一百五十萬為範圍且含限期與按次處罰，依判準歸 definitional。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/78/2",
+  "category": "definitional",
+  "reason": "為違反多條規定之罰鍰規定，九萬至四十五萬為範圍而非唯一答案，依判準歸 definitional。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/79/1",
+  "category": "definitional",
+  "reason": "本項為罰則條文，僅列舉違反條文並規定二萬元至一百萬元之罰鍰範圍，範圍不是唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/79/2",
+  "category": "definitional",
+  "reason": "本項為罰則條文，規定九萬元至四十五萬元之罰鍰範圍，屬範圍而非唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/79/3",
+  "category": "definitional",
+  "reason": "本項為罰則條文，列舉違反條文並規定二萬元至三十萬元之罰鍰範圍，範圍不是唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/79/4",
+  "category": "computable",
+  "reason": "是否加重及加重幅度屬主管機關依事業規模與情節之裁量，但「加重至法定罰鍰最高額二分之一」可獨立切割為純函數：加重後上限等於法定最高額乘以一點五。",
+  "family": "penalty_aggravation_cap",
+  "io": "各該項法定罰鍰最高額→加重後罰鍰上限（最高額×1.5）"
+ },
+ {
+  "unit_id": "N0030001/79-1/1",
+  "category": "definitional",
+  "reason": "本項僅規定準用情形之處罰適用本章罰則，屬適用範圍之指引，沒有可問的數值或布林答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/80/1",
+  "category": "definitional",
+  "reason": "本項為罰則條文，規定妨礙勞工檢查之三萬元至十五萬元罰鍰範圍，範圍不是唯一答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/80-1/1",
+  "category": "definitional",
+  "reason": "本項規定主管機關裁罰後應公布名稱等資訊、限期改善與按次處罰之程序義務，沒有數值或期限可問。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/80-1/2",
+  "category": "discretionary",
+  "reason": "本項規定主管機關「得審酌」勞工人數、違法次數或未給付金額作為量罰標準，罰鍰輕重依個案裁量決定。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/81/1",
+  "category": "discretionary",
+  "reason": "本項雖規定兩罰原則，但但書以「已盡力為防止行為」作為免責要件，是否並罰須依個案判斷此不確定法律概念。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/81/2",
+  "category": "definitional",
+  "reason": "本項規定教唆或縱容違反行為者以行為人論，屬責任歸屬之定義性規定，沒有可計算的輸出。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/82/1",
+  "category": "definitional",
+  "reason": "本項規定罰鍰經催繳不繳納得移送法院強制執行，屬執行程序規定，沒有數值或期限可問。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/83/1",
+  "category": "delegated",
+  "reason": "本項雖課予事業單位舉辦勞資會議之義務，但會議之組成、程序等規則本體均授權中央主管機關會同經濟部訂定辦法，本條僅為授權。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/84/1",
+  "category": "definitional",
+  "reason": "本項規定公務員兼具勞工身分者之法令適用順序與但書從優原則，屬適用範圍之定義性規定，沒有唯一數值答案。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/84-1/1",
+  "category": "delegated",
+  "reason": "哪些工作者得另行約定工時例假等事項，須經中央主管機關核定公告，本條僅列抽象類型並授權，規則本體在公告。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/84-1/2",
+  "category": "discretionary",
+  "reason": "本項雖要求約定應以書面為之，但核心要件「參考本法基準且不得損及勞工健康及福祉」為不確定法律概念，約定是否合法依個案判斷。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/84-2/1",
+  "category": "definitional",
+  "reason": "本項僅規定年資自受僱日起算及資遣費退休金分段依當時法令、自訂規定或協商、第十七條與第五十五條計算，計算規則本體不在本條文內，無法單憑本文寫成純函數。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/85/1",
+  "category": "delegated",
+  "reason": "本項僅授權中央主管機關擬定施行細則並報行政院核定，規則本體在子法。",
+  "family": null,
+  "io": null
+ },
+ {
+  "unit_id": "N0030001/86/1",
+  "category": "lookup",
+  "reason": "本項明定本法自公布日施行，施行日期為條文中唯一明確的期限答案，不涉計算。",
+  "family": "statute_effective_date",
+  "io": "本法（原始條文）→施行日期（公布日）"
+ },
+ {
+  "unit_id": "N0030001/86/2",
+  "category": "lookup",
+  "reason": "本項逐一明定各次修正條文之施行日期（如第三十七條及第三十八條自一百零六年一月一日施行），各為唯一明確期限可獨立成題；僅第三十四條第二項施行日期由行政院定之，該部分為授權而切割排除。",
+  "family": "amendment_effective_date",
+  "io": "修正公布日期與條號→該修正條文之施行日期"
+ },
+ {
+  "unit_id": "N0030001/86/3",
+  "category": "lookup",
+  "reason": "本項明定一百零七年一月十日修正條文自一百零七年三月一日施行，施行日期為唯一明確期限答案。",
+  "family": "amendment_effective_date",
+  "io": "修正公布日期（一百零七年一月十日）→施行日期（一百零七年三月一日）"
+ }
+]

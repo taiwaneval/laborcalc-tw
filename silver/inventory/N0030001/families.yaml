@@ -1,0 +1,32 @@
+# 已編碼 family ↔ inventory units 的對應。coverage 報告從這裡算分子。
+# coverage: full = 該 unit 的可計算規則已完整編碼；partial = 只編碼一部分（說明見 note）
+# family 狀態（draft／reviewed）不記在這裡：只由 silver/families/<id>/reviews.yaml 推得（tools/family_reviews.py）。
+families:
+  - id: overtime_pay
+    name: 加班費（月薪制・單日）
+    version: 0.2.2
+    spec: families/overtime_pay/spec.yaml
+    units:
+      - { unit_id: N0030001/24/1, coverage: partial, note: 第一款、第二款已編碼；第三款（§32-4 天災事變加倍）排除 }
+      - { unit_id: N0030001/24/2, coverage: full }
+      - { unit_id: N0030001/32/2, coverage: partial, note: 只用到單日 12 小時上限；月 46 小時、三個月 138 小時未檢核 }
+      - { unit_id: N0030001/39/1, coverage: full, note: 國定假日出勤加倍；例假與特休部分不在本 family }
+  - id: annual_leave_days
+    name: 特別休假日數（§38 第 1 項・週年制）
+    version: 0.1.3
+    spec: families/annual_leave_days/spec.yaml
+    units:
+      - { unit_id: N0030001/38/1, coverage: full, note: 第 1 項階梯全部編碼；起算點依施行細則第 5 條；無相當日依民法 §121 但書，經勞動部特休試算系統核對（TAI-442） }
+  # 資遣費與預告期間：2026-11-13 簽核，不進 2026Q4
+  - id: severance_pay
+    name: 資遣費（勞基法 §17 舊制・勞退條例 §12 新制）
+    version: 0.1.2
+    spec: families/severance_pay/spec.yaml
+    units:
+      - { unit_id: N0030001/17/1, coverage: partial, note: 第一款、第二款已編碼；有舊制年資且總年資十年以上（可能符合退休條件）排除。新制部分依勞工退休金條例 §12 第 1 項（bronze/N0030020，未做盤點） }
+  - id: termination_notice_period
+    name: 資遣預告期間（§16 第 1 項）
+    version: 0.1.1
+    spec: families/termination_notice_period/spec.yaml
+    units:
+      - { unit_id: N0030001/16/1, coverage: full, note: 三款級距全部編碼；未滿三個月條文未規定，不收 }

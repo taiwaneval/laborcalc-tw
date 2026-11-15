@@ -1,0 +1,89 @@
+# overtime_pay 題幹模板（v1：手寫、確定性、零 LLM 成本）
+# 佔位符：{name} {salary} {day_phrase} {hours} {hours_cn}
+# salary 由 numeral 旋鈕決定寫法；day_phrase 由 day_type 與 day_variant 決定。
+# 每個模板標 register（formal / casual）與 implicit（題幹是否隱含而非明說「加班費」）。
+
+# 取整方式與 spec 的 rounding.final 一致：0.2.0 起無條件進位（加給「以上」的法定下限是精確金額；勞動部試算系統同）。
+answer_instruction: 請只回答一個整數（新台幣元，小數無條件進位到元），不要附任何單位或說明。
+# cot 模式（eval/tasks/rules_registry.py）把上一句換成這句；取整方式也要寫，否則照慣例四捨五入的回答會被判錯。
+cot_instruction: 可以列出計算過程，最後一行請以「答案：<整數>」作結，整數不含單位；金額有小數時無條件進位到元。
+
+day_phrases:
+  # 平日的 hours 是正常 8 小時之後的加班時數，三種說法都必須帶「下班後」。
+  # 0.1.2 前的「某個平日」配上 T01／T02／T05，字面變成當天總出勤只有 N 小時，與 gold 矛盾（2026Q4 有 8 題）。
+  weekday:
+    - 平日下班後
+    - 某個平日下班後
+    - 週三下班後
+  rest_day:
+    - 休息日
+    - 某個休息日（週六）
+    - 休息日
+  holiday:
+    - 國定假日
+    - 國定假日當天
+    - 國定假日（例如端午節）
+
+# 刻意配對（TAI-647）：一般題中 rate 比例組成 size 題一組，同參數、不同模板，標 pair_id，用來量「換問法，答案會不會變」。
+pairing:
+  rate: 0.2
+  size: 2
+
+templates:
+  - id: T01
+    register: formal
+    text: "{name}為月薪制勞工，月薪新臺幣{salary}元，適用勞動基準法正常工時制。{name}於{day_phrase}出勤{hours}小時。依勞動基準法規定，雇主至少應給付{name}多少加班費？"
+  - id: T02
+    register: formal
+    text: "某公司勞工{name}月薪{salary}元。{day_phrase}，雇主要求{name}工作{hours}小時。試依勞動基準法第24條、第39條規定，計算該日加班費之法定下限。"
+  - id: T03
+    register: casual
+    text: "{name}月薪{salary}，{day_phrase}被叫去加班{hours}小時。照勞基法算，公司最少要給多少加班費？"
+  - id: T04
+    register: casual
+    text: "我朋友{name}月薪{salary}元，{day_phrase}加班了{hours_cn}小時，想知道依法可以拿到多少加班費？"
+  - id: T05
+    register: formal
+    implicit: true
+    text: "{name}受僱於某事業單位，每月工資{salary}元，每日正常工時8小時。{day_phrase}，{name}工作{hours}小時。請問該日雇主依法應另行給付之工資為何？"
+  # ---- TAI-647 新增（2026-11-10 草稿，待 Calvin 逐條簽核）----
+  - id: T06
+    register: formal
+    style: hr
+    text: "人資作業：員工{name}，月薪制，月薪{salary}元。{day_phrase}加班{hours}小時。請計算本次依勞動基準法應發給之加班費最低金額。"
+  - id: T07
+    register: casual
+    style: line
+    text: "欸問一下，我是{name}，月薪{salary}，上禮拜{day_phrase}被主管叫回去做了{hours_cn}小時。照勞基法，公司最少應該給我多少加班費？"
+  - id: T08
+    register: formal
+    style: qa
+    text: "【勞資Q&A】問：勞工{name}月薪{salary}元，{day_phrase}依雇主要求工作{hours}小時，雇主應給付多少加班費？（請依勞動基準法計算法定最低金額）"
+  - id: T09
+    register: formal
+    style: distractor
+    text: "{name}任職的公司有48名員工，{name}月薪{salary}元。{day_phrase}，{name}工作了{hours}小時，當天搭計程車回家花了350元。依勞動基準法，雇主至少應給付{name}多少加班費？"
+  - id: T10
+    register: casual
+    implicit: true
+    style: implicit
+    text: "{name}的月薪是{salary}元。{day_phrase}，老闆請{name}來幫忙{hours}小時。依勞動基準法，老闆除了原本的月薪之外，至少還要再付{name}多少錢？"
+
+# 對照題（hours = 0）專用模板：測模型會不會亂套規則
+zero_templates:
+  - id: Z01
+    register: formal
+    text: "{name}為月薪制勞工，月薪{salary}元。{day_phrase}，{name}準時離開，當天未延長工時。依勞動基準法，該日雇主應給付{name}多少加班費？"
+  # ---- TAI-647 新增（待簽核）：對照題只有一個模板時，同分支句型必然重複 ----
+  - id: Z02
+    register: formal
+    text: "{name}月薪{salary}元。{day_phrase}{name}沒有留下來加班，直接回家了，當天未延長工時。依勞動基準法，這天雇主應另外給{name}多少加班費？"
+  - id: Z03
+    register: casual
+    style: line
+    text: "我是{name}，月薪{salary}，{day_phrase}主管本來要我留下來，後來說不用，我就走了，當天未延長工時。這樣照勞基法，公司要給我多少加班費？"
+
+# 實體池（v1 小型；release 時換池）
+names:
+  surnames: [陳, 林, 黃, 張, 李, 王, 吳, 劉, 蔡, 楊, 許, 鄭, 謝, 郭, 洪]
+  given: [怡君, 家豪, 淑芬, 建宏, 美玲, 志明, 雅婷, 俊傑, 宗翰, 佩珊, 冠宇, 欣怡, 柏翰, 詩涵, 承翰]

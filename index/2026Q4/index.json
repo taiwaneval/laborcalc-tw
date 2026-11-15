@@ -1,0 +1,3467 @@
+{
+ "index_name": "LaborCalc-TW",
+ "release": "2026Q4",
+ "methodology_version": "0.2.0-draft",
+ "mode": "release",
+ "release_blockers": [],
+ "generated_at": "2026-11-14T07:43:42+08:00",
+ "weights": {
+  "annual_leave_days": 1.0,
+  "overtime_pay": 1.0
+ },
+ "headline_tiers": [
+  1
+ ],
+ "families": [
+  "annual_leave_days",
+  "overtime_pay"
+ ],
+ "pins": {
+  "annual_leave_days": {
+   "public": {
+    "family_version": "0.1.3",
+    "family_status": "reviewed",
+    "review": {
+     "reviewer": "Calvin Ku",
+     "role": "owner",
+     "date": "2026-11-10",
+     "verdict": "approved"
+    },
+    "spec_sha256": "a0205489f0e0f165ebd9692ed2aca3fe17190346d7a03db770ccdddade6be254",
+    "rule_sha256": "ed6d1012e68c625a2a44906a5102cd41a0b0b91ae3b39b93c3ae7fc7aeead595",
+    "templates_sha256": "073e2530e76ecbed90478ce3fd549c0f72828a31a0fde9207e635f5318091314",
+    "sampler_sha256": "41f1acde2b6a2130aef4dddd64da1d4b1523a78325f81cbff7841905b873cf85",
+    "generator_version": "0.5.0",
+    "n": 200,
+    "rejected": 0,
+    "as_of": "2026-10-09",
+    "salt": "taiwaneval-public-2026",
+    "lineage": {
+     "laws": {
+      "N0030001": {
+       "law_name": "勞動基準法",
+       "last_amended": "20240731",
+       "bronze_sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+       "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+       "triage_version": "0.1.1",
+       "units": [
+        "N0030001/38/1"
+       ]
+      }
+     }
+    }
+   }
+  },
+  "overtime_pay": {
+   "public": {
+    "family_version": "0.2.2",
+    "family_status": "reviewed",
+    "review": {
+     "reviewer": "Calvin Ku",
+     "role": "owner",
+     "date": "2026-11-10",
+     "verdict": "approved"
+    },
+    "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+    "rule_sha256": "e8862905b1df284d3f686b4a128b177ef130b1cf0726eddba90ae96a943f8fae",
+    "templates_sha256": "471ec16e1727bdb68ac744c322a6c0e70788707d7f62b33db99a4cbafea6b937",
+    "sampler_sha256": "a83134ac02f6e37973b9b511e63a9f7e04223395fa24cbe280c6c4bcdf5a45d8",
+    "generator_version": "0.5.0",
+    "n": 200,
+    "rejected": 0,
+    "as_of": "2026-10-08",
+    "salt": "taiwaneval-public-2026",
+    "lineage": {
+     "laws": {
+      "N0030001": {
+       "law_name": "勞動基準法",
+       "last_amended": "20240731",
+       "bronze_sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+       "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+       "triage_version": "0.1.1",
+       "units": [
+        "N0030001/24/1",
+        "N0030001/24/2",
+        "N0030001/32/2",
+        "N0030001/39/1"
+       ]
+      }
+     }
+    }
+   }
+  }
+ },
+ "targets": {
+  "gpt-6-luna@api@opencode@max": {
+   "splits": {
+    "public": {
+     "score": 0.9315789473684211,
+     "control_pass": 1.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.9421052631578948,
+      "overtime_pay": 0.9210526315789473
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 185,
+       "n_scored": 190,
+       "correct_scored": 175,
+       "accuracy": 0.9210526315789473,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.9210526315789473
+        ],
+        "mean": 0.9210526315789473,
+        "min": 0.9210526315789473,
+        "max": 0.9210526315789473,
+        "log_files": [
+         "2026-11-10T06-12-31-00-00_overtime-pay-2026Q4-public_mbPgQGpn7RGsZrTZw6JeiL.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 17,
+        "rate": 0.8947368421052632,
+        "both_correct": 15,
+        "both_wrong": 2,
+        "flipped": 2
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 18,
+         "n": 20,
+         "accuracy": 0.9,
+         "control": false
+        },
+        "H2": {
+         "correct": 15,
+         "n": 15,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 15,
+         "n": 15,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 28,
+         "n": 30,
+         "accuracy": 0.9333333333333333,
+         "control": false
+        },
+        "R2": {
+         "correct": 29,
+         "n": 30,
+         "accuracy": 0.9666666666666667,
+         "control": false
+        },
+        "R3": {
+         "correct": 10,
+         "n": 20,
+         "accuracy": 0.5,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T06-12-31-00-00_overtime-pay-2026Q4-public_mbPgQGpn7RGsZrTZw6JeiL.eval",
+       "log_sha256": "89a1612d89ff45b43f48c02468eca01025551506a8d818527ea360a31362789d",
+       "run_id": "nZKedMAz8FGpAtG9mz2rVn",
+       "model": "openai/gpt-6-luna",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 189,
+       "n_scored": 190,
+       "correct_scored": 179,
+       "accuracy": 0.9421052631578948,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.9421052631578948
+        ],
+        "mean": 0.9421052631578948,
+        "min": 0.9421052631578948,
+        "max": 0.9421052631578948,
+        "log_files": [
+         "2026-11-10T06-41-56-00-00_annual-leave-days-2026Q4-public_D9v7nhrNiZxi9RiHJ58u8p.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 17,
+        "rate": 0.8947368421052632,
+        "both_correct": 16,
+        "both_wrong": 1,
+        "flipped": 2
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 24,
+         "n": 25,
+         "accuracy": 0.96,
+         "control": false
+        },
+        "B2": {
+         "correct": 23,
+         "n": 25,
+         "accuracy": 0.92,
+         "control": false
+        },
+        "B3": {
+         "correct": 5,
+         "n": 10,
+         "accuracy": 0.5,
+         "control": false
+        },
+        "S0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 19,
+         "n": 20,
+         "accuracy": 0.95,
+         "control": false
+        },
+        "S3": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 19,
+         "n": 20,
+         "accuracy": 0.95,
+         "control": false
+        },
+        "S7": {
+         "correct": 9,
+         "n": 10,
+         "accuracy": 0.9,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T06-41-56-00-00_annual-leave-days-2026Q4-public_D9v7nhrNiZxi9RiHJ58u8p.eval",
+       "log_sha256": "589ce4b9db6f4e03b554e4f3ae84f19b202af54f49784b3e85681fa5327f9791",
+       "run_id": "jLoQsga4KAZSch23WWtodg",
+       "model": "openai/gpt-6-luna",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "glm-5.3-flash@api@opencode@max": {
+   "splits": {
+    "public": {
+     "score": 0.5921052631578947,
+     "control_pass": 0.95,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.6736842105263158,
+      "overtime_pay": 0.5105263157894737
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 107,
+       "n_scored": 190,
+       "correct_scored": 97,
+       "accuracy": 0.5105263157894737,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.5105263157894737
+        ],
+        "mean": 0.5105263157894737,
+        "min": 0.5105263157894737,
+        "max": 0.5105263157894737,
+        "log_files": [
+         "2026-11-10T06-54-57-00-00_overtime-pay-2026Q4-public_h9eogVrM8naGLDbu9uPi3r.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 13,
+        "rate": 0.6842105263157895,
+        "both_correct": 6,
+        "both_wrong": 7,
+        "flipped": 6
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 12,
+         "n": 20,
+         "accuracy": 0.6,
+         "control": false
+        },
+        "H2": {
+         "correct": 5,
+         "n": 15,
+         "accuracy": 0.3333333333333333,
+         "control": false
+        },
+        "H3": {
+         "correct": 4,
+         "n": 15,
+         "accuracy": 0.26666666666666666,
+         "control": false
+        },
+        "R1": {
+         "correct": 10,
+         "n": 30,
+         "accuracy": 0.3333333333333333,
+         "control": false
+        },
+        "R2": {
+         "correct": 9,
+         "n": 30,
+         "accuracy": 0.3,
+         "control": false
+        },
+        "R3": {
+         "correct": 4,
+         "n": 20,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 24,
+         "n": 30,
+         "accuracy": 0.8,
+         "control": false
+        },
+        "W2": {
+         "correct": 29,
+         "n": 30,
+         "accuracy": 0.9666666666666667,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T06-54-57-00-00_overtime-pay-2026Q4-public_h9eogVrM8naGLDbu9uPi3r.eval",
+       "log_sha256": "8812d0da415425e52b275296dc7fa1b0ad144e149b7aaa5ccff415ca0d6da692",
+       "run_id": "gLBcWdC9e3qZj3HiZDEBo6",
+       "model": "openai-api/opencode/glm-5.3-flash",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 137,
+       "n_scored": 190,
+       "correct_scored": 128,
+       "accuracy": 0.6736842105263158,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.6736842105263158
+        ],
+        "mean": 0.6736842105263158,
+        "min": 0.6736842105263158,
+        "max": 0.6736842105263158,
+        "log_files": [
+         "2026-11-10T07-46-50-00-00_annual-leave-days-2026Q4-public_MM9cf7bPGtB9pTnuaHjBLE.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 9,
+       "control_pass": 0.9,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 16,
+        "rate": 0.8421052631578947,
+        "both_correct": 11,
+        "both_wrong": 5,
+        "flipped": 3
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 16,
+         "n": 25,
+         "accuracy": 0.64,
+         "control": false
+        },
+        "B2": {
+         "correct": 10,
+         "n": 25,
+         "accuracy": 0.4,
+         "control": false
+        },
+        "B3": {
+         "correct": 6,
+         "n": 10,
+         "accuracy": 0.6,
+         "control": false
+        },
+        "S0": {
+         "correct": 9,
+         "n": 10,
+         "accuracy": 0.9,
+         "control": true
+        },
+        "S1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 16,
+         "n": 20,
+         "accuracy": 0.8,
+         "control": false
+        },
+        "S3": {
+         "correct": 17,
+         "n": 20,
+         "accuracy": 0.85,
+         "control": false
+        },
+        "S4": {
+         "correct": 13,
+         "n": 20,
+         "accuracy": 0.65,
+         "control": false
+        },
+        "S5": {
+         "correct": 15,
+         "n": 20,
+         "accuracy": 0.75,
+         "control": false
+        },
+        "S6": {
+         "correct": 9,
+         "n": 20,
+         "accuracy": 0.45,
+         "control": false
+        },
+        "S7": {
+         "correct": 6,
+         "n": 10,
+         "accuracy": 0.6,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T07-46-50-00-00_annual-leave-days-2026Q4-public_MM9cf7bPGtB9pTnuaHjBLE.eval",
+       "log_sha256": "63af278618b11a1a7c04b7baec6c45dd727bca0e0dcf4f6fb9a40ff9c44f2a51",
+       "run_id": "AnbaP7dPQt5Ke5UK9tRPX9",
+       "model": "openai-api/opencode/glm-5.3-flash",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "deepseek-v4.1-flash@api@opencode@max": {
+   "splits": {
+    "public": {
+     "score": 0.9342105263157895,
+     "control_pass": 1.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.9578947368421052,
+      "overtime_pay": 0.9105263157894737
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 183,
+       "n_scored": 190,
+       "correct_scored": 173,
+       "accuracy": 0.9105263157894737,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.9105263157894737
+        ],
+        "mean": 0.9105263157894737,
+        "min": 0.9105263157894737,
+        "max": 0.9105263157894737,
+        "log_files": [
+         "2026-11-10T10-01-14-00-00_overtime-pay-2026Q4-public_ktDBDvnn5Hgai8mJxA6rpc.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 18,
+        "rate": 0.9473684210526315,
+        "both_correct": 17,
+        "both_wrong": 1,
+        "flipped": 1
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 7,
+         "n": 20,
+         "accuracy": 0.35,
+         "control": false
+        },
+        "H2": {
+         "correct": 15,
+         "n": 15,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 15,
+         "n": 15,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 28,
+         "n": 30,
+         "accuracy": 0.9333333333333333,
+         "control": false
+        },
+        "R2": {
+         "correct": 29,
+         "n": 30,
+         "accuracy": 0.9666666666666667,
+         "control": false
+        },
+        "R3": {
+         "correct": 19,
+         "n": 20,
+         "accuracy": 0.95,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T10-01-14-00-00_overtime-pay-2026Q4-public_ktDBDvnn5Hgai8mJxA6rpc.eval",
+       "log_sha256": "3d24915e9ffa17a8c6308d44e2a2f91ae24203562fd13d171051807ba1216ebe",
+       "run_id": "RMGnHy24GphqkL9Mf36cgg",
+       "model": "openai-api/opencode/deepseek-v4.1-flash",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 192,
+       "n_scored": 190,
+       "correct_scored": 182,
+       "accuracy": 0.9578947368421052,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.9578947368421052
+        ],
+        "mean": 0.9578947368421052,
+        "min": 0.9578947368421052,
+        "max": 0.9578947368421052,
+        "log_files": [
+         "2026-11-10T10-24-47-00-00_annual-leave-days-2026Q4-public_N8cBspD48DWAxCgAuczM6m.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 17,
+        "rate": 0.8947368421052632,
+        "both_correct": 16,
+        "both_wrong": 1,
+        "flipped": 2
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 25,
+         "n": 25,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "B2": {
+         "correct": 22,
+         "n": 25,
+         "accuracy": 0.88,
+         "control": false
+        },
+        "B3": {
+         "correct": 5,
+         "n": 10,
+         "accuracy": 0.5,
+         "control": false
+        },
+        "S0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S3": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S7": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T10-24-47-00-00_annual-leave-days-2026Q4-public_N8cBspD48DWAxCgAuczM6m.eval",
+       "log_sha256": "3d4386427c41792624cdd18503dcbb4c76ae9403ad255d75d37a08cad7f789af",
+       "run_id": "mUaUVSJAQdpQY2qhkNVDvX",
+       "model": "openai-api/opencode/deepseek-v4.1-flash",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "qwen3.8-flash@api@opencode@max": {
+   "splits": {
+    "public": {
+     "score": 0.5447368421052632,
+     "control_pass": 1.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.6157894736842106,
+      "overtime_pay": 0.47368421052631576
+     },
+     "families": {
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 127,
+       "n_scored": 190,
+       "correct_scored": 117,
+       "accuracy": 0.6157894736842106,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.6157894736842106
+        ],
+        "mean": 0.6157894736842106,
+        "min": 0.6157894736842106,
+        "max": 0.6157894736842106,
+        "log_files": [
+         "2026-11-10T12-47-44-00-00_annual-leave-days-2026Q4-public_VsHqj6kaHk3cYDFufXYr3y-recovered.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 14,
+        "rate": 0.7368421052631579,
+        "both_correct": 9,
+        "both_wrong": 5,
+        "flipped": 5
+       },
+       "spec_mismatch": null,
+       "n_error": 1,
+       "by_branch": {
+        "B1": {
+         "correct": 12,
+         "n": 25,
+         "accuracy": 0.48,
+         "control": false
+        },
+        "B2": {
+         "correct": 14,
+         "n": 25,
+         "accuracy": 0.56,
+         "control": false
+        },
+        "B3": {
+         "correct": 4,
+         "n": 10,
+         "accuracy": 0.4,
+         "control": false
+        },
+        "S0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 10,
+         "n": 20,
+         "accuracy": 0.5,
+         "control": false
+        },
+        "S2": {
+         "correct": 16,
+         "n": 20,
+         "accuracy": 0.8,
+         "control": false
+        },
+        "S3": {
+         "correct": 15,
+         "n": 20,
+         "accuracy": 0.75,
+         "control": false
+        },
+        "S4": {
+         "correct": 18,
+         "n": 20,
+         "accuracy": 0.9,
+         "control": false
+        },
+        "S5": {
+         "correct": 17,
+         "n": 20,
+         "accuracy": 0.85,
+         "control": false
+        },
+        "S6": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S7": {
+         "correct": 9,
+         "n": 10,
+         "accuracy": 0.9,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T12-47-44-00-00_annual-leave-days-2026Q4-public_VsHqj6kaHk3cYDFufXYr3y-recovered.eval",
+       "log_sha256": "e25f528ae6bf13be1850c7e0b419298d4ec2372618cd6a8b6ccab460d4aef55c",
+       "run_id": "TfqSzXp6B8NgNTiB2KBcr9",
+       "model": "openai-api/opencode/qwen3.8-flash",
+       "fake": null
+      },
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 100,
+       "n_scored": 190,
+       "correct_scored": 90,
+       "accuracy": 0.47368421052631576,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.47368421052631576
+        ],
+        "mean": 0.47368421052631576,
+        "min": 0.47368421052631576,
+        "max": 0.47368421052631576,
+        "log_files": [
+         "2026-11-10T14-07-17-00-00_overtime-pay-2026Q4-public_RhV5rau6VH8geUPVfXrEc5.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 10,
+        "rate": 0.5263157894736842,
+        "both_correct": 4,
+        "both_wrong": 6,
+        "flipped": 9
+       },
+       "spec_mismatch": null,
+       "n_error": 3,
+       "by_branch": {
+        "H1": {
+         "correct": 4,
+         "n": 20,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "H2": {
+         "correct": 5,
+         "n": 15,
+         "accuracy": 0.3333333333333333,
+         "control": false
+        },
+        "H3": {
+         "correct": 4,
+         "n": 15,
+         "accuracy": 0.26666666666666666,
+         "control": false
+        },
+        "R1": {
+         "correct": 11,
+         "n": 30,
+         "accuracy": 0.36666666666666664,
+         "control": false
+        },
+        "R2": {
+         "correct": 14,
+         "n": 30,
+         "accuracy": 0.4666666666666667,
+         "control": false
+        },
+        "R3": {
+         "correct": 3,
+         "n": 20,
+         "accuracy": 0.15,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 24,
+         "n": 30,
+         "accuracy": 0.8,
+         "control": false
+        },
+        "W2": {
+         "correct": 25,
+         "n": 30,
+         "accuracy": 0.8333333333333334,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T14-07-17-00-00_overtime-pay-2026Q4-public_RhV5rau6VH8geUPVfXrEc5.eval",
+       "log_sha256": "f36b66659779ac392cadb4fa9eaf11fe2880cbd7cab5496e40fada79f841a030",
+       "run_id": "7o3hZ5oAFDVhRW8KFuyDbh",
+       "model": "openai-api/opencode/qwen3.8-flash",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "breeze2-8b@q4ks-gguf@mac-studio-applem1ultra@cot": {
+   "splits": {
+    "public": {
+     "score": 0.0368421052631579,
+     "control_pass": 0.25,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.06842105263157895,
+      "overtime_pay": 0.005263157894736842
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 5,
+       "n_scored": 190,
+       "correct_scored": 1,
+       "accuracy": 0.005263157894736842,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.005263157894736842
+        ],
+        "mean": 0.005263157894736842,
+        "min": 0.005263157894736842,
+        "max": 0.005263157894736842,
+        "log_files": [
+         "2026-11-10T13-27-32-00-00_overtime-pay-2026Q4-public_WKkjVoECgmKVboTAP275At.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 4,
+       "control_pass": 0.4,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "cot",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 0,
+        "both_wrong": 19,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H2": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 1,
+         "n": 30,
+         "accuracy": 0.03333333333333333,
+         "control": false
+        },
+        "R2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 4,
+         "n": 10,
+         "accuracy": 0.4,
+         "control": true
+        },
+        "W1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T13-27-32-00-00_overtime-pay-2026Q4-public_WKkjVoECgmKVboTAP275At.eval",
+       "log_sha256": "23d8a927eb7417747c0af8da7ab3508088e6f63dc3311f98c742f51664c98408",
+       "run_id": "mgq2wEeXyzbMeKBVLst4pv",
+       "model": "openai-api/lmstudio/breeze2-8b",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 14,
+       "n_scored": 190,
+       "correct_scored": 13,
+       "accuracy": 0.06842105263157895,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.06842105263157895
+        ],
+        "mean": 0.06842105263157895,
+        "min": 0.06842105263157895,
+        "max": 0.06842105263157895,
+        "log_files": [
+         "2026-11-10T13-32-53-00-00_annual-leave-days-2026Q4-public_gN5onuPFRGYQZcFkdMYgzg.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 1,
+       "control_pass": 0.1,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "cot",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 0,
+        "both_wrong": 19,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 2,
+         "n": 25,
+         "accuracy": 0.08,
+         "control": false
+        },
+        "B2": {
+         "correct": 2,
+         "n": 25,
+         "accuracy": 0.08,
+         "control": false
+        },
+        "B3": {
+         "correct": 3,
+         "n": 10,
+         "accuracy": 0.3,
+         "control": false
+        },
+        "S0": {
+         "correct": 1,
+         "n": 10,
+         "accuracy": 0.1,
+         "control": true
+        },
+        "S1": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 4,
+         "n": 20,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "S3": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S4": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S7": {
+         "correct": 0,
+         "n": 10,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T13-32-53-00-00_annual-leave-days-2026Q4-public_gN5onuPFRGYQZcFkdMYgzg.eval",
+       "log_sha256": "794fac3006aee2134ed467a7c82ce43ed1de5bebe8eb8787ac62917351a4ed19",
+       "run_id": "fPVurojpMcryQwpC993HTc",
+       "model": "openai-api/lmstudio/breeze2-8b",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "taide-12b-2602@q4km-gguf@mac-studio-applem1ultra@cot": {
+   "splits": {
+    "public": {
+     "score": 0.13421052631578947,
+     "control_pass": 0.45,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.2578947368421053,
+      "overtime_pay": 0.010526315789473684
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 7,
+       "n_scored": 190,
+       "correct_scored": 2,
+       "accuracy": 0.010526315789473684,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.010526315789473684
+        ],
+        "mean": 0.010526315789473684,
+        "min": 0.010526315789473684,
+        "max": 0.010526315789473684,
+        "log_files": [
+         "2026-11-10T13-43-23-00-00_overtime-pay-2026Q4-public_ZEwKHuCcPEgC7zFZAjRCo6.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 5,
+       "control_pass": 0.5,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "cot",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 0,
+        "both_wrong": 19,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "H2": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 5,
+         "n": 10,
+         "accuracy": 0.5,
+         "control": true
+        },
+        "W1": {
+         "correct": 1,
+         "n": 30,
+         "accuracy": 0.03333333333333333,
+         "control": false
+        },
+        "W2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T13-43-23-00-00_overtime-pay-2026Q4-public_ZEwKHuCcPEgC7zFZAjRCo6.eval",
+       "log_sha256": "141c6f92cb18ec08635577f786e99c0e4a2c187b5b2c410016545af2121eca6f",
+       "run_id": "kP8yAeT7h7GVozDSGtKTTg",
+       "model": "openai-api/lmstudio/taide-12b-2602",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 53,
+       "n_scored": 190,
+       "correct_scored": 49,
+       "accuracy": 0.2578947368421053,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.2578947368421053
+        ],
+        "mean": 0.2578947368421053,
+        "min": 0.2578947368421053,
+        "max": 0.2578947368421053,
+        "log_files": [
+         "2026-11-10T13-55-32-00-00_annual-leave-days-2026Q4-public_nvqgLA8oKkxkWLN7q4bXYm.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 4,
+       "control_pass": 0.4,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "cot",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 16,
+        "rate": 0.8421052631578947,
+        "both_correct": 2,
+        "both_wrong": 14,
+        "flipped": 3
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 6,
+         "n": 25,
+         "accuracy": 0.24,
+         "control": false
+        },
+        "B2": {
+         "correct": 3,
+         "n": 25,
+         "accuracy": 0.12,
+         "control": false
+        },
+        "B3": {
+         "correct": 1,
+         "n": 10,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S0": {
+         "correct": 4,
+         "n": 10,
+         "accuracy": 0.4,
+         "control": true
+        },
+        "S1": {
+         "correct": 3,
+         "n": 20,
+         "accuracy": 0.15,
+         "control": false
+        },
+        "S2": {
+         "correct": 11,
+         "n": 20,
+         "accuracy": 0.55,
+         "control": false
+        },
+        "S3": {
+         "correct": 5,
+         "n": 20,
+         "accuracy": 0.25,
+         "control": false
+        },
+        "S4": {
+         "correct": 9,
+         "n": 20,
+         "accuracy": 0.45,
+         "control": false
+        },
+        "S5": {
+         "correct": 6,
+         "n": 20,
+         "accuracy": 0.3,
+         "control": false
+        },
+        "S6": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "S7": {
+         "correct": 4,
+         "n": 10,
+         "accuracy": 0.4,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T13-55-32-00-00_annual-leave-days-2026Q4-public_nvqgLA8oKkxkWLN7q4bXYm.eval",
+       "log_sha256": "42c6731a3e778b72a94bc55a8f93c923adcf8d027c9f53134103ea60149cdd53",
+       "run_id": "jHYwoupqFYitYhUQmYb32Y",
+       "model": "openai-api/lmstudio/taide-12b-2602",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "claude-haiku-5.5@api@openrouter@max": {
+   "splits": {
+    "public": {
+     "score": 0.6,
+     "control_pass": 1.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.8947368421052632,
+      "overtime_pay": 0.30526315789473685
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 68,
+       "n_scored": 190,
+       "correct_scored": 58,
+       "accuracy": 0.30526315789473685,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.30526315789473685
+        ],
+        "mean": 0.30526315789473685,
+        "min": 0.30526315789473685,
+        "max": 0.30526315789473685,
+        "log_files": [
+         "2026-11-10T16-43-12-00-00_overtime-pay-2026Q4-public_RGwj3FboBA3q259Apm4EZb.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 13,
+        "rate": 0.6842105263157895,
+        "both_correct": 2,
+        "both_wrong": 11,
+        "flipped": 6
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 6,
+         "n": 20,
+         "accuracy": 0.3,
+         "control": false
+        },
+        "H2": {
+         "correct": 3,
+         "n": 15,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "H3": {
+         "correct": 4,
+         "n": 15,
+         "accuracy": 0.26666666666666666,
+         "control": false
+        },
+        "R1": {
+         "correct": 4,
+         "n": 30,
+         "accuracy": 0.13333333333333333,
+         "control": false
+        },
+        "R2": {
+         "correct": 1,
+         "n": 30,
+         "accuracy": 0.03333333333333333,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 17,
+         "n": 30,
+         "accuracy": 0.5666666666666667,
+         "control": false
+        },
+        "W2": {
+         "correct": 23,
+         "n": 30,
+         "accuracy": 0.7666666666666667,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T16-43-12-00-00_overtime-pay-2026Q4-public_RGwj3FboBA3q259Apm4EZb.eval",
+       "log_sha256": "9ce6f8bcace0287e08612e7bf0d8684d8001a2694d8b2546d8ed8cdd90c2c866",
+       "run_id": "ZmywCqNNB2fRPuwusgvnLx",
+       "model": "openai-api/openrouter/anthropic/claude-haiku-5.5",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 180,
+       "n_scored": 190,
+       "correct_scored": 170,
+       "accuracy": 0.8947368421052632,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.8947368421052632
+        ],
+        "mean": 0.8947368421052632,
+        "min": 0.8947368421052632,
+        "max": 0.8947368421052632,
+        "log_files": [
+         "2026-11-10T17-54-30-00-00_annual-leave-days-2026Q4-public_7ErcuimgRpNBruXQLNGa79.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 17,
+        "rate": 0.8947368421052632,
+        "both_correct": 16,
+        "both_wrong": 1,
+        "flipped": 2
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 23,
+         "n": 25,
+         "accuracy": 0.92,
+         "control": false
+        },
+        "B2": {
+         "correct": 21,
+         "n": 25,
+         "accuracy": 0.84,
+         "control": false
+        },
+        "B3": {
+         "correct": 5,
+         "n": 10,
+         "accuracy": 0.5,
+         "control": false
+        },
+        "S0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S3": {
+         "correct": 19,
+         "n": 20,
+         "accuracy": 0.95,
+         "control": false
+        },
+        "S4": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 19,
+         "n": 20,
+         "accuracy": 0.95,
+         "control": false
+        },
+        "S6": {
+         "correct": 13,
+         "n": 20,
+         "accuracy": 0.65,
+         "control": false
+        },
+        "S7": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T17-54-30-00-00_annual-leave-days-2026Q4-public_7ErcuimgRpNBruXQLNGa79.eval",
+       "log_sha256": "9e134b940b93994dc1c153a1bc4757aac4718881f56ff08d639b726562173255",
+       "run_id": "9yJ2Xg436mGiEhm6FLACyP",
+       "model": "openai-api/openrouter/anthropic/claude-haiku-5.5",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "gemma-4-12b-it@fp8@colab-l4@max": {
+   "splits": {
+    "public": {
+     "score": 0.06052631578947368,
+     "control_pass": 0.65,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.08421052631578947,
+      "overtime_pay": 0.03684210526315789
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 17,
+       "n_scored": 190,
+       "correct_scored": 7,
+       "accuracy": 0.03684210526315789,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.03684210526315789
+        ],
+        "mean": 0.03684210526315789,
+        "min": 0.03684210526315789,
+        "max": 0.03684210526315789,
+        "log_files": [
+         "2026-11-10T16-50-04-00-00_overtime-pay-2026Q4-public_mhUDq6wizq8h8gQSPMxYg3.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 18,
+        "rate": 0.9473684210526315,
+        "both_correct": 0,
+        "both_wrong": 18,
+        "flipped": 1
+       },
+       "spec_mismatch": null,
+       "n_error": 17,
+       "by_branch": {
+        "H1": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "H2": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 2,
+         "n": 30,
+         "accuracy": 0.06666666666666667,
+         "control": false
+        },
+        "R2": {
+         "correct": 1,
+         "n": 30,
+         "accuracy": 0.03333333333333333,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 2,
+         "n": 30,
+         "accuracy": 0.06666666666666667,
+         "control": false
+        },
+        "W2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T16-50-04-00-00_overtime-pay-2026Q4-public_mhUDq6wizq8h8gQSPMxYg3.eval",
+       "log_sha256": "19c6573c574bbc5683bcd67be3fe1ef0cf9a76c24c81d6a74bffe750744ff078",
+       "run_id": "8UE7DTewCa7Jgf4hqXqRH7",
+       "model": "openai-api/vllm/gemma-4-12b-it",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 19,
+       "n_scored": 190,
+       "correct_scored": 16,
+       "accuracy": 0.08421052631578947,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.08421052631578947
+        ],
+        "mean": 0.08421052631578947,
+        "min": 0.08421052631578947,
+        "max": 0.08421052631578947,
+        "log_files": [
+         "2026-11-11T03-09-42-00-00_annual-leave-days-2026Q4-public_Qvg33YYGXZ98DGQLCVSBWX.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 3,
+       "control_pass": 0.3,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 16,
+        "rate": 0.8421052631578947,
+        "both_correct": 0,
+        "both_wrong": 16,
+        "flipped": 3
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 2,
+         "n": 25,
+         "accuracy": 0.08,
+         "control": false
+        },
+        "B2": {
+         "correct": 1,
+         "n": 25,
+         "accuracy": 0.04,
+         "control": false
+        },
+        "B3": {
+         "correct": 2,
+         "n": 10,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "S0": {
+         "correct": 3,
+         "n": 10,
+         "accuracy": 0.3,
+         "control": true
+        },
+        "S1": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "S2": {
+         "correct": 7,
+         "n": 20,
+         "accuracy": 0.35,
+         "control": false
+        },
+        "S3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "S5": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "S7": {
+         "correct": 1,
+         "n": 10,
+         "accuracy": 0.1,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-11T03-09-42-00-00_annual-leave-days-2026Q4-public_Qvg33YYGXZ98DGQLCVSBWX.eval",
+       "log_sha256": "b7138a66da2656559cc2d77ab8528a76270f29e086f07c314dea23c19fe2988d",
+       "run_id": "mYWRSQDoqupP8vXQKGBiT9",
+       "model": "openai-api/vllm/gemma-4-12b-it",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "qwen3.8-27b@optiq4-mlx@mac-studio-applem1ultra@max": {
+   "splits": {
+    "public": {
+     "score": 0.16578947368421051,
+     "control_pass": 0.75,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.18421052631578946,
+      "overtime_pay": 0.14736842105263157
+     },
+     "families": {
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 40,
+       "n_scored": 190,
+       "correct_scored": 35,
+       "accuracy": 0.18421052631578946,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.18421052631578946
+        ],
+        "mean": 0.18421052631578946,
+        "min": 0.18421052631578946,
+        "max": 0.18421052631578946,
+        "log_files": [
+         "2026-11-10T17-02-29-00-00_annual-leave-days-2026Q4-public_c9qb8RvYh5ZqG7DYehPCDW.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 5,
+       "control_pass": 0.5,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 14,
+        "rate": 0.7368421052631579,
+        "both_correct": 1,
+        "both_wrong": 13,
+        "flipped": 5
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 5,
+         "n": 25,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "B2": {
+         "correct": 5,
+         "n": 25,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "B3": {
+         "correct": 2,
+         "n": 10,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "S0": {
+         "correct": 5,
+         "n": 10,
+         "accuracy": 0.5,
+         "control": true
+        },
+        "S1": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S2": {
+         "correct": 9,
+         "n": 20,
+         "accuracy": 0.45,
+         "control": false
+        },
+        "S3": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "S4": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S5": {
+         "correct": 3,
+         "n": 20,
+         "accuracy": 0.15,
+         "control": false
+        },
+        "S6": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S7": {
+         "correct": 4,
+         "n": 10,
+         "accuracy": 0.4,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T17-02-29-00-00_annual-leave-days-2026Q4-public_c9qb8RvYh5ZqG7DYehPCDW.eval",
+       "log_sha256": "1af7fab6a3db5766a9999ee2e6b81c313639c8ee5bca656457d05590718e7e69",
+       "run_id": "2SQ4JfakuGG3hRtvVagMnN",
+       "model": "openai-api/omlx/Qwen3.8-27B-OptiQ-4bit",
+       "fake": null
+      },
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 38,
+       "n_scored": 190,
+       "correct_scored": 28,
+       "accuracy": 0.14736842105263157,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.14736842105263157
+        ],
+        "mean": 0.14736842105263157,
+        "min": 0.14736842105263157,
+        "max": 0.14736842105263157,
+        "log_files": [
+         "2026-11-13T17-37-42-00-00_overtime-pay-2026Q4-public_2YAMh8Gcbuk9ZqdnQ4cwvc.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 16,
+        "rate": 0.8421052631578947,
+        "both_correct": 1,
+        "both_wrong": 15,
+        "flipped": 3
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "H2": {
+         "correct": 1,
+         "n": 15,
+         "accuracy": 0.06666666666666667,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 5,
+         "n": 30,
+         "accuracy": 0.16666666666666666,
+         "control": false
+        },
+        "R2": {
+         "correct": 3,
+         "n": 30,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 11,
+         "n": 30,
+         "accuracy": 0.36666666666666664,
+         "control": false
+        },
+        "W2": {
+         "correct": 7,
+         "n": 30,
+         "accuracy": 0.23333333333333334,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-13T17-37-42-00-00_overtime-pay-2026Q4-public_2YAMh8Gcbuk9ZqdnQ4cwvc.eval",
+       "log_sha256": "aa820f7b55b8ca63c910fff30525216f63af2047c82e4c9b1175438af7590e7d",
+       "run_id": "DRhxPu7nShnsLhgmE8kfuE",
+       "model": "openai-api/omlx/Qwen3.8-27B-OptiQ-4bit",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "beam-1.0@api@opencode-free@max": {
+   "splits": {
+    "public": {
+     "score": 0.7157894736842105,
+     "control_pass": 1.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.9157894736842105,
+      "overtime_pay": 0.5157894736842106
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 108,
+       "n_scored": 190,
+       "correct_scored": 98,
+       "accuracy": 0.5157894736842106,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.5157894736842106
+        ],
+        "mean": 0.5157894736842106,
+        "min": 0.5157894736842106,
+        "max": 0.5157894736842106,
+        "log_files": [
+         "2026-11-10T18-58-28-00-00_overtime-pay-2026Q4-public_auxCjqto6saHsWQLYhKy3s.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 16,
+        "rate": 0.8421052631578947,
+        "both_correct": 7,
+        "both_wrong": 9,
+        "flipped": 3
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 3,
+         "n": 20,
+         "accuracy": 0.15,
+         "control": false
+        },
+        "H2": {
+         "correct": 4,
+         "n": 15,
+         "accuracy": 0.26666666666666666,
+         "control": false
+        },
+        "H3": {
+         "correct": 3,
+         "n": 15,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "R1": {
+         "correct": 4,
+         "n": 30,
+         "accuracy": 0.13333333333333333,
+         "control": false
+        },
+        "R2": {
+         "correct": 18,
+         "n": 30,
+         "accuracy": 0.6,
+         "control": false
+        },
+        "R3": {
+         "correct": 6,
+         "n": 20,
+         "accuracy": 0.3,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T18-58-28-00-00_overtime-pay-2026Q4-public_auxCjqto6saHsWQLYhKy3s.eval",
+       "log_sha256": "779da2a8234bb1c64e7c0e28c4677becf59d7c9d47bfc95a4b56610408704f15",
+       "run_id": "Me4CK5JwFgASt5ieRnVHVZ",
+       "model": "openai-api/opencode/beam-free",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 184,
+       "n_scored": 190,
+       "correct_scored": 174,
+       "accuracy": 0.9157894736842105,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.9157894736842105
+        ],
+        "mean": 0.9157894736842105,
+        "min": 0.9157894736842105,
+        "max": 0.9157894736842105,
+        "log_files": [
+         "2026-11-10T19-23-07-00-00_annual-leave-days-2026Q4-public_YvjRkuBmQnWKPEGT8pjkd2.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 16,
+        "rate": 0.8421052631578947,
+        "both_correct": 15,
+        "both_wrong": 1,
+        "flipped": 3
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 23,
+         "n": 25,
+         "accuracy": 0.92,
+         "control": false
+        },
+        "B2": {
+         "correct": 21,
+         "n": 25,
+         "accuracy": 0.84,
+         "control": false
+        },
+        "B3": {
+         "correct": 5,
+         "n": 10,
+         "accuracy": 0.5,
+         "control": false
+        },
+        "S0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S3": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 19,
+         "n": 20,
+         "accuracy": 0.95,
+         "control": false
+        },
+        "S6": {
+         "correct": 16,
+         "n": 20,
+         "accuracy": 0.8,
+         "control": false
+        },
+        "S7": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-10T19-23-07-00-00_annual-leave-days-2026Q4-public_YvjRkuBmQnWKPEGT8pjkd2.eval",
+       "log_sha256": "d100f1ecbd828247cc0ddd765d10fe275a3a2e1e6b01c7d47b595e8e8a21e1ee",
+       "run_id": "Y6ruui635YkgTH4SRnJvcd",
+       "model": "openai-api/opencode/beam-free",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "gpt-oss-20b@mxfp4@openrouter@max": {
+   "splits": {
+    "public": {
+     "score": 0.07368421052631578,
+     "control_pass": 0.8,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.14736842105263157,
+      "overtime_pay": 0.0
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 10,
+       "n_scored": 190,
+       "correct_scored": 0,
+       "accuracy": 0.0,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "log_files": [
+         "2026-11-11T07-54-11-00-00_overtime-pay-2026Q4-public_R8Q2so4otEzBrZVbjH8uWo.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 0,
+        "both_wrong": 19,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H2": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-11T07-54-11-00-00_overtime-pay-2026Q4-public_R8Q2so4otEzBrZVbjH8uWo.eval",
+       "log_sha256": "aa75856fe2164ebf47d9c7c41a4a118de96ba8a0afd831ffb4193a9abd57d17c",
+       "run_id": "ZKwyJSJZ4mQzG2BrTHpv8j",
+       "model": "openai-api/openrouter/openai/gpt-oss-20b",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 34,
+       "n_scored": 190,
+       "correct_scored": 28,
+       "accuracy": 0.14736842105263157,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.14736842105263157
+        ],
+        "mean": 0.14736842105263157,
+        "min": 0.14736842105263157,
+        "max": 0.14736842105263157,
+        "log_files": [
+         "2026-11-11T08-32-02-00-00_annual-leave-days-2026Q4-public_4MCLFQhQNeNrBaSgo8t8dj.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 6,
+       "control_pass": 0.6,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 17,
+        "rate": 0.8947368421052632,
+        "both_correct": 1,
+        "both_wrong": 16,
+        "flipped": 2
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 2,
+         "n": 25,
+         "accuracy": 0.08,
+         "control": false
+        },
+        "B2": {
+         "correct": 8,
+         "n": 25,
+         "accuracy": 0.32,
+         "control": false
+        },
+        "B3": {
+         "correct": 3,
+         "n": 10,
+         "accuracy": 0.3,
+         "control": false
+        },
+        "S0": {
+         "correct": 6,
+         "n": 10,
+         "accuracy": 0.6,
+         "control": true
+        },
+        "S1": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 4,
+         "n": 20,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "S3": {
+         "correct": 4,
+         "n": 20,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "S4": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S5": {
+         "correct": 5,
+         "n": 20,
+         "accuracy": 0.25,
+         "control": false
+        },
+        "S6": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S7": {
+         "correct": 0,
+         "n": 10,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-11T08-32-02-00-00_annual-leave-days-2026Q4-public_4MCLFQhQNeNrBaSgo8t8dj.eval",
+       "log_sha256": "b1786760a5707d9798863fb683a87e1572d80e969cb0dee0686a55203131865a",
+       "run_id": "5Y5iixaEW5eSeMSCy3W34L",
+       "model": "openai-api/openrouter/openai/gpt-oss-20b",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "flint-1.0@api@openrouter-free@max": {
+   "splits": {
+    "public": {
+     "score": 0.03684210526315789,
+     "control_pass": 0.95,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.05263157894736842,
+      "overtime_pay": 0.021052631578947368
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 14,
+       "n_scored": 190,
+       "correct_scored": 4,
+       "accuracy": 0.021052631578947368,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.021052631578947368
+        ],
+        "mean": 0.021052631578947368,
+        "min": 0.021052631578947368,
+        "max": 0.021052631578947368,
+        "log_files": [
+         "2026-11-11T10-24-58-00-00_overtime-pay-2026Q4-public_h3KpRLrXcvjZaBfUcoG2LB.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 0,
+        "both_wrong": 19,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H2": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R2": {
+         "correct": 1,
+         "n": 30,
+         "accuracy": 0.03333333333333333,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 3,
+         "n": 30,
+         "accuracy": 0.1,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-11T10-24-58-00-00_overtime-pay-2026Q4-public_h3KpRLrXcvjZaBfUcoG2LB.eval",
+       "log_sha256": "532da67e7864a8cb7e6633a1f3c08c57c10339341bec66e918bb6c9e6de91d95",
+       "run_id": "5PhJJGyWZL4aRe9nUB77if",
+       "model": "openai-api/openrouter/recursive/flint-v1.0:free",
+       "fake": null
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 19,
+       "n_scored": 190,
+       "correct_scored": 10,
+       "accuracy": 0.05263157894736842,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.05263157894736842
+        ],
+        "mean": 0.05263157894736842,
+        "min": 0.05263157894736842,
+        "max": 0.05263157894736842,
+        "log_files": [
+         "2026-11-11T11-26-10-00-00_annual-leave-days-2026Q4-public_KuwUtJU4EfDsnrsB7qhQCU.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 9,
+       "control_pass": 0.9,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 17,
+        "rate": 0.8947368421052632,
+        "both_correct": 0,
+        "both_wrong": 17,
+        "flipped": 2
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 0,
+         "n": 25,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "B2": {
+         "correct": 3,
+         "n": 25,
+         "accuracy": 0.12,
+         "control": false
+        },
+        "B3": {
+         "correct": 2,
+         "n": 10,
+         "accuracy": 0.2,
+         "control": false
+        },
+        "S0": {
+         "correct": 9,
+         "n": 10,
+         "accuracy": 0.9,
+         "control": true
+        },
+        "S1": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "S2": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 2,
+         "n": 20,
+         "accuracy": 0.1,
+         "control": false
+        },
+        "S5": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "S7": {
+         "correct": 1,
+         "n": 10,
+         "accuracy": 0.1,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-11T11-26-10-00-00_annual-leave-days-2026Q4-public_KuwUtJU4EfDsnrsB7qhQCU.eval",
+       "log_sha256": "d60221c15c92c5316d600b0878a431891e53e14e2dec5d8b7fd2e443d014b938",
+       "run_id": "VWEnx3YoZeec6UqknQcLoP",
+       "model": "openai-api/openrouter/recursive/flint-v1.0:free",
+       "fake": null
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "fake-oracle@none@none@direct": {
+   "splits": {
+    "public": {
+     "score": 1.0,
+     "control_pass": 1.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 1.0,
+      "overtime_pay": 1.0
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 200,
+       "n_scored": 190,
+       "correct_scored": 190,
+       "accuracy": 1.0,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         1.0
+        ],
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "log_files": [
+         "2026-11-12T15-07-03-00-00_overtime-pay-2026Q4-public_XEbsQQuQK64cwNA5xXajbH.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 19,
+        "both_wrong": 0,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "H2": {
+         "correct": 15,
+         "n": 15,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 15,
+         "n": 15,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "R2": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "R3": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-12T15-07-03-00-00_overtime-pay-2026Q4-public_XEbsQQuQK64cwNA5xXajbH.eval",
+       "log_sha256": "d729fd992299895d7eaff3dfe8b1352c2a3839d6e3503418943bcfb7590a2784",
+       "run_id": "ih6tWVAXkszkdBGa8iqTu4",
+       "model": "mockllm/model",
+       "fake": "oracle"
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 200,
+       "n_scored": 190,
+       "correct_scored": 190,
+       "accuracy": 1.0,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         1.0
+        ],
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "log_files": [
+         "2026-11-12T15-07-30-00-00_annual-leave-days-2026Q4-public_aCyp9t825mgTFiN2zyxYRS.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 19,
+        "both_wrong": 0,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 25,
+         "n": 25,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "B2": {
+         "correct": 25,
+         "n": 25,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "B3": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S3": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S7": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-12T15-07-30-00-00_annual-leave-days-2026Q4-public_aCyp9t825mgTFiN2zyxYRS.eval",
+       "log_sha256": "a0977f9c4b61bd6d6225541fc6e3e4f58654c233b68c9f9b03464aa0a0449e95",
+       "run_id": "3ni2mmW9aB5smvMe3tuDnx",
+       "model": "mockllm/model",
+       "fake": "oracle"
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "fake-naive@none@none@direct": {
+   "splits": {
+    "public": {
+     "score": 0.6263157894736842,
+     "control_pass": 1.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.8315789473684211,
+      "overtime_pay": 0.42105263157894735
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 90,
+       "n_scored": 190,
+       "correct_scored": 80,
+       "accuracy": 0.42105263157894735,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.42105263157894735
+        ],
+        "mean": 0.42105263157894735,
+        "min": 0.42105263157894735,
+        "max": 0.42105263157894735,
+        "log_files": [
+         "2026-11-12T15-07-08-00-00_overtime-pay-2026Q4-public_Vbp3wobJ9jHMY8Gvhgvw7E.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 8,
+        "both_wrong": 11,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "H2": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "R2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 30,
+         "n": 30,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-12T15-07-08-00-00_overtime-pay-2026Q4-public_Vbp3wobJ9jHMY8Gvhgvw7E.eval",
+       "log_sha256": "3a014a0b472fba5a220f3e46d3b44bc8b091d0f7fba93ef9ca8b5e223064b4a9",
+       "run_id": "hsjiRt2kEUoaRGs4oeXSCG",
+       "model": "mockllm/model",
+       "fake": "naive"
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 168,
+       "n_scored": 190,
+       "correct_scored": 158,
+       "accuracy": 0.8315789473684211,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.8315789473684211
+        ],
+        "mean": 0.8315789473684211,
+        "min": 0.8315789473684211,
+        "max": 0.8315789473684211,
+        "log_files": [
+         "2026-11-12T15-07-36-00-00_annual-leave-days-2026Q4-public_8W48RVKwiRdYq4YoE3XcoV.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 10,
+       "control_pass": 1.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 14,
+        "both_wrong": 5,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 25,
+         "n": 25,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "B2": {
+         "correct": 0,
+         "n": 25,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "B3": {
+         "correct": 5,
+         "n": 10,
+         "accuracy": 0.5,
+         "control": false
+        },
+        "S0": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S3": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 20,
+         "n": 20,
+         "accuracy": 1.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 18,
+         "n": 20,
+         "accuracy": 0.9,
+         "control": false
+        },
+        "S7": {
+         "correct": 10,
+         "n": 10,
+         "accuracy": 1.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-12T15-07-36-00-00_annual-leave-days-2026Q4-public_8W48RVKwiRdYq4YoE3XcoV.eval",
+       "log_sha256": "77d255dcdc2f244864b0023e611190912b40e7732900487c4a00a2d3bc254435",
+       "run_id": "VcPWC8fZcKBVxKRybUnGVy",
+       "model": "mockllm/model",
+       "fake": "naive"
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  },
+  "fake-random@none@none@direct": {
+   "splits": {
+    "public": {
+     "score": 0.002631578947368421,
+     "control_pass": 0.0,
+     "n_control": 20,
+     "status": "ok",
+     "reason": null,
+     "family_scores": {
+      "annual_leave_days": 0.0,
+      "overtime_pay": 0.005263157894736842
+     },
+     "families": {
+      "overtime_pay": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 1,
+       "n_scored": 190,
+       "correct_scored": 1,
+       "accuracy": 0.005263157894736842,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.005263157894736842
+        ],
+        "mean": 0.005263157894736842,
+        "min": 0.005263157894736842,
+        "max": 0.005263157894736842,
+        "log_files": [
+         "2026-11-12T15-07-22-00-00_overtime-pay-2026Q4-public_8Vubr4UA5yDxb67cVFM99u.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 0,
+       "control_pass": 0.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 18,
+        "rate": 0.9473684210526315,
+        "both_correct": 0,
+        "both_wrong": 18,
+        "flipped": 1
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "H1": {
+         "correct": 1,
+         "n": 20,
+         "accuracy": 0.05,
+         "control": false
+        },
+        "H2": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "H3": {
+         "correct": 0,
+         "n": 15,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "R3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W0": {
+         "correct": 0,
+         "n": 10,
+         "accuracy": 0.0,
+         "control": true
+        },
+        "W1": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "W2": {
+         "correct": 0,
+         "n": 30,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-12T15-07-22-00-00_overtime-pay-2026Q4-public_8Vubr4UA5yDxb67cVFM99u.eval",
+       "log_sha256": "4cf91e549deba1f9f978bec4cb177108e8a81ac3d1245d01901eab339bb4477a",
+       "run_id": "byFHPTbZzyiPETPR5g4aQk",
+       "model": "mockllm/model",
+       "fake": "random"
+      },
+      "annual_leave_days": {
+       "n": 200,
+       "expected_n": 200,
+       "correct": 0,
+       "n_scored": 190,
+       "correct_scored": 0,
+       "accuracy": 0.0,
+       "repeats": {
+        "n_runs": 1,
+        "accuracies": [
+         0.0
+        ],
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "log_files": [
+         "2026-11-12T15-07-40-00-00_annual-leave-days-2026Q4-public_Z7FAdok4mCRHSeW5AdCXST.eval"
+        ]
+       },
+       "n_control": 10,
+       "correct_control": 0,
+       "control_pass": 0.0,
+       "complete": true,
+       "tier": 1,
+       "answer_mode": "direct",
+       "phrasing_consistency": {
+        "pairs": 19,
+        "consistent": 19,
+        "rate": 1.0,
+        "both_correct": 0,
+        "both_wrong": 19,
+        "flipped": 0
+       },
+       "spec_mismatch": null,
+       "n_error": 0,
+       "by_branch": {
+        "B1": {
+         "correct": 0,
+         "n": 25,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "B2": {
+         "correct": 0,
+         "n": 25,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "B3": {
+         "correct": 0,
+         "n": 10,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S0": {
+         "correct": 0,
+         "n": 10,
+         "accuracy": 0.0,
+         "control": true
+        },
+        "S1": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S2": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S3": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S4": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S5": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S6": {
+         "correct": 0,
+         "n": 20,
+         "accuracy": 0.0,
+         "control": false
+        },
+        "S7": {
+         "correct": 0,
+         "n": 10,
+         "accuracy": 0.0,
+         "control": false
+        }
+       },
+       "log_file": "2026-11-12T15-07-40-00-00_annual-leave-days-2026Q4-public_Z7FAdok4mCRHSeW5AdCXST.eval",
+       "log_sha256": "18769f42cf15544d263f8c1a109e074c0097621bbf64397b98e8e6d3e367f397",
+       "run_id": "98FARpoAuNPZWtU2VARV56",
+       "model": "mockllm/model",
+       "fake": "random"
+      }
+     }
+    }
+   },
+   "public_private_gap": null
+  }
+ },
+ "notes": [
+  "evaluation_target = model@quantization@hardware；不同 target 不合併。",
+  "分母固定為 manifest n；缺題不補 0、不重加權，aggregate 直接 unavailable。",
+  "fake-* target 是 pipeline 驗證用的假 solver，不是模型。",
+  "accuracy 只算非 control 分支（n_scored）；control 分支（對照題）另報 control_pass，不進 headline。",
+  "answer_mode（direct／cot）記在每個 family 的 run 裡；target 命名慣例加 @direct／@cot 後綴，不同 answer_mode 不合併。",
+  "spec_mismatch 非 null 表示該 run 的題目與當期題集不是同一版（family 版本、spec／rule／templates／sampler hash 或產生器版本不同，differs 列出哪幾個），分數照算但應重跑。",
+  "mode=preview 的 index 不是正式 release：release_blockers 列出擋住 release 的項目；mode=release 時該清單必為空。",
+  "pins 的 family_status 由 silver/families/<id>/reviews.yaml 推得：manifest 上的 spec／rule／templates／sampler hash 有對應的 approved 簽核才是 reviewed。",
+  "unavailable 的 target 仍附 family_scores（partial 顯示）：已跑完的 family 各自的 accuracy；不給總分、不進排名。"
+ ]
+}

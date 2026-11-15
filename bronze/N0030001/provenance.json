@@ -1,0 +1,11 @@
+{
+ "source": "kong0107/mojLawSplitJSON (mirror of law.moj.gov.tw open data)",
+ "source_file": "FalVMingLing/N0030001.json",
+ "mirror_commit": "6b6054b50edd0ffae0cd23e489aeab7f9b9cffa1",
+ "mirror_update_date": "20260918",
+ "sha256": "9b0c7a4a3ce5363e7302d8091eaaa5eb538e25a25a2b64a49088585b819a13ee",
+ "fetched_at": "2026-10-11T13:30:49+08:00",
+ "law_name": "勞動基準法",
+ "law_url": "https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=N0030001",
+ "last_amended": "20240731"
+}

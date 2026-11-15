@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.runner.js
+.venv/
+.env
+.env.*
+.DS_Store
+# private question sets and their salt are never published
+gold/releases/*/private/
+# pages built locally by `make site`
+site/

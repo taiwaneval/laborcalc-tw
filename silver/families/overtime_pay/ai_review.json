@@ -1,0 +1,39 @@
+{
+ "note": "AI 意見，供審閱參考，不是人工簽核；family 是否 reviewed 只看 reviews.yaml。",
+ "generated_by": "tools/ai_review_legal.py",
+ "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+ "reviewed_at": "2026-10-12T15:21:51+08:00",
+ "spec_sha256": "632c7b7fc0fe99f03e76572ed37a443821545a10ef48f6cfe3abcb18e7b5ed57",
+ "entries": {
+  "LSA-24-1": {
+   "verdict": "ok",
+   "reason": "摘要雖僅列前二款，但編碼為欄位明確說明第三款（天災事變加倍發給）已排除於本 family（見 scope.excludes），完整對應出處原文三款內容且無矛盾。",
+   "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=24"
+  },
+  "LSA-24-2": {
+   "verdict": "ok",
+   "reason": "摘要完整引用出處原文；編碼為正確解讀「另再加給」為月薪外加給倍率（前2小時4/3、第3-8小時5/3），並註明引用勞動部示意圖與MOL-RESTDAY-9H作為時段劃分依據，與本出處無矛盾。",
+   "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=24"
+  },
+  "LSA-32-2": {
+   "verdict": "ok",
+   "reason": "摘要完整引用本條第2項前段原文；編碼為說明平日延長工時上限4小時係依正常工時8小時推算，並明確標註休息日、國定假日12小時上限為編者比照設定非本項原文，無隱匿或錯誤。",
+   "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=32"
+  },
+  "LSA-39": {
+   "verdict": "ok",
+   "reason": "摘要正確反映第 39 條原文；編碼與備註引用勞動部行政解釋作為「加倍發給」之具體計算依據，並已於備註註明出處，符合規則模型可結合其他出處之原則，與本出處無矛盾。",
+   "source_url": "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=N0030001&flno=39"
+  },
+  "MOL-HOURLY": {
+   "verdict": "ok",
+   "reason": "摘要忠實引述原函釋核心內容，編碼為正確實作「原月薪給付總額為240小時且未重行約定」時之時薪換算邏輯，備註已註明其他系統驗證依據，均無違誤。",
+   "source_url": "https://www.mol.gov.tw/topic/3067/5991/6010/19252/"
+  },
+  "MOL-RESTDAY-9H": {
+   "verdict": "warn",
+   "reason": "出處原文僅列示法條規定之兩段加班費率（前2小時另加1⅓、2小時後另加1⅔），未包含示意圖圖片內容與試算系統程式碼，而本列關鍵的「第9–12小時2⅔倍」內容僅見於示意圖與系統驗證，無法由提供的原文直接佐證。",
+   "source_url": "https://www.mol.gov.tw/1607/28162/28166/28180/81521/81529/post"
+  }
+ }
+}

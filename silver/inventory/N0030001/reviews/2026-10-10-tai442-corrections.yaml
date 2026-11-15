@@ -1,0 +1,9 @@
+reviewer: Calvin Ku
+date: "2026-10-10"
+scope: TAI-442 以官方來源查核後的訂正（Calvin 2026-10-10 在對話中確認查核結果）。分類與 family 不變，只訂正備註。
+decisions:
+  - unit_id: N0030001/40/1
+    verdict: overridden
+    category: computable
+    family: holiday_work_double_pay
+    note: 併入 39/1 同一 family。訂正 2026-10-08 備註：休息日因天災、事變或突發事件出勤不適用 §40，工資依 §24 第 2 項計給（勞動部 107 年 3 月 14 日勞動條 2 字第 1070130380 號函）；§40 停止假期加倍只涵蓋例假、休假日、特休。
